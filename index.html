@@ -8,710 +8,621 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 
-/* ── RESET & TOKENS ── */
+/* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
-:root {
-  --ink:      #0d0d0d;
-  --paper:    #f5f0e8;
-  --cream:    #ede8dc;
-  --accent:   #c8391a;
-  --accent2:  #1a3a5c;
-  --gold:     #b8952a;
-  --muted:    #6b6458;
-  --border:   #ccc4b4;
-  --allow:    #1a5c2a;
-  --deny:     #8b0000;
-  --warn:     #7a4f00;
-  --warn-bg:  #fff8e6;
-  --gap:      1px;
-  --r: 0px;
+/* ══════════════════════════════════════════════════════════════
+   15 TEMI
+   SCURI  (5): pelle · ghiaccio · bosco · viola · alba
+   CHIARI (5): carta · cielo · menta · cipria · limone
+   EXTRA  (5): carbone · rosso · oceano · tabacco · notte
+   ══════════════════════════════════════════════════════════════ */
+:root { --gap:1px; --max-content:1200px; --max-text:860px; }
+
+/* 1 PELLE (default) */
+:root, body[data-theme="pelle"] {
+  --ink:#0d0d0d; --paper:#f5f0e8; --cream:#ede8dc;
+  --accent:#c8391a; --accent2:#1a3a5c; --gold:#b8952a;
+  --muted:#6b6458; --border:#ccc4b4; --allow:#1a5c2a; --deny:#8b0000;
+  --warn:#7a4f00; --warn-bg:#fff8e6;
+  --hero-bg:#0d0d0d; --hg:rgba(200,57,26,.06); --hl:rgba(200,57,26,.14);
+  --dark:#0d0d0d; --sb:#0f0f0f; --sb2:#141414; --ss:#1a1a1a;
+  --db:#222; --cb:#0d0d0d; --gb:#0a0a0a;
+  --ib:#0f0f0f; --ibr:#252525; --pb:#080808; --pbr:#1a1a1a;
+  --fb:#0d0d0d; --fs:#1a1a1a; --bb:#0d0d0d;
+  --sw:#c8391a; --sn:"Pelle";
+}
+/* 2 GHIACCIO */
+body[data-theme="ghiaccio"] {
+  --ink:#0a1628; --paper:#f0f5ff; --cream:#e4ecf7;
+  --accent:#1565c0; --accent2:#0d47a1; --gold:#1976d2;
+  --muted:#4a607a; --border:#b8cde8; --allow:#1b5e20; --deny:#b71c1c;
+  --warn:#3e2723; --warn-bg:#e8f5ff;
+  --hero-bg:#0a1628; --hg:rgba(21,101,192,.08); --hl:rgba(21,101,192,.18);
+  --dark:#0a1628; --sb:#060f1e; --sb2:#0d1a2e; --ss:#142038;
+  --db:#1a2d4a; --cb:#0a1628; --gb:#070e1c;
+  --ib:#0c1728; --ibr:#1e3050; --pb:#050c18; --pbr:#162540;
+  --fb:#0a1628; --fs:#142038; --bb:#0a1628;
+  --sw:#1565c0; --sn:"Ghiaccio";
+}
+/* 3 BOSCO */
+body[data-theme="bosco"] {
+  --ink:#0a1a0e; --paper:#eef4ed; --cream:#deeadd;
+  --accent:#2e7d32; --accent2:#1b5e20; --gold:#558b2f;
+  --muted:#4a6045; --border:#a8c5a0; --allow:#1b5e20; --deny:#7b1919;
+  --warn:#3e2e00; --warn-bg:#f1fbe8;
+  --hero-bg:#0a1a0e; --hg:rgba(46,125,50,.07); --hl:rgba(46,125,50,.18);
+  --dark:#0a1a0e; --sb:#060e08; --sb2:#0c160e; --ss:#142010;
+  --db:#162018; --cb:#0a1a0e; --gb:#07100a;
+  --ib:#0c180d; --ibr:#1c3020; --pb:#050d07; --pbr:#122016;
+  --fb:#0a1a0e; --fs:#142010; --bb:#0a1a0e;
+  --sw:#2e7d32; --sn:"Bosco";
+}
+/* 4 VIOLA */
+body[data-theme="viola"] {
+  --ink:#100820; --paper:#f4f0fa; --cream:#e8e0f5;
+  --accent:#7b1fa2; --accent2:#4a148c; --gold:#9c27b0;
+  --muted:#5a4a70; --border:#c4aedd; --allow:#2e7d32; --deny:#880e4f;
+  --warn:#3e1a4a; --warn-bg:#fdf0ff;
+  --hero-bg:#100820; --hg:rgba(123,31,162,.07); --hl:rgba(123,31,162,.20);
+  --dark:#100820; --sb:#0a0516; --sb2:#120924; --ss:#1e1030;
+  --db:#200c34; --cb:#100820; --gb:#0c0618;
+  --ib:#100a1e; --ibr:#281844; --pb:#080410; --pbr:#1c1030;
+  --fb:#100820; --fs:#1e1030; --bb:#100820;
+  --sw:#7b1fa2; --sn:"Viola";
+}
+/* 5 ALBA */
+body[data-theme="alba"] {
+  --ink:#1c1008; --paper:#fffbf3; --cream:#fff0d8;
+  --accent:#d4680a; --accent2:#8b4a00; --gold:#c8820a;
+  --muted:#7a5530; --border:#e0c898; --allow:#2d6a1e; --deny:#8b1a1a;
+  --warn:#7a3a00; --warn-bg:#fff8ee;
+  --hero-bg:#1c1008; --hg:rgba(212,104,10,.07); --hl:rgba(212,104,10,.16);
+  --dark:#1c1008; --sb:#120a04; --sb2:#1a1008; --ss:#281808;
+  --db:#2a1a08; --cb:#1c1008; --gb:#100804;
+  --ib:#160e06; --ibr:#301c08; --pb:#0e0804; --pbr:#241408;
+  --fb:#1c1008; --fs:#281808; --bb:#1c1008;
+  --sw:#d4680a; --sn:"Alba";
+}
+/* 6 CARTA */
+body[data-theme="carta"] {
+  --ink:#f0ece4; --paper:#fafaf8; --cream:#f0ede6;
+  --accent:#c0392b; --accent2:#2c3e50; --gold:#d4ac0d;
+  --muted:#888; --border:#d8d4cc; --allow:#196f3d; --deny:#922b21;
+  --warn:#6e4e00; --warn-bg:#fefce8;
+  --hero-bg:#1a1a1a; --hg:rgba(192,57,43,.06); --hl:rgba(192,57,43,.14);
+  --dark:#1a1a1a; --sb:#111; --sb2:#181818; --ss:#1f1f1f;
+  --db:#222; --cb:#111; --gb:#0e0e0e;
+  --ib:#141414; --ibr:#2a2a2a; --pb:#0c0c0c; --pbr:#1c1c1c;
+  --fb:#1a1a1a; --fs:#222; --bb:#1a1a1a;
+  --sw:#c0392b; --sn:"Carta";
+}
+/* 7 CIELO */
+body[data-theme="cielo"] {
+  --ink:#e8f2ff; --paper:#f5faff; --cream:#e6f3ff;
+  --accent:#0077cc; --accent2:#005fa3; --gold:#0099dd;
+  --muted:#a0c4e8; --border:#b0d4f0; --allow:#1a7040; --deny:#c0392b;
+  --warn:#5a3a00; --warn-bg:#f0f8ff;
+  --hero-bg:#0d1e30; --hg:rgba(0,119,204,.08); --hl:rgba(0,119,204,.18);
+  --dark:#0d1e30; --sb:#081424; --sb2:#0f1c2e; --ss:#122438;
+  --db:#152840; --cb:#0d1e30; --gb:#081018;
+  --ib:#0c1826; --ibr:#1a2e44; --pb:#060f1c; --pbr:#102030;
+  --fb:#0d1e30; --fs:#122438; --bb:#0d1e30;
+  --sw:#0077cc; --sn:"Cielo";
+}
+/* 8 MENTA */
+body[data-theme="menta"] {
+  --ink:#d8f5ee; --paper:#f2fdf6; --cream:#e0f7ea;
+  --accent:#00897b; --accent2:#00695c; --gold:#26a69a;
+  --muted:#90ccc0; --border:#9dd4c8; --allow:#1b5e20; --deny:#b71c1c;
+  --warn:#3e2a00; --warn-bg:#f0fdf4;
+  --hero-bg:#081a12; --hg:rgba(0,137,123,.07); --hl:rgba(0,137,123,.18);
+  --dark:#081a12; --sb:#051009; --sb2:#0c180e; --ss:#102016;
+  --db:#112218; --cb:#081a12; --gb:#050e0a;
+  --ib:#091410; --ibr:#152c20; --pb:#040c08; --pbr:#0e1e14;
+  --fb:#081a12; --fs:#102016; --bb:#081a12;
+  --sw:#00897b; --sn:"Menta";
+}
+/* 9 CIPRIA */
+body[data-theme="cipria"] {
+  --ink:#fce8ee; --paper:#fff5f5; --cream:#ffe8e8;
+  --accent:#c2185b; --accent2:#880e4f; --gold:#e91e63;
+  --muted:#d090a8; --border:#f0b8cc; --allow:#2e7d32; --deny:#7b0f0f;
+  --warn:#5a1a00; --warn-bg:#fff0f3;
+  --hero-bg:#1a0a0e; --hg:rgba(194,24,91,.07); --hl:rgba(194,24,91,.18);
+  --dark:#1a0a0e; --sb:#110508; --sb2:#180a0c; --ss:#200e14;
+  --db:#220a10; --cb:#1a0a0e; --gb:#12060a;
+  --ib:#160808; --ibr:#2e1020; --pb:#0e0406; --pbr:#1c0c14;
+  --fb:#1a0a0e; --fs:#200e14; --bb:#1a0a0e;
+  --sw:#c2185b; --sn:"Cipria";
+}
+/* 10 LIMONE */
+body[data-theme="limone"] {
+  --ink:#fffff0; --paper:#fffff0; --cream:#fafad0;
+  --accent:#9e9000; --accent2:#7a6f00; --gold:#b8a800;
+  --muted:#d0c860; --border:#d8d290; --allow:#2e5c1e; --deny:#8b2800;
+  --warn:#5a4000; --warn-bg:#fefee8;
+  --hero-bg:#111000; --hg:rgba(158,144,0,.07); --hl:rgba(158,144,0,.18);
+  --dark:#111000; --sb:#0a0900; --sb2:#131100; --ss:#1c1a00;
+  --db:#1e1c00; --cb:#111000; --gb:#0c0b00;
+  --ib:#0f0e00; --ibr:#252200; --pb:#080700; --pbr:#181600;
+  --fb:#111000; --fs:#1c1a00; --bb:#111000;
+  --sw:#9e9000; --sn:"Limone";
+}
+/* 11 CARBONE */
+body[data-theme="carbone"] {
+  --ink:#e8e8e8; --paper:#1c1c1c; --cream:#242424;
+  --accent:#ff6b35; --accent2:#e65100; --gold:#ffa726;
+  --muted:#888; --border:#383838; --allow:#4caf50; --deny:#ef5350;
+  --warn:#c8a000; --warn-bg:#2a2200;
+  --hero-bg:#0e0e0e; --hg:rgba(255,107,53,.05); --hl:rgba(255,107,53,.12);
+  --dark:#0e0e0e; --sb:#0a0a0a; --sb2:#101010; --ss:#141414;
+  --db:#1c1c1c; --cb:#0a0a0a; --gb:#080808;
+  --ib:#0d0d0d; --ibr:#202020; --pb:#060606; --pbr:#141414;
+  --fb:#0e0e0e; --fs:#141414; --bb:#0e0e0e;
+  --sw:#ff6b35; --sn:"Carbone";
+}
+/* 12 ROSSO */
+body[data-theme="rosso"] {
+  --ink:#1a0505; --paper:#fff8f8; --cream:#ffe8e8;
+  --accent:#d32f2f; --accent2:#b71c1c; --gold:#e53935;
+  --muted:#7a3a3a; --border:#f0b8b8; --allow:#2e7d32; --deny:#7b0000;
+  --warn:#6a2000; --warn-bg:#fff0ee;
+  --hero-bg:#0f0202; --hg:rgba(211,47,47,.07); --hl:rgba(211,47,47,.20);
+  --dark:#0f0202; --sb:#0a0101; --sb2:#120202; --ss:#1a0303;
+  --db:#1c0404; --cb:#0f0202; --gb:#090101;
+  --ib:#0d0202; --ibr:#280808; --pb:#070101; --pbr:#160404;
+  --fb:#0f0202; --fs:#1a0303; --bb:#0f0202;
+  --sw:#d32f2f; --sn:"Rosso";
+}
+/* 13 OCEANO */
+body[data-theme="oceano"] {
+  --ink:#e0f0ff; --paper:#0a1520; --cream:#0f2035;
+  --accent:#00bcd4; --accent2:#0097a7; --gold:#4dd0e1;
+  --muted:#6090b0; --border:#1a3050; --allow:#4caf50; --deny:#ff5252;
+  --warn:#d4a000; --warn-bg:#0a1a10;
+  --hero-bg:#060e18; --hg:rgba(0,188,212,.06); --hl:rgba(0,188,212,.18);
+  --dark:#060e18; --sb:#040b12; --sb2:#08111c; --ss:#0c1828;
+  --db:#0e1e2e; --cb:#060e18; --gb:#040a10;
+  --ib:#080e18; --ibr:#102030; --pb:#030810; --pbr:#0a1820;
+  --fb:#060e18; --fs:#0c1828; --bb:#060e18;
+  --sw:#00bcd4; --sn:"Oceano";
+}
+/* 14 TABACCO */
+body[data-theme="tabacco"] {
+  --ink:#f5ece0; --paper:#1e1408; --cream:#281c0e;
+  --accent:#d4a054; --accent2:#b8843a; --gold:#e8b870;
+  --muted:#8a7060; --border:#3a2c1e; --allow:#6ab04c; --deny:#e05050;
+  --warn:#c0a000; --warn-bg:#1e1200;
+  --hero-bg:#130d04; --hg:rgba(212,160,84,.06); --hl:rgba(212,160,84,.16);
+  --dark:#130d04; --sb:#0e0902; --sb2:#160e04; --ss:#201408;
+  --db:#221608; --cb:#130d04; --gb:#0e0902;
+  --ib:#100c04; --ibr:#281e0c; --pb:#0a0702; --pbr:#1c1208;
+  --fb:#130d04; --fs:#201408; --bb:#130d04;
+  --sw:#d4a054; --sn:"Tabacco";
+}
+/* 15 NOTTE */
+body[data-theme="notte"] {
+  --ink:#c8d8f0; --paper:#080c14; --cream:#0e1420;
+  --accent:#5c8aff; --accent2:#3d6de8; --gold:#7aa8ff;
+  --muted:#5070a0; --border:#182440; --allow:#4caf50; --deny:#ff6060;
+  --warn:#d4b000; --warn-bg:#08100a;
+  --hero-bg:#040810; --hg:rgba(92,138,255,.06); --hl:rgba(92,138,255,.16);
+  --dark:#040810; --sb:#02060c; --sb2:#060a14; --ss:#0a1020;
+  --db:#0c1828; --cb:#040810; --gb:#030610;
+  --ib:#06080e; --ibr:#101828; --pb:#02040a; --pbr:#0a1020;
+  --fb:#040810; --fs:#0a1020; --bb:#040810;
+  --sw:#5c8aff; --sn:"Notte";
 }
 
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--paper);
-  color: var(--ink);
-  overflow-x: hidden;
-  line-height: 1.6;
-  font-size: 16px;
-}
+/* ── Apply vars ── */
+body { font-family:'DM Sans',sans-serif; background:var(--paper); color:var(--ink); overflow-x:hidden; line-height:1.6; font-size:16px; transition:background .35s,color .35s; }
+img,svg { display:block; max-width:100%; }
+a { color:inherit; }
+.lang-bar   { background:var(--bb) !important; }
+.hero       { background:var(--hero-bg) !important; }
+.hero-bg-grid { background-image: linear-gradient(var(--hg) 1px,transparent 1px), linear-gradient(90deg,var(--hg) 1px,transparent 1px) !important; }
+.hero-glow  { background:radial-gradient(circle,var(--hl) 0%,transparent 70%) !important; }
+.section-dark { background:var(--dark) !important; }
+.step-card  { background:var(--sb) !important; }
+.step-card:hover { background:var(--sb2) !important; }
+.steps-grid { background:var(--ss) !important; border-color:var(--ss) !important; }
+.donation-box { border-color:var(--db) !important; }
+.copy-block { background:var(--cb) !important; }
+.generator  { background:var(--gb) !important; }
+.generator::before { background-image: linear-gradient(var(--hg) 1px,transparent 1px), linear-gradient(90deg,var(--hg) 1px,transparent 1px) !important; }
+.gen-input  { background:var(--ib) !important; border-color:var(--ibr) !important; }
+.gen-input:focus { border-color:var(--accent) !important; }
+.gen-preview { background:var(--pb) !important; border-color:var(--pbr) !important; }
+footer { background:var(--fb) !important; border-color:var(--fs) !important; }
 
-img, svg { display: block; max-width: 100%; }
-a { color: inherit; }
-
-/* ── LANG BAR ── */
+/* ══════════════════
+   LANG BAR
+   ══════════════════ */
 .lang-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 200;
-  background: var(--ink);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 6px;
-  padding: 10px 16px;
-  min-height: 44px;
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  display:flex; align-items:center; justify-content:flex-end;
+  gap:6px; padding:0 32px; min-height:44px;
 }
 .lang-bar-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  color: #555;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  margin-right: 8px;
+  font-family:'DM Mono',monospace; font-size:10px; color:#555;
+  letter-spacing:.15em; text-transform:uppercase; margin-right:8px;
 }
 .lang-btn {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border: 1px solid #444;
-  background: transparent;
-  color: #888;
-  cursor: pointer;
-  transition: all .2s;
-  min-height: 32px;
-  touch-action: manipulation;
+  font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.1em;
+  text-transform:uppercase; padding:6px 14px; border:1px solid #444;
+  background:transparent; color:#888; cursor:pointer; transition:all .2s;
+  min-height:32px; touch-action:manipulation;
 }
-.lang-btn:hover  { border-color: var(--accent); color: var(--accent); }
-.lang-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.lang-btn:hover  { border-color:var(--accent); color:var(--accent); }
+.lang-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+
+/* ── DROPDOWN THEME PICKER ── */
+.theme-picker {
+  position:relative;
+  display:flex; align-items:center;
+}
+.theme-trigger {
+  display:inline-flex; align-items:center; gap:7px;
+  font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.12em;
+  text-transform:uppercase; color:#666; cursor:pointer;
+  padding:5px 12px; border:1px solid #2a2a2a; background:transparent;
+  transition:all .2s; min-height:32px; touch-action:manipulation;
+  white-space:nowrap;
+  -webkit-user-select:none; user-select:none;
+}
+.theme-trigger:hover { color:#aaa; border-color:#444; }
+.theme-trigger .t-dot {
+  width:9px; height:9px; border-radius:50%; flex-shrink:0;
+  background:var(--sw); transition:transform .2s;
+}
+.theme-trigger .t-arrow {
+  font-size:8px; opacity:.5; transition:transform .25s;
+}
+.theme-picker.open .theme-trigger { color:#ddd; border-color:#555; background:rgba(255,255,255,.04); }
+.theme-picker.open .t-arrow { transform:rotate(180deg); }
+
+.theme-dropdown {
+  position:absolute; top:calc(100% + 6px); right:0;
+  min-width:220px; background:#111; border:1px solid #282828;
+  box-shadow:0 16px 48px rgba(0,0,0,.7);
+  opacity:0; transform:translateY(-8px) scale(.98);
+  pointer-events:none; transition:opacity .22s ease, transform .22s ease;
+  z-index:999;
+}
+.theme-picker.open .theme-dropdown {
+  opacity:1; transform:translateY(0) scale(1); pointer-events:all;
+}
+.theme-group-label {
+  font-family:'DM Mono',monospace; font-size:8px; letter-spacing:.22em;
+  text-transform:uppercase; color:#333; padding:10px 14px 6px;
+  border-top:1px solid #1c1c1c;
+}
+.theme-group-label:first-child { border-top:none; }
+.theme-option {
+  display:flex; align-items:center; gap:10px;
+  width:100%; padding:9px 14px; border:none; background:transparent;
+  cursor:pointer; text-align:left; transition:background .15s;
+  touch-action:manipulation;
+}
+.theme-option:hover { background:rgba(255,255,255,.06); }
+.theme-option.active { background:rgba(255,255,255,.04); }
+.theme-option .o-dot {
+  width:12px; height:12px; border-radius:50%; flex-shrink:0;
+  border:1.5px solid rgba(255,255,255,.12);
+}
+.theme-option .o-check {
+  margin-left:auto; font-size:10px; color:var(--accent);
+  opacity:0; transition:opacity .15s;
+}
+.theme-option.active .o-check { opacity:1; }
+.theme-option .o-name {
+  font-family:'DM Mono',monospace; font-size:10px;
+  letter-spacing:.1em; text-transform:uppercase;
+  color:#999;
+}
+.theme-option.active .o-name { color:#eee; }
+.theme-option .o-tag {
+  font-family:'DM Mono',monospace; font-size:8px;
+  letter-spacing:.08em; text-transform:uppercase;
+  margin-left:auto; padding:2px 6px; border-radius:2px;
+}
+.o-tag.light { background:rgba(255,255,255,.08); color:#777; }
+.o-tag.dark  { background:rgba(0,0,0,.4);         color:#555; }
+
+.langbar-sep { width:1px; height:20px; background:#222; margin:0 8px; flex-shrink:0; }
 
 /* ── LANG VISIBILITY ── */
-[data-lang="en"]              { display: none; }
-body.lang-en [data-lang="it"] { display: none; }
-body.lang-en [data-lang="en"] { display: revert; }
+[data-lang="en"]              { display:none; }
+body.lang-en [data-lang="it"] { display:none; }
+body.lang-en [data-lang="en"] { display:revert; }
 
-/* ── CONTAINER ── */
-.container {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+/* ══════════════════
+   CONTAINER
+   ══════════════════ */
+.container { width:100%; max-width:var(--max-content); margin:0 auto; padding:0 40px; }
 
-/* ── HERO ── */
+/* ══════════════════
+   HERO
+   ══════════════════ */
 .hero {
-  position: relative;
-  background: var(--ink);
-  overflow: hidden;
-  padding: 96px 20px 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100svh;
+  position:relative; overflow:hidden;
+  padding:96px 40px 80px; display:flex; align-items:center;
+  justify-content:center; min-height:100svh;
 }
 .hero-bg-grid {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(200,57,26,.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(200,57,26,.06) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
+  position:absolute; inset:0;
+  background-size:60px 60px; pointer-events:none;
 }
 .hero-glow {
-  position: absolute;
-  width: min(700px, 100vw);
-  height: min(700px, 100vw);
-  background: radial-gradient(circle, rgba(200,57,26,.14) 0%, transparent 70%);
-  top: 50%; left: 50%;
-  transform: translate(-50%,-50%);
-  pointer-events: none;
+  position:absolute; width:min(900px,100vw); height:min(900px,100vw);
+  top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none;
 }
 .hero-inner {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  width: 100%;
-  max-width: 800px;
-  animation: fadeUp .7s ease both;
+  position:relative; z-index:1; text-align:center;
+  width:100%; max-width:900px; animation:fadeUp .7s ease both;
 }
 .hero-badge {
-  display: inline-block;
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid rgba(200,57,26,.35);
-  padding: 6px 16px;
-  margin-bottom: 28px;
+  display:inline-block; font-family:'DM Mono',monospace; font-size:10px;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--accent);
+  border:1px solid rgba(200,57,26,.35); padding:6px 16px; margin-bottom:28px;
 }
 .hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 8vw, 5.5rem);
-  font-weight: 900;
-  color: var(--paper);
-  line-height: 1.08;
-  letter-spacing: -.02em;
-  margin-bottom: 12px;
+  font-family:'Playfair Display',serif; font-size:clamp(2.6rem,7vw,6.5rem);
+  font-weight:900; color:var(--paper); line-height:1.05;
+  letter-spacing:-.02em; margin-bottom:14px;
 }
-.hero-title em { color: var(--accent); font-style: normal; }
+.hero-title em { color:var(--accent); font-style:normal; }
 .hero-version {
-  font-family: 'DM Mono', monospace;
-  font-size: clamp(10px, 2.5vw, 13px);
-  color: #555;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  margin-bottom: 28px;
+  font-family:'DM Mono',monospace; font-size:clamp(10px,1.5vw,13px);
+  color:#555; letter-spacing:.2em; text-transform:uppercase; margin-bottom:28px;
 }
-.hero-desc {
-  font-size: clamp(.9rem, 3vw, 1.05rem);
-  color: #888;
-  line-height: 1.8;
-  max-width: 520px;
-  margin: 0 auto 36px;
-}
-.hero-ctas {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+.hero-desc { font-size:clamp(.9rem,1.8vw,1.1rem); color:#888; line-height:1.8; max-width:580px; margin:0 auto 40px; }
+.hero-ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+/* ══════════════════
+   BUTTONS
+   ══════════════════ */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  padding: 14px 24px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all .2s;
-  border: none;
-  min-height: 48px;
-  touch-action: manipulation;
-  white-space: nowrap;
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.1em;
+  text-transform:uppercase; padding:14px 28px; cursor:pointer;
+  text-decoration:none; transition:all .2s; border:none;
+  min-height:48px; touch-action:manipulation; white-space:nowrap;
 }
-.btn-red  { background: var(--accent); color: #fff; }
-.btn-red:hover  { background: #a52e14; }
-.btn-ghost { background: transparent; color: var(--paper); border: 1px solid #444; }
-.btn-ghost:hover { border-color: #888; }
-.btn-blue { background: var(--accent2); color: #fff; }
-.btn-blue:hover { background: #0f2438; }
-.btn-gold { background: var(--gold); color: #111; }
-.btn-gold:hover { background: #9e7e20; }
-.btn-dark { background: #1a1a1a; color: #aaa; border: 1px solid #333; }
-.btn-dark:hover { border-color: var(--accent); color: var(--paper); }
+.btn-red   { background:var(--accent); color:#fff; }
+.btn-red:hover { filter:brightness(.85); }
+.btn-ghost { background:transparent; color:var(--paper); border:1px solid #444; }
+.btn-ghost:hover { border-color:#888; }
+.btn-blue  { background:var(--accent2); color:#fff; }
+.btn-blue:hover { filter:brightness(.85); }
+.btn-gold  { background:var(--gold); color:#111; }
+.btn-gold:hover { filter:brightness(.88); }
+.btn-dark  { background:#1a1a1a; color:#aaa; border:1px solid #333; }
+.btn-dark:hover { border-color:var(--accent); color:var(--paper); }
 
-/* ── SECTION BASE ── */
-.section {
-  padding: 72px 20px;
-}
-.section-dark  { background: var(--ink); }
-.section-cream { background: var(--cream); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.section-paper { background: var(--paper); }
-.section-bordered { border-top: 1px solid var(--border); }
+/* ══════════════════
+   SECTIONS
+   ══════════════════ */
+.section { padding:88px 40px; }
+.section-dark  { background:var(--dark); }
+.section-cream { background:var(--cream); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.section-paper { background:var(--paper); }
+.section-bordered { border-top:1px solid var(--border); }
 
-.section-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-.section-dark .section-label { color: var(--accent); }
+.section-label { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.section-title { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,4vw,3.2rem); font-weight:700; line-height:1.15; color:var(--ink); margin-bottom:16px; }
+.section-dark .section-title { color:var(--paper); }
+.section-intro { font-size:clamp(.9rem,1.5vw,1rem); color:var(--muted); line-height:1.8; max-width:620px; margin-bottom:40px; }
 
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.6rem, 5vw, 2.8rem);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--ink);
-  margin-bottom: 16px;
-}
-.section-dark .section-title { color: var(--paper); }
-
-.section-intro {
-  font-size: clamp(.88rem, 2.5vw, .98rem);
-  color: #777;
-  line-height: 1.8;
-  max-width: 580px;
-  margin-bottom: 40px;
-}
-
-/* ── SUMMARY GRID ── */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
-  gap: var(--gap);
-  background: var(--border);
-  border: 1px solid var(--border);
-  margin-top: 40px;
-}
-.card {
-  background: var(--paper);
-  padding: 28px 24px;
-  transition: background .2s;
-}
-.card:hover { background: #f9f4ec; }
-.card-icon  { font-size: 1.6rem; margin-bottom: 14px; line-height: 1; }
-.card-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--ink);
-}
-.card-text  { font-size: .88rem; line-height: 1.75; color: var(--muted); }
-.card-allow .card-title { color: var(--allow); }
-.card-deny  .card-title { color: var(--deny); }
-.card-commercial .card-title { color: var(--accent2); }
-.card-military   .card-title { color: var(--deny); }
+/* ── CARD GRID ── */
+.card-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--gap); background:var(--border); border:1px solid var(--border); margin-top:40px; }
+.card { background:var(--paper); padding:32px 28px; transition:filter .2s; }
+.card:hover { filter:brightness(.96); }
+.card-icon { font-size:1.6rem; margin-bottom:14px; }
+.card-title { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; margin-bottom:10px; }
+.card-text { font-size:.9rem; line-height:1.75; color:var(--muted); }
+.card-allow .card-title { color:var(--allow); }
+.card-deny  .card-title { color:var(--deny); }
+.card-commercial .card-title { color:var(--accent2); }
+.card-military   .card-title { color:var(--deny); }
 
 /* ── RULES ── */
-.rules-cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 40px;
-}
-.rules-col h3 {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  padding: 7px 10px;
-  margin-bottom: 16px;
-  display: inline-block;
-}
-.col-allow h3 { color: var(--allow); background: rgba(26,92,42,.08); border-left: 3px solid var(--allow); }
-.col-deny  h3 { color: var(--deny);  background: rgba(139,0,0,.06);  border-left: 3px solid var(--deny); }
+.rules-cols { display:grid; grid-template-columns:1fr 1fr; gap:60px; margin-top:40px; }
+.rules-col h3 { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; padding:7px 10px; margin-bottom:16px; display:inline-block; }
+.col-allow h3 { color:var(--allow); background:rgba(26,92,42,.08); border-left:3px solid var(--allow); }
+.col-deny  h3 { color:var(--deny);  background:rgba(139,0,0,.06);  border-left:3px solid var(--deny); }
+.rule { display:flex; gap:10px; align-items:flex-start; padding:13px 0; border-bottom:1px solid var(--border); font-size:.9rem; line-height:1.65; color:var(--muted); }
+.rule:last-child { border-bottom:none; }
+.rule-mark { flex-shrink:0; font-size:.95rem; margin-top:2px; }
 
-.rule {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: .88rem;
-  line-height: 1.65;
-  color: var(--muted);
-}
-.rule:last-child { border-bottom: none; }
-.rule-mark { flex-shrink: 0; font-size: .95rem; margin-top: 1px; }
+/* ── STEPS ── */
+.steps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap); border:1px solid var(--ss); margin-top:40px; }
+.step-card { padding:36px 32px; transition:background .2s; }
+.step-num { font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:900; color:rgba(200,57,26,.12); line-height:1; margin-bottom:14px; user-select:none; }
+.step-label { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.step-text { font-size:.9rem; line-height:1.75; color:#777; }
 
-/* ── STEP CARDS (commercial) ── */
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
-  gap: var(--gap);
-  background: #1a1a1a;
-  border: 1px solid #1a1a1a;
-  margin-top: 40px;
-}
-.step-card {
-  background: #0f0f0f;
-  padding: 28px 24px;
-  transition: background .2s;
-}
-.step-card:hover { background: #141414; }
-.step-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 900;
-  color: rgba(200,57,26,.12);
-  line-height: 1;
-  margin-bottom: 14px;
-  user-select: none;
-}
-.step-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-.step-text { font-size: .88rem; line-height: 1.75; color: #777; }
+/* ── DONATION ── */
+.donation-box { margin-top:36px; padding:36px 40px; display:flex; align-items:center; gap:48px; flex-wrap:wrap; border:1px solid var(--db); }
+.donation-amount { font-family:'Playfair Display',serif; font-size:clamp(2.5rem,5vw,4rem); font-weight:900; color:var(--gold); line-height:1.05; flex-shrink:0; }
+.donation-amount small { display:block; font-family:'DM Mono',monospace; font-size:10px; color:#555; margin-top:4px; letter-spacing:.08em; }
+.donation-info h4 { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--paper); margin-bottom:10px; }
+.donation-info p { font-size:.9rem; color:#666; line-height:1.75; }
 
-/* ── DONATION BOX ── */
-.donation-box {
-  margin-top: 36px;
-  border: 1px solid #222;
-  padding: 28px;
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-.donation-amount {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 8vw, 3.5rem);
-  font-weight: 900;
-  color: var(--gold);
-  line-height: 1.05;
-  flex-shrink: 0;
-}
-.donation-amount small {
-  display: block;
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  color: #555;
-  margin-top: 4px;
-  letter-spacing: .08em;
-}
-.donation-info h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  color: var(--paper);
-  margin-bottom: 8px;
-}
-.donation-info p { font-size: .88rem; color: #666; line-height: 1.75; }
-
-/* ── PROHIBITIONS ── */
-.prohib-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
-  gap: var(--gap);
-  background: var(--border);
-  border: 1px solid var(--border);
-  margin-top: 40px;
-}
-.prohib-card {
-  background: var(--paper);
-  padding: 22px 20px;
-  border-left: 3px solid transparent;
-  transition: all .2s;
-}
-.prohib-card:hover { border-left-color: var(--deny); background: #fff; }
-.prohib-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--deny);
-  display: block;
-  margin-bottom: 8px;
-}
-.prohib-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 6px;
-}
-.prohib-text { font-size: .84rem; color: var(--muted); line-height: 1.65; }
+/* ── PROHIB GRID ── */
+.prohib-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap); background:var(--border); border:1px solid var(--border); margin-top:40px; }
+.prohib-card { background:var(--paper); padding:26px 24px; border-left:3px solid transparent; transition:all .2s; }
+.prohib-card:hover { border-left-color:var(--deny); filter:brightness(.98); }
+.prohib-tag { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--deny); display:block; margin-bottom:8px; }
+.prohib-title { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--ink); margin-bottom:8px; }
+.prohib-text { font-size:.87rem; color:var(--muted); line-height:1.7; }
 
 /* ── ACCORDION ── */
-.accordion { margin-top: 32px; }
-.acc-item  { border-bottom: 1px solid var(--border); }
-.acc-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 0;
-  cursor: pointer;
-  user-select: none;
-  gap: 12px;
-  transition: color .2s;
-  -webkit-tap-highlight-color: transparent;
-}
-.acc-header:hover { color: var(--accent); }
-.acc-header-left { display: flex; align-items: center; gap: 14px; min-width: 0; }
-.acc-num {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: .15em;
-  color: var(--accent);
-  flex-shrink: 0;
-  width: 36px;
-}
-.acc-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(.88rem, 2.5vw, 1rem);
-  font-weight: 700;
-  min-width: 0;
-  word-break: break-word;
-}
-.acc-arrow { font-size: 1rem; color: var(--muted); transition: transform .3s; flex-shrink: 0; }
-.acc-item.open .acc-arrow { transform: rotate(180deg); }
-.acc-body { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
-.acc-body-inner {
-  padding: 0 0 24px 50px;
-  font-size: .88rem;
-  line-height: 1.85;
-  color: var(--muted);
-}
-.acc-body-inner ul { margin: 10px 0; padding-left: 18px; }
-.acc-body-inner li { margin-bottom: 6px; color: var(--deny); }
-.acc-body-inner li span { color: var(--muted); }
-.acc-body-inner strong { color: var(--ink); font-weight: 600; }
-.acc-body-inner p + p { margin-top: 10px; }
+.accordion { margin-top:32px; }
+.acc-item { border-bottom:1px solid var(--border); }
+.acc-header { display:flex; justify-content:space-between; align-items:center; padding:20px 0; cursor:pointer; user-select:none; gap:12px; transition:color .2s; -webkit-tap-highlight-color:transparent; }
+.acc-header:hover { color:var(--accent); }
+.acc-header-left { display:flex; align-items:center; gap:14px; min-width:0; }
+.acc-num { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.15em; color:var(--accent); flex-shrink:0; width:60px; }
+.acc-title { font-family:'Playfair Display',serif; font-size:clamp(.9rem,1.5vw,1.05rem); font-weight:700; min-width:0; word-break:break-word; }
+.acc-arrow { font-size:1rem; color:var(--muted); transition:transform .3s; flex-shrink:0; }
+.acc-item.open .acc-arrow { transform:rotate(180deg); }
+.acc-body { max-height:0; overflow:hidden; transition:max-height .4s ease; }
+.acc-body-inner { padding:0 0 28px 74px; font-size:.9rem; line-height:1.85; color:var(--muted); max-width:720px; }
+.acc-body-inner ul { margin:10px 0; padding-left:18px; }
+.acc-body-inner li { margin-bottom:6px; color:var(--deny); }
+.acc-body-inner li span { color:var(--muted); }
+.acc-body-inner strong { color:var(--ink); font-weight:600; }
+.acc-body-inner p+p { margin-top:10px; }
 
 /* ── WARN BOX ── */
-.warn-box {
-  background: var(--warn-bg);
-  border-left: 4px solid var(--gold);
-  padding: 14px 18px;
-  margin: 12px 0;
-  font-size: .85rem;
-  color: var(--warn);
-  line-height: 1.7;
-  font-weight: 500;
-}
-code {
-  font-family: 'DM Mono', monospace;
-  font-size: .82em;
-  background: var(--cream);
-  border: 1px solid var(--border);
-  padding: .1em .35em;
-  color: var(--accent2);
-  word-break: break-all;
-}
+.warn-box { background:var(--warn-bg); border-left:4px solid var(--gold); padding:14px 18px; margin:12px 0; font-size:.87rem; color:var(--warn); line-height:1.7; font-weight:500; }
+code { font-family:'DM Mono',monospace; font-size:.82em; background:var(--cream); border:1px solid var(--border); padding:.1em .35em; color:var(--accent2); word-break:break-all; }
 
 /* ── COPY BLOCK ── */
-.copy-wrap { margin-top: 36px; position: relative; }
-.copy-block {
-  background: #0d0d0d;
-  color: #bbb;
-  font-family: 'DM Mono', monospace;
-  font-size: clamp(.62rem, 1.8vw, .75rem);
-  line-height: 1.85;
-  padding: 20px 16px;
-  overflow-x: auto;
-  white-space: pre;
-  -webkit-overflow-scrolling: touch;
-}
-.copy-btn-wrap { margin-top: 8px; }
-.copy-btn {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  background: #1a1a1a;
-  color: #888;
-  border: 1px solid #333;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: all .2s;
-  min-height: 36px;
-  touch-action: manipulation;
-}
-.copy-btn:hover  { color: var(--accent); border-color: var(--accent); }
-.copy-btn.copied { color: var(--allow); border-color: var(--allow); }
+.copy-wrap { margin-top:40px; }
+.copy-block { color:#bbb; font-family:'DM Mono',monospace; font-size:clamp(.65rem,1.2vw,.78rem); line-height:1.85; padding:24px 20px; overflow-x:auto; white-space:pre; max-width:var(--max-text); }
+.copy-btn-wrap { margin-top:8px; }
+.copy-btn { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; background:#1a1a1a; color:#888; border:1px solid #333; padding:10px 20px; cursor:pointer; transition:all .2s; min-height:40px; touch-action:manipulation; }
+.copy-btn:hover  { color:var(--accent); border-color:var(--accent); }
+.copy-btn.copied { color:var(--allow); border-color:var(--allow); }
 
 /* ── GENERATOR ── */
-.generator {
-  padding: 72px 20px;
-  background: var(--ink);
-  position: relative;
-  overflow: hidden;
-  border-top: 3px solid var(--accent);
-}
-.generator::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(200,57,26,.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(200,57,26,.04) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-}
-.gen-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  max-width: 860px;
-  margin-bottom: 28px;
-}
-.gen-field { display: flex; flex-direction: column; gap: 6px; }
-.gen-field.full { grid-column: 1 / -1; }
-.gen-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.gen-sublabel {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  color: #444;
-  letter-spacing: .08em;
-}
-.gen-input {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 15px;
-  background: #0f0f0f;
-  color: var(--paper);
-  border: 1px solid #252525;
-  padding: 13px 14px;
-  outline: none;
-  transition: border-color .2s, box-shadow .2s;
-  width: 100%;
-  -webkit-appearance: none;
-  appearance: none;
-  border-radius: 0;
-  min-height: 48px;
-}
-.gen-input::placeholder { color: #383838; }
-.gen-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(200,57,26,.1); }
-
-.gen-amount-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-
-.gen-preview {
-  background: #080808;
-  border: 1px solid #1a1a1a;
-  padding: 20px;
-  margin-bottom: 28px;
-  max-width: 860px;
-  overflow-x: auto;
-}
-.gen-preview-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: #333;
-  margin-bottom: 12px;
-}
-.preview-live {
-  font-family: 'DM Mono', monospace;
-  font-size: clamp(.62rem, 1.8vw, .72rem);
-  line-height: 1.9;
-  color: #666;
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-.ph     { color: #2a2a2a; font-style: italic; }
-.filled { color: var(--gold); font-weight: 500; }
-
-.gen-downloads {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  max-width: 860px;
-  margin-bottom: 20px;
-}
-.gen-note {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  color: #333;
-  max-width: 860px;
-  line-height: 1.8;
-  letter-spacing: .05em;
-}
-.req { color: var(--accent); }
-
-.gen-status {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: .08em;
-  padding: 10px 14px;
-  margin-bottom: 20px;
-  max-width: 860px;
-  display: none;
-}
-.gen-status.show   { display: block; }
-.gen-status.error  { background: rgba(139,0,0,.18); color: #e88; border-left: 3px solid var(--deny); }
-.gen-status.success{ background: rgba(26,92,42,.18); color: #8e8; border-left: 3px solid var(--allow); }
+.generator { padding:88px 40px; position:relative; overflow:hidden; border-top:3px solid var(--accent); }
+.generator::before { content:''; position:absolute; inset:0; background-size:40px 40px; pointer-events:none; }
+.gen-inner { position:relative; z-index:1; max-width:var(--max-content); margin:0 auto; }
+.gen-form { display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:var(--max-text); margin-bottom:32px; }
+.gen-field { display:flex; flex-direction:column; gap:6px; }
+.gen-field.full { grid-column:1/-1; }
+.gen-label { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); }
+.gen-sublabel { font-family:'DM Mono',monospace; font-size:9px; color:#444; letter-spacing:.08em; margin-bottom:2px; }
+.gen-input { font-family:'DM Sans',sans-serif; font-size:15px; color:var(--paper); border:1px solid var(--ibr); padding:14px 16px; outline:none; transition:border-color .2s,box-shadow .2s; width:100%; appearance:none; border-radius:0; min-height:50px; }
+.gen-input::placeholder { color:#383838; }
+.gen-input:focus { box-shadow:0 0 0 3px rgba(200,57,26,.1); }
+.gen-amount-row { display:grid; grid-template-columns:2fr 1fr; gap:10px; }
+.gen-preview { border:1px solid var(--pbr); padding:24px; margin-bottom:32px; max-width:var(--max-text); overflow-x:auto; }
+.gen-preview-label { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.22em; text-transform:uppercase; color:#333; margin-bottom:14px; }
+.preview-live { font-family:'DM Mono',monospace; font-size:clamp(.62rem,1vw,.74rem); line-height:1.9; color:#666; white-space:pre-wrap; word-break:break-word; }
+.ph     { color:#2a2a2a; font-style:italic; }
+.filled { color:var(--gold); font-weight:500; }
+.gen-downloads { display:flex; gap:12px; flex-wrap:wrap; max-width:var(--max-text); margin-bottom:24px; }
+.gen-note { font-family:'DM Mono',monospace; font-size:9px; color:#333; max-width:var(--max-text); line-height:1.8; letter-spacing:.05em; }
+.req { color:var(--accent); }
+.gen-status { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.08em; padding:12px 16px; margin-bottom:24px; max-width:var(--max-text); display:none; }
+.gen-status.show { display:block; }
+.gen-status.error   { background:rgba(139,0,0,.18); color:#e88; border-left:3px solid var(--deny); }
+.gen-status.success { background:rgba(26,92,42,.18); color:#8e8; border-left:3px solid var(--allow); }
 
 /* ── FOOTER ── */
-footer {
-  background: var(--ink);
-  color: #555;
-  padding: 48px 20px;
-  text-align: center;
-  border-top: 1px solid #1a1a1a;
-}
-.footer-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  color: var(--paper);
-  margin-bottom: 6px;
-}
-.footer-sub {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 20px;
-}
-footer p { font-size: .8rem; line-height: 1.75; max-width: 520px; margin: 0 auto; }
+footer { color:#555; padding:56px 40px; text-align:center; border-top:1px solid var(--fs); }
+.footer-logo { font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--paper); margin-bottom:6px; }
+.footer-sub { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:20px; }
+footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
 
 /* ── REVEAL ── */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal { opacity:0; transform:translateY(20px); transition:opacity .6s ease,transform .6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
 
-/* ── ANIMATIONS ── */
-@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 
-/* ══════════════════════════════════════
+/* ══════════════════
    RESPONSIVE
-   ══════════════════════════════════════ */
-
-/* Tablet */
-@media (max-width: 860px) {
-  .rules-cols { grid-template-columns: 1fr; gap: 28px; }
-  .gen-form { grid-template-columns: 1fr; }
-  .gen-field.full { grid-column: 1; }
+   ══════════════════ */
+@media (min-width:1400px) {
+  :root { --max-content:1320px; }
+  .section,.generator { padding:100px 40px; }
 }
-
-/* Mobile */
-@media (max-width: 600px) {
-  /* lang bar */
-  .lang-bar { padding: 8px 12px; }
-  .lang-bar-label { display: none; }
-  .lang-btn { padding: 7px 14px; font-size: 11px; }
-
-  /* hero */
-  .hero { padding: 80px 16px 52px; min-height: 100svh; }
-  .hero-desc { margin-bottom: 28px; }
-  .hero-ctas { flex-direction: column; align-items: stretch; max-width: 280px; margin-left: auto; margin-right: auto; }
-  .btn { width: 100%; }
-
-  /* sections */
-  .section { padding: 52px 16px; }
-  .container { padding: 0 16px; }
-  .section-intro { margin-bottom: 28px; }
-
-  /* grids → single col */
-  .card-grid     { grid-template-columns: 1fr; }
-  .steps-grid    { grid-template-columns: 1fr; }
-  .prohib-grid   { grid-template-columns: 1fr; }
-
-  /* donation */
-  .donation-box { flex-direction: column; gap: 20px; padding: 22px 18px; text-align: center; }
-
-  /* accordion */
-  .acc-header { padding: 16px 0; }
-  .acc-body-inner { padding: 0 0 20px 0; font-size: .85rem; }
-  .acc-body-inner ul { padding-left: 14px; }
-  .acc-title { font-size: .9rem; }
-
-  /* copy block */
-  .copy-block { font-size: .62rem; padding: 14px 12px; }
-  .copy-btn { width: 100%; }
-
-  /* generator */
-  .gen-form { grid-template-columns: 1fr; gap: 16px; }
-  .gen-amount-row { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .gen-downloads { flex-direction: column; }
-  .gen-downloads .btn { width: 100%; }
-  .gen-preview { padding: 14px; }
-
-  /* warn box */
-  .warn-box { padding: 12px 14px; font-size: .82rem; }
+@media (max-width:1099px) {
+  :root { --max-content:100%; }
+  .container { padding:0 32px; }
+  .hero,.section,.generator { padding-left:32px; padding-right:32px; }
+  .card-grid { grid-template-columns:repeat(2,1fr); }
 }
-
-@media (max-width: 360px) {
-  .hero-title { font-size: 1.9rem; }
-  .gen-amount-row { grid-template-columns: 1fr; }
+@media (max-width:860px) {
+  .container { padding:0 24px; }
+  .hero,.section,.generator { padding-left:24px; padding-right:24px; }
+  .rules-cols { grid-template-columns:1fr; gap:32px; }
+  .steps-grid { grid-template-columns:1fr 1fr; }
+  .prohib-grid { grid-template-columns:repeat(2,1fr); }
+  .card-grid { grid-template-columns:repeat(2,1fr); }
+  .gen-form { grid-template-columns:1fr; }
+  .gen-field.full { grid-column:1; }
+  .theme-trigger .t-label { display:none; }
 }
-
+@media (max-width:600px) {
+  .lang-bar { padding:0 16px; flex-wrap:wrap; min-height:auto; padding-top:6px; padding-bottom:6px; }
+  .lang-bar-label { display:none; }
+  .langbar-sep { display:none; }
+  .theme-trigger .t-label { display:none; }
+  .lang-btn { padding:6px 12px; font-size:10px; }
+  .hero,.section,.generator { padding-left:16px; padding-right:16px; }
+  .hero { padding-top:80px; padding-bottom:52px; min-height:100svh; }
+  .section,.generator { padding-top:52px; padding-bottom:52px; }
+  .hero-ctas { flex-direction:column; align-items:stretch; max-width:300px; margin:0 auto; }
+  .btn { width:100%; }
+  .card-grid,.steps-grid,.prohib-grid { grid-template-columns:1fr; }
+  .donation-box { flex-direction:column; gap:20px; padding:22px 18px; text-align:center; }
+  .acc-body-inner { padding:0 0 20px; font-size:.86rem; }
+  .acc-body-inner ul { padding-left:14px; }
+  .copy-block { font-size:.62rem; padding:14px 12px; }
+  .copy-btn { width:100%; }
+  .gen-form { gap:16px; }
+  .gen-amount-row { grid-template-columns:2fr 1fr; gap:8px; }
+  .gen-downloads { flex-direction:column; }
+  .gen-downloads .btn { width:100%; }
+  .theme-dropdown { right:auto; left:0; min-width:200px; }
+}
+@media (max-width:360px) {
+  .hero-title { font-size:1.9rem; }
+  .gen-amount-row { grid-template-columns:1fr; }
+}
 </style>
 </head>
 <body class="lang-it">
 
 <!-- LANG BAR -->
 <div class="lang-bar">
+
+  <!-- DROPDOWN TEMA -->
+  <div class="theme-picker" id="theme-picker">
+    <button class="theme-trigger" id="theme-trigger" onclick="toggleThemePicker(event)" aria-haspopup="listbox" aria-expanded="false">
+      <span class="t-dot"></span>
+      <span class="t-label" data-lang="it">Tema</span>
+      <span class="t-label" data-lang="en">Theme</span>
+      <span class="t-arrow">▾</span>
+    </button>
+    <div class="theme-dropdown" id="theme-dropdown" role="listbox">
+
+      <div class="theme-group-label" data-lang="it">— Scuri</div>
+      <div class="theme-group-label" data-lang="en">— Dark</div>
+      <button class="theme-option active" data-theme="pelle"    onclick="setTheme('pelle')"    role="option"><span class="o-dot" style="background:#c8391a"></span><span class="o-name">Pelle</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
+      <button class="theme-option"        data-theme="ghiaccio" onclick="setTheme('ghiaccio')" role="option"><span class="o-dot" style="background:#1565c0"></span><span class="o-name">Ghiaccio</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
+      <button class="theme-option"        data-theme="bosco"    onclick="setTheme('bosco')"    role="option"><span class="o-dot" style="background:#2e7d32"></span><span class="o-name">Bosco</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
+      <button class="theme-option"        data-theme="viola"    onclick="setTheme('viola')"    role="option"><span class="o-dot" style="background:#7b1fa2"></span><span class="o-name">Viola</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
+      <button class="theme-option"        data-theme="alba"     onclick="setTheme('alba')"     role="option"><span class="o-dot" style="background:#d4680a"></span><span class="o-name">Alba</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
+
+      <div class="theme-group-label" data-lang="it">— Chiari</div>
+      <div class="theme-group-label" data-lang="en">— Light</div>
+      <button class="theme-option" data-theme="carta"    onclick="setTheme('carta')"    role="option"><span class="o-dot" style="background:#c0392b;border-color:rgba(0,0,0,.2)"></span><span class="o-name">Carta</span><span class="o-tag light">light</span><span class="o-check">✓</span></button>
+      <button class="theme-option" data-theme="cielo"    onclick="setTheme('cielo')"    role="option"><span class="o-dot" style="background:#0077cc;border-color:rgba(0,0,0,.2)"></span><span class="o-name">Cielo</span><span class="o-tag light">light</span><span class="o-check">✓</span></button>
+      <button class="theme-option" data-theme="menta"    onclick="setTheme('menta')"    role="option"><span class="o-dot" style="background:#00897b;border-color:rgba(0,0,0,.2)"></span><span class="o-name">Menta</span><span class="o-tag light">light</span><span class="o-check">✓</span></button>
+      <button class="theme-option" data-theme="cipria"   onclick="setTheme('cipria')"   role="option"><span class="o-dot" style="background:#c2185b;border-color:rgba(0,0,0,.2)"></span><span class="o-name">Cipria</span><span class="o-tag light">light</span><span class="o-check">✓</span></button>
+      <button class="theme-option" data-theme="limone"   onclick="setTheme('limone')"   role="option"><span class="o-dot" style="background:#9e9000;border-color:rgba(0,0,0,.2)"></span><span class="o-name">Limone</span><span class="o-tag light">light</span><span class="o-check">✓</span></button>
+
+      <div class="theme-group-label" data-lang="it">— Extra</div>
+      <div class="theme-group-label" data-lang="en">— Extra</div>
+      <button class="theme-option" data-theme="carbone"  onclick="setTheme('carbone')"  role="option"><span class="o-dot" style="background:#ff6b35"></span><span class="o-name">Carbone</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
+      <button class="theme-option" data-theme="rosso"    onclick="setTheme('rosso')"    role="option"><span class="o-dot" style="background:#d32f2f;border-color:rgba(0,0,0,.2)"></span><span class="o-name">Rosso</span><span class="o-tag light">light</span><span class="o-check">✓</span></button>
+      <button class="theme-option" data-theme="oceano"   onclick="setTheme('oceano')"   role="option"><span class="o-dot" style="background:#00bcd4"></span><span class="o-name">Oceano</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
+      <button class="theme-option" data-theme="tabacco"  onclick="setTheme('tabacco')"  role="option"><span class="o-dot" style="background:#d4a054"></span><span class="o-name">Tabacco</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
+      <button class="theme-option" data-theme="notte"    onclick="setTheme('notte')"    role="option"><span class="o-dot" style="background:#5c8aff"></span><span class="o-name">Notte</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
+
+    </div>
+  </div>
+
+  <div class="langbar-sep"></div>
   <span class="lang-bar-label" data-lang="it">Lingua</span>
   <span class="lang-bar-label" data-lang="en">Language</span>
   <button class="lang-btn active" id="btn-it" onclick="setLang('it')">IT</button>
@@ -734,8 +645,8 @@ footer p { font-size: .8rem; line-height: 1.75; max-width: 520px; margin: 0 auto
     <div class="hero-ctas">
       <a href="#generator" class="btn btn-red" data-lang="it">🔧 Genera la tua licenza</a>
       <a href="#generator" class="btn btn-red" data-lang="en">🔧 Generate your license</a>
-      <a href="#testo"     class="btn btn-ghost" data-lang="it">Leggi il testo</a>
-      <a href="#testo"     class="btn btn-ghost" data-lang="en">Read the text</a>
+      <a href="#testo" class="btn btn-ghost" data-lang="it">Leggi il testo</a>
+      <a href="#testo" class="btn btn-ghost" data-lang="en">Read the text</a>
     </div>
   </div>
 </section>
@@ -789,8 +700,7 @@ footer p { font-size: .8rem; line-height: 1.75; max-width: 520px; margin: 0 auto
     <h2 class="section-title" data-lang="en">Permissions &amp; prohibitions</h2>
     <div class="rules-cols">
       <div class="rules-col col-allow">
-        <h3 data-lang="it">✔ Puoi</h3>
-        <h3 data-lang="en">✔ You can</h3>
+        <h3 data-lang="it">✔ Puoi</h3><h3 data-lang="en">✔ You can</h3>
         <div class="rule"><span class="rule-mark">✓</span><span data-lang="it">Usare il Software in qualsiasi prodotto commerciale o personale</span><span data-lang="en">Use the Software in any commercial or personal product</span></div>
         <div class="rule"><span class="rule-mark">✓</span><span data-lang="it">Modificare il codice sorgente</span><span data-lang="en">Modify the source code</span></div>
         <div class="rule"><span class="rule-mark">✓</span><span data-lang="it">Distribuire e ridistribuire il Software</span><span data-lang="en">Distribute and redistribute the Software</span></div>
@@ -799,8 +709,7 @@ footer p { font-size: .8rem; line-height: 1.75; max-width: 520px; margin: 0 auto
         <div class="rule"><span class="rule-mark">✓</span><span data-lang="it">Vendere il Software o prodotti basati su di esso</span><span data-lang="en">Sell the Software or products based on it</span></div>
       </div>
       <div class="rules-col col-deny">
-        <h3 data-lang="it">✘ Non puoi</h3>
-        <h3 data-lang="en">✘ You cannot</h3>
+        <h3 data-lang="it">✘ Non puoi</h3><h3 data-lang="en">✘ You cannot</h3>
         <div class="rule"><span class="rule-mark">✗</span><span data-lang="it">Usarlo come dati di addestramento per qualsiasi AI/ML</span><span data-lang="en">Use it as training data for any AI/ML model</span></div>
         <div class="rule"><span class="rule-mark">✗</span><span data-lang="it">Usarlo per fine-tuning, pre-training o distillazione di modelli</span><span data-lang="en">Use it for fine-tuning, pre-training, or model distillation</span></div>
         <div class="rule"><span class="rule-mark">✗</span><span data-lang="it">Usarlo per scopi militari o della difesa armata</span><span data-lang="en">Use it for military or armed defense purposes</span></div>
@@ -821,35 +730,27 @@ footer p { font-size: .8rem; line-height: 1.75; max-width: 520px; margin: 0 auto
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-num">01</div>
-        <div class="step-label" data-lang="it">Notifica obbligatoria</div>
-        <div class="step-label" data-lang="en">Mandatory notification</div>
+        <div class="step-label" data-lang="it">Notifica obbligatoria</div><div class="step-label" data-lang="en">Mandatory notification</div>
         <p class="step-text" data-lang="it">Prima di iniziare qualsiasi utilizzo, invia una email al titolare del copyright con ragione sociale, partita IVA, descrizione dell'uso previsto e il nominativo del responsabile della conformità.</p>
         <p class="step-text" data-lang="en">Before beginning any use, send an email to the copyright holder with your company name, tax ID, description of intended use, and the name of your compliance officer.</p>
       </div>
       <div class="step-card">
         <div class="step-num">02</div>
-        <div class="step-label" data-lang="it">Donazione mensile</div>
-        <div class="step-label" data-lang="en">Monthly donation</div>
+        <div class="step-label" data-lang="it">Donazione mensile</div><div class="step-label" data-lang="en">Monthly donation</div>
         <p class="step-text" data-lang="it">Versa mensilmente almeno l'Importo Minimo Mensile stabilito dal creatore nella valuta da lui indicata. Variazioni comunicate con 30 giorni di preavviso.</p>
         <p class="step-text" data-lang="en">Pay at least the Minimum Monthly Amount set by the creator in their designated currency. Changes announced with 30 days' notice.</p>
       </div>
       <div class="step-card">
         <div class="step-num">03</div>
-        <div class="step-label" data-lang="it">Notifica variazioni</div>
-        <div class="step-label" data-lang="en">Change notifications</div>
+        <div class="step-label" data-lang="it">Notifica variazioni</div><div class="step-label" data-lang="en">Change notifications</div>
         <p class="step-text" data-lang="it">In caso di variazioni sostanziali o cessazione dell'utilizzo, notifica via email entro 30 giorni. La cessazione estingue l'obbligo di donazione.</p>
         <p class="step-text" data-lang="en">Upon material changes or cessation of use, send notification by email within 30 days. Cessation extinguishes the donation obligation.</p>
       </div>
     </div>
     <div class="donation-box">
-      <div class="donation-amount">
-        [AMT]
-        <small data-lang="it">/ mese min. &mdash; valuta del creatore</small>
-        <small data-lang="en">/ month min. &mdash; creator's currency</small>
-      </div>
+      <div class="donation-amount">[AMT]<small data-lang="it">/ mese min. &mdash; valuta del creatore</small><small data-lang="en">/ month min. &mdash; creator's currency</small></div>
       <div class="donation-info">
-        <h4 data-lang="it">Importo Minimo Mensile</h4>
-        <h4 data-lang="en">Minimum Monthly Amount</h4>
+        <h4 data-lang="it">Importo Minimo Mensile</h4><h4 data-lang="en">Minimum Monthly Amount</h4>
         <p data-lang="it">Il titolare fissa liberamente importo e valuta. Mancato pagamento per 2+ mesi consecutivi = <strong style="color:#c66">revoca automatica immediata di tutti i diritti</strong>.</p>
         <p data-lang="en">The copyright holder freely sets amount and currency. Failure to pay for 2+ consecutive months = <strong style="color:#c66">automatic and immediate revocation of all rights</strong>.</p>
       </div>
@@ -865,54 +766,12 @@ footer p { font-size: .8rem; line-height: 1.75; max-width: 520px; margin: 0 auto
     <h2 class="section-title" data-lang="it">Cosa è espressamente vietato</h2>
     <h2 class="section-title" data-lang="en">What is expressly prohibited</h2>
     <div class="prohib-grid">
-      <div class="prohib-card">
-        <span class="prohib-tag" data-lang="it">Divieto AI · Art. 2</span>
-        <span class="prohib-tag" data-lang="en">AI Ban · Sec. 2</span>
-        <div class="prohib-title" data-lang="it">Dati di addestramento</div>
-        <div class="prohib-title" data-lang="en">Training data</div>
-        <p class="prohib-text" data-lang="it">Usare il Software come training data, fine-tuning data o evaluation data per qualsiasi sistema AI/ML.</p>
-        <p class="prohib-text" data-lang="en">Using the Software as training data, fine-tuning data, or evaluation data for any AI/ML system.</p>
-      </div>
-      <div class="prohib-card">
-        <span class="prohib-tag" data-lang="it">Divieto AI · Art. 2</span>
-        <span class="prohib-tag" data-lang="en">AI Ban · Sec. 2</span>
-        <div class="prohib-title" data-lang="it">Pipeline di raccolta dati</div>
-        <div class="prohib-title" data-lang="en">Data collection pipelines</div>
-        <p class="prohib-text" data-lang="it">Incorporare il Software in scraper o sistemi automatizzati per raccogliere dati per AI/ML.</p>
-        <p class="prohib-text" data-lang="en">Incorporating the Software into scrapers or automated systems for collecting AI/ML training data.</p>
-      </div>
-      <div class="prohib-card">
-        <span class="prohib-tag" data-lang="it">Divieto AI · Art. 2</span>
-        <span class="prohib-tag" data-lang="en">AI Ban · Sec. 2</span>
-        <div class="prohib-title" data-lang="it">Dataset sintetici</div>
-        <div class="prohib-title" data-lang="en">Synthetic datasets</div>
-        <p class="prohib-text" data-lang="it">Generare dataset sintetici o aumentati da usare nell'addestramento di qualsiasi modello AI/ML.</p>
-        <p class="prohib-text" data-lang="en">Generating synthetic or augmented datasets for AI/ML model training.</p>
-      </div>
-      <div class="prohib-card">
-        <span class="prohib-tag" data-lang="it">Divieto Militare · Art. 3</span>
-        <span class="prohib-tag" data-lang="en">Military Ban · Sec. 3</span>
-        <div class="prohib-title" data-lang="it">Forze armate</div>
-        <div class="prohib-title" data-lang="en">Armed forces</div>
-        <p class="prohib-text" data-lang="it">Uso da parte di eserciti, milizie, corpi paramilitari o agenzie di intelligence di qualsiasi nazione.</p>
-        <p class="prohib-text" data-lang="en">Use by armies, militias, paramilitary groups, or intelligence agencies of any nation.</p>
-      </div>
-      <div class="prohib-card">
-        <span class="prohib-tag" data-lang="it">Divieto Militare · Art. 3</span>
-        <span class="prohib-tag" data-lang="en">Military Ban · Sec. 3</span>
-        <div class="prohib-title" data-lang="it">Sistemi d'arma</div>
-        <div class="prohib-title" data-lang="en">Weapons systems</div>
-        <p class="prohib-text" data-lang="it">Sviluppo, produzione, testing o supporto di armamenti, droni militari o sistemi di targeting.</p>
-        <p class="prohib-text" data-lang="en">Development, production, testing, or support of armaments, military drones, or targeting systems.</p>
-      </div>
-      <div class="prohib-card">
-        <span class="prohib-tag" data-lang="it">Divieto Militare · Art. 3</span>
-        <span class="prohib-tag" data-lang="en">Military Ban · Sec. 3</span>
-        <div class="prohib-title" data-lang="it">Guerra informatica</div>
-        <div class="prohib-title" data-lang="en">Cyber warfare</div>
-        <p class="prohib-text" data-lang="it">Cyber warfare, guerra elettronica, sorveglianza di massa a fini militari o operazioni offensive.</p>
-        <p class="prohib-text" data-lang="en">Cyber warfare, electronic warfare, mass surveillance for military purposes, or offensive operations.</p>
-      </div>
+      <div class="prohib-card"><span class="prohib-tag" data-lang="it">Divieto AI · Art. 2</span><span class="prohib-tag" data-lang="en">AI Ban · Sec. 2</span><div class="prohib-title" data-lang="it">Dati di addestramento</div><div class="prohib-title" data-lang="en">Training data</div><p class="prohib-text" data-lang="it">Usare il Software come training data, fine-tuning data o evaluation data per qualsiasi sistema AI/ML.</p><p class="prohib-text" data-lang="en">Using the Software as training data, fine-tuning data, or evaluation data for any AI/ML system.</p></div>
+      <div class="prohib-card"><span class="prohib-tag" data-lang="it">Divieto AI · Art. 2</span><span class="prohib-tag" data-lang="en">AI Ban · Sec. 2</span><div class="prohib-title" data-lang="it">Pipeline di raccolta dati</div><div class="prohib-title" data-lang="en">Data collection pipelines</div><p class="prohib-text" data-lang="it">Incorporare il Software in scraper o sistemi automatizzati per raccogliere dati per AI/ML.</p><p class="prohib-text" data-lang="en">Incorporating the Software into scrapers or automated systems for collecting AI/ML training data.</p></div>
+      <div class="prohib-card"><span class="prohib-tag" data-lang="it">Divieto AI · Art. 2</span><span class="prohib-tag" data-lang="en">AI Ban · Sec. 2</span><div class="prohib-title" data-lang="it">Dataset sintetici</div><div class="prohib-title" data-lang="en">Synthetic datasets</div><p class="prohib-text" data-lang="it">Generare dataset sintetici o aumentati da usare nell'addestramento di qualsiasi modello AI/ML.</p><p class="prohib-text" data-lang="en">Generating synthetic or augmented datasets for AI/ML model training.</p></div>
+      <div class="prohib-card"><span class="prohib-tag" data-lang="it">Divieto Militare · Art. 3</span><span class="prohib-tag" data-lang="en">Military Ban · Sec. 3</span><div class="prohib-title" data-lang="it">Forze armate</div><div class="prohib-title" data-lang="en">Armed forces</div><p class="prohib-text" data-lang="it">Uso da parte di eserciti, milizie, corpi paramilitari o agenzie di intelligence di qualsiasi nazione.</p><p class="prohib-text" data-lang="en">Use by armies, militias, paramilitary groups, or intelligence agencies of any nation.</p></div>
+      <div class="prohib-card"><span class="prohib-tag" data-lang="it">Divieto Militare · Art. 3</span><span class="prohib-tag" data-lang="en">Military Ban · Sec. 3</span><div class="prohib-title" data-lang="it">Sistemi d'arma</div><div class="prohib-title" data-lang="en">Weapons systems</div><p class="prohib-text" data-lang="it">Sviluppo, produzione, testing o supporto di armamenti, droni militari o sistemi di targeting.</p><p class="prohib-text" data-lang="en">Development, production, testing, or support of armaments, military drones, or targeting systems.</p></div>
+      <div class="prohib-card"><span class="prohib-tag" data-lang="it">Divieto Militare · Art. 3</span><span class="prohib-tag" data-lang="en">Military Ban · Sec. 3</span><div class="prohib-title" data-lang="it">Guerra informatica</div><div class="prohib-title" data-lang="en">Cyber warfare</div><p class="prohib-text" data-lang="it">Cyber warfare, guerra elettronica, sorveglianza di massa a fini militari o operazioni offensive.</p><p class="prohib-text" data-lang="en">Cyber warfare, electronic warfare, mass surveillance for military purposes, or offensive operations.</p></div>
     </div>
   </div>
 </section>
@@ -924,183 +783,30 @@ footer p { font-size: .8rem; line-height: 1.75; max-width: 520px; margin: 0 auto
     <p class="section-label" data-lang="en">Full license text</p>
     <h2 class="section-title" data-lang="it">aatel v1.0 — Testo integrale</h2>
     <h2 class="section-title" data-lang="en">aatel v1.0 — Full text</h2>
-    <div class="warn-box" data-lang="it">⚠ Sostituisci <code>[ANNO]</code>, <code>[NOME]</code>, <code>[EMAIL]</code>, <code>[IMPORTO]</code>, <code>[VALUTA]</code>, <code>[METODO DI PAGAMENTO]</code> e <code>[ISTRUZIONI PAGAMENTO]</code> con i tuoi dati — oppure usa il generatore qui sotto.</div>
-    <div class="warn-box" data-lang="en">⚠ Replace <code>[YEAR]</code>, <code>[NAME]</code>, <code>[EMAIL]</code>, <code>[AMOUNT]</code>, <code>[CURRENCY]</code>, <code>[PAYMENT METHOD]</code> and <code>[PAYMENT INSTRUCTIONS]</code> with your data — or use the generator below.</div>
+    <div class="warn-box" data-lang="it">⚠ Sostituisci <code>[ANNO]</code>, <code>[NOME]</code>, <code>[EMAIL]</code>, <code>[IMPORTO]</code>, <code>[VALUTA]</code>, <code>[METODO]</code> e <code>[ISTRUZIONI]</code> con i tuoi dati — oppure usa il generatore.</div>
+    <div class="warn-box" data-lang="en">⚠ Replace <code>[YEAR]</code>, <code>[NAME]</code>, <code>[EMAIL]</code>, <code>[AMOUNT]</code>, <code>[CURRENCY]</code>, <code>[METHOD]</code> and <code>[INSTRUCTIONS]</code> with your data — or use the generator.</div>
 
-    <!-- IT ACCORDION -->
     <div class="accordion" data-lang="it">
-      <div class="acc-item">
-        <div class="acc-header" onclick="toggleAcc(this)">
-          <div class="acc-header-left"><span class="acc-num">PREAMBOLO</span><span class="acc-title">Concessione della licenza</span></div>
-          <span class="acc-arrow">▾</span>
-        </div>
-        <div class="acc-body"><div class="acc-body-inner"><p>È concessa, gratuitamente, a chiunque ottenga una copia del presente software e dei file di documentazione associati (il <strong>"Software"</strong>), l'autorizzazione a trattare il Software senza restrizioni, inclusi i diritti di utilizzare, copiare, modificare, unire, pubblicare, distribuire, sublicenziare e/o vendere copie del Software, <strong>a condizione che siano rispettate le seguenti condizioni</strong>.</p></div></div>
-      </div>
-      <div class="acc-item">
-        <div class="acc-header" onclick="toggleAcc(this)">
-          <div class="acc-header-left"><span class="acc-num">ART. 1</span><span class="acc-title">Attribuzione</span></div>
-          <span class="acc-arrow">▾</span>
-        </div>
-        <div class="acc-body"><div class="acc-body-inner"><p>L'avviso di copyright e il presente avviso di autorizzazione devono essere inclusi in tutte le copie o parti sostanziali del Software, in qualsiasi forma o mezzo.</p></div></div>
-      </div>
-      <div class="acc-item">
-        <div class="acc-header" onclick="toggleAcc(this)">
-          <div class="acc-header-left"><span class="acc-num">ART. 2</span><span class="acc-title">Divieto di utilizzo per l'addestramento AI/ML</span></div>
-          <span class="acc-arrow">▾</span>
-        </div>
-        <div class="acc-body"><div class="acc-body-inner">
-          <p>È <strong>espressamente e assolutamente vietato</strong> agendo direttamente o indirettamente:</p>
-          <ul>
-            <li><span>Usare il Software come dati di addestramento, fine-tuning o valutazione per qualsiasi sistema AI/ML;</span></li>
-            <li><span>Usare l'output o componenti derivate per addestrare, ottimizzare o valutare modelli AI/ML;</span></li>
-            <li><span>Incorporare il Software in pipeline di raccolta dati per AI/ML;</span></li>
-            <li><span>Generare dataset sintetici destinati all'addestramento di modelli AI/ML;</span></li>
-            <li><span>Trasferire il Software a terzi per i suddetti scopi.</span></li>
-          </ul>
-          <p>Divieto valido <strong>indipendentemente dallo scopo</strong> — commerciale, accademico, governativo, non-profit o personale.</p>
-        </div></div>
-      </div>
-      <div class="acc-item">
-        <div class="acc-header" onclick="toggleAcc(this)">
-          <div class="acc-header-left"><span class="acc-num">ART. 3</span><span class="acc-title">Divieto di utilizzo militare</span></div>
-          <span class="acc-arrow">▾</span>
-        </div>
-        <div class="acc-body"><div class="acc-body-inner">
-          <p>Il Software non può essere utilizzato per <strong>alcuno scopo militare, paramilitare o di difesa armata</strong>:</p>
-          <ul>
-            <li><span>Forze armate, guardie nazionali, milizie, agenzie di intelligence di qualsiasi nazione;</span></li>
-            <li><span>Aziende e appaltatori operanti in contratti militari o della difesa;</span></li>
-            <li><span>Sviluppo di armamenti, droni militari, sistemi di targeting o sorveglianza;</span></li>
-            <li><span>Cyber warfare, guerra elettronica o operazioni informatiche a scopo militare;</span></li>
-            <li><span>Utilizzo indiretto tramite terzi per conto di organizzazioni militari.</span></li>
-          </ul>
-        </div></div>
-      </div>
-      <div class="acc-item">
-        <div class="acc-header" onclick="toggleAcc(this)">
-          <div class="acc-header-left"><span class="acc-num">ART. 4</span><span class="acc-title">Obbligo di notifica per le entità commerciali</span></div>
-          <span class="acc-arrow">▾</span>
-        </div>
-        <div class="acc-body"><div class="acc-body-inner">
-          <p><strong>4.1</strong> Le entità commerciali devono notificare via email <strong>prima</strong> di iniziare l'utilizzo: <code>[EMAIL]</code></p>
-          <p><strong>4.2 Email deve contenere:</strong> ragione sociale, P.IVA, descrizione uso, data inizio, responsabile conformità.</p>
-          <p><strong>4.3</strong> Variazioni sostanziali → email aggiornata entro 30 gg. Cessazione → email entro 30 gg.</p>
-          <div class="warn-box" style="margin-top:12px">Utilizzo senza notifica = violazione materiale con risoluzione automatica di tutti i diritti.</div>
-        </div></div>
-      </div>
-      <div class="acc-item">
-        <div class="acc-header" onclick="toggleAcc(this)">
-          <div class="acc-header-left"><span class="acc-num">ART. 5</span><span class="acc-title">Obbligo di donazione mensile</span></div>
-          <span class="acc-arrow">▾</span>
-        </div>
-        <div class="acc-body"><div class="acc-body-inner">
-          <p><strong>5.1</strong> Donazione mensile pari o superiore all'<strong>Importo Minimo Mensile</strong> stabilito dal titolare (<code>[IMPORTO] [VALUTA]</code>) nella valuta indicata.</p>
-          <p><strong>5.2</strong> Pagamento entro il 1° di ogni mese. Prove documentali conservate 24 mesi.</p><p><strong>Metodo di pagamento accettato:</strong> <code>[METODO DI PAGAMENTO]</code> (es. PayPal, Bitcoin, IBAN, Stripe, criptovaluta, ecc.) — le istruzioni complete sono pubblicate dal titolare del copyright: <code>[ISTRUZIONI PAGAMENTO]</code></p>
-          <p><strong>5.3</strong> Mancato pagamento per 2+ mesi = <strong>revoca automatica immediata</strong>.</p>
-          <p><strong>5.4</strong> Privati e non-profit: esonerati dall'obbligo di donazione.</p>
-        </div></div>
-      </div>
-      <div class="acc-item">
-        <div class="acc-header" onclick="toggleAcc(this)">
-          <div class="acc-header-left"><span class="acc-num">ART. 6–8</span><span class="acc-title">Ridistribuzione · Rimedi · Garanzie</span></div>
-          <span class="acc-arrow">▾</span>
-        </div>
-        <div class="acc-body"><div class="acc-body-inner">
-          <p><strong>Art. 6</strong> — Ridistribuzione con licenza invariata e integrale obbligatoria.</p>
-          <p><strong>Art. 7</strong> — Le violazioni costituiscono violazione del diritto d'autore e inadempimento contrattuale. Il titolare può esperire tutti i rimedi disponibili in qualsiasi giurisdizione.</p>
-          <p><strong>Art. 8</strong> — IL SOFTWARE VIENE FORNITO "COSÌ COM'È", SENZA GARANZIA DI ALCUN TIPO.</p>
-        </div></div>
-      </div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">PREAMBOLO</span><span class="acc-title">Concessione della licenza</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>È concessa, gratuitamente, a chiunque ottenga una copia del presente software e dei file di documentazione associati (il <strong>"Software"</strong>), l'autorizzazione a trattare il Software senza restrizioni, inclusi i diritti di utilizzare, copiare, modificare, unire, pubblicare, distribuire, sublicenziare e/o vendere copie del Software, <strong>a condizione che siano rispettate le seguenti condizioni</strong>.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 1</span><span class="acc-title">Attribuzione</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>L'avviso di copyright e il presente avviso di autorizzazione devono essere inclusi in tutte le copie o parti sostanziali del Software.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 2</span><span class="acc-title">Divieto di utilizzo per l'addestramento AI/ML</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>È <strong>espressamente e assolutamente vietato</strong>:</p><ul><li><span>Usare il Software come dati di addestramento, fine-tuning o valutazione per qualsiasi sistema AI/ML;</span></li><li><span>Usare l'output per addestrare, ottimizzare o valutare modelli AI/ML;</span></li><li><span>Incorporare il Software in pipeline di raccolta dati per AI/ML;</span></li><li><span>Generare dataset sintetici destinati all'addestramento di modelli AI/ML;</span></li><li><span>Trasferire il Software a terzi per i suddetti scopi.</span></li></ul><p>Divieto valido <strong>indipendentemente dallo scopo</strong> — commerciale, accademico, governativo, non-profit o personale.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 3</span><span class="acc-title">Divieto di utilizzo militare</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>Il Software non può essere utilizzato per <strong>alcuno scopo militare, paramilitare o di difesa armata</strong>:</p><ul><li><span>Forze armate, guardie nazionali, milizie, agenzie di intelligence;</span></li><li><span>Aziende operanti in contratti militari o della difesa;</span></li><li><span>Sviluppo di armamenti, droni militari, sistemi di targeting;</span></li><li><span>Cyber warfare, guerra elettronica o operazioni militari;</span></li><li><span>Utilizzo indiretto tramite terzi per conto di organizzazioni militari.</span></li></ul></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 4</span><span class="acc-title">Obbligo di notifica per le entità commerciali</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>4.1</strong> Notifica via email <strong>prima</strong> di iniziare l'utilizzo: <code>[EMAIL]</code></p><p><strong>4.2 Email deve contenere:</strong> ragione sociale, P.IVA, descrizione uso, data inizio, responsabile conformità.</p><p><strong>4.3</strong> Variazioni → email entro 30 gg. Cessazione → email entro 30 gg.</p><div class="warn-box" style="margin-top:12px">Utilizzo senza notifica = violazione materiale con risoluzione automatica di tutti i diritti.</div></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 5</span><span class="acc-title">Obbligo di donazione mensile</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>5.1</strong> Donazione mensile ≥ <strong>Importo Minimo Mensile</strong> (<code>[IMPORTO] [VALUTA]</code>).</p><p><strong>5.2</strong> Pagamento entro il 1° di ogni mese. Metodo: <code>[METODO]</code> — Istruzioni: <code>[ISTRUZIONI]</code></p><p><strong>5.3</strong> Mancato pagamento per 2+ mesi = <strong>revoca automatica immediata</strong>.</p><p><strong>5.4</strong> Privati e non-profit: esonerati.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 6–8</span><span class="acc-title">Ridistribuzione · Rimedi · Garanzie</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>Art. 6</strong> — Ridistribuzione con licenza invariata e integrale obbligatoria.</p><p><strong>Art. 7</strong> — Le violazioni costituiscono violazione del diritto d'autore e inadempimento contrattuale.</p><p><strong>Art. 8</strong> — IL SOFTWARE VIENE FORNITO "COSÌ COM'È", SENZA GARANZIA DI ALCUN TIPO.</p></div></div></div>
     </div>
 
-    <!-- EN ACCORDION -->
     <div class="accordion" data-lang="en">
-      <div class="acc-item">
-        <div class="acc-header" onclick="toggleAcc(this)">
-          <div class="acc-header-left"><span class="acc-num">PREAMBLE</span><span class="acc-title">Grant of license</span></div>
-          <span class="acc-arrow">▾</span>
-        </div>
-        <div class="acc-body"><div class="acc-body-inner"><p>Permission is hereby granted, free of charge, to any person or entity obtaining a copy of this software and associated documentation files (the <strong>"Software"</strong>), to deal in the Software without restriction, <strong>subject to the following conditions</strong>.</p></div></div>
-      </div>
-      <div class="acc-item">
-        <div class="acc-header" onclick="toggleAcc(this)">
-          <div class="acc-header-left"><span class="acc-num">SEC. 1</span><span class="acc-title">Attribution</span></div>
-          <span class="acc-arrow">▾</span>
-        </div>
-        <div class="acc-body"><div class="acc-body-inner"><p>The copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p></div></div>
-      </div>
-      <div class="acc-item">
-        <div class="acc-header" onclick="toggleAcc(this)">
-          <div class="acc-header-left"><span class="acc-num">SEC. 2</span><span class="acc-title">Prohibition on AI/ML training use</span></div>
-          <span class="acc-arrow">▾</span>
-        </div>
-        <div class="acc-body"><div class="acc-body-inner">
-          <p>It is <strong>expressly and absolutely prohibited</strong>, directly or indirectly, to:</p>
-          <ul>
-            <li><span>Use the Software as training data, fine-tuning data, or evaluation data for any AI/ML system;</span></li>
-            <li><span>Use the output or derived components to train, fine-tune, distill, or evaluate AI/ML models;</span></li>
-            <li><span>Incorporate the Software into automated data collection pipelines for AI/ML;</span></li>
-            <li><span>Generate synthetic or augmented datasets for AI/ML model training;</span></li>
-            <li><span>Transfer the Software to third parties for the above purposes.</span></li>
-          </ul>
-          <p>This prohibition applies <strong>regardless of purpose</strong> — commercial, academic, governmental, non-profit, or personal.</p>
-        </div></div>
-      </div>
-      <div class="acc-item">
-        <div class="acc-header" onclick="toggleAcc(this)">
-          <div class="acc-header-left"><span class="acc-num">SEC. 3</span><span class="acc-title">Prohibition on military use</span></div>
-          <span class="acc-arrow">▾</span>
-        </div>
-        <div class="acc-body"><div class="acc-body-inner">
-          <p>The Software may <strong>not</strong> be used for any <strong>military, paramilitary, or armed defense purpose</strong>:</p>
-          <ul>
-            <li><span>Armed forces, national guards, militias, or intelligence agencies of any nation;</span></li>
-            <li><span>Companies and contractors operating under military or defense contracts;</span></li>
-            <li><span>Development of weapons, military drones, targeting, or surveillance systems;</span></li>
-            <li><span>Cyber warfare, electronic warfare, or offensive military cyber operations;</span></li>
-            <li><span>Indirect use through third parties acting on behalf of military organizations.</span></li>
-          </ul>
-        </div></div>
-      </div>
-      <div class="acc-item">
-        <div class="acc-header" onclick="toggleAcc(this)">
-          <div class="acc-header-left"><span class="acc-num">SEC. 4</span><span class="acc-title">Mandatory notification for commercial entities</span></div>
-          <span class="acc-arrow">▾</span>
-        </div>
-        <div class="acc-body"><div class="acc-body-inner">
-          <p><strong>4.1</strong> Commercial entities must notify by email <strong>before</strong> any use: <code>[EMAIL]</code></p>
-          <p><strong>4.2 Email must include:</strong> company name, tax ID, description of use, start date, compliance officer.</p>
-          <p><strong>4.3</strong> Material changes → updated email within 30 days. Cessation → email within 30 days.</p>
-          <div class="warn-box" style="margin-top:12px">Use without notification = material violation with automatic termination of all rights.</div>
-        </div></div>
-      </div>
-      <div class="acc-item">
-        <div class="acc-header" onclick="toggleAcc(this)">
-          <div class="acc-header-left"><span class="acc-num">SEC. 5</span><span class="acc-title">Monthly donation obligation</span></div>
-          <span class="acc-arrow">▾</span>
-        </div>
-        <div class="acc-body"><div class="acc-body-inner">
-          <p><strong>5.1</strong> Monthly donation of at least the <strong>Minimum Monthly Amount</strong> set by the copyright holder (<code>[AMOUNT] [CURRENCY]</code>) in the designated currency.</p>
-          <p><strong>5.2</strong> Due on 1st of each month. Retain proof for 24 months.</p><p><strong>Accepted payment method:</strong> <code>[PAYMENT METHOD]</code> (e.g. PayPal, Bitcoin, IBAN, Stripe, cryptocurrency, bank transfer, etc.) — full instructions published by the copyright holder: <code>[PAYMENT INSTRUCTIONS]</code></p>
-          <p><strong>5.3</strong> Failure to pay for 2+ months = <strong>automatic and immediate revocation</strong>.</p>
-          <p><strong>5.4</strong> Private individuals and non-profits: exempt from donation obligation.</p>
-        </div></div>
-      </div>
-      <div class="acc-item">
-        <div class="acc-header" onclick="toggleAcc(this)">
-          <div class="acc-header-left"><span class="acc-num">SEC. 6–8</span><span class="acc-title">Redistribution · Remedies · Warranties</span></div>
-          <span class="acc-arrow">▾</span>
-        </div>
-        <div class="acc-body"><div class="acc-body-inner">
-          <p><strong>Sec. 6</strong> — Any redistribution must include this license in its entirety, unmodified.</p>
-          <p><strong>Sec. 7</strong> — Violations constitute copyright infringement and breach of contract. All legal remedies reserved, enforceable in any jurisdiction.</p>
-          <p><strong>Sec. 8</strong> — THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.</p>
-        </div></div>
-      </div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">PREAMBLE</span><span class="acc-title">Grant of license</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>Permission is hereby granted, free of charge, to any person or entity obtaining a copy of this software and associated documentation files (the <strong>"Software"</strong>), to deal in the Software without restriction, <strong>subject to the following conditions</strong>.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">SEC. 1</span><span class="acc-title">Attribution</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>The copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">SEC. 2</span><span class="acc-title">Prohibition on AI/ML training use</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>It is <strong>expressly and absolutely prohibited</strong>:</p><ul><li><span>Use the Software as training, fine-tuning, or evaluation data for any AI/ML system;</span></li><li><span>Use output to train, fine-tune, distill, or evaluate AI/ML models;</span></li><li><span>Incorporate the Software into automated data collection pipelines for AI/ML;</span></li><li><span>Generate synthetic or augmented datasets for AI/ML model training;</span></li><li><span>Transfer the Software to third parties for the above purposes.</span></li></ul><p>This prohibition applies <strong>regardless of purpose</strong>.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">SEC. 3</span><span class="acc-title">Prohibition on military use</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>The Software may <strong>not</strong> be used for any <strong>military, paramilitary, or armed defense purpose</strong>:</p><ul><li><span>Armed forces, national guards, militias, or intelligence agencies;</span></li><li><span>Companies operating under military or defense contracts;</span></li><li><span>Development of weapons, military drones, targeting or surveillance systems;</span></li><li><span>Cyber warfare, electronic warfare, or offensive military cyber operations;</span></li><li><span>Indirect use through third parties acting on behalf of military organizations.</span></li></ul></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">SEC. 4</span><span class="acc-title">Mandatory notification for commercial entities</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>4.1</strong> Notify by email <strong>before</strong> any use: <code>[EMAIL]</code></p><p><strong>4.2 Email must include:</strong> company name, tax ID, description of use, start date, compliance officer.</p><p><strong>4.3</strong> Changes → email within 30 days. Cessation → email within 30 days.</p><div class="warn-box" style="margin-top:12px">Use without notification = material violation with automatic termination of all rights.</div></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">SEC. 5</span><span class="acc-title">Monthly donation obligation</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>5.1</strong> Monthly donation ≥ <strong>Minimum Monthly Amount</strong> (<code>[AMOUNT] [CURRENCY]</code>).</p><p><strong>5.2</strong> Due 1st of each month. Method: <code>[METHOD]</code> — Instructions: <code>[INSTRUCTIONS]</code></p><p><strong>5.3</strong> Failure for 2+ months = <strong>automatic and immediate revocation</strong>.</p><p><strong>5.4</strong> Private individuals and non-profits: exempt.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">SEC. 6–8</span><span class="acc-title">Redistribution · Remedies · Warranties</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>Sec. 6</strong> — Any redistribution must include this license in its entirety, unmodified.</p><p><strong>Sec. 7</strong> — Violations constitute copyright infringement and breach of contract.</p><p><strong>Sec. 8</strong> — THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.</p></div></div></div>
     </div>
 
-    <!-- COPY BLOCK -->
-    <div class="copy-wrap" style="margin-top:40px">
+    <div class="copy-wrap" style="margin-top:48px">
       <p class="section-label" style="margin-bottom:12px" data-lang="it">Copia rapida per il tuo README</p>
       <p class="section-label" style="margin-bottom:12px" data-lang="en">Quick copy for your README</p>
       <div class="copy-block" id="copy-block">ANTI-AI TRAINING Ethical License (aatel) v1.0
@@ -1118,8 +824,8 @@ Copyright (c) [ANNO/YEAR] [NOME/NAME]
 
 Full text: aatel v1.0</div>
       <div class="copy-btn-wrap">
-        <button class="copy-btn" onclick="copyLicense()" id="copy-btn" data-lang="it">Copia testo</button>
-        <button class="copy-btn" onclick="copyLicense()" id="copy-btn-en" data-lang="en">Copy text</button>
+        <button class="copy-btn" onclick="copyLicense()" data-lang="it">Copia testo</button>
+        <button class="copy-btn" onclick="copyLicense()" data-lang="en">Copy text</button>
       </div>
     </div>
   </div>
@@ -1127,43 +833,37 @@ Full text: aatel v1.0</div>
 
 <!-- GENERATOR -->
 <section class="generator reveal" id="generator">
-  <div class="container" style="position:relative;z-index:1">
+  <div class="gen-inner">
     <p class="section-label" data-lang="it">Genera la tua licenza</p>
     <p class="section-label" data-lang="en">Generate your license</p>
     <h2 class="section-title" data-lang="it">Personalizza &amp; Scarica</h2>
     <h2 class="section-title" data-lang="en">Customize &amp; Download</h2>
     <p class="section-intro" data-lang="it">Inserisci i tuoi dati e scarica la licenza aatel personalizzata. Generazione 100% locale nel browser.</p>
     <p class="section-intro" data-lang="en">Enter your details and download your personalized aatel license. 100% local generation in the browser.</p>
-
     <div class="gen-status" id="gen-status"></div>
-
     <div class="gen-form" id="gen-form">
       <div class="gen-field">
         <label class="gen-label" data-lang="it">Anno <span class="req">*</span></label>
         <label class="gen-label" data-lang="en">Year <span class="req">*</span></label>
-        <span class="gen-sublabel" data-lang="it">es. 2025</span>
-        <span class="gen-sublabel" data-lang="en">e.g. 2025</span>
+        <span class="gen-sublabel" data-lang="it">es. 2025</span><span class="gen-sublabel" data-lang="en">e.g. 2025</span>
         <input class="gen-input" type="number" id="f-year" placeholder="2025" min="2000" max="2100" oninput="updatePreview()">
       </div>
       <div class="gen-field">
         <label class="gen-label" data-lang="it">Nome / Organizzazione <span class="req">*</span></label>
         <label class="gen-label" data-lang="en">Name / Organization <span class="req">*</span></label>
-        <span class="gen-sublabel" data-lang="it">es. Mario Rossi / Acme S.r.l.</span>
-        <span class="gen-sublabel" data-lang="en">e.g. John Smith / Acme Inc.</span>
+        <span class="gen-sublabel" data-lang="it">es. Mario Rossi</span><span class="gen-sublabel" data-lang="en">e.g. John Smith</span>
         <input class="gen-input" type="text" id="f-name" placeholder="Mario Rossi" oninput="updatePreview()">
       </div>
       <div class="gen-field full">
         <label class="gen-label" data-lang="it">Email del titolare <span class="req">*</span></label>
         <label class="gen-label" data-lang="en">Copyright holder email <span class="req">*</span></label>
-        <span class="gen-sublabel" data-lang="it">Per ricevere le notifiche dalle aziende</span>
-        <span class="gen-sublabel" data-lang="en">To receive notifications from companies</span>
+        <span class="gen-sublabel" data-lang="it">Per ricevere le notifiche</span><span class="gen-sublabel" data-lang="en">To receive notifications</span>
         <input class="gen-input" type="email" id="f-email" placeholder="licenza@esempio.com" oninput="updatePreview()">
       </div>
       <div class="gen-field">
         <label class="gen-label" data-lang="it">Importo min. mensile <span class="req">*</span></label>
         <label class="gen-label" data-lang="en">Min. monthly amount <span class="req">*</span></label>
-        <span class="gen-sublabel" data-lang="it">Importo + valuta per le aziende</span>
-        <span class="gen-sublabel" data-lang="en">Amount + currency for companies</span>
+        <span class="gen-sublabel" data-lang="it">Importo + valuta</span><span class="gen-sublabel" data-lang="en">Amount + currency</span>
         <div class="gen-amount-row">
           <input class="gen-input" type="number" id="f-amount" placeholder="1.00" min="0.01" step="0.01" oninput="updatePreview()">
           <input class="gen-input" type="text" id="f-currency" placeholder="EUR" maxlength="10" oninput="updatePreview()">
@@ -1172,34 +872,30 @@ Full text: aatel v1.0</div>
       <div class="gen-field">
         <label class="gen-label" data-lang="it">Metodo di pagamento <span class="req">*</span></label>
         <label class="gen-label" data-lang="en">Payment method <span class="req">*</span></label>
-        <span class="gen-sublabel" data-lang="it">Es. PayPal / Bitcoin / IBAN / Stripe / cripto / bonifico…</span>
-        <span class="gen-sublabel" data-lang="en">E.g. PayPal / Bitcoin / IBAN / Stripe / crypto / bank transfer…</span>
-        <input class="gen-input" type="text" id="f-payment" placeholder="es. Bitcoin, PayPal, IBAN, Stripe…" oninput="updatePreview()">
+        <span class="gen-sublabel">PayPal / Bitcoin / IBAN / Stripe…</span>
+        <input class="gen-input" type="text" id="f-payment" placeholder="es. Bitcoin, PayPal, IBAN…" oninput="updatePreview()">
       </div>
       <div class="gen-field full">
         <label class="gen-label" data-lang="it">Istruzioni di pagamento <span class="req">*</span></label>
         <label class="gen-label" data-lang="en">Payment instructions <span class="req">*</span></label>
-        <span class="gen-sublabel" data-lang="it">URL, indirizzo wallet, IBAN, email PayPal, link Stripe… (tutto ciò che serve per pagare)</span>
-        <span class="gen-sublabel" data-lang="en">URL, wallet address, IBAN, PayPal email, Stripe link… (everything needed to pay)</span>
-        <input class="gen-input" type="text" id="f-payinstr" placeholder="es. paypal.me/tuonome / bc1q…xyz / IT60 X054…" oninput="updatePreview()">
+        <span class="gen-sublabel" data-lang="it">URL, wallet, IBAN, email PayPal…</span>
+        <span class="gen-sublabel" data-lang="en">URL, wallet address, IBAN, PayPal email…</span>
+        <input class="gen-input" type="text" id="f-payinstr" placeholder="es. paypal.me/tuonome / bc1q…xyz" oninput="updatePreview()">
       </div>
     </div>
-
     <div class="gen-preview">
       <div class="gen-preview-label" data-lang="it">Anteprima live</div>
       <div class="gen-preview-label" data-lang="en">Live preview</div>
       <div class="preview-live" id="preview-live"></div>
     </div>
-
     <div class="gen-downloads">
       <button class="btn btn-red"  onclick="downloadLicense('it')">🇮🇹 <span data-lang="it">Scarica Italiano</span><span data-lang="en">Download Italian</span></button>
       <button class="btn btn-blue" onclick="downloadLicense('en')">🇬🇧 <span data-lang="it">Scarica Inglese</span><span data-lang="en">Download English</span></button>
       <button class="btn btn-gold" onclick="downloadLicense('both')">📄 <span data-lang="it">Scarica Entrambe</span><span data-lang="en">Download Both</span></button>
-      <button class="btn btn-dark" onclick="downloadLicense('md')"># <span data-lang="it">Markdown README</span><span data-lang="en">Markdown README</span></button>
+      <button class="btn btn-dark" onclick="downloadLicense('md')"># <span>Markdown README</span></button>
     </div>
-
-    <p class="gen-note" data-lang="it"><span class="req">*</span> Campi obbligatori. Il file viene generato localmente nel tuo browser — nessun dato inviato a server esterni.</p>
-    <p class="gen-note" data-lang="en"><span class="req">*</span> Required fields. File generated locally in your browser — no data sent to any external server.</p>
+    <p class="gen-note" data-lang="it"><span class="req">*</span> Campi obbligatori. Generazione 100% locale — nessun dato inviato a server.</p>
+    <p class="gen-note" data-lang="en"><span class="req">*</span> Required fields. 100% local generation — no data sent to any server.</p>
   </div>
 </section>
 
@@ -1213,567 +909,235 @@ Full text: aatel v1.0</div>
 
 <script>
 
-  // ── LANG SWITCH ──
+  /* ── LANG ── */
   function setLang(lang) {
     document.body.className = 'lang-' + lang;
-    document.getElementById('btn-it').className = 'lang-btn' + (lang === 'it' ? ' active' : '');
-    document.getElementById('btn-en').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
+    document.getElementById('btn-it').className = 'lang-btn' + (lang==='it' ? ' active' : '');
+    document.getElementById('btn-en').className = 'lang-btn' + (lang==='en' ? ' active' : '');
     document.documentElement.lang = lang;
   }
 
-  // ── ACCORDION ──
-  function toggleAcc(header) {
-    const item = header.parentElement;
-    const body = item.querySelector('.acc-body');
-    const isOpen = item.classList.contains('open');
+  /* ── THEME DROPDOWN ── */
+  var THEME_SWATCHES = {
+    pelle:'#c8391a', ghiaccio:'#1565c0', bosco:'#2e7d32', viola:'#7b1fa2', alba:'#d4680a',
+    carta:'#c0392b', cielo:'#0077cc', menta:'#00897b', cipria:'#c2185b', limone:'#9e9000',
+    carbone:'#ff6b35', rosso:'#d32f2f', oceano:'#00bcd4', tabacco:'#d4a054', notte:'#5c8aff'
+  };
 
-    // close all in same accordion
-    const acc = item.closest('.accordion');
-    acc.querySelectorAll('.acc-item.open').forEach(el => {
+  function toggleThemePicker(e) {
+    e.stopPropagation();
+    var picker = document.getElementById('theme-picker');
+    var isOpen = picker.classList.contains('open');
+    picker.classList.toggle('open', !isOpen);
+    document.getElementById('theme-trigger').setAttribute('aria-expanded', String(!isOpen));
+  }
+
+  function setTheme(theme) {
+    document.body.setAttribute('data-theme', theme);
+    // update dot on trigger
+    var dot = document.querySelector('.theme-trigger .t-dot');
+    if (dot && THEME_SWATCHES[theme]) dot.style.background = THEME_SWATCHES[theme];
+    // update active state in dropdown
+    document.querySelectorAll('.theme-option').forEach(function(btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
+    });
+    // close dropdown
+    var picker = document.getElementById('theme-picker');
+    picker.classList.remove('open');
+    document.getElementById('theme-trigger').setAttribute('aria-expanded', 'false');
+    try { localStorage.setItem('aatel-theme', theme); } catch(e) {}
+  }
+
+  // Close on outside click
+  document.addEventListener('click', function(e) {
+    var picker = document.getElementById('theme-picker');
+    if (picker && !picker.contains(e.target)) {
+      picker.classList.remove('open');
+      document.getElementById('theme-trigger').setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      var picker = document.getElementById('theme-picker');
+      if (picker) picker.classList.remove('open');
+    }
+  });
+
+  // Restore theme
+  (function() {
+    try {
+      var saved = localStorage.getItem('aatel-theme');
+      if (saved && THEME_SWATCHES[saved]) setTheme(saved);
+    } catch(e) {}
+  })();
+
+  /* ── ACCORDION ── */
+  function toggleAcc(header) {
+    var item = header.parentElement;
+    var body = item.querySelector('.acc-body');
+    var isOpen = item.classList.contains('open');
+    var acc = item.closest('.accordion');
+    acc.querySelectorAll('.acc-item.open').forEach(function(el) {
       el.classList.remove('open');
       el.querySelector('.acc-body').style.maxHeight = '0';
     });
-
     if (!isOpen) {
       item.classList.add('open');
       body.style.maxHeight = body.scrollHeight + 'px';
     }
   }
 
-  // ── COPY LICENSE ──
+  /* ── COPY ── */
   function copyLicense() {
-    const text = document.getElementById('copy-block').textContent;
-    navigator.clipboard.writeText(text).then(() => {
-      const btn = document.getElementById('copy-btn');
-      const btnEn = document.getElementById('copy-btn-en');
-      btn.textContent = '✓ Copiato!';
-      btn.classList.add('copied');
-      btnEn.textContent = '✓ Copied!';
-      btnEn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = 'Copia testo';
-        btn.classList.remove('copied');
-        btnEn.textContent = 'Copy text';
-        btnEn.classList.remove('copied');
-      }, 2000);
+    var text = document.getElementById('copy-block').textContent;
+    navigator.clipboard.writeText(text).then(function() {
+      document.querySelectorAll('.copy-btn').forEach(function(btn) {
+        var orig = btn.textContent;
+        btn.textContent = btn.getAttribute('data-lang') === 'it' ? '✓ Copiato!' : '✓ Copied!';
+        btn.classList.add('copied');
+        setTimeout(function() { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
+      });
     });
   }
 
-  // ── SCROLL REVEAL ──
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
+  /* ── REVEAL ── */
+  var ro = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }
     });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // ══ LICENSE GENERATOR ══
-
-  // Full license templates
-  const LICENSE_IT = `ANTI-AI TRAINING Ethical License (aatel) — Versione 1.0
-Basata sulla licenza MIT
-
-Copyright (c) {{ANNO}} {{NOME}}
-
-È concessa, gratuitamente, a chiunque ottenga una copia del presente software
-e dei file di documentazione associati (il "Software"), l'autorizzazione a
-trattare il Software senza restrizioni, inclusi i diritti di utilizzare, copiare,
-modificare, unire, pubblicare, distribuire, sublicenziare e/o vendere copie del
-Software, a condizione che siano rispettate le seguenti condizioni:
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ARTICOLO 1 — ATTRIBUZIONE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-L'avviso di copyright sopra riportato e il presente avviso di autorizzazione
-devono essere inclusi in tutte le copie o parti sostanziali del Software, in
-qualsiasi forma o mezzo, digitale o fisico. L'attribuzione deve essere
-chiaramente visibile e non alterata.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ARTICOLO 2 — DIVIETO DI UTILIZZO PER L'ADDESTRAMENTO DI MODELLI AI/ML
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-È ESPRESSAMENTE E ASSOLUTAMENTE VIETATO a qualsiasi persona fisica, giuridica,
-società, ente pubblico o privato, organizzazione accademica o di qualsiasi altra
-natura, agendo direttamente o indirettamente:
-
-  (a) Utilizzare il Software, in tutto o in parte, come dati di addestramento,
-      dati di fine-tuning, dati di pre-addestramento o dati di valutazione per
-      qualsiasi sistema di intelligenza artificiale, machine learning, deep
-      learning, modello linguistico di grandi dimensioni o qualsiasi altro
-      sistema statistico o automatizzato di qualsiasi tipo;
-
-  (b) Utilizzare l'output, la struttura, la logica, l'architettura o qualsiasi
-      componente derivata dal Software per addestrare, ottimizzare, pre-adde-
-      strare, distillare, allineare, valutare o fare benchmark di qualsiasi
-      modello AI o ML;
-
-  (c) Incorporare il Software in pipeline automatizzate, sistemi di raccolta
-      dati, web scraper o processi di aggregazione dati il cui scopo principale
-      o secondario sia la raccolta di dati per l'addestramento di modelli AI/ML;
-
-  (d) Utilizzare il Software per generare dataset sintetici, dataset aumentati
-      o qualsiasi forma di dati derivati destinati all'addestramento di modelli
-      AI/ML;
-
-  (e) Concedere in licenza, sublicenziare o trasferire in qualsiasi modo il
-      Software a terzi per uno qualsiasi degli scopi sopra descritti.
-
-Tale divieto si applica INDIPENDENTEMENTE DALLO SCOPO — commerciale, accademico,
-governativo, di ricerca, non-profit o personale.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ARTICOLO 3 — DIVIETO DI UTILIZZO MILITARE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Il Software non può essere utilizzato, in tutto o in parte, direttamente o
-indirettamente, per alcuno scopo militare, paramilitare o di difesa armata.
-Questo divieto include, senza limitazioni:
-
-  (a) Utilizzo da parte o per conto di forze armate, rami militari, guardie
-      nazionali, milizie, gruppi paramilitari o agenzie di intelligence di
-      qualsiasi nazione o organizzazione sovranazionale;
-
-  (b) Utilizzo da parte di società, appaltatori, subappaltatori o consulenti
-      che operano nell'ambito di contratti militari, della difesa o dell'intel-
-      ligence, laddove tale utilizzo sia collegato a detti contratti;
-
-  (c) Utilizzo per lo sviluppo, la produzione, il testing, la simulazione, la
-      guida, il targeting o il supporto operativo di sistemi d'arma, armi
-      autonome, droni da combattimento, sistemi di sorveglianza militare o
-      qualsiasi tecnologia progettata per il conflitto armato;
-
-  (d) Utilizzo per guerra informatica, guerra elettronica, intelligence sui
-      segnali, sorveglianza di massa a fini militari o di intelligence, o
-      qualsiasi operazione informatica offensiva o difensiva di natura militare;
-
-  (e) Utilizzo indiretto tramite terzi che agiscono per conto di organizzazioni
-      militari o di intelligence.
-
-Tale divieto si applica a TUTTE LE ENTITÀ, indipendentemente dalla nazionalità,
-dallo status giuridico o dalla natura purportamente difensiva o umanitaria.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ARTICOLO 4 — OBBLIGO DI NOTIFICA PER LE ENTITÀ COMMERCIALI
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-4.1 — OBBLIGO DI NOTIFICA
-Qualsiasi società, azienda, ente commerciale o organizzazione con scopo di lucro
-che intenda utilizzare, modificare e/o ridistribuire il Software è LEGALMENTE
-OBBLIGATA a notificarlo al titolare del copyright PRIMA di avviare tale utilizzo,
-mediante l'invio di una email formale a: {{EMAIL}}
-
-4.2 — CONTENUTO DELL'EMAIL DI NOTIFICA
-L'email deve contenere: (1) Denominazione sociale e sede legale; (2) Partita IVA
-o equivalente; (3) Descrizione dell'utilizzo previsto; (4) Data di inizio; (5)
-Nome, ruolo e email del responsabile della conformità.
-
-4.3 — NOTIFICA DI VARIAZIONI E CESSAZIONE
-Variazioni sostanziali → email aggiornata entro 30 giorni.
-Cessazione dell'utilizzo → email di termine entro 30 giorni.
-
-ATTENZIONE: L'utilizzo senza notifica costituisce VIOLAZIONE MATERIALE della
-presente Licenza con risoluzione automatica di tutti i diritti concessi.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ARTICOLO 5 — OBBLIGO DI DONAZIONE MENSILE PER LE ENTITÀ COMMERCIALI
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-5.1 — OBBLIGO E IMPORTO MINIMO
-Le entità commerciali devono versare una DONAZIONE RICORRENTE MENSILE pari o
-superiore all'Importo Minimo Mensile di: {{IMPORTO}} {{VALUTA}} / mese
-nella valuta indicata, al titolare originale del copyright.
-
-Il titolare può modificare importo e valuta con 30 giorni di preavviso.
-
-5.2 — TERMINI DI PAGAMENTO
-Pagamento entro il 1° di ogni mese. Conservare prove documentali per 24 mesi.
-Metodo di pagamento accettato: {{PAGAMENTO}}
-Istruzioni complete per il pagamento: {{PAYINSTR}}
-
-Il titolare del copyright è l'unico responsabile della scelta e comunicazione del metodo
-di pagamento. Qualsiasi metodo legalmente riconoscibile è ammesso (es. bonifico
-bancario, carta di credito, PayPal, criptovaluta, assegno, ecc.).
-
-5.3 — INADEMPIENZA
-Mancato pagamento per 2+ mesi consecutivi = REVOCA AUTOMATICA E IMMEDIATA di
-tutti i diritti. Ripristinabili solo al saldo integrale degli arretrati.
-
-5.4 — ESENZIONI
-Privati cittadini e organizzazioni senza scopo di lucro sono esonerati
-dall'obbligo di donazione.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ARTICOLO 6 — RIDISTRIBUZIONE CON LICENZA INVARIATA
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Qualsiasi ridistribuzione del Software, modificata o non modificata, deve
-includere questa licenza nella sua interezza, senza modifiche ad alcuna clausola.
-Non possono essere imposte restrizioni aggiuntive ai destinatari.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ARTICOLO 7 — ESECUZIONE E RIMEDI
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Qualsiasi violazione costituisce sia una violazione del diritto d'autore che un
-inadempimento contrattuale. Il titolare può esperire tutti i rimedi disponibili:
-provvedimenti inibitori, risarcimento del danno, recupero delle spese legali,
-risoluzione di tutti i diritti. Applicabile in qualsiasi giurisdizione.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ARTICOLO 8 — ESCLUSIONE DI GARANZIE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-IL SOFTWARE VIENE FORNITO "COSÌ COM'È", SENZA GARANZIA DI ALCUN TIPO, ESPRESSA
-O IMPLICITA. IN NESSUN CASO GLI AUTORI O I TITOLARI DEL COPYRIGHT SARANNO
-RESPONSABILI PER QUALSIASI RECLAMO, DANNO O ALTRA RESPONSABILITÀ.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-— FINE DELLA LICENZA — aatel v1.0 — {{ANNO}} {{NOME}}`;
-
-  const LICENSE_EN = `ANTI-AI TRAINING Ethical License (aatel) — Version 1.0
-Based on the MIT License
-
-Copyright (c) {{ANNO}} {{NOME}}
-
-Permission is hereby granted, free of charge, to any person or entity obtaining
-a copy of this software and associated documentation files (the "Software"), to
-deal in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-of the Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SECTION 1 — ATTRIBUTION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-The copyright notice and this permission notice shall be included in all copies
-or substantial portions of the Software, in any form or medium. The attribution
-must be clearly visible and unaltered.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SECTION 2 — PROHIBITION ON USE FOR AI/ML MODEL TRAINING
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-It is EXPRESSLY AND ABSOLUTELY PROHIBITED for any natural person, legal entity,
-corporation, government body, non-profit organization, academic institution, or
-any other entity, acting directly or indirectly, to:
-
-  (a) Use the Software, in whole or in part, as training data, fine-tuning data,
-      pre-training data, or evaluation data for any artificial intelligence,
-      machine learning, deep learning, large language model, or any other
-      statistical model or automated system of any kind;
-
-  (b) Use the output, structure, logic, architecture, or any component derived
-      from the Software to train, fine-tune, pre-train, distill, align,
-      benchmark, or evaluate any AI or ML model of any kind;
-
-  (c) Incorporate the Software into any automated pipeline, data collection
-      system, web scraper, or data aggregation process whose primary or secondary
-      purpose is the collection of data for AI/ML training purposes;
-
-  (d) Use the Software to generate synthetic datasets, augmented datasets, or any
-      form of derivative data intended for use in AI/ML model training;
-
-  (e) License, sublicense, or otherwise transfer the Software to any third party
-      for any of the purposes described above.
-
-This prohibition applies REGARDLESS OF PURPOSE — including commercial, academic,
-governmental, research, non-profit, or personal use.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SECTION 3 — PROHIBITION ON MILITARY USE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-The Software may NOT be used, in whole or in part, directly or indirectly, for
-any military, paramilitary, or armed defense purpose. This prohibition includes:
-
-  (a) Use by or on behalf of any armed forces, military branch, national guard,
-      militia, paramilitary group, or any intelligence agency of any nation or
-      supranational organization;
-
-  (b) Use by any company, contractor, subcontractor, or consultant operating
-      under a military, defense, or intelligence contract, where such use relates
-      to that contract;
-
-  (c) Use for the development, production, testing, simulation, guidance,
-      targeting, or operational support of weapons systems, autonomous weapons,
-      combat drones, military surveillance systems, or any technology designed
-      for armed conflict;
-
-  (d) Use for cyber warfare, electronic warfare, signals intelligence, mass
-      surveillance for military or intelligence purposes, or any offensive or
-      defensive military cyber operation;
-
-  (e) Indirect use through third parties acting on behalf of any military or
-      intelligence organization.
-
-This prohibition applies to ALL ENTITIES, regardless of nationality, legal
-status, or the purportedly defensive or humanitarian nature of the use.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SECTION 4 — MANDATORY NOTIFICATION FOR COMMERCIAL ENTITIES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-4.1 — OBLIGATION TO NOTIFY
-Any company, corporation, commercial entity, or for-profit organization that
-intends to use, modify, and/or redistribute the Software is LEGALLY OBLIGATED
-to notify the copyright holder BEFORE commencing such use, by sending a formal
-notification email to: {{EMAIL}}
-
-4.2 — CONTENT OF THE NOTIFICATION EMAIL
-The email must include: (1) Full legal name and registered address; (2) Tax ID
-or VAT number; (3) Description of intended use; (4) Intended start date; (5)
-Name, role, and email of the compliance officer.
-
-4.3 — NOTIFICATION OF CHANGES AND CESSATION
-Material changes → updated email within 30 days.
-Cessation of use → termination email within 30 days.
-
-WARNING: Use without notification constitutes a MATERIAL VIOLATION of this
-License, resulting in automatic termination of all rights granted herein.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SECTION 5 — MONTHLY DONATION OBLIGATION FOR COMMERCIAL ENTITIES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-5.1 — OBLIGATION AND MINIMUM MONTHLY AMOUNT
-Any commercial entity must make a RECURRING MONTHLY DONATION of at least the
-Minimum Monthly Amount of: {{IMPORTO}} {{VALUTA}} / month
-in the designated currency, to the original copyright holder.
-
-The copyright holder may change the amount and currency with 30 days' notice.
-
-5.2 — PAYMENT TERMS
-Payment due on or before the 1st of each month. Retain proof for 24 months.
-Accepted payment method: {{PAGAMENTO}}
-Full payment instructions: {{PAYINSTR}}
-
-The copyright holder has sole discretion over the choice and communication of the
-payment method. Any legally recognized method is permitted (e.g. bank transfer,
-credit card, PayPal, cryptocurrency, cheque, etc.).
-
-5.3 — DEFAULT
-Failure to pay for 2+ consecutive months = AUTOMATIC AND IMMEDIATE REVOCATION
-of all rights. Reinstated only upon full settlement of all arrears.
-
-5.4 — EXEMPTIONS
-Private individuals and non-profit organizations are exempt from the donation
-obligation, provided they comply with all other license conditions.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SECTION 6 — REDISTRIBUTION WITH UNMODIFIED LICENSE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Any redistribution of the Software, modified or unmodified, must include this
-license in its entirety, without modification of any clause. No additional
-restrictions may be imposed on recipients.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SECTION 7 — ENFORCEMENT AND REMEDIES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Any violation constitutes both copyright infringement and breach of contract.
-The copyright holder reserves the right to pursue all available legal remedies,
-including injunctive relief, monetary damages, recovery of legal fees, and
-termination of all granted rights. Enforceable in any jurisdiction.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SECTION 8 — DISCLAIMER OF WARRANTIES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
-OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-— END OF LICENSE — aatel v1.0 — {{ANNO}} {{NOME}}`;
-
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el) { ro.observe(el); });
+
+  /* ── LICENSE TEMPLATES ── */
+  var SEP72 = '\u2501'.repeat(72);
+
+  var LICENSE_IT =
+    'ANTI-AI TRAINING Ethical License (aatel) \u2014 Versione 1.0\nBasata sulla licenza MIT\n\nCopyright (c) {{ANNO}} {{NOME}}\n\n\u00C8 concessa, gratuitamente, a chiunque ottenga una copia del presente software\ne dei file di documentazione associati (il "Software"), l\'autorizzazione a\ntrattare il Software senza restrizioni, inclusi i diritti di utilizzare, copiare,\nmodificare, unire, pubblicare, distribuire, sublicenziare e/o vendere copie del\nSoftware, a condizione che siano rispettate le seguenti condizioni:\n\n' +
+    SEP72 + '\nARTICOLO 1 \u2014 ATTRIBUZIONE\n' + SEP72 + '\n\nL\'avviso di copyright sopra riportato e il presente avviso di autorizzazione\ndevono essere inclusi in tutte le copie o parti sostanziali del Software.\n\n' +
+    SEP72 + '\nARTICOLO 2 \u2014 DIVIETO DI UTILIZZO PER L\'ADDESTRAMENTO DI MODELLI AI/ML\n' + SEP72 + '\n\n\u00C8 ESPRESSAMENTE E ASSOLUTAMENTE VIETATO, agendo direttamente o indirettamente:\n\n  (a) Utilizzare il Software come dati di addestramento, fine-tuning, pre-addestramento\n      o valutazione per qualsiasi sistema AI, ML, deep learning o LLM;\n\n  (b) Utilizzare l\'output o componenti derivate per addestrare, ottimizzare,\n      distillare, allineare o valutare qualsiasi modello AI o ML;\n\n  (c) Incorporare il Software in pipeline automatizzate di raccolta dati per AI/ML;\n\n  (d) Generare dataset sintetici o aumentati per l\'addestramento di modelli AI/ML;\n\n  (e) Trasferire il Software a terzi per uno qualsiasi degli scopi sopra descritti.\n\nTale divieto si applica INDIPENDENTEMENTE DALLO SCOPO \u2014 commerciale, accademico,\ngovernativo, di ricerca, non-profit o personale.\n\n' +
+    SEP72 + '\nARTICOLO 3 \u2014 DIVIETO DI UTILIZZO MILITARE\n' + SEP72 + '\n\nIl Software non pu\u00F2 essere utilizzato per alcuno scopo militare, paramilitare\no di difesa armata. Questo divieto include:\n\n  (a) Forze armate, guardie nazionali, milizie, agenzie di intelligence;\n\n  (b) Aziende e appaltatori operanti in contratti militari o della difesa;\n\n  (c) Sviluppo di armamenti, droni militari, sistemi di targeting o sorveglianza;\n\n  (d) Cyber warfare, guerra elettronica o operazioni informatiche a scopo militare;\n\n  (e) Utilizzo indiretto tramite terzi per conto di organizzazioni militari.\n\n' +
+    SEP72 + '\nARTICOLO 4 \u2014 OBBLIGO DI NOTIFICA PER LE ENTIT\u00C0 COMMERCIALI\n' + SEP72 + '\n\n4.1 \u2014 OBBLIGO DI NOTIFICA\nNotifica via email PRIMA di avviare l\'utilizzo: {{EMAIL}}\n\n4.2 \u2014 L\'email deve contenere: denominazione sociale, P.IVA, descrizione uso,\ndata inizio, nome e ruolo del responsabile della conformit\u00E0.\n\n4.3 \u2014 Variazioni sostanziali \u2192 email aggiornata entro 30 giorni.\nCessazione \u2192 email di termine entro 30 giorni.\n\nATTENZIONE: Utilizzo senza notifica = VIOLAZIONE MATERIALE con risoluzione\nautomatica di tutti i diritti.\n\n' +
+    SEP72 + '\nARTICOLO 5 \u2014 OBBLIGO DI DONAZIONE MENSILE\n' + SEP72 + '\n\n5.1 \u2014 Le entit\u00E0 commerciali devono versare mensilmente almeno:\n    {{IMPORTO}} {{VALUTA}} / mese\n\n5.2 \u2014 Pagamento entro il 1\u00B0 di ogni mese. Conservare prove per 24 mesi.\n    Metodo accettato: {{PAGAMENTO}}\n    Istruzioni di pagamento: {{PAYINSTR}}\n\n5.3 \u2014 Mancato pagamento per 2+ mesi = REVOCA AUTOMATICA E IMMEDIATA di tutti\ni diritti. Ripristinabili solo al saldo integrale degli arretrati.\n\n5.4 \u2014 Privati e organizzazioni non-profit: esonerati dall\'obbligo.\n\n' +
+    SEP72 + '\nARTICOLO 6 \u2014 RIDISTRIBUZIONE CON LICENZA INVARIATA\n' + SEP72 + '\n\nQualsiasi ridistribuzione deve includere questa licenza nella sua interezza,\nsenza modifiche. Non possono essere imposte restrizioni aggiuntive.\n\n' +
+    SEP72 + '\nARTICOLO 7 \u2014 ESECUZIONE E RIMEDI\n' + SEP72 + '\n\nQualsiasi violazione costituisce sia violazione del diritto d\'autore che\ninadempimento contrattuale. Tutti i rimedi legali sono riservati.\n\n' +
+    SEP72 + '\nARTICOLO 8 \u2014 ESCLUSIONE DI GARANZIE\n' + SEP72 + '\n\nIL SOFTWARE VIENE FORNITO "COS\u00CC COM\'\u00C8", SENZA GARANZIA DI ALCUN TIPO.\n\n' +
+    SEP72 + '\n\u2014 FINE DELLA LICENZA \u2014 aatel v1.0 \u2014 {{ANNO}} {{NOME}}';
+
+  var LICENSE_EN =
+    'ANTI-AI TRAINING Ethical License (aatel) \u2014 Version 1.0\nBased on the MIT License\n\nCopyright (c) {{ANNO}} {{NOME}}\n\nPermission is hereby granted, free of charge, to any person or entity obtaining\na copy of this software and associated documentation files (the "Software"), to\ndeal in the Software without restriction, subject to the following conditions:\n\n' +
+    SEP72 + '\nSECTION 1 \u2014 ATTRIBUTION\n' + SEP72 + '\n\nThe copyright notice and this permission notice shall be included in all copies\nor substantial portions of the Software.\n\n' +
+    SEP72 + '\nSECTION 2 \u2014 PROHIBITION ON AI/ML MODEL TRAINING\n' + SEP72 + '\n\nIt is EXPRESSLY AND ABSOLUTELY PROHIBITED, directly or indirectly, to:\n\n  (a) Use the Software as training, fine-tuning, pre-training, or evaluation data\n      for any AI, ML, deep learning, LLM, or statistical model of any kind;\n\n  (b) Use the output, structure, or any derived component to train, fine-tune,\n      distill, align, benchmark, or evaluate any AI or ML model;\n\n  (c) Incorporate the Software into automated pipelines for AI/ML data collection;\n\n  (d) Generate synthetic or augmented datasets for AI/ML model training;\n\n  (e) Transfer the Software to third parties for any of the above purposes.\n\nThis prohibition applies REGARDLESS OF PURPOSE \u2014 commercial, academic,\ngovernmental, research, non-profit, or personal.\n\n' +
+    SEP72 + '\nSECTION 3 \u2014 PROHIBITION ON MILITARY USE\n' + SEP72 + '\n\nThe Software may NOT be used for any military, paramilitary, or armed defense\npurpose. This prohibition includes:\n\n  (a) Armed forces, national guards, militias, or intelligence agencies;\n\n  (b) Companies or contractors operating under military or defense contracts;\n\n  (c) Development of weapons, military drones, targeting, or surveillance systems;\n\n  (d) Cyber warfare, electronic warfare, or offensive military cyber operations;\n\n  (e) Indirect use through third parties acting on behalf of military organizations.\n\n' +
+    SEP72 + '\nSECTION 4 \u2014 MANDATORY NOTIFICATION FOR COMMERCIAL ENTITIES\n' + SEP72 + '\n\n4.1 \u2014 OBLIGATION TO NOTIFY\nNotify by email BEFORE commencing use: {{EMAIL}}\n\n4.2 \u2014 Email must include: full legal name, tax ID, description of use,\nstart date, name and role of the compliance officer.\n\n4.3 \u2014 Material changes \u2192 updated email within 30 days.\nCessation \u2192 termination email within 30 days.\n\nWARNING: Use without notification = MATERIAL VIOLATION resulting in automatic\ntermination of all rights.\n\n' +
+    SEP72 + '\nSECTION 5 \u2014 MONTHLY DONATION OBLIGATION\n' + SEP72 + '\n\n5.1 \u2014 Commercial entities must pay at least:\n    {{IMPORTO}} {{VALUTA}} / month\n\n5.2 \u2014 Due on or before the 1st of each month. Retain proof for 24 months.\n    Accepted payment method: {{PAGAMENTO}}\n    Full payment instructions: {{PAYINSTR}}\n\n5.3 \u2014 Failure to pay for 2+ consecutive months = AUTOMATIC AND IMMEDIATE\nREVOCATION of all rights. Reinstated only upon full settlement of arrears.\n\n5.4 \u2014 Private individuals and non-profits: exempt.\n\n' +
+    SEP72 + '\nSECTION 6 \u2014 REDISTRIBUTION WITH UNMODIFIED LICENSE\n' + SEP72 + '\n\nAny redistribution must include this license in its entirety, without\nmodification. No additional restrictions may be imposed on recipients.\n\n' +
+    SEP72 + '\nSECTION 7 \u2014 ENFORCEMENT AND REMEDIES\n' + SEP72 + '\n\nAny violation constitutes copyright infringement and breach of contract.\nAll legal remedies reserved, enforceable in any jurisdiction.\n\n' +
+    SEP72 + '\nSECTION 8 \u2014 DISCLAIMER OF WARRANTIES\n' + SEP72 + '\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.\n\n' +
+    SEP72 + '\n\u2014 END OF LICENSE \u2014 aatel v1.0 \u2014 {{ANNO}} {{NOME}}';
+
+  /* ── GENERATOR ── */
   function getFields() {
     return {
-      anno: document.getElementById('f-year').value.trim() || null,
-      nome: document.getElementById('f-name').value.trim() || null,
-      email: document.getElementById('f-email').value.trim() || null,
-      importo: document.getElementById('f-amount').value.trim() || null,
-      valuta: document.getElementById('f-currency').value.trim() || null,
-      pagamento: document.getElementById('f-payment').value.trim() || null,
-      payinstr:  document.getElementById('f-payinstr').value.trim() || null,
+      anno:      (document.getElementById('f-year').value     || '').trim() || null,
+      nome:      (document.getElementById('f-name').value     || '').trim() || null,
+      email:     (document.getElementById('f-email').value    || '').trim() || null,
+      importo:   (document.getElementById('f-amount').value   || '').trim() || null,
+      valuta:    (document.getElementById('f-currency').value || '').trim() || null,
+      pagamento: (document.getElementById('f-payment').value  || '').trim() || null,
+      payinstr:  (document.getElementById('f-payinstr').value || '').trim() || null,
     };
   }
 
-  function fill(template, f) {
-    return template
-      .replace(/{{ANNO}}/g,    f.anno     || '[ANNO/YEAR]')
-      .replace(/{{NOME}}/g,    f.nome     || '[NOME/NAME]')
-      .replace(/{{EMAIL}}/g,   f.email    || '[EMAIL]')
-      .replace(/{{IMPORTO}}/g, f.importo  || '[IMPORTO/AMOUNT]')
-      .replace(/{{VALUTA}}/g,  f.valuta   || '[VALUTA/CURRENCY]')
-      .replace(/{{PAGAMENTO}}/g,  f.pagamento || '[METODO DI PAGAMENTO / PAYMENT METHOD]')
-      .replace(/{{PAYINSTR}}/g,   f.payinstr  || '[ISTRUZIONI PAGAMENTO / PAYMENT INSTRUCTIONS]');
+  function fill(tmpl, f) {
+    return tmpl
+      .replace(/\{\{ANNO\}\}/g,     f.anno     || '[ANNO/YEAR]')
+      .replace(/\{\{NOME\}\}/g,     f.nome     || '[NOME/NAME]')
+      .replace(/\{\{EMAIL\}\}/g,    f.email    || '[EMAIL]')
+      .replace(/\{\{IMPORTO\}\}/g,  f.importo  || '[IMPORTO/AMOUNT]')
+      .replace(/\{\{VALUTA\}\}/g,   f.valuta   || '[VALUTA/CURRENCY]')
+      .replace(/\{\{PAGAMENTO\}\}/g, f.pagamento || '[METODO/METHOD]')
+      .replace(/\{\{PAYINSTR\}\}/g,  f.payinstr  || '[ISTRUZIONI/INSTRUCTIONS]');
   }
 
   function updatePreview() {
-    const f = getFields();
-    // Build a short preview (first ~25 lines of IT version + copyright)
-    const preview = fill(LICENSE_IT, f);
-    const lines = preview.split('\n').slice(0, 6);
-
-    // highlight placeholders vs filled
-    const html = lines.map(line => {
-      return line
-        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-        .replace(/\[([A-ZÀÈÌÒÙ/ -]+)\]/g, '<span class="ph">[$1]</span>')
-        .replace(/\{\{([A-Z]+)\}\}/g, (_, p) => {
-          const val = { ANNO: f.anno, NOME: f.nome, EMAIL: f.email, IMPORTO: f.importo, VALUTA: f.valuta, PAGAMENTO: f.pagamento, PAYINSTR: f.payinstr }[p];
-          return val ? `<span class="filled">${val}</span>` : `<span class="ph">[${p}]</span>`;
-        });
+    var f = getFields();
+    var lines = fill(LICENSE_IT, f).split('\n').slice(0, 9);
+    var html = lines.map(function(line) {
+      return line.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        .replace(/\[([A-Z\u00C0-\u00FC\/\s\-]+)\]/g,'<span class="ph">[$1]</span>');
     }).join('\n');
+    document.getElementById('preview-live').innerHTML = html + '\n<span class="ph">\u2026 [documento completo / full document]</span>';
+  }
 
-    // Show first 6 lines + ellipsis
-    const previewFull = fill(LICENSE_IT, f);
-    const previewLines = previewFull.split('\n');
-    let rendered = '';
-    for (let i = 0; i < Math.min(8, previewLines.length); i++) {
-      let line = previewLines[i]
-        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-      // highlight unfilled placeholders
-      line = line.replace(/\[([A-ZÀÈÌÒÙ\/\s-]+)\]/g, '<span class="ph">[$1]</span>');
-      rendered += line + '\n';
-    }
-    rendered += '<span class="ph">... [documento completo · full document]</span>';
-
-    document.getElementById('preview-live').innerHTML = rendered;
+  function showStatus(msg, type) {
+    var el = document.getElementById('gen-status');
+    el.textContent = msg;
+    el.className = 'gen-status ' + type + ' show';
+    setTimeout(function() { el.className = 'gen-status'; }, 5000);
   }
 
   function validate() {
-    const f = getFields();
-    const missing = [];
-    const isIT = !document.body.classList.contains('lang-en');
-
-    if (!f.anno) missing.push(isIT ? 'Anno' : 'Year');
-    if (!f.nome) missing.push(isIT ? 'Nome/Organizzazione' : 'Name/Organization');
-    if (!f.email) missing.push('Email');
-    if (!f.importo) missing.push(isIT ? 'Importo' : 'Amount');
-    if (!f.valuta) missing.push(isIT ? 'Valuta' : 'Currency');
-    if (!f.pagamento) missing.push(isIT ? 'Metodo di pagamento' : 'Payment method');
-    if (!f.payinstr)  missing.push(isIT ? 'Istruzioni pagamento' : 'Payment instructions');
-
-    const statusEl = document.getElementById('gen-status');
+    var f = getFields();
+    var isIT = !document.body.classList.contains('lang-en');
+    var missing = [];
+    if (!f.anno)      missing.push(isIT ? 'Anno' : 'Year');
+    if (!f.nome)      missing.push(isIT ? 'Nome' : 'Name');
+    if (!f.email)     missing.push('Email');
+    if (!f.importo)   missing.push(isIT ? 'Importo' : 'Amount');
+    if (!f.valuta)    missing.push(isIT ? 'Valuta' : 'Currency');
+    if (!f.pagamento) missing.push(isIT ? 'Metodo pagamento' : 'Payment method');
+    if (!f.payinstr)  missing.push(isIT ? 'Istruzioni' : 'Instructions');
     if (missing.length > 0) {
-      const msg = isIT
-        ? `⚠ Campi mancanti: ${missing.join(', ')}`
-        : `⚠ Missing fields: ${missing.join(', ')}`;
-      statusEl.textContent = msg;
-      statusEl.className = 'gen-status error show';
-      setTimeout(() => statusEl.className = 'gen-status', 4000);
+      showStatus((isIT ? '\u26A0 Campi mancanti: ' : '\u26A0 Missing fields: ') + missing.join(', '), 'error');
+      document.getElementById('gen-form').scrollIntoView({ behavior:'smooth', block:'center' });
       return null;
     }
-
-    statusEl.className = 'gen-status';
     return f;
   }
 
-  function downloadFile(content, filename, mimeType) {
-    const blob = new Blob([content], { type: mimeType + ';charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  }
-
-  function showSuccess() {
-    const isIT = !document.body.classList.contains('lang-en');
-    const statusEl = document.getElementById('gen-status');
-    statusEl.textContent = isIT
-      ? '✓ Licenza generata e scaricata con successo!'
-      : '✓ License generated and downloaded successfully!';
-    statusEl.className = 'gen-status success show';
-    setTimeout(() => statusEl.className = 'gen-status', 4000);
+  function downloadFile(content, filename) {
+    try {
+      var blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url; a.download = filename; a.style.display = 'none';
+      document.body.appendChild(a); a.click();
+      setTimeout(function() { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
+      return true;
+    } catch(e) { console.error(e); return false; }
   }
 
   function downloadLicense(type) {
-    const f = validate();
+    var f = validate();
     if (!f) return;
-
-    const safeName = (f.nome || 'aatel').replace(/[^a-zA-Z0-9_\- ]/g, '_').replace(/\s+/g, '_');
-    const year = f.anno || new Date().getFullYear();
-
-    if (type === 'it') {
-      const content = fill(LICENSE_IT, f);
-      downloadFile(content, `aatel_v1.0_IT_${safeName}_${year}.txt`, 'text/plain');
-      showSuccess();
-
-    } else if (type === 'en') {
-      const content = fill(LICENSE_EN, f);
-      downloadFile(content, `aatel_v1.0_EN_${safeName}_${year}.txt`, 'text/plain');
-      showSuccess();
-
-    } else if (type === 'both') {
-      const sep = '\n\n' + '═'.repeat(72) + '\n' + '═'.repeat(72) + '\n\n';
-      const content =
-        '[ VERSIONE ITALIANA / ITALIAN VERSION ]\n\n' +
-        fill(LICENSE_IT, f) +
-        sep +
-        '[ ENGLISH VERSION / VERSIONE INGLESE ]\n\n' +
-        fill(LICENSE_EN, f);
-      downloadFile(content, `aatel_v1.0_IT+EN_${safeName}_${year}.txt`, 'text/plain');
-      showSuccess();
-
+    var safe = (f.nome || 'aatel').replace(/[^a-zA-Z0-9_\- ]/g,'_').replace(/\s+/g,'_');
+    var yr = f.anno || new Date().getFullYear();
+    var isIT = !document.body.classList.contains('lang-en');
+    var ok = false;
+    if (type === 'it')   ok = downloadFile(fill(LICENSE_IT, f), 'aatel_v1.0_IT_'+safe+'_'+yr+'.txt');
+    else if (type === 'en') ok = downloadFile(fill(LICENSE_EN, f), 'aatel_v1.0_EN_'+safe+'_'+yr+'.txt');
+    else if (type === 'both') {
+      var sep = '\n\n' + '\u2550'.repeat(72) + '\n' + '\u2550'.repeat(72) + '\n\n';
+      ok = downloadFile('[ VERSIONE ITALIANA ]\n\n'+fill(LICENSE_IT,f)+sep+'[ ENGLISH VERSION ]\n\n'+fill(LICENSE_EN,f), 'aatel_v1.0_IT+EN_'+safe+'_'+yr+'.txt');
     } else if (type === 'md') {
-      const md = `# aatel — Anti-AI Training Ethical License v1.0
-
-> Copyright (c) ${year} ${f.nome}
-
-## ✔ Permitted
-
-- Use, copy, modify, merge, publish, distribute, sublicense, and sell the Software
-- Build commercial or personal products on top of the Software
-- Sublicense under the same terms
-
-## ✘ Prohibited
-
-- ❌ Use the Software (in whole or in part) to train, fine-tune, or evaluate **any AI/ML model**
-- ❌ Use the Software for **any military, paramilitary, or armed defense purpose**
-- ❌ Redistribute without this license attached and unmodified
-
-## 🏢 Commercial Entities
-
-1. **Notify** the copyright holder by email **before** any use: [${f.email}](mailto:${f.email})
-2. **Pay** at least **${f.importo} ${f.valuta}/month** via **${f.pagamento}** — ${f.payinstr}
-3. **Notify** upon material changes or cessation of use
-4. Failure to pay for **2+ consecutive months** = automatic revocation of all rights
-
-## ⚡ Enforcement
-
-Violations constitute copyright infringement and breach of contract.
-All legal remedies reserved.
-
----
-
-*Full license text: see LICENSE.txt — aatel v1.0*
-`;
-      downloadFile(md, `README_LICENSE_${safeName}_${year}.md`, 'text/markdown');
-      showSuccess();
+      var md = '# aatel \u2014 Anti-AI Training Ethical License v1.0\n\n> Copyright (c) '+yr+' '+f.nome+'\n\n## \u2714 Permitted\n- Use, copy, modify, distribute, sublicense, and sell the Software\n- Build commercial or personal products\n- Sublicense under the same terms\n\n## \u2718 Prohibited\n- \u274C Use as AI/ML training data or for model training\n- \u274C Use for military or armed defense purposes\n- \u274C Redistribute without this license\n\n## \uD83C\uDFE2 Commercial Entities\n1. **Notify** before use: ['+f.email+'](mailto:'+f.email+')\n2. **Pay** \u2265 '+f.importo+' '+f.valuta+'/month via '+f.pagamento+' \u2014 '+f.payinstr+'\n3. **Notify** upon material changes or cessation\n4. Failure to pay 2+ months = automatic revocation\n\n---\n*Full license: LICENSE.txt \u2014 aatel v1.0*\n';
+      ok = downloadFile(md, 'README_LICENSE_'+safe+'_'+yr+'.md');
     }
+    if (ok) showStatus(isIT ? '\u2713 Licenza scaricata con successo!' : '\u2713 License downloaded successfully!', 'success');
+    else    showStatus(isIT ? '\u274C Errore nel download.' : '\u274C Download error.', 'error');
   }
 
-  // Init preview on load
-  document.addEventListener('DOMContentLoaded', () => {
+  /* ── INIT ── */
+  document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('f-year').value = new Date().getFullYear();
     updatePreview();
   });
-
-
+  if (document.readyState !== 'loading') {
+    document.getElementById('f-year').value = new Date().getFullYear();
+    updatePreview();
+  }
 
 </script>
 </body>
