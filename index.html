@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>aatel — Anti-AI Training Ethical License v1.0</title>
+<title>aatel — Anti-AI Training Ethical License v1.2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -14,9 +14,6 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
 /* ══════════════════════════════════════════════════════════════
    15 TEMI
-   SCURI  (5): pelle · ghiaccio · bosco · viola · alba
-   CHIARI (5): carta · cielo · menta · cipria · limone
-   EXTRA  (5): carbone · rosso · oceano · tabacco · notte
    ══════════════════════════════════════════════════════════════ */
 :root { --gap:1px; --max-content:1200px; --max-text:860px; }
 
@@ -245,92 +242,41 @@ footer { background:var(--fb) !important; border-color:var(--fs) !important; }
   display:flex; align-items:center; justify-content:flex-end;
   gap:6px; padding:0 32px; min-height:44px;
 }
-.lang-bar-label {
-  font-family:'DM Mono',monospace; font-size:10px; color:#555;
-  letter-spacing:.15em; text-transform:uppercase; margin-right:8px;
-}
-.lang-btn {
-  font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.1em;
-  text-transform:uppercase; padding:6px 14px; border:1px solid #444;
-  background:transparent; color:#888; cursor:pointer; transition:all .2s;
-  min-height:32px; touch-action:manipulation;
-}
+.lang-bar-label { font-family:'DM Mono',monospace; font-size:10px; color:#555; letter-spacing:.15em; text-transform:uppercase; margin-right:8px; }
+.lang-btn { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; padding:6px 14px; border:1px solid #444; background:transparent; color:#888; cursor:pointer; transition:all .2s; min-height:32px; touch-action:manipulation; }
 .lang-btn:hover  { border-color:var(--accent); color:var(--accent); }
 .lang-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
 
-/* ── DROPDOWN THEME PICKER ── */
-.theme-picker {
-  position:relative;
-  display:flex; align-items:center;
-}
-.theme-trigger {
-  display:inline-flex; align-items:center; gap:7px;
+/* ── VERSION BADGE in lang bar ── */
+.ver-badge {
   font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.12em;
-  text-transform:uppercase; color:#666; cursor:pointer;
-  padding:5px 12px; border:1px solid #2a2a2a; background:transparent;
-  transition:all .2s; min-height:32px; touch-action:manipulation;
-  white-space:nowrap;
-  -webkit-user-select:none; user-select:none;
+  text-transform:uppercase; color:var(--gold); border:1px solid rgba(184,149,42,.35);
+  padding:4px 10px; margin-right:4px; pointer-events:none;
 }
+
+/* ── DROPDOWN THEME PICKER ── */
+.theme-picker { position:relative; display:flex; align-items:center; }
+.theme-trigger { display:inline-flex; align-items:center; gap:7px; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#666; cursor:pointer; padding:5px 12px; border:1px solid #2a2a2a; background:transparent; transition:all .2s; min-height:32px; touch-action:manipulation; white-space:nowrap; -webkit-user-select:none; user-select:none; }
 .theme-trigger:hover { color:#aaa; border-color:#444; }
-.theme-trigger .t-dot {
-  width:9px; height:9px; border-radius:50%; flex-shrink:0;
-  background:var(--sw); transition:transform .2s;
-}
-.theme-trigger .t-arrow {
-  font-size:8px; opacity:.5; transition:transform .25s;
-}
+.theme-trigger .t-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; background:var(--sw); transition:transform .2s; }
+.theme-trigger .t-arrow { font-size:8px; opacity:.5; transition:transform .25s; }
 .theme-picker.open .theme-trigger { color:#ddd; border-color:#555; background:rgba(255,255,255,.04); }
 .theme-picker.open .t-arrow { transform:rotate(180deg); }
-
-.theme-dropdown {
-  position:absolute; top:calc(100% + 6px); right:0;
-  min-width:220px; background:#111; border:1px solid #282828;
-  box-shadow:0 16px 48px rgba(0,0,0,.7);
-  opacity:0; transform:translateY(-8px) scale(.98);
-  pointer-events:none; transition:opacity .22s ease, transform .22s ease;
-  z-index:999;
-}
-.theme-picker.open .theme-dropdown {
-  opacity:1; transform:translateY(0) scale(1); pointer-events:all;
-}
-.theme-group-label {
-  font-family:'DM Mono',monospace; font-size:8px; letter-spacing:.22em;
-  text-transform:uppercase; color:#333; padding:10px 14px 6px;
-  border-top:1px solid #1c1c1c;
-}
+.theme-dropdown { position:absolute; top:calc(100% + 6px); right:0; min-width:220px; background:#111; border:1px solid #282828; box-shadow:0 16px 48px rgba(0,0,0,.7); opacity:0; transform:translateY(-8px) scale(.98); pointer-events:none; transition:opacity .22s ease, transform .22s ease; z-index:999; }
+.theme-picker.open .theme-dropdown { opacity:1; transform:translateY(0) scale(1); pointer-events:all; }
+.theme-group-label { font-family:'DM Mono',monospace; font-size:8px; letter-spacing:.22em; text-transform:uppercase; color:#333; padding:10px 14px 6px; border-top:1px solid #1c1c1c; }
 .theme-group-label:first-child { border-top:none; }
-.theme-option {
-  display:flex; align-items:center; gap:10px;
-  width:100%; padding:9px 14px; border:none; background:transparent;
-  cursor:pointer; text-align:left; transition:background .15s;
-  touch-action:manipulation;
-}
+.theme-option { display:flex; align-items:center; gap:10px; width:100%; padding:9px 14px; border:none; background:transparent; cursor:pointer; text-align:left; transition:background .15s; touch-action:manipulation; }
 .theme-option:hover { background:rgba(255,255,255,.06); }
 .theme-option.active { background:rgba(255,255,255,.04); }
-.theme-option .o-dot {
-  width:12px; height:12px; border-radius:50%; flex-shrink:0;
-  border:1.5px solid rgba(255,255,255,.12);
-}
-.theme-option .o-check {
-  margin-left:auto; font-size:10px; color:var(--accent);
-  opacity:0; transition:opacity .15s;
-}
+.theme-option .o-dot { width:12px; height:12px; border-radius:50%; flex-shrink:0; border:1.5px solid rgba(255,255,255,.12); }
+.theme-option .o-check { margin-left:auto; font-size:10px; color:var(--accent); opacity:0; transition:opacity .15s; }
 .theme-option.active .o-check { opacity:1; }
-.theme-option .o-name {
-  font-family:'DM Mono',monospace; font-size:10px;
-  letter-spacing:.1em; text-transform:uppercase;
-  color:#999;
-}
+.theme-option .o-name { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:#999; }
 .theme-option.active .o-name { color:#eee; }
-.theme-option .o-tag {
-  font-family:'DM Mono',monospace; font-size:8px;
-  letter-spacing:.08em; text-transform:uppercase;
-  margin-left:auto; padding:2px 6px; border-radius:2px;
-}
+.theme-option .o-tag { font-family:'DM Mono',monospace; font-size:8px; letter-spacing:.08em; text-transform:uppercase; margin-left:auto; padding:2px 6px; border-radius:2px; }
 .o-tag.light { background:rgba(255,255,255,.08); color:#777; }
-.o-tag.dark  { background:rgba(0,0,0,.4);         color:#555; }
-
+.o-tag.dark  { background:rgba(0,0,0,.4); color:#555; }
 .langbar-sep { width:1px; height:20px; background:#222; margin:0 8px; flex-shrink:0; }
 
 /* ── LANG VISIBILITY ── */
@@ -346,51 +292,21 @@ body.lang-en [data-lang="en"] { display:revert; }
 /* ══════════════════
    HERO
    ══════════════════ */
-.hero {
-  position:relative; overflow:hidden;
-  padding:96px 40px 80px; display:flex; align-items:center;
-  justify-content:center; min-height:100svh;
-}
-.hero-bg-grid {
-  position:absolute; inset:0;
-  background-size:60px 60px; pointer-events:none;
-}
-.hero-glow {
-  position:absolute; width:min(900px,100vw); height:min(900px,100vw);
-  top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none;
-}
-.hero-inner {
-  position:relative; z-index:1; text-align:center;
-  width:100%; max-width:900px; animation:fadeUp .7s ease both;
-}
-.hero-badge {
-  display:inline-block; font-family:'DM Mono',monospace; font-size:10px;
-  letter-spacing:.2em; text-transform:uppercase; color:var(--accent);
-  border:1px solid rgba(200,57,26,.35); padding:6px 16px; margin-bottom:28px;
-}
-.hero-title {
-  font-family:'Playfair Display',serif; font-size:clamp(2.6rem,7vw,6.5rem);
-  font-weight:900; color:var(--paper); line-height:1.05;
-  letter-spacing:-.02em; margin-bottom:14px;
-}
+.hero { position:relative; overflow:hidden; padding:96px 40px 80px; display:flex; align-items:center; justify-content:center; min-height:100svh; }
+.hero-bg-grid { position:absolute; inset:0; background-size:60px 60px; pointer-events:none; }
+.hero-glow { position:absolute; width:min(900px,100vw); height:min(900px,100vw); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; }
+.hero-inner { position:relative; z-index:1; text-align:center; width:100%; max-width:900px; animation:fadeUp .7s ease both; }
+.hero-badge { display:inline-block; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); border:1px solid rgba(200,57,26,.35); padding:6px 16px; margin-bottom:28px; }
+.hero-title { font-family:'Playfair Display',serif; font-size:clamp(2.6rem,7vw,6.5rem); font-weight:900; color:var(--paper); line-height:1.05; letter-spacing:-.02em; margin-bottom:14px; }
 .hero-title em { color:var(--accent); font-style:normal; }
-.hero-version {
-  font-family:'DM Mono',monospace; font-size:clamp(10px,1.5vw,13px);
-  color:#555; letter-spacing:.2em; text-transform:uppercase; margin-bottom:28px;
-}
+.hero-version { font-family:'DM Mono',monospace; font-size:clamp(10px,1.5vw,13px); color:var(--gold); letter-spacing:.2em; text-transform:uppercase; margin-bottom:28px; }
 .hero-desc { font-size:clamp(.9rem,1.8vw,1.1rem); color:#888; line-height:1.8; max-width:580px; margin:0 auto 40px; }
 .hero-ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
 
 /* ══════════════════
    BUTTONS
    ══════════════════ */
-.btn {
-  display:inline-flex; align-items:center; justify-content:center; gap:6px;
-  font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.1em;
-  text-transform:uppercase; padding:14px 28px; cursor:pointer;
-  text-decoration:none; transition:all .2s; border:none;
-  min-height:48px; touch-action:manipulation; white-space:nowrap;
-}
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:6px; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; padding:14px 28px; cursor:pointer; text-decoration:none; transition:all .2s; border:none; min-height:48px; touch-action:manipulation; white-space:nowrap; }
 .btn-red   { background:var(--accent); color:#fff; }
 .btn-red:hover { filter:brightness(.85); }
 .btn-ghost { background:transparent; color:var(--paper); border:1px solid #444; }
@@ -443,6 +359,25 @@ body.lang-en [data-lang="en"] { display:revert; }
 .step-num { font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:900; color:rgba(200,57,26,.12); line-height:1; margin-bottom:14px; user-select:none; }
 .step-label { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
 .step-text { font-size:.9rem; line-height:1.75; color:#777; }
+
+/* ── FEE TIERS ── */
+.tiers-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--gap); background:var(--border); border:1px solid var(--border); margin-top:32px; }
+.tier-card { background:var(--paper); padding:32px 28px; }
+.tier-tag { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.2em; text-transform:uppercase; padding:4px 10px; display:inline-block; margin-bottom:14px; }
+.tier-a .tier-tag { color:var(--allow); background:rgba(26,92,42,.08); border:1px solid rgba(26,92,42,.2); }
+.tier-b .tier-tag { color:var(--gold); background:rgba(184,149,42,.08); border:1px solid rgba(184,149,42,.25); }
+.tier-title { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:700; margin-bottom:8px; color:var(--ink); }
+.tier-sub { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.08em; color:var(--muted); margin-bottom:16px; }
+.tier-items { list-style:none; display:flex; flex-direction:column; gap:8px; }
+.tier-items li { font-size:.88rem; line-height:1.65; color:var(--muted); padding-left:16px; position:relative; }
+.tier-items li::before { content:'→'; position:absolute; left:0; color:var(--accent); font-size:.8rem; }
+.tier-example { margin-top:16px; padding:10px 14px; background:var(--cream); border-left:3px solid var(--gold); font-family:'DM Mono',monospace; font-size:10px; line-height:1.7; color:var(--muted); }
+
+/* ── INFLATION BOX ── */
+.inflation-box { margin-top:32px; padding:28px 32px; border:1px solid var(--gold); background:var(--warn-bg); }
+.inflation-box-title { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--warn); margin-bottom:10px; display:flex; align-items:center; gap:10px; }
+.inflation-box p { font-size:.9rem; line-height:1.8; color:var(--muted); }
+.inflation-box p+p { margin-top:8px; }
 
 /* ── DONATION ── */
 .donation-box { margin-top:36px; padding:36px 40px; display:flex; align-items:center; gap:48px; flex-wrap:wrap; border:1px solid var(--db); }
@@ -502,6 +437,7 @@ code { font-family:'DM Mono',monospace; font-size:.82em; background:var(--cream)
 .gen-input::placeholder { color:#383838; }
 .gen-input:focus { box-shadow:0 0 0 3px rgba(200,57,26,.1); }
 .gen-amount-row { display:grid; grid-template-columns:2fr 1fr; gap:10px; }
+.gen-section-header { grid-column:1/-1; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.25em; text-transform:uppercase; color:#333; padding:14px 0 4px; border-bottom:1px solid #1a1a1a; margin-bottom:4px; }
 .gen-preview { border:1px solid var(--pbr); padding:24px; margin-bottom:32px; max-width:var(--max-text); overflow-x:auto; }
 .gen-preview-label { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.22em; text-transform:uppercase; color:#333; margin-bottom:14px; }
 .preview-live { font-family:'DM Mono',monospace; font-size:clamp(.62rem,1vw,.74rem); line-height:1.9; color:#666; white-space:pre-wrap; word-break:break-word; }
@@ -539,6 +475,7 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
   .container { padding:0 32px; }
   .hero,.section,.generator { padding-left:32px; padding-right:32px; }
   .card-grid { grid-template-columns:repeat(2,1fr); }
+  .tiers-grid { grid-template-columns:1fr; }
 }
 @media (max-width:860px) {
   .container { padding:0 24px; }
@@ -555,6 +492,7 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
   .lang-bar { padding:0 16px; flex-wrap:wrap; min-height:auto; padding-top:6px; padding-bottom:6px; }
   .lang-bar-label { display:none; }
   .langbar-sep { display:none; }
+  .ver-badge { display:none; }
   .theme-trigger .t-label { display:none; }
   .lang-btn { padding:6px 12px; font-size:10px; }
   .hero,.section,.generator { padding-left:16px; padding-right:16px; }
@@ -584,8 +522,6 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
 
 <!-- LANG BAR -->
 <div class="lang-bar">
-
-  <!-- DROPDOWN TEMA -->
   <div class="theme-picker" id="theme-picker">
     <button class="theme-trigger" id="theme-trigger" onclick="toggleThemePicker(event)" aria-haspopup="listbox" aria-expanded="false">
       <span class="t-dot"></span>
@@ -594,7 +530,6 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
       <span class="t-arrow">▾</span>
     </button>
     <div class="theme-dropdown" id="theme-dropdown" role="listbox">
-
       <div class="theme-group-label" data-lang="it">— Scuri</div>
       <div class="theme-group-label" data-lang="en">— Dark</div>
       <button class="theme-option active" data-theme="pelle"    onclick="setTheme('pelle')"    role="option"><span class="o-dot" style="background:#c8391a"></span><span class="o-name">Pelle</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
@@ -602,7 +537,6 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
       <button class="theme-option"        data-theme="bosco"    onclick="setTheme('bosco')"    role="option"><span class="o-dot" style="background:#2e7d32"></span><span class="o-name">Bosco</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
       <button class="theme-option"        data-theme="viola"    onclick="setTheme('viola')"    role="option"><span class="o-dot" style="background:#7b1fa2"></span><span class="o-name">Viola</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
       <button class="theme-option"        data-theme="alba"     onclick="setTheme('alba')"     role="option"><span class="o-dot" style="background:#d4680a"></span><span class="o-name">Alba</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
-
       <div class="theme-group-label" data-lang="it">— Chiari</div>
       <div class="theme-group-label" data-lang="en">— Light</div>
       <button class="theme-option" data-theme="carta"    onclick="setTheme('carta')"    role="option"><span class="o-dot" style="background:#c0392b;border-color:rgba(0,0,0,.2)"></span><span class="o-name">Carta</span><span class="o-tag light">light</span><span class="o-check">✓</span></button>
@@ -610,7 +544,6 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
       <button class="theme-option" data-theme="menta"    onclick="setTheme('menta')"    role="option"><span class="o-dot" style="background:#00897b;border-color:rgba(0,0,0,.2)"></span><span class="o-name">Menta</span><span class="o-tag light">light</span><span class="o-check">✓</span></button>
       <button class="theme-option" data-theme="cipria"   onclick="setTheme('cipria')"   role="option"><span class="o-dot" style="background:#c2185b;border-color:rgba(0,0,0,.2)"></span><span class="o-name">Cipria</span><span class="o-tag light">light</span><span class="o-check">✓</span></button>
       <button class="theme-option" data-theme="limone"   onclick="setTheme('limone')"   role="option"><span class="o-dot" style="background:#9e9000;border-color:rgba(0,0,0,.2)"></span><span class="o-name">Limone</span><span class="o-tag light">light</span><span class="o-check">✓</span></button>
-
       <div class="theme-group-label" data-lang="it">— Extra</div>
       <div class="theme-group-label" data-lang="en">— Extra</div>
       <button class="theme-option" data-theme="carbone"  onclick="setTheme('carbone')"  role="option"><span class="o-dot" style="background:#ff6b35"></span><span class="o-name">Carbone</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
@@ -618,10 +551,10 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
       <button class="theme-option" data-theme="oceano"   onclick="setTheme('oceano')"   role="option"><span class="o-dot" style="background:#00bcd4"></span><span class="o-name">Oceano</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
       <button class="theme-option" data-theme="tabacco"  onclick="setTheme('tabacco')"  role="option"><span class="o-dot" style="background:#d4a054"></span><span class="o-name">Tabacco</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
       <button class="theme-option" data-theme="notte"    onclick="setTheme('notte')"    role="option"><span class="o-dot" style="background:#5c8aff"></span><span class="o-name">Notte</span><span class="o-tag dark">dark</span><span class="o-check">✓</span></button>
-
     </div>
   </div>
-
+  <div class="langbar-sep"></div>
+  <span class="ver-badge">v1.2</span>
   <div class="langbar-sep"></div>
   <span class="lang-bar-label" data-lang="it">Lingua</span>
   <span class="lang-bar-label" data-lang="en">Language</span>
@@ -639,9 +572,9 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
       <span data-lang="en">Open Source License</span>
     </div>
     <h1 class="hero-title">Anti-<em>AI</em> Training<br>Ethical License</h1>
-    <p class="hero-version">aatel &mdash; Version 1.0</p>
-    <p class="hero-desc" data-lang="it">Una licenza aperta ispirata alla MIT che protegge il tuo software dall&rsquo;uso per addestrare modelli AI/ML, vieta qualsiasi uso militare e garantisce un contributo ai creatori.</p>
-    <p class="hero-desc" data-lang="en">An MIT-inspired Ethical License that protects your software from AI/ML training use, prohibits any military use, and ensures a minimum contribution to creators.</p>
+    <p class="hero-version">aatel &mdash; Version 1.2</p>
+    <p class="hero-desc" data-lang="it">Una licenza aperta ispirata alla MIT che protegge il tuo software dall&rsquo;uso per addestrare modelli AI/ML, vieta qualsiasi uso militare, introduce una struttura tariffaria a due livelli basata sul fatturato e una clausola di salvaguardia sull&rsquo;inflazione.</p>
+    <p class="hero-desc" data-lang="en">An MIT-inspired Ethical License that protects your software from AI/ML training use, prohibits any military use, introduces a two-tier revenue-based fee structure, and includes an annual inflation safeguard clause.</p>
     <div class="hero-ctas">
       <a href="#generator" class="btn btn-red" data-lang="it">🔧 Genera la tua licenza</a>
       <a href="#generator" class="btn btn-red" data-lang="en">🔧 Generate your license</a>
@@ -684,8 +617,8 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
         <div class="card-icon">🏢</div>
         <div class="card-title" data-lang="it">Entità Commerciali</div>
         <div class="card-title" data-lang="en">Commercial Entities</div>
-        <p class="card-text" data-lang="it">Le aziende devono notificare il creatore via email prima dell'uso e versare una donazione mensile minima nella valuta indicata dal titolare.</p>
-        <p class="card-text" data-lang="en">Companies must notify the creator by email before use and pay a minimum monthly donation in the currency designated by the copyright holder.</p>
+        <p class="card-text" data-lang="it">Le aziende devono notificare il creatore e versare una fee mensile: fissa se sotto soglia, fissa + percentuale sul fatturato se sopra soglia. Adeguamento annuale all'inflazione facoltativo.</p>
+        <p class="card-text" data-lang="en">Companies must notify the creator and pay a monthly fee: fixed below threshold, fixed + revenue percentage above threshold. Optional annual inflation adjustment.</p>
       </div>
     </div>
   </div>
@@ -715,44 +648,84 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
         <div class="rule"><span class="rule-mark">✗</span><span data-lang="it">Usarlo per scopi militari o della difesa armata</span><span data-lang="en">Use it for military or armed defense purposes</span></div>
         <div class="rule"><span class="rule-mark">✗</span><span data-lang="it">Usarlo per guerra informatica o sorveglianza militare</span><span data-lang="en">Use it for cyber warfare or military surveillance</span></div>
         <div class="rule"><span class="rule-mark">✗</span><span data-lang="it">Ridistribuire senza allegare questa licenza integrale</span><span data-lang="en">Redistribute without attaching this complete license</span></div>
-        <div class="rule"><span class="rule-mark">✗</span><span data-lang="it">Usarlo commercialmente senza notifica e donazione mensile</span><span data-lang="en">Use it commercially without notification and monthly donation</span></div>
+        <div class="rule"><span class="rule-mark">✗</span><span data-lang="it">Usarlo commercialmente senza notifica e fee mensile</span><span data-lang="en">Use it commercially without notification and monthly fee</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMMERCIAL -->
+<!-- COMMERCIAL / FEE TIERS -->
 <section class="section section-dark reveal">
   <div class="container">
     <p class="section-label">Per le aziende / For companies</p>
-    <h2 class="section-title" data-lang="it">Obblighi per le entità commerciali</h2>
-    <h2 class="section-title" data-lang="en">Obligations for commercial entities</h2>
-    <div class="steps-grid">
+    <h2 class="section-title" data-lang="it">Struttura tariffaria a livelli</h2>
+    <h2 class="section-title" data-lang="en">Tiered fee structure</h2>
+    <p class="section-intro" data-lang="it">La fee dipende dal fatturato lordo annuo. Sotto soglia: solo canone fisso. Sopra soglia: canone fisso + percentuale sul fatturato. Tutti i parametri sono fissati dal titolare della licenza.</p>
+    <p class="section-intro" data-lang="en">The fee depends on annual gross revenue. Below threshold: fixed fee only. Above threshold: fixed fee + revenue percentage. All parameters are set by the license holder.</p>
+
+    <div class="tiers-grid">
+      <div class="tier-card tier-a">
+        <span class="tier-tag" data-lang="it">Livello A — Sotto soglia</span>
+        <span class="tier-tag" data-lang="en">Tier A — Below threshold</span>
+        <div class="tier-title" data-lang="it">Fee mensile fissa</div>
+        <div class="tier-title" data-lang="en">Fixed monthly fee</div>
+        <div class="tier-sub" data-lang="it">Fatturato annuo &lt; [SOGLIA DI FATTURATO]</div>
+        <div class="tier-sub" data-lang="en">Annual revenue &lt; [REVENUE THRESHOLD]</div>
+        <ul class="tier-items">
+          <li data-lang="it">Canone mensile fisso ≥ [IMPORTO FISSO] [VALUTA]</li>
+          <li data-lang="en">Fixed monthly fee ≥ [FIXED AMOUNT] [CURRENCY]</li>
+          <li data-lang="it">Nessuna componente variabile sul fatturato</li>
+          <li data-lang="en">No additional revenue-based component</li>
+          <li data-lang="it">Valido anche per liberi professionisti e autonomi sotto soglia</li>
+          <li data-lang="en">Also applies to freelancers and sole traders below threshold</li>
+        </ul>
+      </div>
+      <div class="tier-card tier-b">
+        <span class="tier-tag" data-lang="it">Livello B — Sopra soglia</span>
+        <span class="tier-tag" data-lang="en">Tier B — Above threshold</span>
+        <div class="tier-title" data-lang="it">Fee fissa + % sul fatturato</div>
+        <div class="tier-title" data-lang="en">Fixed fee + revenue %</div>
+        <div class="tier-sub" data-lang="it">Fatturato annuo ≥ [SOGLIA DI FATTURATO]</div>
+        <div class="tier-sub" data-lang="en">Annual revenue ≥ [REVENUE THRESHOLD]</div>
+        <ul class="tier-items">
+          <li data-lang="it">Stesso canone fisso del Livello A, PIÙ</li>
+          <li data-lang="en">Same fixed fee as Tier A, PLUS</li>
+          <li data-lang="it">[PERCENTUALE]% del fatturato annuo ÷ 12 ogni mese</li>
+          <li data-lang="en">[PERCENTAGE]% of annual revenue ÷ 12 per month</li>
+          <li data-lang="it">Dichiarazione annuale autocertificata del fatturato entro 90 gg dalla chiusura esercizio</li>
+          <li data-lang="en">Annual self-certified revenue declaration within 90 days of fiscal year end</li>
+        </ul>
+        <div class="tier-example" data-lang="it">Es. soglia €1M, fisso €10/mese, 0,5%:<br>fatturato €2M → €10 + (€2M × 0,5% ÷ 12) = <strong style="color:var(--gold)">€843,33/mese</strong></div>
+        <div class="tier-example" data-lang="en">E.g. threshold €1M, fixed €10/mo, 0.5%:<br>revenue €2M → €10 + (€2M × 0.5% ÷ 12) = <strong style="color:var(--gold)">€843.33/month</strong></div>
+      </div>
+    </div>
+
+    <div class="inflation-box">
+      <div class="inflation-box-title">📊 <span data-lang="it">Clausola di salvaguardia — Adeguamento annuale all'inflazione (Art. 5.8)</span><span data-lang="en">Safeguard clause — Annual inflation adjustment (Sec. 5.8)</span></div>
+      <p data-lang="it">Il titolare può, una volta per anno solare, adeguare facoltativamente la fee fissa, la soglia di fatturato e/o la percentuale. L'adeguamento al rialzo non può superare il tasso HICP (Eurostat) o il CPI nazionale del titolare.</p>
+      <p data-lang="en">The license holder may, once per calendar year, optionally adjust the fixed fee, revenue threshold, and/or percentage. Any upward adjustment cannot exceed the HICP rate (Eurostat) or the holder's national CPI.</p>
+      <p data-lang="it" style="margin-top:8px"><strong>Preavviso minimo: 60 giorni.</strong> Silenzio entro 30 gg dalla notifica = accettazione tacita. Le entità in uso da meno di 12 mesi sono protette da qualsiasi adeguamento.</p>
+      <p data-lang="en" style="margin-top:8px"><strong>Minimum notice: 60 days.</strong> No response within 30 days of notification = deemed acceptance. Entities using the software for less than 12 months are protected from any adjustment.</p>
+    </div>
+
+    <div class="steps-grid" style="margin-top:40px">
       <div class="step-card">
         <div class="step-num">01</div>
         <div class="step-label" data-lang="it">Notifica obbligatoria</div><div class="step-label" data-lang="en">Mandatory notification</div>
-        <p class="step-text" data-lang="it">Prima di iniziare qualsiasi utilizzo, invia una email al titolare del copyright con ragione sociale, partita IVA, descrizione dell'uso previsto e il nominativo del responsabile della conformità.</p>
-        <p class="step-text" data-lang="en">Before beginning any use, send an email to the copyright holder with your company name, tax ID, description of intended use, and the name of your compliance officer.</p>
+        <p class="step-text" data-lang="it">Prima di iniziare qualsiasi utilizzo, invia una email al titolare del copyright con ragione sociale, P.IVA, fatturato dichiarato, descrizione uso e responsabile della conformità.</p>
+        <p class="step-text" data-lang="en">Before beginning any use, send an email with company name, tax ID, declared revenue, description of intended use, and your compliance officer's details.</p>
       </div>
       <div class="step-card">
         <div class="step-num">02</div>
-        <div class="step-label" data-lang="it">Donazione mensile</div><div class="step-label" data-lang="en">Monthly donation</div>
-        <p class="step-text" data-lang="it">Versa mensilmente almeno l'Importo Minimo Mensile stabilito dal creatore nella valuta da lui indicata. Variazioni comunicate con 30 giorni di preavviso.</p>
-        <p class="step-text" data-lang="en">Pay at least the Minimum Monthly Amount set by the creator in their designated currency. Changes announced with 30 days' notice.</p>
+        <div class="step-label" data-lang="it">Fee mensile (livello appropriato)</div><div class="step-label" data-lang="en">Monthly fee (appropriate tier)</div>
+        <p class="step-text" data-lang="it">Versa mensilmente la fee corrispondente al tuo livello. Livello B: fornisci anche la dichiarazione annuale del fatturato entro 90 giorni dalla chiusura dell'esercizio.</p>
+        <p class="step-text" data-lang="en">Pay the monthly fee for your tier. Tier B: also provide an annual revenue declaration within 90 days of your fiscal year end.</p>
       </div>
       <div class="step-card">
         <div class="step-num">03</div>
-        <div class="step-label" data-lang="it">Notifica variazioni</div><div class="step-label" data-lang="en">Change notifications</div>
-        <p class="step-text" data-lang="it">In caso di variazioni sostanziali o cessazione dell'utilizzo, notifica via email entro 30 giorni. La cessazione estingue l'obbligo di donazione.</p>
-        <p class="step-text" data-lang="en">Upon material changes or cessation of use, send notification by email within 30 days. Cessation extinguishes the donation obligation.</p>
-      </div>
-    </div>
-    <div class="donation-box">
-      <div class="donation-amount">[AMT]<small data-lang="it">/ mese min. &mdash; valuta del creatore</small><small data-lang="en">/ month min. &mdash; creator's currency</small></div>
-      <div class="donation-info">
-        <h4 data-lang="it">Importo Minimo Mensile</h4><h4 data-lang="en">Minimum Monthly Amount</h4>
-        <p data-lang="it">Il titolare fissa liberamente importo e valuta. Mancato pagamento per 2+ mesi consecutivi = <strong style="color:#c66">revoca automatica immediata di tutti i diritti</strong>.</p>
-        <p data-lang="en">The copyright holder freely sets amount and currency. Failure to pay for 2+ consecutive months = <strong style="color:#c66">automatic and immediate revocation of all rights</strong>.</p>
+        <div class="step-label" data-lang="it">Notifica variazioni e inflazione</div><div class="step-label" data-lang="en">Change &amp; inflation notifications</div>
+        <p class="step-text" data-lang="it">Segnala variazioni sostanziali o cambio di livello entro 30–60 gg. In caso di adeguamento inflazione: accetta o cessa l'uso entro 30 gg dalla notifica del titolare.</p>
+        <p class="step-text" data-lang="en">Report material changes or tier transitions within 30–60 days. For inflation adjustments: accept or cease use within 30 days of the holder's notification.</p>
       </div>
     </div>
   </div>
@@ -781,18 +754,18 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
   <div class="container">
     <p class="section-label" data-lang="it">Testo completo</p>
     <p class="section-label" data-lang="en">Full license text</p>
-    <h2 class="section-title" data-lang="it">aatel v1.0 — Testo integrale</h2>
-    <h2 class="section-title" data-lang="en">aatel v1.0 — Full text</h2>
-    <div class="warn-box" data-lang="it">⚠ Sostituisci <code>[ANNO]</code>, <code>[NOME]</code>, <code>[EMAIL]</code>, <code>[IMPORTO]</code>, <code>[VALUTA]</code>, <code>[METODO]</code> e <code>[ISTRUZIONI]</code> con i tuoi dati — oppure usa il generatore.</div>
-    <div class="warn-box" data-lang="en">⚠ Replace <code>[YEAR]</code>, <code>[NAME]</code>, <code>[EMAIL]</code>, <code>[AMOUNT]</code>, <code>[CURRENCY]</code>, <code>[METHOD]</code> and <code>[INSTRUCTIONS]</code> with your data — or use the generator.</div>
+    <h2 class="section-title" data-lang="it">aatel v1.2 — Testo integrale</h2>
+    <h2 class="section-title" data-lang="en">aatel v1.2 — Full text</h2>
+    <div class="warn-box" data-lang="it">⚠ Sostituisci i segnaposto con i tuoi dati — oppure usa il generatore in fondo alla pagina.</div>
+    <div class="warn-box" data-lang="en">⚠ Replace all placeholders with your data — or use the generator below.</div>
 
     <div class="accordion" data-lang="it">
-      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">PREAMBOLO</span><span class="acc-title">Concessione della licenza</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>È concessa, gratuitamente, a chiunque ottenga una copia del presente software e dei file di documentazione associati (il <strong>"Software"</strong>), l'autorizzazione a trattare il Software senza restrizioni, inclusi i diritti di utilizzare, copiare, modificare, unire, pubblicare, distribuire, sublicenziare e/o vendere copie del Software, <strong>a condizione che siano rispettate le seguenti condizioni</strong>.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">PREAMBOLO</span><span class="acc-title">Concessione della licenza</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>È concessa, gratuitamente, a chiunque ottenga una copia del presente software e dei file di documentazione associati (il <strong>"Software"</strong>), l'autorizzazione a trattare il Software senza restrizioni, inclusi i diritti di utilizzare, copiare, modificare, unire, pubblicare, distribuire, sublicenziare e/o vendere copie del Software, a condizione che siano rispettate le seguenti condizioni.</p></div></div></div>
       <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 1</span><span class="acc-title">Attribuzione</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>L'avviso di copyright e il presente avviso di autorizzazione devono essere inclusi in tutte le copie o parti sostanziali del Software.</p></div></div></div>
       <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 2</span><span class="acc-title">Divieto di utilizzo per l'addestramento AI/ML</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>È <strong>espressamente e assolutamente vietato</strong>:</p><ul><li><span>Usare il Software come dati di addestramento, fine-tuning o valutazione per qualsiasi sistema AI/ML;</span></li><li><span>Usare l'output per addestrare, ottimizzare o valutare modelli AI/ML;</span></li><li><span>Incorporare il Software in pipeline di raccolta dati per AI/ML;</span></li><li><span>Generare dataset sintetici destinati all'addestramento di modelli AI/ML;</span></li><li><span>Trasferire il Software a terzi per i suddetti scopi.</span></li></ul><p>Divieto valido <strong>indipendentemente dallo scopo</strong> — commerciale, accademico, governativo, non-profit o personale.</p></div></div></div>
       <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 3</span><span class="acc-title">Divieto di utilizzo militare</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>Il Software non può essere utilizzato per <strong>alcuno scopo militare, paramilitare o di difesa armata</strong>:</p><ul><li><span>Forze armate, guardie nazionali, milizie, agenzie di intelligence;</span></li><li><span>Aziende operanti in contratti militari o della difesa;</span></li><li><span>Sviluppo di armamenti, droni militari, sistemi di targeting;</span></li><li><span>Cyber warfare, guerra elettronica o operazioni militari;</span></li><li><span>Utilizzo indiretto tramite terzi per conto di organizzazioni militari.</span></li></ul></div></div></div>
-      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 4</span><span class="acc-title">Obbligo di notifica per le entità commerciali</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>4.1</strong> Notifica via email <strong>prima</strong> di iniziare l'utilizzo: <code>[EMAIL]</code></p><p><strong>4.2 Email deve contenere:</strong> ragione sociale, P.IVA, descrizione uso, data inizio, responsabile conformità.</p><p><strong>4.3</strong> Variazioni → email entro 30 gg. Cessazione → email entro 30 gg.</p><div class="warn-box" style="margin-top:12px">Utilizzo senza notifica = violazione materiale con risoluzione automatica di tutti i diritti.</div></div></div></div>
-      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 5</span><span class="acc-title">Obbligo di donazione mensile</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>5.1</strong> Donazione mensile ≥ <strong>Importo Minimo Mensile</strong> (<code>[IMPORTO] [VALUTA]</code>).</p><p><strong>5.2</strong> Pagamento entro il 1° di ogni mese. Metodo: <code>[METODO]</code> — Istruzioni: <code>[ISTRUZIONI]</code></p><p><strong>5.3</strong> Mancato pagamento per 2+ mesi = <strong>revoca automatica immediata</strong>.</p><p><strong>5.4</strong> Privati e non-profit: esonerati.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 4</span><span class="acc-title">Obbligo di notifica per le entità commerciali</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>4.1</strong> Notifica via email <strong>prima</strong> di iniziare l'utilizzo: <code>[EMAIL]</code></p><p><strong>4.2 Email deve contenere:</strong> ragione sociale, P.IVA, descrizione uso, data inizio, <strong>fatturato lordo annuo dichiarato</strong> (per determinare il livello tariffario), responsabile conformità.</p><p><strong>4.3</strong> Variazioni → email entro 30 gg. Cambio livello (sopra/sotto soglia) → notifica entro 60 gg dalla chiusura esercizio. Cessazione → email entro 30 gg.</p><div class="warn-box" style="margin-top:12px">Utilizzo senza notifica = violazione materiale con risoluzione automatica di tutti i diritti.</div></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 5</span><span class="acc-title">Struttura tariffaria e obblighi di pagamento</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>5.1 — Livello A</strong> (fatturato &lt; <code>[SOGLIA]</code>): canone fisso mensile ≥ <code>[IMPORTO FISSO] [VALUTA]</code>. Nessuna componente variabile.</p><p><strong>5.2 — Livello B</strong> (fatturato ≥ <code>[SOGLIA]</code>): stesso canone fisso PIÙ <code>[PERCENTUALE]%</code> del fatturato annuo ÷ 12 al mese. Dichiarazione annuale del fatturato entro 90 gg dalla chiusura esercizio.</p><p><strong>5.3 — Liberi professionisti/autonomi:</strong> trattati come Livello A se sotto soglia, come Livello B se sopra soglia.</p><p><strong>5.4 — Pagamento:</strong> entro il 1° di ogni mese. Metodo: <code>[METODO]</code> — Istruzioni: <code>[ISTRUZIONI]</code>. Conservare prove per 24 mesi.</p><p><strong>5.5 — Mancato pagamento</strong> per 2+ mesi = <strong>revoca automatica immediata</strong>. Ripristino solo a saldo integrale degli arretrati.</p><p><strong>5.6 — Privati e non-profit:</strong> esonerati dall'obbligo.</p><p><strong>5.7 — Adeguamento inflazione (Clausola di salvaguardia):</strong> il titolare può, una volta per anno solare, adeguare fee fissa, soglia e/o percentuale. Limite: tasso HICP (Eurostat) o CPI nazionale. Preavviso minimo 60 gg. Silenzio = accettazione. No adeguamenti nel primo anno di utilizzo dell'entità.</p></div></div></div>
       <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 6–8</span><span class="acc-title">Ridistribuzione · Rimedi · Garanzie</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>Art. 6</strong> — Ridistribuzione con licenza invariata e integrale obbligatoria.</p><p><strong>Art. 7</strong> — Le violazioni costituiscono violazione del diritto d'autore e inadempimento contrattuale.</p><p><strong>Art. 8</strong> — IL SOFTWARE VIENE FORNITO "COSÌ COM'È", SENZA GARANZIA DI ALCUN TIPO.</p></div></div></div>
     </div>
 
@@ -801,28 +774,31 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
       <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">SEC. 1</span><span class="acc-title">Attribution</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>The copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p></div></div></div>
       <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">SEC. 2</span><span class="acc-title">Prohibition on AI/ML training use</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>It is <strong>expressly and absolutely prohibited</strong>:</p><ul><li><span>Use the Software as training, fine-tuning, or evaluation data for any AI/ML system;</span></li><li><span>Use output to train, fine-tune, distill, or evaluate AI/ML models;</span></li><li><span>Incorporate the Software into automated data collection pipelines for AI/ML;</span></li><li><span>Generate synthetic or augmented datasets for AI/ML model training;</span></li><li><span>Transfer the Software to third parties for the above purposes.</span></li></ul><p>This prohibition applies <strong>regardless of purpose</strong>.</p></div></div></div>
       <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">SEC. 3</span><span class="acc-title">Prohibition on military use</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>The Software may <strong>not</strong> be used for any <strong>military, paramilitary, or armed defense purpose</strong>:</p><ul><li><span>Armed forces, national guards, militias, or intelligence agencies;</span></li><li><span>Companies operating under military or defense contracts;</span></li><li><span>Development of weapons, military drones, targeting or surveillance systems;</span></li><li><span>Cyber warfare, electronic warfare, or offensive military cyber operations;</span></li><li><span>Indirect use through third parties acting on behalf of military organizations.</span></li></ul></div></div></div>
-      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">SEC. 4</span><span class="acc-title">Mandatory notification for commercial entities</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>4.1</strong> Notify by email <strong>before</strong> any use: <code>[EMAIL]</code></p><p><strong>4.2 Email must include:</strong> company name, tax ID, description of use, start date, compliance officer.</p><p><strong>4.3</strong> Changes → email within 30 days. Cessation → email within 30 days.</p><div class="warn-box" style="margin-top:12px">Use without notification = material violation with automatic termination of all rights.</div></div></div></div>
-      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">SEC. 5</span><span class="acc-title">Monthly donation obligation</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>5.1</strong> Monthly donation ≥ <strong>Minimum Monthly Amount</strong> (<code>[AMOUNT] [CURRENCY]</code>).</p><p><strong>5.2</strong> Due 1st of each month. Method: <code>[METHOD]</code> — Instructions: <code>[INSTRUCTIONS]</code></p><p><strong>5.3</strong> Failure for 2+ months = <strong>automatic and immediate revocation</strong>.</p><p><strong>5.4</strong> Private individuals and non-profits: exempt.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">SEC. 4</span><span class="acc-title">Mandatory notification for commercial entities</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>4.1</strong> Notify by email <strong>before</strong> any use: <code>[EMAIL]</code></p><p><strong>4.2 Email must include:</strong> company name, tax ID, description of use, start date, <strong>declared annual gross revenue</strong> (for fee tier determination), compliance officer.</p><p><strong>4.3</strong> Material changes → email within 30 days. Tier crossing (above/below threshold) → notify within 60 days of fiscal year end. Cessation → email within 30 days.</p><div class="warn-box" style="margin-top:12px">Use without notification = material violation with automatic termination of all rights.</div></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">SEC. 5</span><span class="acc-title">Fee structure and payment obligations</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>5.1 — Tier A</strong> (revenue &lt; <code>[THRESHOLD]</code>): fixed monthly fee ≥ <code>[FIXED AMOUNT] [CURRENCY]</code>. No variable component.</p><p><strong>5.2 — Tier B</strong> (revenue ≥ <code>[THRESHOLD]</code>): same fixed fee PLUS <code>[PERCENTAGE]%</code> of annual revenue ÷ 12 per month. Annual revenue declaration within 90 days of fiscal year end.</p><p><strong>5.3 — Freelancers/sole traders:</strong> treated as Tier A if below threshold, Tier B if above.</p><p><strong>5.4 — Payment:</strong> due 1st of each month. Method: <code>[METHOD]</code> — Instructions: <code>[INSTRUCTIONS]</code>. Retain proof for 24 months.</p><p><strong>5.5 — Failure to pay</strong> for 2+ months = <strong>automatic and immediate revocation</strong>. Reinstated only upon full settlement.</p><p><strong>5.6 — Private individuals and non-profits:</strong> exempt.</p><p><strong>5.7 — Inflation adjustment (Safeguard clause):</strong> once per calendar year, the holder may adjust the fixed fee, threshold, and/or percentage. Cap: HICP rate (Eurostat) or national CPI. Minimum 60-day notice. Silence = acceptance. No adjustments within the first 12 months of use.</p></div></div></div>
       <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">SEC. 6–8</span><span class="acc-title">Redistribution · Remedies · Warranties</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>Sec. 6</strong> — Any redistribution must include this license in its entirety, unmodified.</p><p><strong>Sec. 7</strong> — Violations constitute copyright infringement and breach of contract.</p><p><strong>Sec. 8</strong> — THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.</p></div></div></div>
     </div>
 
     <div class="copy-wrap" style="margin-top:48px">
       <p class="section-label" style="margin-bottom:12px" data-lang="it">Copia rapida per il tuo README</p>
       <p class="section-label" style="margin-bottom:12px" data-lang="en">Quick copy for your README</p>
-      <div class="copy-block" id="copy-block">ANTI-AI TRAINING Ethical License (aatel) v1.0
+      <div class="copy-block" id="copy-block">ANTI-AI TRAINING Ethical License (aatel) v1.2
 Copyright (c) [ANNO/YEAR] [NOME/NAME]
 
 1. ATTRIBUTION — Include this notice in all copies.
 2. NO AI/ML TRAINING — No use as training data for any AI/ML model.
 3. NO MILITARY USE — No use for any military or defense purpose.
-4. NOTIFY (companies) — Email [EMAIL] before use.
-5. PAY (companies) — [IMPORTO/AMOUNT] [VALUTA/CURRENCY]/month.
-   Method: [METODO/METHOD] — Instructions: [ISTRUZIONI/INSTRUCTIONS].
-6. REDISTRIBUTE — Include this license unmodified.
-7. VIOLATIONS — Copyright infringement + breach of contract.
-8. AS IS — No warranty of any kind.
+4. NOTIFY (companies) — Email [EMAIL] before use. Include declared revenue.
+5. PAY (companies):
+   · Tier A (revenue < [SOGLIA/THRESHOLD]): [IMPORTO/AMOUNT] [VALUTA/CURRENCY]/month fixed.
+   · Tier B (revenue ≥ [SOGLIA/THRESHOLD]): fixed fee + [PERCENTUALE/PERCENTAGE]% revenue/12 per month.
+   · Method: [METODO/METHOD] — Instructions: [ISTRUZIONI/INSTRUCTIONS].
+6. INFLATION — Holder may adjust fees once/year (≤ HICP/CPI). 60-day notice.
+7. REDISTRIBUTE — Include this license unmodified.
+8. VIOLATIONS — Copyright infringement + breach of contract.
+9. AS IS — No warranty of any kind.
 
-Full text: aatel v1.0</div>
+Full text: aatel v1.2</div>
       <div class="copy-btn-wrap">
         <button class="copy-btn" onclick="copyLicense()" data-lang="it">Copia testo</button>
         <button class="copy-btn" onclick="copyLicense()" data-lang="en">Copy text</button>
@@ -838,10 +814,14 @@ Full text: aatel v1.0</div>
     <p class="section-label" data-lang="en">Generate your license</p>
     <h2 class="section-title" data-lang="it">Personalizza &amp; Scarica</h2>
     <h2 class="section-title" data-lang="en">Customize &amp; Download</h2>
-    <p class="section-intro" data-lang="it">Inserisci i tuoi dati e scarica la licenza aatel personalizzata. Generazione 100% locale nel browser.</p>
-    <p class="section-intro" data-lang="en">Enter your details and download your personalized aatel license. 100% local generation in the browser.</p>
+    <p class="section-intro" data-lang="it">Inserisci i tuoi dati e scarica la licenza aatel v1.2 personalizzata. Generazione 100% locale nel browser.</p>
+    <p class="section-intro" data-lang="en">Enter your details and download your personalized aatel v1.2 license. 100% local generation in the browser.</p>
     <div class="gen-status" id="gen-status"></div>
     <div class="gen-form" id="gen-form">
+
+      <!-- BASE INFO -->
+      <div class="gen-section-header" data-lang="it">— Dati base</div>
+      <div class="gen-section-header" data-lang="en">— Basic info</div>
       <div class="gen-field">
         <label class="gen-label" data-lang="it">Anno <span class="req">*</span></label>
         <label class="gen-label" data-lang="en">Year <span class="req">*</span></label>
@@ -860,28 +840,52 @@ Full text: aatel v1.0</div>
         <span class="gen-sublabel" data-lang="it">Per ricevere le notifiche</span><span class="gen-sublabel" data-lang="en">To receive notifications</span>
         <input class="gen-input" type="email" id="f-email" placeholder="licenza@esempio.com" oninput="updatePreview()">
       </div>
+
+      <!-- FEE TIERS -->
+      <div class="gen-section-header" data-lang="it">— Struttura tariffaria (Art. 5)</div>
+      <div class="gen-section-header" data-lang="en">— Fee structure (Sec. 5)</div>
+      <div class="gen-field full">
+        <label class="gen-label" data-lang="it">Soglia di fatturato annuo <span class="req">*</span></label>
+        <label class="gen-label" data-lang="en">Annual revenue threshold <span class="req">*</span></label>
+        <span class="gen-sublabel" data-lang="it">Importo + valuta — es. 1000000 EUR</span><span class="gen-sublabel" data-lang="en">Amount + currency — e.g. 1000000 EUR</span>
+        <div class="gen-amount-row">
+          <input class="gen-input" type="number" id="f-threshold" placeholder="1000000" min="0" step="1" oninput="updatePreview()">
+          <input class="gen-input" type="text" id="f-threshold-cur" placeholder="EUR" maxlength="10" oninput="updatePreview()">
+        </div>
+      </div>
       <div class="gen-field">
-        <label class="gen-label" data-lang="it">Importo min. mensile <span class="req">*</span></label>
-        <label class="gen-label" data-lang="en">Min. monthly amount <span class="req">*</span></label>
+        <label class="gen-label" data-lang="it">Fee fissa mensile (Livello A &amp; B) <span class="req">*</span></label>
+        <label class="gen-label" data-lang="en">Fixed monthly fee (Tier A &amp; B) <span class="req">*</span></label>
         <span class="gen-sublabel" data-lang="it">Importo + valuta</span><span class="gen-sublabel" data-lang="en">Amount + currency</span>
         <div class="gen-amount-row">
-          <input class="gen-input" type="number" id="f-amount" placeholder="1.00" min="0.01" step="0.01" oninput="updatePreview()">
+          <input class="gen-input" type="number" id="f-fixed" placeholder="10.00" min="0.01" step="0.01" oninput="updatePreview()">
           <input class="gen-input" type="text" id="f-currency" placeholder="EUR" maxlength="10" oninput="updatePreview()">
         </div>
       </div>
+      <div class="gen-field">
+        <label class="gen-label" data-lang="it">Percentuale sul fatturato (Livello B) <span class="req">*</span></label>
+        <label class="gen-label" data-lang="en">Revenue percentage (Tier B) <span class="req">*</span></label>
+        <span class="gen-sublabel" data-lang="it">es. 0.5 (= 0,5% del fatturato annuo)</span><span class="gen-sublabel" data-lang="en">e.g. 0.5 (= 0.5% of annual revenue)</span>
+        <input class="gen-input" type="number" id="f-percent" placeholder="0.5" min="0.01" step="0.01" oninput="updatePreview()">
+      </div>
+
+      <!-- PAYMENT -->
+      <div class="gen-section-header" data-lang="it">— Pagamento</div>
+      <div class="gen-section-header" data-lang="en">— Payment</div>
       <div class="gen-field">
         <label class="gen-label" data-lang="it">Metodo di pagamento <span class="req">*</span></label>
         <label class="gen-label" data-lang="en">Payment method <span class="req">*</span></label>
         <span class="gen-sublabel">PayPal / Bitcoin / IBAN / Stripe…</span>
         <input class="gen-input" type="text" id="f-payment" placeholder="es. Bitcoin, PayPal, IBAN…" oninput="updatePreview()">
       </div>
-      <div class="gen-field full">
+      <div class="gen-field">
         <label class="gen-label" data-lang="it">Istruzioni di pagamento <span class="req">*</span></label>
         <label class="gen-label" data-lang="en">Payment instructions <span class="req">*</span></label>
         <span class="gen-sublabel" data-lang="it">URL, wallet, IBAN, email PayPal…</span>
         <span class="gen-sublabel" data-lang="en">URL, wallet address, IBAN, PayPal email…</span>
         <input class="gen-input" type="text" id="f-payinstr" placeholder="es. paypal.me/tuonome / bc1q…xyz" oninput="updatePreview()">
       </div>
+
     </div>
     <div class="gen-preview">
       <div class="gen-preview-label" data-lang="it">Anteprima live</div>
@@ -902,13 +906,12 @@ Full text: aatel v1.0</div>
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">aatel</div>
-  <div class="footer-sub">Anti-AI Training Ethical License — v1.0</div>
+  <div class="footer-sub">Anti-AI Training Ethical License — v1.2</div>
   <p data-lang="it">Liberamente utilizzabile per proteggere i tuoi progetti open source. Non costituisce consulenza legale. Basata sulla licenza MIT.</p>
   <p data-lang="en">Freely usable to protect your open source projects. Does not constitute legal advice. Based on the MIT License.</p>
 </footer>
 
 <script>
-
   /* ── LANG ── */
   function setLang(lang) {
     document.body.className = 'lang-' + lang;
@@ -923,7 +926,6 @@ Full text: aatel v1.0</div>
     carta:'#c0392b', cielo:'#0077cc', menta:'#00897b', cipria:'#c2185b', limone:'#9e9000',
     carbone:'#ff6b35', rosso:'#d32f2f', oceano:'#00bcd4', tabacco:'#d4a054', notte:'#5c8aff'
   };
-
   function toggleThemePicker(e) {
     e.stopPropagation();
     var picker = document.getElementById('theme-picker');
@@ -931,24 +933,18 @@ Full text: aatel v1.0</div>
     picker.classList.toggle('open', !isOpen);
     document.getElementById('theme-trigger').setAttribute('aria-expanded', String(!isOpen));
   }
-
   function setTheme(theme) {
     document.body.setAttribute('data-theme', theme);
-    // update dot on trigger
     var dot = document.querySelector('.theme-trigger .t-dot');
     if (dot && THEME_SWATCHES[theme]) dot.style.background = THEME_SWATCHES[theme];
-    // update active state in dropdown
     document.querySelectorAll('.theme-option').forEach(function(btn) {
       btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
     });
-    // close dropdown
     var picker = document.getElementById('theme-picker');
     picker.classList.remove('open');
     document.getElementById('theme-trigger').setAttribute('aria-expanded', 'false');
     try { localStorage.setItem('aatel-theme', theme); } catch(e) {}
   }
-
-  // Close on outside click
   document.addEventListener('click', function(e) {
     var picker = document.getElementById('theme-picker');
     if (picker && !picker.contains(e.target)) {
@@ -956,21 +952,11 @@ Full text: aatel v1.0</div>
       document.getElementById('theme-trigger').setAttribute('aria-expanded', 'false');
     }
   });
-
-  // Close on Escape
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      var picker = document.getElementById('theme-picker');
-      if (picker) picker.classList.remove('open');
-    }
+    if (e.key === 'Escape') { var picker = document.getElementById('theme-picker'); if (picker) picker.classList.remove('open'); }
   });
-
-  // Restore theme
   (function() {
-    try {
-      var saved = localStorage.getItem('aatel-theme');
-      if (saved && THEME_SWATCHES[saved]) setTheme(saved);
-    } catch(e) {}
+    try { var saved = localStorage.getItem('aatel-theme'); if (saved && THEME_SWATCHES[saved]) setTheme(saved); } catch(e) {}
   })();
 
   /* ── ACCORDION ── */
@@ -1014,56 +1000,61 @@ Full text: aatel v1.0</div>
   var SEP72 = '\u2501'.repeat(72);
 
   var LICENSE_IT =
-    'ANTI-AI TRAINING Ethical License (aatel) \u2014 Versione 1.0\nBasata sulla licenza MIT\n\nCopyright (c) {{ANNO}} {{NOME}}\n\n\u00C8 concessa, gratuitamente, a chiunque ottenga una copia del presente software\ne dei file di documentazione associati (il "Software"), l\'autorizzazione a\ntrattare il Software senza restrizioni, inclusi i diritti di utilizzare, copiare,\nmodificare, unire, pubblicare, distribuire, sublicenziare e/o vendere copie del\nSoftware, a condizione che siano rispettate le seguenti condizioni:\n\n' +
+    'ANTI-AI TRAINING Ethical License (aatel) \u2014 Versione 1.2\nBasata sulla licenza MIT\n\nCopyright (c) {{ANNO}} {{NOME}}\n\n\u00C8 concessa, gratuitamente, a chiunque ottenga una copia del presente software\ne dei file di documentazione associati (il "Software"), l\'autorizzazione a\ntrattare il Software senza restrizioni, inclusi i diritti di utilizzare, copiare,\nmodificare, unire, pubblicare, distribuire, sublicenziare e/o vendere copie del\nSoftware, a condizione che siano rispettate le seguenti condizioni:\n\n' +
     SEP72 + '\nARTICOLO 1 \u2014 ATTRIBUZIONE\n' + SEP72 + '\n\nL\'avviso di copyright sopra riportato e il presente avviso di autorizzazione\ndevono essere inclusi in tutte le copie o parti sostanziali del Software.\n\n' +
     SEP72 + '\nARTICOLO 2 \u2014 DIVIETO DI UTILIZZO PER L\'ADDESTRAMENTO DI MODELLI AI/ML\n' + SEP72 + '\n\n\u00C8 ESPRESSAMENTE E ASSOLUTAMENTE VIETATO, agendo direttamente o indirettamente:\n\n  (a) Utilizzare il Software come dati di addestramento, fine-tuning, pre-addestramento\n      o valutazione per qualsiasi sistema AI, ML, deep learning o LLM;\n\n  (b) Utilizzare l\'output o componenti derivate per addestrare, ottimizzare,\n      distillare, allineare o valutare qualsiasi modello AI o ML;\n\n  (c) Incorporare il Software in pipeline automatizzate di raccolta dati per AI/ML;\n\n  (d) Generare dataset sintetici o aumentati per l\'addestramento di modelli AI/ML;\n\n  (e) Trasferire il Software a terzi per uno qualsiasi degli scopi sopra descritti.\n\nTale divieto si applica INDIPENDENTEMENTE DALLO SCOPO \u2014 commerciale, accademico,\ngovernativo, di ricerca, non-profit o personale.\n\n' +
     SEP72 + '\nARTICOLO 3 \u2014 DIVIETO DI UTILIZZO MILITARE\n' + SEP72 + '\n\nIl Software non pu\u00F2 essere utilizzato per alcuno scopo militare, paramilitare\no di difesa armata. Questo divieto include:\n\n  (a) Forze armate, guardie nazionali, milizie, agenzie di intelligence;\n\n  (b) Aziende e appaltatori operanti in contratti militari o della difesa;\n\n  (c) Sviluppo di armamenti, droni militari, sistemi di targeting o sorveglianza;\n\n  (d) Cyber warfare, guerra elettronica o operazioni informatiche a scopo militare;\n\n  (e) Utilizzo indiretto tramite terzi per conto di organizzazioni militari.\n\n' +
-    SEP72 + '\nARTICOLO 4 \u2014 OBBLIGO DI NOTIFICA PER LE ENTIT\u00C0 COMMERCIALI\n' + SEP72 + '\n\n4.1 \u2014 OBBLIGO DI NOTIFICA\nNotifica via email PRIMA di avviare l\'utilizzo: {{EMAIL}}\n\n4.2 \u2014 L\'email deve contenere: denominazione sociale, P.IVA, descrizione uso,\ndata inizio, nome e ruolo del responsabile della conformit\u00E0.\n\n4.3 \u2014 Variazioni sostanziali \u2192 email aggiornata entro 30 giorni.\nCessazione \u2192 email di termine entro 30 giorni.\n\nATTENZIONE: Utilizzo senza notifica = VIOLAZIONE MATERIALE con risoluzione\nautomatica di tutti i diritti.\n\n' +
-    SEP72 + '\nARTICOLO 5 \u2014 OBBLIGO DI DONAZIONE MENSILE\n' + SEP72 + '\n\n5.1 \u2014 Le entit\u00E0 commerciali devono versare mensilmente almeno:\n    {{IMPORTO}} {{VALUTA}} / mese\n\n5.2 \u2014 Pagamento entro il 1\u00B0 di ogni mese. Conservare prove per 24 mesi.\n    Metodo accettato: {{PAGAMENTO}}\n    Istruzioni di pagamento: {{PAYINSTR}}\n\n5.3 \u2014 Mancato pagamento per 2+ mesi = REVOCA AUTOMATICA E IMMEDIATA di tutti\ni diritti. Ripristinabili solo al saldo integrale degli arretrati.\n\n5.4 \u2014 Privati e organizzazioni non-profit: esonerati dall\'obbligo.\n\n' +
+    SEP72 + '\nARTICOLO 4 \u2014 OBBLIGO DI NOTIFICA PER LE ENTIT\u00C0 COMMERCIALI\n' + SEP72 + '\n\n4.1 \u2014 OBBLIGO DI NOTIFICA\nInviare email PRIMA di avviare l\'utilizzo a: {{EMAIL}}\n\n4.2 \u2014 L\'email deve contenere: denominazione sociale, P.IVA, descrizione uso,\ndata inizio, fatturato lordo annuo dichiarato (per determinare il livello\ntariffario), nome e ruolo del responsabile della conformit\u00E0.\n\n4.3 \u2014 Variazioni sostanziali \u2192 email aggiornata entro 30 giorni.\nCambio di livello tariffario (sopra/sotto soglia) \u2192 notifica entro 60 giorni\ndalla chiusura dell\'esercizio fiscale in cui il cambio si \u00E8 verificato.\nCessazione \u2192 email di termine entro 30 giorni.\n\nATTENZIONE: Utilizzo senza notifica = VIOLAZIONE MATERIALE con risoluzione\nautomatica di tutti i diritti.\n\n' +
+    SEP72 + '\nARTICOLO 5 \u2014 STRUTTURA TARIFFARIA E OBBLIGHI DI PAGAMENTO\n' + SEP72 + '\n\n5.1 \u2014 LIVELLO A (Fatturato annuo < {{SOGLIA}} {{VALUTA}})\nCanone mensile fisso: {{IMPORTO}} {{VALUTA}} / mese\nNessuna componente aggiuntiva basata sul fatturato.\n\n5.2 \u2014 LIVELLO B (Fatturato annuo \u2265 {{SOGLIA}} {{VALUTA}})\nStesso canone mensile fisso: {{IMPORTO}} {{VALUTA}} / mese, PI\u00D9\nQuota variabile: {{PERCENTUALE}}% del fatturato annuo \u00F7 12 al mese.\nLe entit\u00E0 di Livello B devono fornire una dichiarazione annuale\nautocertificata del fatturato entro 90 giorni dalla chiusura di ogni\nesercizio fiscale. Il titolare pu\u00F2 richiedere documentazione di supporto.\n\n  Esempio: soglia {{SOGLIA}} {{VALUTA}}, fisso {{IMPORTO}} {{VALUTA}}/mese, {{PERCENTUALE}}%:\n  Fatturato {{SOGLIA}} x 2 {{VALUTA}} \u2192 {{IMPORTO}} + ({{SOGLIA}} x 2 x {{PERCENTUALE}}% \u00F7 12)\n\n5.3 \u2014 LIBERI PROFESSIONISTI E LAVORATORI AUTONOMI\nTrattati come Livello A se fatturato < {{SOGLIA}} {{VALUTA}},\ncome Livello B se fatturato \u2265 {{SOGLIA}} {{VALUTA}}.\n\n5.4 \u2014 TERMINI DI PAGAMENTO\nPagamento entro il 1\u00B0 giorno solare di ogni mese.\nMetodo accettato: {{PAGAMENTO}}\nIstruzioni di pagamento: {{PAYINSTR}}\nConservare prove documentali per almeno 24 mesi.\n\n5.5 \u2014 INADEMPIMENTO\nMancato pagamento per 2+ mesi consecutivi = REVOCA AUTOMATICA E IMMEDIATA\ndi tutti i diritti. Ripristino solo al saldo integrale degli arretrati.\n\n5.6 \u2014 ESENZIONI\nPrivati (uso personale non commerciale) e organizzazioni non-profit:\nesonerati dall\'obbligo di pagamento.\n\n5.7 \u2014 CLAUSOLA DI SALVAGUARDIA \u2014 ADEGUAMENTO ANNUALE ALL\'INFLAZIONE\nIl titolare si riserva il diritto, a sua esclusiva discrezione, di adeguare\nuna volta per anno solare: il canone fisso, la soglia di fatturato e/o la\npercentuale sul fatturato.\n\nMeccanismo: l\'adeguamento al rialzo non pu\u00F2 superare il tasso annuo HICP\n(Eurostat, UE) o il CPI nazionale del titolare per il periodo di riferimento\npi\u00F9 recente. L\'adeguamento al ribasso \u00E8 sempre possibile.\n\nNotifica obbligatoria: almeno 60 giorni prima dell\'entrata in vigore, con\nindicazione dei parametri precedenti, dei nuovi parametri, dell\'indice\nutilizzato e della data di decorrenza.\n\nEffetto del silenzio: nessuna risposta scritta entro 30 giorni dalla\nricezione della notifica = accettazione tacita. In caso di rifiuto,\ncessare l\'uso e notificarlo entro gli stessi 30 giorni.\n\nProtection primo anno: nessun adeguamento applicabile nei primi 12 mesi\ndall\'inizio dell\'utilizzo da parte di una determinata entit\u00E0.\n\n' +
     SEP72 + '\nARTICOLO 6 \u2014 RIDISTRIBUZIONE CON LICENZA INVARIATA\n' + SEP72 + '\n\nQualsiasi ridistribuzione deve includere questa licenza nella sua interezza,\nsenza modifiche. Non possono essere imposte restrizioni aggiuntive.\n\n' +
     SEP72 + '\nARTICOLO 7 \u2014 ESECUZIONE E RIMEDI\n' + SEP72 + '\n\nQualsiasi violazione costituisce sia violazione del diritto d\'autore che\ninadempimento contrattuale. Tutti i rimedi legali sono riservati.\n\n' +
     SEP72 + '\nARTICOLO 8 \u2014 ESCLUSIONE DI GARANZIE\n' + SEP72 + '\n\nIL SOFTWARE VIENE FORNITO "COS\u00CC COM\'\u00C8", SENZA GARANZIA DI ALCUN TIPO.\n\n' +
-    SEP72 + '\n\u2014 FINE DELLA LICENZA \u2014 aatel v1.0 \u2014 {{ANNO}} {{NOME}}';
+    SEP72 + '\n\u2014 FINE DELLA LICENZA \u2014 aatel v1.2 \u2014 {{ANNO}} {{NOME}}';
 
   var LICENSE_EN =
-    'ANTI-AI TRAINING Ethical License (aatel) \u2014 Version 1.0\nBased on the MIT License\n\nCopyright (c) {{ANNO}} {{NOME}}\n\nPermission is hereby granted, free of charge, to any person or entity obtaining\na copy of this software and associated documentation files (the "Software"), to\ndeal in the Software without restriction, subject to the following conditions:\n\n' +
+    'ANTI-AI TRAINING Ethical License (aatel) \u2014 Version 1.2\nBased on the MIT License\n\nCopyright (c) {{ANNO}} {{NOME}}\n\nPermission is hereby granted, free of charge, to any person or entity obtaining\na copy of this software and associated documentation files (the "Software"), to\ndeal in the Software without restriction, subject to the following conditions:\n\n' +
     SEP72 + '\nSECTION 1 \u2014 ATTRIBUTION\n' + SEP72 + '\n\nThe copyright notice and this permission notice shall be included in all copies\nor substantial portions of the Software.\n\n' +
     SEP72 + '\nSECTION 2 \u2014 PROHIBITION ON AI/ML MODEL TRAINING\n' + SEP72 + '\n\nIt is EXPRESSLY AND ABSOLUTELY PROHIBITED, directly or indirectly, to:\n\n  (a) Use the Software as training, fine-tuning, pre-training, or evaluation data\n      for any AI, ML, deep learning, LLM, or statistical model of any kind;\n\n  (b) Use the output, structure, or any derived component to train, fine-tune,\n      distill, align, benchmark, or evaluate any AI or ML model;\n\n  (c) Incorporate the Software into automated pipelines for AI/ML data collection;\n\n  (d) Generate synthetic or augmented datasets for AI/ML model training;\n\n  (e) Transfer the Software to third parties for any of the above purposes.\n\nThis prohibition applies REGARDLESS OF PURPOSE \u2014 commercial, academic,\ngovernmental, research, non-profit, or personal.\n\n' +
     SEP72 + '\nSECTION 3 \u2014 PROHIBITION ON MILITARY USE\n' + SEP72 + '\n\nThe Software may NOT be used for any military, paramilitary, or armed defense\npurpose. This prohibition includes:\n\n  (a) Armed forces, national guards, militias, or intelligence agencies;\n\n  (b) Companies or contractors operating under military or defense contracts;\n\n  (c) Development of weapons, military drones, targeting, or surveillance systems;\n\n  (d) Cyber warfare, electronic warfare, or offensive military cyber operations;\n\n  (e) Indirect use through third parties acting on behalf of military organizations.\n\n' +
-    SEP72 + '\nSECTION 4 \u2014 MANDATORY NOTIFICATION FOR COMMERCIAL ENTITIES\n' + SEP72 + '\n\n4.1 \u2014 OBLIGATION TO NOTIFY\nNotify by email BEFORE commencing use: {{EMAIL}}\n\n4.2 \u2014 Email must include: full legal name, tax ID, description of use,\nstart date, name and role of the compliance officer.\n\n4.3 \u2014 Material changes \u2192 updated email within 30 days.\nCessation \u2192 termination email within 30 days.\n\nWARNING: Use without notification = MATERIAL VIOLATION resulting in automatic\ntermination of all rights.\n\n' +
-    SEP72 + '\nSECTION 5 \u2014 MONTHLY DONATION OBLIGATION\n' + SEP72 + '\n\n5.1 \u2014 Commercial entities must pay at least:\n    {{IMPORTO}} {{VALUTA}} / month\n\n5.2 \u2014 Due on or before the 1st of each month. Retain proof for 24 months.\n    Accepted payment method: {{PAGAMENTO}}\n    Full payment instructions: {{PAYINSTR}}\n\n5.3 \u2014 Failure to pay for 2+ consecutive months = AUTOMATIC AND IMMEDIATE\nREVOCATION of all rights. Reinstated only upon full settlement of arrears.\n\n5.4 \u2014 Private individuals and non-profits: exempt.\n\n' +
+    SEP72 + '\nSECTION 4 \u2014 MANDATORY NOTIFICATION FOR COMMERCIAL ENTITIES\n' + SEP72 + '\n\n4.1 \u2014 OBLIGATION TO NOTIFY\nNotify by email BEFORE commencing use: {{EMAIL}}\n\n4.2 \u2014 Email must include: full legal name, tax ID, description of use,\nstart date, declared annual gross revenue (to determine applicable fee tier),\nname and role of the compliance officer.\n\n4.3 \u2014 Material changes \u2192 updated email within 30 days.\nTier crossing (above/below threshold) \u2192 notify within 60 days of the fiscal\nyear-end in which the crossing occurred, and adjust payments from the first\nmonth of the following fiscal year.\nCessation \u2192 termination email within 30 days.\n\nWARNING: Use without notification = MATERIAL VIOLATION resulting in automatic\ntermination of all rights.\n\n' +
+    SEP72 + '\nSECTION 5 \u2014 FEE STRUCTURE AND PAYMENT OBLIGATIONS\n' + SEP72 + '\n\n5.1 \u2014 TIER A (Annual revenue < {{SOGLIA}} {{VALUTA}})\nFixed monthly fee: {{IMPORTO}} {{VALUTA}} / month\nNo additional revenue-based component.\n\n5.2 \u2014 TIER B (Annual revenue \u2265 {{SOGLIA}} {{VALUTA}})\nSame fixed monthly fee: {{IMPORTO}} {{VALUTA}} / month, PLUS\nRevenue percentage: {{PERCENTUALE}}% of annual revenue \u00F7 12 per month.\nTier B entities must provide a self-certified annual revenue declaration\nwithin 90 days of each fiscal year-end. The copyright holder may request\nsupporting documentation to verify revenue declarations.\n\n  Example: threshold {{SOGLIA}} {{VALUTA}}, fixed {{IMPORTO}} {{VALUTA}}/mo, {{PERCENTUALE}}%:\n  Revenue {{SOGLIA}} x 2 {{VALUTA}} \u2192 {{IMPORTO}} + ({{SOGLIA}} x 2 x {{PERCENTUALE}}% \u00F7 12)\n\n5.3 \u2014 FREELANCERS AND SOLE TRADERS\nTreated as Tier A if annual revenue < {{SOGLIA}} {{VALUTA}},\nas Tier B if annual revenue \u2265 {{SOGLIA}} {{VALUTA}}.\n\n5.4 \u2014 PAYMENT TERMS\nDue on or before the 1st calendar day of each month.\nAccepted payment method: {{PAGAMENTO}}\nFull payment instructions: {{PAYINSTR}}\nRetain documentary proof for a minimum of 24 months.\n\n5.5 \u2014 DEFAULT AND REMEDIES\nFailure to pay for 2+ consecutive months = AUTOMATIC AND IMMEDIATE REVOCATION\nof all rights. Reinstated only upon full settlement of arrears.\n\n5.6 \u2014 EXEMPTIONS\nPrivate individuals (personal non-commercial use) and non-profit organizations\nare exempt from payment obligations.\n\n5.7 \u2014 SAFEGUARD CLAUSE \u2014 ANNUAL INFLATION ADJUSTMENT\nThe copyright holder reserves the right, at their sole discretion, to adjust\nonce per calendar year: the fixed fee, the revenue threshold, and/or the\nrevenue percentage.\n\nMechanism: any upward adjustment may not exceed the annual HICP rate published\nby Eurostat (EU), or the equivalent national CPI of the country where the\ncopyright holder is domiciled, for the most recently published 12-month\nreference period. Downward adjustments are always permitted.\n\nNotification: at least 60 calendar days before the adjusted amounts take\neffect, with indication of previous parameters, new parameters, the inflation\nindex used, and the effective date.\n\nEffect of silence: no written objection within 30 days of receiving the\nnotification = deemed acceptance. If objecting, the entity must cease use\nand submit a termination notice within the same 30-day period.\n\nFirst-year protection: no adjustment may be applied within the first 12\nmonths from the date on which a given entity begins using the Software.\n\n' +
     SEP72 + '\nSECTION 6 \u2014 REDISTRIBUTION WITH UNMODIFIED LICENSE\n' + SEP72 + '\n\nAny redistribution must include this license in its entirety, without\nmodification. No additional restrictions may be imposed on recipients.\n\n' +
     SEP72 + '\nSECTION 7 \u2014 ENFORCEMENT AND REMEDIES\n' + SEP72 + '\n\nAny violation constitutes copyright infringement and breach of contract.\nAll legal remedies reserved, enforceable in any jurisdiction.\n\n' +
     SEP72 + '\nSECTION 8 \u2014 DISCLAIMER OF WARRANTIES\n' + SEP72 + '\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.\n\n' +
-    SEP72 + '\n\u2014 END OF LICENSE \u2014 aatel v1.0 \u2014 {{ANNO}} {{NOME}}';
+    SEP72 + '\n\u2014 END OF LICENSE \u2014 aatel v1.2 \u2014 {{ANNO}} {{NOME}}';
 
   /* ── GENERATOR ── */
   function getFields() {
     return {
-      anno:      (document.getElementById('f-year').value     || '').trim() || null,
-      nome:      (document.getElementById('f-name').value     || '').trim() || null,
-      email:     (document.getElementById('f-email').value    || '').trim() || null,
-      importo:   (document.getElementById('f-amount').value   || '').trim() || null,
-      valuta:    (document.getElementById('f-currency').value || '').trim() || null,
-      pagamento: (document.getElementById('f-payment').value  || '').trim() || null,
-      payinstr:  (document.getElementById('f-payinstr').value || '').trim() || null,
+      anno:      (document.getElementById('f-year').value        || '').trim() || null,
+      nome:      (document.getElementById('f-name').value        || '').trim() || null,
+      email:     (document.getElementById('f-email').value       || '').trim() || null,
+      soglia:    (document.getElementById('f-threshold').value   || '').trim() || null,
+      valuta:    (document.getElementById('f-threshold-cur').value || document.getElementById('f-currency').value || '').trim() || null,
+      importo:   (document.getElementById('f-fixed').value       || '').trim() || null,
+      percento:  (document.getElementById('f-percent').value     || '').trim() || null,
+      pagamento: (document.getElementById('f-payment').value     || '').trim() || null,
+      payinstr:  (document.getElementById('f-payinstr').value    || '').trim() || null,
     };
   }
 
   function fill(tmpl, f) {
+    var cur = f.valuta || '[VALUTA/CURRENCY]';
     return tmpl
-      .replace(/\{\{ANNO\}\}/g,     f.anno     || '[ANNO/YEAR]')
-      .replace(/\{\{NOME\}\}/g,     f.nome     || '[NOME/NAME]')
-      .replace(/\{\{EMAIL\}\}/g,    f.email    || '[EMAIL]')
-      .replace(/\{\{IMPORTO\}\}/g,  f.importo  || '[IMPORTO/AMOUNT]')
-      .replace(/\{\{VALUTA\}\}/g,   f.valuta   || '[VALUTA/CURRENCY]')
-      .replace(/\{\{PAGAMENTO\}\}/g, f.pagamento || '[METODO/METHOD]')
-      .replace(/\{\{PAYINSTR\}\}/g,  f.payinstr  || '[ISTRUZIONI/INSTRUCTIONS]');
+      .replace(/\{\{ANNO\}\}/g,       f.anno      || '[ANNO/YEAR]')
+      .replace(/\{\{NOME\}\}/g,       f.nome      || '[NOME/NAME]')
+      .replace(/\{\{EMAIL\}\}/g,      f.email     || '[EMAIL]')
+      .replace(/\{\{SOGLIA\}\}/g,     f.soglia    || '[SOGLIA/THRESHOLD]')
+      .replace(/\{\{VALUTA\}\}/g,     cur)
+      .replace(/\{\{IMPORTO\}\}/g,    f.importo   || '[IMPORTO/FIXED AMOUNT]')
+      .replace(/\{\{PERCENTUALE\}\}/g,f.percento  || '[PERCENTUALE/PERCENTAGE]')
+      .replace(/\{\{PAGAMENTO\}\}/g,  f.pagamento || '[METODO/METHOD]')
+      .replace(/\{\{PAYINSTR\}\}/g,   f.payinstr  || '[ISTRUZIONI/INSTRUCTIONS]');
   }
 
   function updatePreview() {
     var f = getFields();
-    var lines = fill(LICENSE_IT, f).split('\n').slice(0, 9);
+    var lines = fill(LICENSE_IT, f).split('\n').slice(0, 12);
     var html = lines.map(function(line) {
       return line.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
         .replace(/\[([A-Z\u00C0-\u00FC\/\s\-]+)\]/g,'<span class="ph">[$1]</span>');
@@ -1085,8 +1076,10 @@ Full text: aatel v1.0</div>
     if (!f.anno)      missing.push(isIT ? 'Anno' : 'Year');
     if (!f.nome)      missing.push(isIT ? 'Nome' : 'Name');
     if (!f.email)     missing.push('Email');
-    if (!f.importo)   missing.push(isIT ? 'Importo' : 'Amount');
+    if (!f.soglia)    missing.push(isIT ? 'Soglia fatturato' : 'Revenue threshold');
     if (!f.valuta)    missing.push(isIT ? 'Valuta' : 'Currency');
+    if (!f.importo)   missing.push(isIT ? 'Importo fisso' : 'Fixed amount');
+    if (!f.percento)  missing.push(isIT ? 'Percentuale' : 'Percentage');
     if (!f.pagamento) missing.push(isIT ? 'Metodo pagamento' : 'Payment method');
     if (!f.payinstr)  missing.push(isIT ? 'Istruzioni' : 'Instructions');
     if (missing.length > 0) {
@@ -1116,13 +1109,14 @@ Full text: aatel v1.0</div>
     var yr = f.anno || new Date().getFullYear();
     var isIT = !document.body.classList.contains('lang-en');
     var ok = false;
-    if (type === 'it')   ok = downloadFile(fill(LICENSE_IT, f), 'aatel_v1.0_IT_'+safe+'_'+yr+'.txt');
-    else if (type === 'en') ok = downloadFile(fill(LICENSE_EN, f), 'aatel_v1.0_EN_'+safe+'_'+yr+'.txt');
+    if (type === 'it')   ok = downloadFile(fill(LICENSE_IT, f), 'aatel_v1.2_IT_'+safe+'_'+yr+'.txt');
+    else if (type === 'en') ok = downloadFile(fill(LICENSE_EN, f), 'aatel_v1.2_EN_'+safe+'_'+yr+'.txt');
     else if (type === 'both') {
       var sep = '\n\n' + '\u2550'.repeat(72) + '\n' + '\u2550'.repeat(72) + '\n\n';
-      ok = downloadFile('[ VERSIONE ITALIANA ]\n\n'+fill(LICENSE_IT,f)+sep+'[ ENGLISH VERSION ]\n\n'+fill(LICENSE_EN,f), 'aatel_v1.0_IT+EN_'+safe+'_'+yr+'.txt');
+      ok = downloadFile('[ VERSIONE ITALIANA ]\n\n'+fill(LICENSE_IT,f)+sep+'[ ENGLISH VERSION ]\n\n'+fill(LICENSE_EN,f), 'aatel_v1.2_IT+EN_'+safe+'_'+yr+'.txt');
     } else if (type === 'md') {
-      var md = '# aatel \u2014 Anti-AI Training Ethical License v1.0\n\n> Copyright (c) '+yr+' '+f.nome+'\n\n## \u2714 Permitted\n- Use, copy, modify, distribute, sublicense, and sell the Software\n- Build commercial or personal products\n- Sublicense under the same terms\n\n## \u2718 Prohibited\n- \u274C Use as AI/ML training data or for model training\n- \u274C Use for military or armed defense purposes\n- \u274C Redistribute without this license\n\n## \uD83C\uDFE2 Commercial Entities\n1. **Notify** before use: ['+f.email+'](mailto:'+f.email+')\n2. **Pay** \u2265 '+f.importo+' '+f.valuta+'/month via '+f.pagamento+' \u2014 '+f.payinstr+'\n3. **Notify** upon material changes or cessation\n4. Failure to pay 2+ months = automatic revocation\n\n---\n*Full license: LICENSE.txt \u2014 aatel v1.0*\n';
+      var cur = f.valuta || 'EUR';
+      var md = '# aatel \u2014 Anti-AI Training Ethical License v1.2\n\n> Copyright (c) '+yr+' '+f.nome+'\n\n## \u2714 Permitted\n- Use, copy, modify, distribute, sublicense, and sell the Software\n- Build commercial or personal products\n- Sublicense under the same terms\n\n## \u2718 Prohibited\n- \u274C Use as AI/ML training data or for model training of any kind\n- \u274C Use for military or armed defense purposes\n- \u274C Redistribute without this license\n\n## \uD83C\uDFE2 Commercial Entities\n1. **Notify** before use: ['+f.email+'](mailto:'+f.email+')\n2. **Fee structure:**\n   - Tier A (revenue < '+f.soglia+' '+cur+'): '+f.importo+' '+cur+'/month fixed\n   - Tier B (revenue \u2265 '+f.soglia+' '+cur+'): '+f.importo+' '+cur+'/month + '+f.percento+'% of annual revenue \u00F7 12\n   - Payment via '+f.pagamento+' \u2014 '+f.payinstr+'\n3. **Notify** on material changes, tier crossings, or cessation\n4. Failure to pay 2+ months = automatic revocation\n5. **Inflation clause:** holder may adjust fees once/year (\u2264 HICP/CPI), 60-day notice required\n\n---\n*Full license: LICENSE.txt \u2014 aatel v1.2*\n';
       ok = downloadFile(md, 'README_LICENSE_'+safe+'_'+yr+'.md');
     }
     if (ok) showStatus(isIT ? '\u2713 Licenza scaricata con successo!' : '\u2713 License downloaded successfully!', 'success');
@@ -1138,7 +1132,6 @@ Full text: aatel v1.0</div>
     document.getElementById('f-year').value = new Date().getFullYear();
     updatePreview();
   }
-
 </script>
 </body>
 </html>
