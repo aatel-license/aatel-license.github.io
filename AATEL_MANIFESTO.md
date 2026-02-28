@@ -57,4 +57,4 @@ The AATEL is a small act of reclaiming that trust.
 
 ---
 
-*© AATEL — Anti-AI Training Ethical License | [Your Name] | [Your Email] | [Donation Link]*
+*© AATEL — Anti-AI Training Ethical License Mirko Perrone aatel.license@gmail.com*
