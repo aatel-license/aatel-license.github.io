@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>aatel — Anti-AI Training Ethical License v1.2</title>
+<title>aatel — Anti-AI Training Ethical License</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -16,7 +16,6 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
    15 TEMI
    ══════════════════════════════════════════════════════════════ */
 :root { --gap:1px; --max-content:1200px; --max-text:860px; }
-
 /* 1 PELLE (default) */
 :root, body[data-theme="pelle"] {
   --ink:#0d0d0d; --paper:#f5f0e8; --cream:#ede8dc;
@@ -26,9 +25,10 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   --hero-bg:#0d0d0d; --hg:rgba(200,57,26,.06); --hl:rgba(200,57,26,.14);
   --dark:#0d0d0d; --sb:#0f0f0f; --sb2:#141414; --ss:#1a1a1a;
   --db:#222; --cb:#0d0d0d; --gb:#0a0a0a;
-  --ib:#0f0f0f; --ibr:#252525; --pb:#080808; --pbr:#1a1a1a;
+  --ib:#1a1a1a; --ibr:#4a4540; --pb:#080808; --pbr:#1a1a1a;
   --fb:#0d0d0d; --fs:#1a1a1a; --bb:#0d0d0d;
   --sw:#c8391a; --sn:"Pelle";
+  --input-text:#f0ece4; --input-ph:#8a8278;
 }
 /* 2 GHIACCIO */
 body[data-theme="ghiaccio"] {
@@ -39,9 +39,10 @@ body[data-theme="ghiaccio"] {
   --hero-bg:#0a1628; --hg:rgba(21,101,192,.08); --hl:rgba(21,101,192,.18);
   --dark:#0a1628; --sb:#060f1e; --sb2:#0d1a2e; --ss:#142038;
   --db:#1a2d4a; --cb:#0a1628; --gb:#070e1c;
-  --ib:#0c1728; --ibr:#1e3050; --pb:#050c18; --pbr:#162540;
+  --ib:#0d1e38; --ibr:#3a6090; --pb:#050c18; --pbr:#162540;
   --fb:#0a1628; --fs:#142038; --bb:#0a1628;
   --sw:#1565c0; --sn:"Ghiaccio";
+  --input-text:#ddeeff; --input-ph:#6888aa;
 }
 /* 3 BOSCO */
 body[data-theme="bosco"] {
@@ -52,9 +53,10 @@ body[data-theme="bosco"] {
   --hero-bg:#0a1a0e; --hg:rgba(46,125,50,.07); --hl:rgba(46,125,50,.18);
   --dark:#0a1a0e; --sb:#060e08; --sb2:#0c160e; --ss:#142010;
   --db:#162018; --cb:#0a1a0e; --gb:#07100a;
-  --ib:#0c180d; --ibr:#1c3020; --pb:#050d07; --pbr:#122016;
+  --ib:#0e2012; --ibr:#3a7040; --pb:#050d07; --pbr:#122016;
   --fb:#0a1a0e; --fs:#142010; --bb:#0a1a0e;
   --sw:#2e7d32; --sn:"Bosco";
+  --input-text:#d4eed6; --input-ph:#5a8860;
 }
 /* 4 VIOLA */
 body[data-theme="viola"] {
@@ -65,9 +67,10 @@ body[data-theme="viola"] {
   --hero-bg:#100820; --hg:rgba(123,31,162,.07); --hl:rgba(123,31,162,.20);
   --dark:#100820; --sb:#0a0516; --sb2:#120924; --ss:#1e1030;
   --db:#200c34; --cb:#100820; --gb:#0c0618;
-  --ib:#100a1e; --ibr:#281844; --pb:#080410; --pbr:#1c1030;
+  --ib:#1a0e30; --ibr:#6a3a90; --pb:#080410; --pbr:#1c1030;
   --fb:#100820; --fs:#1e1030; --bb:#100820;
   --sw:#7b1fa2; --sn:"Viola";
+  --input-text:#ecddf8; --input-ph:#8060a8;
 }
 /* 5 ALBA */
 body[data-theme="alba"] {
@@ -78,9 +81,10 @@ body[data-theme="alba"] {
   --hero-bg:#1c1008; --hg:rgba(212,104,10,.07); --hl:rgba(212,104,10,.16);
   --dark:#1c1008; --sb:#120a04; --sb2:#1a1008; --ss:#281808;
   --db:#2a1a08; --cb:#1c1008; --gb:#100804;
-  --ib:#160e06; --ibr:#301c08; --pb:#0e0804; --pbr:#241408;
+  --ib:#241408; --ibr:#905030; --pb:#0e0804; --pbr:#241408;
   --fb:#1c1008; --fs:#281808; --bb:#1c1008;
   --sw:#d4680a; --sn:"Alba";
+  --input-text:#fde8c8; --input-ph:#906040;
 }
 /* 6 CARTA */
 body[data-theme="carta"] {
@@ -91,9 +95,10 @@ body[data-theme="carta"] {
   --hero-bg:#1a1a1a; --hg:rgba(192,57,43,.06); --hl:rgba(192,57,43,.14);
   --dark:#1a1a1a; --sb:#111; --sb2:#181818; --ss:#1f1f1f;
   --db:#222; --cb:#111; --gb:#0e0e0e;
-  --ib:#141414; --ibr:#2a2a2a; --pb:#0c0c0c; --pbr:#1c1c1c;
+  --ib:#242424; --ibr:#505050; --pb:#0c0c0c; --pbr:#1c1c1c;
   --fb:#1a1a1a; --fs:#222; --bb:#1a1a1a;
   --sw:#c0392b; --sn:"Carta";
+  --input-text:#f0ece4; --input-ph:#888880;
 }
 /* 7 CIELO */
 body[data-theme="cielo"] {
@@ -104,9 +109,10 @@ body[data-theme="cielo"] {
   --hero-bg:#0d1e30; --hg:rgba(0,119,204,.08); --hl:rgba(0,119,204,.18);
   --dark:#0d1e30; --sb:#081424; --sb2:#0f1c2e; --ss:#122438;
   --db:#152840; --cb:#0d1e30; --gb:#081018;
-  --ib:#0c1826; --ibr:#1a2e44; --pb:#060f1c; --pbr:#102030;
+  --ib:#102840; --ibr:#3878b0; --pb:#060f1c; --pbr:#102030;
   --fb:#0d1e30; --fs:#122438; --bb:#0d1e30;
   --sw:#0077cc; --sn:"Cielo";
+  --input-text:#d8eeff; --input-ph:#5898cc;
 }
 /* 8 MENTA */
 body[data-theme="menta"] {
@@ -117,9 +123,10 @@ body[data-theme="menta"] {
   --hero-bg:#081a12; --hg:rgba(0,137,123,.07); --hl:rgba(0,137,123,.18);
   --dark:#081a12; --sb:#051009; --sb2:#0c180e; --ss:#102016;
   --db:#112218; --cb:#081a12; --gb:#050e0a;
-  --ib:#091410; --ibr:#152c20; --pb:#040c08; --pbr:#0e1e14;
+  --ib:#0e2820; --ibr:#308878; --pb:#040c08; --pbr:#0e1e14;
   --fb:#081a12; --fs:#102016; --bb:#081a12;
   --sw:#00897b; --sn:"Menta";
+  --input-text:#c8f0e8; --input-ph:#508878;
 }
 /* 9 CIPRIA */
 body[data-theme="cipria"] {
@@ -130,9 +137,10 @@ body[data-theme="cipria"] {
   --hero-bg:#1a0a0e; --hg:rgba(194,24,91,.07); --hl:rgba(194,24,91,.18);
   --dark:#1a0a0e; --sb:#110508; --sb2:#180a0c; --ss:#200e14;
   --db:#220a10; --cb:#1a0a0e; --gb:#12060a;
-  --ib:#160808; --ibr:#2e1020; --pb:#0e0406; --pbr:#1c0c14;
+  --ib:#28101c; --ibr:#904060; --pb:#0e0406; --pbr:#1c0c14;
   --fb:#1a0a0e; --fs:#200e14; --bb:#1a0a0e;
   --sw:#c2185b; --sn:"Cipria";
+  --input-text:#fcd8e4; --input-ph:#a06080;
 }
 /* 10 LIMONE */
 body[data-theme="limone"] {
@@ -143,9 +151,10 @@ body[data-theme="limone"] {
   --hero-bg:#111000; --hg:rgba(158,144,0,.07); --hl:rgba(158,144,0,.18);
   --dark:#111000; --sb:#0a0900; --sb2:#131100; --ss:#1c1a00;
   --db:#1e1c00; --cb:#111000; --gb:#0c0b00;
-  --ib:#0f0e00; --ibr:#252200; --pb:#080700; --pbr:#181600;
+  --ib:#1e1c00; --ibr:#706800; --pb:#080700; --pbr:#181600;
   --fb:#111000; --fs:#1c1a00; --bb:#111000;
   --sw:#9e9000; --sn:"Limone";
+  --input-text:#fffff0; --input-ph:#888800;
 }
 /* 11 CARBONE */
 body[data-theme="carbone"] {
@@ -156,9 +165,10 @@ body[data-theme="carbone"] {
   --hero-bg:#0e0e0e; --hg:rgba(255,107,53,.05); --hl:rgba(255,107,53,.12);
   --dark:#0e0e0e; --sb:#0a0a0a; --sb2:#101010; --ss:#141414;
   --db:#1c1c1c; --cb:#0a0a0a; --gb:#080808;
-  --ib:#0d0d0d; --ibr:#202020; --pb:#060606; --pbr:#141414;
+  --ib:#282828; --ibr:#585858; --pb:#060606; --pbr:#141414;
   --fb:#0e0e0e; --fs:#141414; --bb:#0e0e0e;
   --sw:#ff6b35; --sn:"Carbone";
+  --input-text:#f0f0f0; --input-ph:#909090;
 }
 /* 12 ROSSO */
 body[data-theme="rosso"] {
@@ -169,9 +179,10 @@ body[data-theme="rosso"] {
   --hero-bg:#0f0202; --hg:rgba(211,47,47,.07); --hl:rgba(211,47,47,.20);
   --dark:#0f0202; --sb:#0a0101; --sb2:#120202; --ss:#1a0303;
   --db:#1c0404; --cb:#0f0202; --gb:#090101;
-  --ib:#0d0202; --ibr:#280808; --pb:#070101; --pbr:#160404;
+  --ib:#280808; --ibr:#904040; --pb:#070101; --pbr:#160404;
   --fb:#0f0202; --fs:#1a0303; --bb:#0f0202;
   --sw:#d32f2f; --sn:"Rosso";
+  --input-text:#fddada; --input-ph:#a06060;
 }
 /* 13 OCEANO */
 body[data-theme="oceano"] {
@@ -182,9 +193,10 @@ body[data-theme="oceano"] {
   --hero-bg:#060e18; --hg:rgba(0,188,212,.06); --hl:rgba(0,188,212,.18);
   --dark:#060e18; --sb:#040b12; --sb2:#08111c; --ss:#0c1828;
   --db:#0e1e2e; --cb:#060e18; --gb:#040a10;
-  --ib:#080e18; --ibr:#102030; --pb:#030810; --pbr:#0a1820;
+  --ib:#0e2038; --ibr:#2878a8; --pb:#030810; --pbr:#0a1820;
   --fb:#060e18; --fs:#0c1828; --bb:#060e18;
   --sw:#00bcd4; --sn:"Oceano";
+  --input-text:#c8e8ff; --input-ph:#4880a8;
 }
 /* 14 TABACCO */
 body[data-theme="tabacco"] {
@@ -195,9 +207,10 @@ body[data-theme="tabacco"] {
   --hero-bg:#130d04; --hg:rgba(212,160,84,.06); --hl:rgba(212,160,84,.16);
   --dark:#130d04; --sb:#0e0902; --sb2:#160e04; --ss:#201408;
   --db:#221608; --cb:#130d04; --gb:#0e0902;
-  --ib:#100c04; --ibr:#281e0c; --pb:#0a0702; --pbr:#1c1208;
+  --ib:#281e0c; --ibr:#806030; --pb:#0a0702; --pbr:#1c1208;
   --fb:#130d04; --fs:#201408; --bb:#130d04;
   --sw:#d4a054; --sn:"Tabacco";
+  --input-text:#f0d8b0; --input-ph:#906840;
 }
 /* 15 NOTTE */
 body[data-theme="notte"] {
@@ -208,11 +221,11 @@ body[data-theme="notte"] {
   --hero-bg:#040810; --hg:rgba(92,138,255,.06); --hl:rgba(92,138,255,.16);
   --dark:#040810; --sb:#02060c; --sb2:#060a14; --ss:#0a1020;
   --db:#0c1828; --cb:#040810; --gb:#030610;
-  --ib:#06080e; --ibr:#101828; --pb:#02040a; --pbr:#0a1020;
+  --ib:#101828; --ibr:#3858a0; --pb:#02040a; --pbr:#0a1020;
   --fb:#040810; --fs:#0a1020; --bb:#040810;
   --sw:#5c8aff; --sn:"Notte";
+  --input-text:#b8ccee; --input-ph:#486090;
 }
-
 /* ── Apply vars ── */
 body { font-family:'DM Sans',sans-serif; background:var(--paper); color:var(--ink); overflow-x:hidden; line-height:1.6; font-size:16px; transition:background .35s,color .35s; }
 img,svg { display:block; max-width:100%; }
@@ -426,6 +439,7 @@ code { font-family:'DM Mono',monospace; font-size:.82em; background:var(--cream)
 
 /* ── GENERATOR ── */
 .generator { padding:88px 40px; position:relative; overflow:hidden; border-top:3px solid var(--accent); }
+.generator.gen-ic-active { border-top-color:var(--gold); }
 .generator::before { content:''; position:absolute; inset:0; background-size:40px 40px; pointer-events:none; }
 .gen-inner { position:relative; z-index:1; max-width:var(--max-content); margin:0 auto; }
 .gen-form { display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:var(--max-text); margin-bottom:32px; }
@@ -451,6 +465,22 @@ code { font-family:'DM Mono',monospace; font-size:.82em; background:var(--cream)
 .gen-status.error   { background:rgba(139,0,0,.18); color:#e88; border-left:3px solid var(--deny); }
 .gen-status.success { background:rgba(26,92,42,.18); color:#8e8; border-left:3px solid var(--allow); }
 
+/* ── GEN TABS ── */
+.gen-tabs { display:flex; gap:0; max-width:var(--max-text); margin-bottom:36px; border-bottom:2px solid var(--border); }
+.gen-tab-btn { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; padding:14px 24px; border:none; background:transparent; color:var(--muted); cursor:pointer; border-bottom:3px solid transparent; margin-bottom:-2px; transition:all .2s; white-space:nowrap; touch-action:manipulation; }
+.gen-tab-btn:hover { color:var(--ink); }
+.gen-tab-btn.active { color:var(--accent); border-bottom-color:var(--accent); font-weight:600; }
+.gen-tab-badge { display:inline-block; font-size:8px; padding:2px 6px; background:var(--accent); color:#fff; margin-left:6px; vertical-align:middle; letter-spacing:.05em; border-radius:2px; }
+.gen-tab-panel { display:none; }
+.gen-tab-panel.active { display:block; }
+.ic-info-box { max-width:var(--max-text); padding:16px 20px; background:var(--warn-bg); border-left:4px solid var(--accent); margin-bottom:28px; font-size:.87rem; color:var(--warn); line-height:1.75; }
+.ic-info-box strong { color:var(--ink); }
+.ic-feature-row { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; max-width:var(--max-text); margin-bottom:28px; }
+.ic-feature-chip { background:var(--cream); border:1px solid var(--border); padding:10px 14px; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.1em; color:var(--muted); text-transform:uppercase; text-align:center; line-height:1.6; }
+.ic-feature-chip strong { display:block; color:var(--accent); font-size:10px; margin-bottom:2px; }
+@media(max-width:860px) { .gen-tabs { overflow-x:auto; } .ic-feature-row { grid-template-columns:1fr 1fr; } }
+@media(max-width:600px) { .gen-tab-btn { padding:10px 14px; font-size:10px; } .ic-feature-row { grid-template-columns:1fr; } }
+
 /* ── FOOTER ── */
 footer { color:#555; padding:56px 40px; text-align:center; border-top:1px solid var(--fs); }
 .footer-logo { font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--paper); margin-bottom:6px; }
@@ -462,6 +492,179 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
 .reveal.visible { opacity:1; transform:translateY(0); }
 
 @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+/* ══════════════════════════════════════════════════════════════
+   LICENSE SWITCHER NAV
+   ══════════════════════════════════════════════════════════════ */
+.lic-nav {
+  position:sticky; top:44px; z-index:100;
+  background:var(--dark); border-bottom:1px solid #222;
+  display:flex; align-items:center; justify-content:center; gap:0;
+  box-shadow:0 4px 24px rgba(0,0,0,.35);
+}
+.lic-nav-btn {
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.14em;
+  text-transform:uppercase; padding:16px 36px; cursor:pointer;
+  background:transparent; border:none; color:#555;
+  border-bottom:3px solid transparent; transition:all .22s;
+  text-decoration:none; white-space:nowrap; touch-action:manipulation;
+}
+.lic-nav-btn:hover { color:#aaa; border-bottom-color:#444; }
+.lic-nav-btn.active-v12 { color:var(--accent); border-bottom-color:var(--accent); }
+.lic-nav-btn.active-ic  { color:var(--gold);   border-bottom-color:var(--gold); }
+.lic-nav-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.lic-nav-dot-v12 { background:var(--accent); }
+.lic-nav-dot-ic  { background:var(--gold); }
+.lic-nav-sep { width:1px; height:28px; background:#222; }
+.lic-nav-badge {
+  font-size:8px; padding:2px 7px; border-radius:2px;
+  font-family:'DM Mono',monospace; letter-spacing:.06em;
+  text-transform:uppercase; vertical-align:middle;
+}
+.lic-nav-badge-v12 { background:rgba(200,57,26,.15); color:var(--accent); border:1px solid rgba(200,57,26,.25); }
+.lic-nav-badge-ic  { background:rgba(184,149,42,.12); color:var(--gold);   border:1px solid rgba(184,149,42,.25); }
+
+/* ══════════════════════════════════════════════════════════════
+   SPLIT HERO
+   ══════════════════════════════════════════════════════════════ */
+.hero-split {
+  display:grid; grid-template-columns:1fr 1fr;
+  position:relative; overflow:hidden; min-height:100svh;
+  padding-top:44px;
+}
+.hero-half {
+  position:relative; overflow:hidden;
+  padding:80px 48px 72px; display:flex; align-items:center; justify-content:center;
+  transition:filter .3s;
+}
+.hero-half:hover { filter:brightness(1.04); }
+.hero-half-v12 { background:var(--hero-bg); border-right:1px solid #1a1a1a; }
+.hero-half-ic  { background:var(--hero-bg); }
+.hero-half-divider {
+  position:absolute; top:0; bottom:0; left:50%;
+  width:1px; background:linear-gradient(to bottom, transparent, #2a2a2a 20%, #2a2a2a 80%, transparent);
+  z-index:2; pointer-events:none;
+}
+.hero-half-inner { position:relative; z-index:1; text-align:center; max-width:480px; animation:fadeUp .7s ease both; }
+.hero-half-inner.ic-delay { animation-delay:.15s; }
+.hero-half .hero-bg-grid { background-size:50px 50px; }
+.hero-half-v12 .hero-bg-grid { background-image: linear-gradient(var(--hg) 1px,transparent 1px), linear-gradient(90deg,var(--hg) 1px,transparent 1px); }
+.hero-half-ic .hero-bg-grid  { background-image: linear-gradient(rgba(184,149,42,.04) 1px,transparent 1px), linear-gradient(90deg,rgba(184,149,42,.04) 1px,transparent 1px); }
+.hero-half-glow { position:absolute; width:600px; height:600px; top:50%; left:50%; transform:translate(-50%,-50%); border-radius:50%; pointer-events:none; }
+.hero-half-v12 .hero-half-glow { background:radial-gradient(circle, var(--hl) 0%, transparent 65%); }
+.hero-half-ic .hero-half-glow  { background:radial-gradient(circle, rgba(184,149,42,.12) 0%, transparent 65%); }
+.hero-half-badge {
+  display:inline-block; font-family:'DM Mono',monospace; font-size:9px;
+  letter-spacing:.22em; text-transform:uppercase; padding:5px 14px; margin-bottom:22px;
+}
+.hero-half-v12 .hero-half-badge { color:var(--accent); border:1px solid rgba(200,57,26,.3); }
+.hero-half-ic  .hero-half-badge { color:var(--gold);   border:1px solid rgba(184,149,42,.35); }
+.hero-half-title {
+  font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3.5vw,3.2rem);
+  font-weight:900; color:var(--paper); line-height:1.1; letter-spacing:-.02em; margin-bottom:10px;
+}
+.hero-half-title em { font-style:normal; }
+.hero-half-v12 .hero-half-title em { color:var(--accent); }
+.hero-half-ic  .hero-half-title em { color:var(--gold); }
+.hero-half-version {
+  font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.2em;
+  text-transform:uppercase; margin-bottom:20px;
+}
+.hero-half-v12 .hero-half-version { color:var(--accent); }
+.hero-half-ic  .hero-half-version { color:var(--gold); }
+.hero-half-desc { font-size:clamp(.82rem,1.3vw,.94rem); color:#777; line-height:1.8; margin-bottom:32px; }
+.hero-half-tags { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-bottom:32px; }
+.hero-tag {
+  font-family:'DM Mono',monospace; font-size:8.5px; letter-spacing:.1em;
+  text-transform:uppercase; padding:4px 10px; border-radius:2px;
+}
+.hero-tag-v12 { background:rgba(200,57,26,.12); color:var(--accent); border:1px solid rgba(200,57,26,.2); }
+.hero-tag-ic  { background:rgba(184,149,42,.1);  color:var(--gold);   border:1px solid rgba(184,149,42,.2); }
+.hero-half-ctas { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+
+/* ══════════════════════════════════════════════════════════════
+   LICENSE SECTION HEADERS
+   ══════════════════════════════════════════════════════════════ */
+.lic-section-header {
+  padding:28px 40px; display:flex; align-items:center; gap:20px;
+  border-top:1px solid #1a1a1a; border-bottom:1px solid #1a1a1a;
+}
+.lic-section-header-v12 { background:linear-gradient(135deg, rgba(200,57,26,.08) 0%, transparent 60%); border-left:4px solid var(--accent); }
+.lic-section-header-ic  { background:linear-gradient(135deg, rgba(184,149,42,.07) 0%, transparent 60%); border-left:4px solid var(--gold); }
+.lic-section-id {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.25em;
+  text-transform:uppercase; padding:5px 14px; flex-shrink:0;
+}
+.lic-section-id-v12 { color:var(--accent); background:rgba(200,57,26,.1); border:1px solid rgba(200,57,26,.2); }
+.lic-section-id-ic  { color:var(--gold);   background:rgba(184,149,42,.1); border:1px solid rgba(184,149,42,.2); }
+.lic-section-name {
+  font-family:'Playfair Display',serif; font-size:clamp(1rem,2vw,1.35rem);
+  font-weight:700; color:var(--paper);
+}
+.lic-section-desc { font-family:'DM Mono',monospace; font-size:9px; color:#555; letter-spacing:.08em; margin-left:auto; text-align:right; display:none; }
+@media(min-width:860px) { .lic-section-desc { display:block; } }
+
+/* IC SPECIFIC */
+.section-ic-dark  { background:var(--dark); }
+.section-ic-cream {
+  background:linear-gradient(135deg, rgba(184,149,42,.04) 0%, var(--cream) 40%);
+  border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+}
+.section-ic-dark .section-title  { color:var(--paper); }
+.section-ic-dark .section-label  { color:var(--gold); }
+.section-ic-dark .section-intro  { color:#666; }
+.section-ic-cream .section-label { color:var(--gold); }
+.section-ic-paper .section-label { color:var(--gold); }
+
+/* IC CARD GRID */
+.ic-card-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--gap); background:rgba(184,149,42,.1); border:1px solid rgba(184,149,42,.15); margin-top:40px; }
+.ic-card { background:var(--paper); padding:32px 28px; transition:filter .2s; }
+.ic-card:hover { filter:brightness(.96); }
+.ic-card-icon { font-size:1.6rem; margin-bottom:14px; }
+.ic-card-title { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; margin-bottom:10px; color:var(--gold); }
+.ic-card-text { font-size:.9rem; line-height:1.75; color:var(--muted); }
+
+/* IC RULES */
+.ic-rules-cols { display:grid; grid-template-columns:1fr 1fr; gap:60px; margin-top:40px; }
+.ic-col-allow h3 { color:var(--allow); background:rgba(26,92,42,.08); border-left:3px solid var(--allow); }
+.ic-col-deny  h3 { color:var(--deny);  background:rgba(139,0,0,.06);  border-left:3px solid var(--deny); }
+.ic-col-gold  h3 { color:var(--gold);  background:rgba(184,149,42,.07); border-left:3px solid var(--gold); }
+
+/* IC FEE SPECIAL */
+.ic-fee-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap); background:rgba(184,149,42,.1); border:1px solid rgba(184,149,42,.15); margin-top:32px; }
+.ic-fee-card { background:var(--paper); padding:28px 24px; }
+.ic-fee-tag  { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.2em; text-transform:uppercase; padding:4px 10px; display:inline-block; margin-bottom:14px; }
+.ic-fee-tag-0 { color:var(--allow); background:rgba(26,92,42,.08); border:1px solid rgba(26,92,42,.2); }
+.ic-fee-tag-a { color:var(--accent); background:rgba(200,57,26,.08); border:1px solid rgba(200,57,26,.2); }
+.ic-fee-tag-b { color:var(--gold);   background:rgba(184,149,42,.08); border:1px solid rgba(184,149,42,.25); }
+.ic-fee-title { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; margin-bottom:8px; color:var(--ink); }
+.ic-fee-items { list-style:none; display:flex; flex-direction:column; gap:8px; }
+.ic-fee-items li { font-size:.87rem; line-height:1.65; color:var(--muted); padding-left:16px; position:relative; }
+.ic-fee-items li::before { content:'→'; position:absolute; left:0; color:var(--gold); font-size:.8rem; }
+
+/* ACCORDION IC */
+.ic-acc .acc-num { color:var(--gold); }
+.ic-acc .acc-header:hover { color:var(--gold); }
+
+/* RESPONSIVE ADDITIONS */
+@media(max-width:860px) {
+  .hero-split { grid-template-columns:1fr; min-height:auto; }
+  .hero-half { padding:72px 32px 56px; }
+  .hero-half-v12 { border-right:none; border-bottom:1px solid #1a1a1a; }
+  .hero-half-divider { display:none; }
+  .lic-nav { flex-wrap:wrap; top:44px; }
+  .lic-nav-btn { padding:12px 20px; font-size:10px; }
+  .ic-card-grid { grid-template-columns:repeat(2,1fr); }
+  .ic-rules-cols { grid-template-columns:1fr; gap:32px; }
+  .ic-fee-grid { grid-template-columns:1fr; }
+  .lic-section-header { padding:20px 24px; gap:12px; }
+}
+@media(max-width:600px) {
+  .hero-half { padding:60px 16px 48px; }
+  .ic-card-grid { grid-template-columns:1fr; }
+  .lic-nav-btn { padding:10px 14px; font-size:9px; }
+}
 
 /* ══════════════════
    RESPONSIVE
@@ -562,27 +765,95 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
   <button class="lang-btn"        id="btn-en" onclick="setLang('en')">EN</button>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-inner">
-    <div class="hero-badge">
-      <span data-lang="it">Licenza Ethical Source</span>
-      <span data-lang="en">Ethical Source License</span>
-    </div>
-    <h1 class="hero-title">Anti-<em>AI</em> Training<br>Ethical License</h1>
-    <p class="hero-version">aatel &mdash; Version 1.2</p>
-    <p class="hero-desc" data-lang="it">Una licenza aperta ispirata alla MIT che protegge il tuo software dall&rsquo;uso per addestrare modelli AI/ML, vieta qualsiasi uso militare, introduce una struttura tariffaria a due livelli basata sul fatturato e una clausola di salvaguardia sull&rsquo;inflazione.</p>
-    <p class="hero-desc" data-lang="en">An MIT-inspired Ethical License that protects your software from AI/ML training use, prohibits any military use, introduces a two-tier revenue-based fee structure, and includes an annual inflation safeguard clause.</p>
-    <div class="hero-ctas">
-      <a href="#generator" class="btn btn-red" data-lang="it">🔧 Genera la tua licenza</a>
-      <a href="#generator" class="btn btn-red" data-lang="en">🔧 Generate your license</a>
-      <a href="#testo" class="btn btn-ghost" data-lang="it">Leggi il testo</a>
-      <a href="#testo" class="btn btn-ghost" data-lang="en">Read the text</a>
+<!-- SPLIT HERO -->
+<div class="hero-split">
+  <!-- aatel v1.2 half -->
+  <div class="hero-half hero-half-v12">
+    <div class="hero-bg-grid hero-half-glow"></div>
+    <div class="hero-half-glow"></div>
+    <div class="hero-half-inner">
+      <div class="hero-half-badge">
+        <span data-lang="it">Licenza Software</span>
+        <span data-lang="en">Software License</span>
+      </div>
+      <h1 class="hero-half-title">Anti-<em>AI</em><br>Training<br>Ethical License</h1>
+      <p class="hero-half-version">aatel — v1.2</p>
+      <div class="hero-half-tags">
+        <span class="hero-tag hero-tag-v12">🚫 No AI Training</span>
+        <span class="hero-tag hero-tag-v12">⛔ No Military</span>
+        <span class="hero-tag hero-tag-v12">🏢 Fee a livelli</span>
+        <span class="hero-tag hero-tag-v12">📊 Anti-inflazione</span>
+      </div>
+      <p class="hero-half-desc" data-lang="it">Licenza open-source ispirata alla MIT per <strong style="color:var(--paper)">software</strong>. Vieta addestramento AI/ML, usi militari, e include tariffe a due livelli con salvaguardia inflazione.</p>
+      <p class="hero-half-desc" data-lang="en">MIT-inspired open-source license for <strong style="color:var(--paper)">software</strong>. Bans AI/ML training, military use, and includes tiered revenue fees with annual inflation protection.</p>
+      <div class="hero-half-ctas">
+        <a href="#generator" class="btn btn-red" onclick="switchGenTab('aatel')" data-lang="it">🔧 Genera v1.2</a>
+        <a href="#generator" class="btn btn-red" onclick="switchGenTab('aatel')" data-lang="en">🔧 Generate v1.2</a>
+        <a href="#testo" class="btn btn-ghost" data-lang="it">Leggi il testo</a>
+        <a href="#testo" class="btn btn-ghost" data-lang="en">Read the text</a>
+      </div>
     </div>
   </div>
-</section>
+
+  <!-- aatel-IC v2.0 half -->
+  <div class="hero-half hero-half-ic">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-half-glow"></div>
+    <div class="hero-half-inner ic-delay">
+      <div class="hero-half-badge">
+        <span data-lang="it">Licenza Contenuti Internet</span>
+        <span data-lang="en">Internet Content License</span>
+      </div>
+      <h1 class="hero-half-title">Internet<br><em>Content</em><br>Edition</h1>
+      <p class="hero-half-version">aatel IC — v2.0</p>
+      <div class="hero-half-tags">
+        <span class="hero-tag hero-tag-ic">🤖 Anti-AI Engines</span>
+        <span class="hero-tag hero-tag-ic">🆓 Free &lt;€1M</span>
+        <span class="hero-tag hero-tag-ic">✓ Anti-Cache</span>
+        <span class="hero-tag hero-tag-ic">⚖️ Foro IT/UE</span>
+      </div>
+      <p class="hero-half-desc" data-lang="it">Licenza per <strong style="color:var(--paper)">contenuti pubblicati su internet</strong>. Vieta uso da Motori AI senza compenso, fee basata sugli utilizzi reali, gratuita per non-profit e sotto €1M.</p>
+      <p class="hero-half-desc" data-lang="en">License for <strong style="color:var(--paper)">internet-published content</strong>. Bans uncompensated AI Engine use, usage-based fee, free for non-profits and under €1M revenue.</p>
+      <div class="hero-half-ctas">
+        <a href="#generator-ic" class="btn btn-gold" onclick="switchGenTab('ic')" data-lang="it">🔧 Genera IC v2.0</a>
+        <a href="#generator-ic" class="btn btn-gold" onclick="switchGenTab('ic')" data-lang="en">🔧 Generate IC v2.0</a>
+        <a href="#testo-ic" class="btn btn-ghost" data-lang="it">Leggi il testo</a>
+        <a href="#testo-ic" class="btn btn-ghost" data-lang="en">Read the text</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LICENSE NAV -->
+<nav class="lic-nav" id="lic-nav" aria-label="Navigazione licenze">
+  <a href="#section-v12" class="lic-nav-btn active-v12">
+    <span class="lic-nav-dot lic-nav-dot-v12"></span>
+    <span data-lang="it">aatel v1.2 — Software</span>
+    <span data-lang="en">aatel v1.2 — Software</span>
+    <span class="lic-nav-badge lic-nav-badge-v12">MIT-based</span>
+  </a>
+  <div class="lic-nav-sep"></div>
+  <a href="#section-ic" class="lic-nav-btn active-ic">
+    <span class="lic-nav-dot lic-nav-dot-ic"></span>
+    <span data-lang="it">aatel IC v2.0 — Contenuti</span>
+    <span data-lang="en">aatel IC v2.0 — Content</span>
+    <span class="lic-nav-badge lic-nav-badge-ic">NUOVO</span>
+  </a>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════════
+     SEZIONE aatel v1.2
+     ══════════════════════════════════════════════════════════════ -->
+<div id="section-v12">
+
+<!-- SECTION HEADER v1.2 -->
+<div class="lic-section-header lic-section-header-v12">
+  <span class="lic-section-id lic-section-id-v12">aatel v1.2</span>
+  <span class="lic-section-name" data-lang="it">Anti-AI Training Ethical License — Licenza Software</span>
+  <span class="lic-section-name" data-lang="en">Anti-AI Training Ethical License — Software License</span>
+  <span class="lic-section-desc" data-lang="it">Per software · Ispirata alla MIT · Fee a due livelli</span>
+  <span class="lic-section-desc" data-lang="en">For software · MIT-inspired · Two-tier fee structure</span>
+</div>
 
 <!-- SUMMARY -->
 <section class="section section-cream reveal" id="sommario">
@@ -808,15 +1079,208 @@ Full text: aatel v1.2</div>
 </section>
 
 <!-- GENERATOR -->
+</div><!-- /section-v12 -->
+
+<!-- ══════════════════════════════════════════════════════════════
+     SEZIONE aatel-IC v2.0
+     ══════════════════════════════════════════════════════════════ -->
+<div id="section-ic">
+
+<!-- SECTION HEADER IC -->
+<div class="lic-section-header lic-section-header-ic">
+  <span class="lic-section-id lic-section-id-ic">aatel IC v2.0</span>
+  <span class="lic-section-name" data-lang="it">Internet Content Edition — Licenza per Contenuti Internet</span>
+  <span class="lic-section-name" data-lang="en">Internet Content Edition — License for Internet Content</span>
+  <span class="lic-section-desc" data-lang="it">Per contenuti web · Fee per utilizzo · Foro IT/UE</span>
+  <span class="lic-section-desc" data-lang="en">For web content · Usage-based fee · IT/EU jurisdiction</span>
+</div>
+
+<!-- IC SUMMARY -->
+<section class="section section-ic-cream reveal">
+  <div class="container">
+    <p class="section-label" data-lang="it">Riepilogo aatel-IC v2.0</p>
+    <p class="section-label" data-lang="en">aatel-IC v2.0 Summary</p>
+    <h2 class="section-title" data-lang="it">Cosa può fare, cosa non può fare</h2>
+    <h2 class="section-title" data-lang="en">What is allowed, what is prohibited</h2>
+    <div class="ic-card-grid">
+      <div class="ic-card">
+        <div class="ic-card-icon">✅</div>
+        <div class="ic-card-title" data-lang="it">Consentito</div>
+        <div class="ic-card-title" data-lang="en">Allowed</div>
+        <p class="ic-card-text" data-lang="it">Leggere, citare, condividere con attribuzione. Uso personale non commerciale. Non-profit, ONG e aziende sotto €1M: solo notifica, nessun pagamento.</p>
+        <p class="ic-card-text" data-lang="en">Reading, quoting, sharing with attribution. Non-commercial personal use. Non-profits, NGOs and companies under €1M: notify only, no payment required.</p>
+      </div>
+      <div class="ic-card">
+        <div class="ic-card-icon">🤖</div>
+        <div class="ic-card-title" data-lang="it">Motori AI — Solo a pagamento</div>
+        <div class="ic-card-title" data-lang="en">AI Engines — Pay to use</div>
+        <p class="ic-card-text" data-lang="it">Google, Bing, Perplexity e simili devono notificare e pagare. Fee mensile fissa + variabile per 1.000 risposte servite. La cache non azzera il debito.</p>
+        <p class="ic-card-text" data-lang="en">Google, Bing, Perplexity and similar must notify and pay. Fixed monthly fee + variable per 1,000 responses served. Caching does not reset the obligation.</p>
+      </div>
+      <div class="ic-card">
+        <div class="ic-card-icon">🏢</div>
+        <div class="ic-card-title" data-lang="it">Entità commerciali &gt;€1M</div>
+        <div class="ic-card-title" data-lang="en">Commercial entities &gt;€1M</div>
+        <p class="ic-card-text" data-lang="it">Fatturato tra €1M e soglia: canone fisso mensile. Sopra soglia: canone fisso + percentuale sul fatturato. Notifica obbligatoria prima dell'uso.</p>
+        <p class="ic-card-text" data-lang="en">Revenue between €1M and threshold: fixed monthly fee. Above threshold: fixed fee + revenue percentage. Mandatory notification before use.</p>
+      </div>
+      <div class="ic-card">
+        <div class="ic-card-icon">⛔</div>
+        <div class="ic-card-title" data-lang="it">Vietato — Addestramento AI</div>
+        <div class="ic-card-title" data-lang="en">Prohibited — AI Training</div>
+        <p class="ic-card-text" data-lang="it">È assolutamente vietato usare il Contenuto, in tutto o in parte, come dati di addestramento, fine-tuning o valutazione per qualsiasi modello AI/ML.</p>
+        <p class="ic-card-text" data-lang="en">It is strictly forbidden to use the Content, in whole or in part, as training, fine-tuning, or evaluation data for any AI/ML model.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IC RULES -->
+<section class="section section-paper section-bordered reveal">
+  <div class="container">
+    <p class="section-label" data-lang="it">Regole aatel-IC v2.0</p>
+    <p class="section-label" data-lang="en">aatel-IC v2.0 Rules</p>
+    <h2 class="section-title" data-lang="it">Anti-scappatoie: 4 protezioni chiave</h2>
+    <h2 class="section-title" data-lang="en">Anti-loophole: 4 key protections</h2>
+    <p class="section-intro" data-lang="it">aatel-IC v2.0 chiude esplicitamente quattro scappatoie comuni che i Motori AI usano per evitare di pagare i creatori di contenuti.</p>
+    <p class="section-intro" data-lang="en">aatel-IC v2.0 explicitly closes four common loopholes that AI Engines use to avoid compensating content creators.</p>
+    <div class="rules-cols ic-rules-cols">
+      <div class="rules-col ic-col-deny">
+        <h3 data-lang="it">✘ Scappatoie chiuse</h3><h3 data-lang="en">✘ Closed loopholes</h3>
+        <div class="rule"><span class="rule-mark" style="color:var(--deny)">✗</span><span data-lang="it"><strong>Cache non azzera il debito</strong> — si paga per ogni utilizzo nelle risposte, non per ogni download del Contenuto</span><span data-lang="en"><strong>Cache doesn't reset debt</strong> — you pay per use in responses, not per content download</span></div>
+        <div class="rule"><span class="rule-mark" style="color:var(--deny)">✗</span><span data-lang="it"><strong>robots.txt assente ≠ permesso</strong> — l'assenza di file robots.txt non costituisce autorizzazione implicita all'uso</span><span data-lang="en"><strong>Missing robots.txt ≠ permission</strong> — absence of robots.txt does not constitute implicit authorization</span></div>
+        <div class="rule"><span class="rule-mark" style="color:var(--deny)">✗</span><span data-lang="it"><strong>Mancanza di tracciamento</strong> — senza dati sulle query servite, si presume il 100% di utilizzo del Contenuto</span><span data-lang="en"><strong>Missing tracking data</strong> — without query data, 100% content usage is presumed</span></div>
+        <div class="rule"><span class="rule-mark" style="color:var(--deny)">✗</span><span data-lang="it"><strong>Responsabilità solidale</strong> — tutte le entità del gruppo rispondono in solido, impedendo di schermarsi dietro filiali</span><span data-lang="en"><strong>Joint liability</strong> — all group entities are jointly liable, preventing shielding behind subsidiaries</span></div>
+      </div>
+      <div class="rules-col ic-col-allow">
+        <h3 data-lang="it">✔ Come funziona la fee</h3><h3 data-lang="en">✔ How the fee works</h3>
+        <div class="rule"><span class="rule-mark" style="color:var(--allow)">✓</span><span data-lang="it">Fee basata sulle risposte effettivamente <strong>servite</strong> agli utenti, non sui semplici accessi o download</span><span data-lang="en">Fee based on responses actually <strong>served</strong> to users, not on simple accesses or downloads</span></div>
+        <div class="rule"><span class="rule-mark" style="color:var(--allow)">✓</span><span data-lang="it">Canone fisso mensile + variabile per ogni 1.000 risposte — i parametri li scegli tu</span><span data-lang="en">Fixed monthly fee + variable per 1,000 responses — you set the parameters</span></div>
+        <div class="rule"><span class="rule-mark" style="color:var(--allow)">✓</span><span data-lang="it">Non-profit, ONG, privati e aziende sotto €1M: gratis, solo obbligo di notifica</span><span data-lang="en">Non-profits, NGOs, individuals, companies under €1M: free, notification only required</span></div>
+        <div class="rule"><span class="rule-mark" style="color:var(--allow)">✓</span><span data-lang="it">Generazione 100% locale nel browser — nessun dato inviato a server</span><span data-lang="en">100% local browser generation — no data sent to any server</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IC FEE TIERS -->
+<section class="section section-ic-dark reveal">
+  <div class="container">
+    <p class="section-label" data-lang="it">Struttura tariffaria aatel-IC v2.0</p>
+    <p class="section-label" data-lang="en">aatel-IC v2.0 Fee structure</p>
+    <h2 class="section-title" data-lang="it">Tre livelli di utilizzo</h2>
+    <h2 class="section-title" data-lang="en">Three usage tiers</h2>
+    <p class="section-intro" data-lang="it">La struttura tariffaria si articola in tre livelli chiari: gratuito per chi non ha scopo di lucro, a canone fisso per le PMI, e proporzionale al fatturato per le grandi aziende.</p>
+    <p class="section-intro" data-lang="en">The fee structure has three clear levels: free for non-commercial users, fixed fee for SMEs, and revenue-proportional for large entities.</p>
+    <div class="ic-fee-grid">
+      <div class="ic-fee-card">
+        <span class="ic-fee-tag ic-fee-tag-0" data-lang="it">Livello 0 — Gratuito</span>
+        <span class="ic-fee-tag ic-fee-tag-0" data-lang="en">Tier 0 — Free</span>
+        <div class="ic-fee-title" data-lang="it">Non-profit, Privati, &lt;€1M</div>
+        <div class="ic-fee-title" data-lang="en">Non-profit, Individuals, &lt;€1M</div>
+        <ul class="ic-fee-items">
+          <li data-lang="it">ONG, non-profit, fondazioni</li>
+          <li data-lang="en">NGOs, non-profits, foundations</li>
+          <li data-lang="it">Privati (uso personale non commerciale)</li>
+          <li data-lang="en">Individuals (non-commercial personal use)</li>
+          <li data-lang="it">Aziende con fatturato annuo &lt; €1.000.000</li>
+          <li data-lang="en">Companies with annual revenue &lt; €1,000,000</li>
+          <li data-lang="it"><strong style="color:var(--allow)">Solo notifica obbligatoria. Nessun pagamento.</strong></li>
+          <li data-lang="en"><strong style="color:var(--allow)">Notification only required. No payment.</strong></li>
+        </ul>
+      </div>
+      <div class="ic-fee-card">
+        <span class="ic-fee-tag ic-fee-tag-a" data-lang="it">Livello A — Canone fisso</span>
+        <span class="ic-fee-tag ic-fee-tag-a" data-lang="en">Tier A — Fixed fee</span>
+        <div class="ic-fee-title" data-lang="it">Entità commerciali €1M–Soglia</div>
+        <div class="ic-fee-title" data-lang="en">Commercial entities €1M–Threshold</div>
+        <ul class="ic-fee-items">
+          <li data-lang="it">Fatturato ≥ €1M e &lt; soglia impostata</li>
+          <li data-lang="en">Revenue ≥ €1M and &lt; set threshold</li>
+          <li data-lang="it">Canone fisso mensile (importo da te scelto)</li>
+          <li data-lang="en">Fixed monthly fee (amount you set)</li>
+          <li data-lang="it">Notifica prima dell'uso + pagamento mensile</li>
+          <li data-lang="en">Notify before use + monthly payment</li>
+        </ul>
+      </div>
+      <div class="ic-fee-card">
+        <span class="ic-fee-tag ic-fee-tag-b" data-lang="it">Livello B — Fisso + % fatturato</span>
+        <span class="ic-fee-tag ic-fee-tag-b" data-lang="en">Tier B — Fixed + % revenue</span>
+        <div class="ic-fee-title" data-lang="it">Grandi entità commerciali &gt;Soglia</div>
+        <div class="ic-fee-title" data-lang="en">Large commercial entities &gt;Threshold</div>
+        <ul class="ic-fee-items">
+          <li data-lang="it">Fatturato annuo ≥ soglia impostata</li>
+          <li data-lang="en">Annual revenue ≥ set threshold</li>
+          <li data-lang="it">Canone fisso + [%] del fatturato annuo ÷ 12</li>
+          <li data-lang="en">Fixed fee + [%] of annual revenue ÷ 12</li>
+          <li data-lang="it">Dichiarazione fatturato entro 90 gg chiusura</li>
+          <li data-lang="en">Revenue declaration within 90 days of year-end</li>
+          <li data-lang="it"><strong style="color:var(--gold)">Penale 3× in caso di inadempimento</strong></li>
+          <li data-lang="en"><strong style="color:var(--gold)">3× penalty for non-compliance</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AI Engine fee box -->
+    <div class="inflation-box" style="border-color:var(--gold);margin-top:32px">
+      <div class="inflation-box-title">🤖 <span data-lang="it">Fee speciale Motori AI (Art. 3)</span><span data-lang="en">Special AI Engine Fee (Art. 3)</span></div>
+      <p data-lang="it">I Motori AI (Google AI, Bing, Perplexity, ecc.) pagano un <strong>canone fisso mensile</strong> (da te impostato) <strong>più</strong> una fee variabile per ogni <strong>1.000 risposte servite</strong> che utilizzano il Contenuto. I parametri li decidi tu nel generatore.</p>
+      <p data-lang="en">AI Engines (Google AI, Bing, Perplexity, etc.) pay a <strong>fixed monthly fee</strong> (you set it) <strong>plus</strong> a variable fee per <strong>1,000 responses served</strong> that use the Content. You decide the parameters in the generator.</p>
+      <p style="margin-top:8px" data-lang="it"><strong>Responsabilità solidale:</strong> se un motore AI appartiene a un gruppo (es. Google LLC → Alphabet), tutte le entità del gruppo rispondono in solido.</p>
+      <p style="margin-top:8px" data-lang="en"><strong>Joint liability:</strong> if an AI Engine belongs to a group (e.g. Google LLC → Alphabet), all group entities are jointly and severally liable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- IC FULL TEXT -->
+<section class="section section-paper section-bordered reveal" id="testo-ic">
+  <div class="container">
+    <p class="section-label" data-lang="it">Testo completo aatel-IC v2.0</p>
+    <p class="section-label" data-lang="en">Full text aatel-IC v2.0</p>
+    <h2 class="section-title" data-lang="it">aatel-IC v2.0 — Testo integrale</h2>
+    <h2 class="section-title" data-lang="en">aatel-IC v2.0 — Full text</h2>
+    <div class="warn-box" data-lang="it">⚠ Sostituisci i segnaposto con i tuoi dati — oppure usa il generatore qui sotto.</div>
+    <div class="warn-box" data-lang="en">⚠ Replace all placeholders with your data — or use the generator below.</div>
+    <div class="accordion ic-acc" data-lang="it">
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 1</span><span class="acc-title">Definizioni</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>Contenuto</strong>: qualsiasi opera digitale (testo, immagini, audio, video, dati strutturati) pubblicata pubblicamente. <strong>Motore AI</strong>: qualsiasi sistema basato su AI/ML che accede, indicizza, elabora o cita il Contenuto per rispondere a query degli utenti. <strong>Utilizzo</strong>: ogni risposta effettivamente servita a un utente che include o si basa sul Contenuto.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 2</span><span class="acc-title">Licenza di utilizzo</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>È concessa, a condizione del rispetto di questa licenza, l'autorizzazione a leggere, citare, redistribuire con attribuzione il Contenuto. L'uso per addestramento, fine-tuning o valutazione di modelli AI/ML è <strong>espressamente e assolutamente vietato</strong>, indipendentemente dallo scopo.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 3</span><span class="acc-title">Motori di Ricerca AI — Fee e obblighi</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>3.1</strong> I Motori AI devono notificare il Titolare via email prima dell'avvio.<br><strong>3.2</strong> Fee mensile: canone fisso <code>[AI_FISSO] [VALUTA]</code> + <code>[AI_PER1K] [VALUTA]</code> per ogni 1.000 risposte servite.<br><strong>3.3</strong> Senza dati tracciamento → presunzione automatica 100% utilizzo.<br><strong>3.4</strong> robots.txt assente ≠ autorizzazione implicita.<br><strong>3.5</strong> Responsabilità solidale tra tutte le entità del gruppo.<br><strong>3.6</strong> Inadempimento: penale 3× + rimozione entro 15 giorni.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 4–5</span><span class="acc-title">Entità commerciali — Notifica e Fee</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>Livello 0 (gratuito)</strong>: fatturato &lt; €1.000.000, non-profit, ONG, privati → solo notifica, nessun pagamento.<br><strong>Livello A</strong>: fatturato ≥ €1M e &lt; <code>[SOGLIA]</code> → canone fisso mensile <code>[IMPORTO] [VALUTA]</code>.<br><strong>Livello B</strong>: fatturato ≥ <code>[SOGLIA]</code> → canone fisso + <code>[PERCENTUALE]%</code> fatturato ÷ 12.<br>Mancato pagamento 2+ mesi: revoca + arretrati + penale 20%.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 6–10</span><span class="acc-title">Redistribuzione · Rimedi · Garanzie · Separabilità · Modifiche</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>Art. 6</strong> — Redistribuzione con licenza invariata e integrale obbligatoria.<br><strong>Art. 7</strong> — Violazioni: violazione diritto d'autore + inadempimento contrattuale + penale 3×.<br><strong>Art. 8</strong> — Il Contenuto viene fornito "così com'è" senza garanzia.<br><strong>Art. 9</strong> — Clausola invalida → sostituita da clausola valida più vicina all'effetto originale.<br><strong>Art. 10</strong> — Versione applicabile: quella in vigore all'inizio dell'utilizzo. Preavviso nuova versione: 90 gg.</p></div></div></div>
+    </div>
+    <div class="accordion ic-acc" data-lang="en">
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 1</span><span class="acc-title">Definitions</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>Content</strong>: any digital work (text, images, audio, video, structured data) published publicly. <strong>AI Engine</strong>: any AI/ML-based system that accesses, indexes, processes or cites the Content to answer user queries. <strong>Use</strong>: each response actually served to a user that includes or is based on the Content.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 2</span><span class="acc-title">License of use</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p>Subject to compliance with this license, permission is granted to read, quote, redistribute with attribution. Use for AI/ML training, fine-tuning or evaluation is <strong>expressly and absolutely prohibited</strong>, regardless of purpose.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 3</span><span class="acc-title">AI Search Engines — Fees and obligations</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>3.1</strong> AI Engines must notify the Holder by email before commencing use.<br><strong>3.2</strong> Monthly fee: fixed fee <code>[AI_FIXED] [CURRENCY]</code> + <code>[AI_PER1K] [CURRENCY]</code> per 1,000 responses served.<br><strong>3.3</strong> Without tracking data → automatic presumption of 100% content usage.<br><strong>3.4</strong> Missing robots.txt ≠ implicit permission.<br><strong>3.5</strong> Joint liability across all group entities.<br><strong>3.6</strong> Non-compliance: 3× penalty + removal within 15 days.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 4–5</span><span class="acc-title">Commercial entities — Notification and Fee</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>Tier 0 (free)</strong>: revenue &lt; €1,000,000, non-profits, NGOs, individuals → notification only, no payment.<br><strong>Tier A</strong>: revenue ≥ €1M and &lt; <code>[THRESHOLD]</code> → fixed monthly fee <code>[AMOUNT] [CURRENCY]</code>.<br><strong>Tier B</strong>: revenue ≥ <code>[THRESHOLD]</code> → fixed fee + <code>[PERCENTAGE]%</code> revenue ÷ 12.<br>Non-payment for 2+ months: revocation + arrears + 20% penalty.</p></div></div></div>
+      <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><span class="acc-num">ART. 6–10</span><span class="acc-title">Redistribution · Remedies · Warranties · Severability · Amendments</span></div><span class="acc-arrow">▾</span></div><div class="acc-body"><div class="acc-body-inner"><p><strong>Art. 6</strong> — Redistribution must include this license in full, unchanged.<br><strong>Art. 7</strong> — Violations: copyright infringement + breach of contract + 3× penalty.<br><strong>Art. 8</strong> — Content is provided "as is" without warranty.<br><strong>Art. 9</strong> — Invalid clause → replaced by the closest valid clause.<br><strong>Art. 10</strong> — Applicable version: the one in force at the start of use. New version notice: 90 days.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GENERATOR IC anchor -->
+<a id="generator-ic"></a>
+
+<!-- GENERATOR -->
 <section class="generator reveal" id="generator">
   <div class="gen-inner">
-    <p class="section-label" data-lang="it">Genera la tua licenza</p>
-    <p class="section-label" data-lang="en">Generate your license</p>
+    <p class="section-label" data-lang="it">Genera la tua licenza — aatel v1.2 &amp; IC v2.0</p>
+    <p class="section-label" data-lang="en">Generate your license — aatel v1.2 &amp; IC v2.0</p>
     <h2 class="section-title" data-lang="it">Personalizza &amp; Scarica</h2>
     <h2 class="section-title" data-lang="en">Customize &amp; Download</h2>
-    <p class="section-intro" data-lang="it">Inserisci i tuoi dati e scarica la licenza aatel v1.2 personalizzata. Generazione 100% locale nel browser.</p>
-    <p class="section-intro" data-lang="en">Enter your details and download your personalized aatel v1.2 license. 100% local generation in the browser.</p>
+    <p class="section-intro" data-lang="it">Inserisci i tuoi dati e scarica la licenza personalizzata. Generazione 100% locale nel browser.</p>
+    <p class="section-intro" data-lang="en">Enter your details and download your personalized license. 100% local generation in the browser.</p>
+
+    <!-- TABS -->
+    <div class="gen-tabs">
+      <button class="gen-tab-btn active" id="tab-btn-aatel" onclick="switchGenTab('aatel')"><span data-lang="it">aatel v1.2 — Software</span><span data-lang="en">aatel v1.2 — Software</span></button>
+      <button class="gen-tab-btn" id="tab-btn-ic" onclick="switchGenTab('ic')"><span data-lang="it">aatel-IC v2.0 — Contenuti Internet <span class="gen-tab-badge">NUOVO</span></span><span data-lang="en">aatel-IC v2.0 — Internet Content <span class="gen-tab-badge">NEW</span></span></button>
+    </div>
+
     <div class="gen-status" id="gen-status"></div>
+
+    <!-- TAB PANEL: aatel v1.2 -->
+    <div class="gen-tab-panel active" id="tab-aatel">
     <div class="gen-form" id="gen-form">
 
       <!-- BASE INFO -->
@@ -900,15 +1364,156 @@ Full text: aatel v1.2</div>
     </div>
     <p class="gen-note" data-lang="it"><span class="req">*</span> Campi obbligatori. Generazione 100% locale — nessun dato inviato a server.</p>
     <p class="gen-note" data-lang="en"><span class="req">*</span> Required fields. 100% local generation — no data sent to any server.</p>
+    </div><!-- /tab-aatel -->
+
+    <!-- TAB PANEL: aatel-IC v2.0 -->
+    <div class="gen-tab-panel" id="tab-ic">
+
+      <div class="ic-info-box">
+        <span data-lang="it">🛡️ <strong>aatel-IC v2.0</strong> — Licenza per contenuti pubblicati su internet. Protegge articoli, video, immagini, newsletter e qualsiasi opera digitale dall'uso non autorizzato da parte di Motori AI. Include clausole anti-scappatoia per robots.txt, mancanza di tracciamento, entità collegate e cambio di giurisdizione. Legge applicabile: <strong>diritto italiano + normativa UE</strong>.</span>
+        <span data-lang="en">🛡️ <strong>aatel-IC v2.0</strong> — License for internet-published content. Protects articles, videos, images, newsletters and any digital work from unauthorized use by AI Engines. Includes anti-loophole clauses for robots.txt, missing tracking data, affiliated entities, and jurisdiction changes. Applicable law: <strong>Italian law + EU regulations</strong>.</span>
+      </div>
+
+      <div class="ic-feature-row">
+        <div class="ic-feature-chip"><strong data-lang="it">🆓 Gratuito &lt;€1M</strong><strong data-lang="en">🆓 Free &lt;€1M</strong><span data-lang="it">Non-profit, ONG, privati e aziende sotto €1M: gratis, solo notifica</span><span data-lang="en">Non-profits, NGOs, individuals, companies under €1M: free, notify only</span></div>
+        <div class="ic-feature-chip"><strong data-lang="it">✓ Anti-Cache</strong><strong data-lang="en">✓ Anti-Cache</strong><span data-lang="it">Si paga per utilizzo, non per accesso</span><span data-lang="en">Pay per use, not per access</span></div>
+        <div class="ic-feature-chip"><strong data-lang="it">✓ Anti-Robots.txt</strong><strong data-lang="en">✓ Anti-Robots.txt</strong><span data-lang="it">Assenza robots.txt non è autorizzazione</span><span data-lang="en">Missing robots.txt ≠ permission</span></div>
+        <div class="ic-feature-chip"><strong data-lang="it">✓ Solidarietà Gruppo</strong><strong data-lang="en">✓ Group Liability</strong><span data-lang="it">Responsabilità solidale tra entità collegate</span><span data-lang="en">Joint liability across affiliated entities</span></div>
+        <div class="ic-feature-chip"><strong data-lang="it">✓ Foro IT/UE</strong><strong data-lang="en">✓ IT/EU Jurisdiction</strong><span data-lang="it">Vale per chiunque operi in Europa</span><span data-lang="en">Applies to anyone operating in Europe</span></div>
+        <div class="ic-feature-chip"><strong data-lang="it">✓ Penale Triplo</strong><strong data-lang="en">✓ Triple Penalty</strong><span data-lang="it">Inadempimento: 3× gli importi dovuti</span><span data-lang="en">Default: 3× the amounts owed</span></div>
+      </div>
+
+      <div class="gen-form" id="ic-gen-form">
+
+        <!-- BASE INFO -->
+        <div class="gen-section-header" data-lang="it">— Dati del titolare</div>
+        <div class="gen-section-header" data-lang="en">— Copyright holder info</div>
+        <div class="gen-field">
+          <label class="gen-label" data-lang="it">Anno <span class="req">*</span></label>
+          <label class="gen-label" data-lang="en">Year <span class="req">*</span></label>
+          <input class="gen-input" type="number" id="ic-year" placeholder="2025" min="2000" max="2100" oninput="updateICPreview()">
+        </div>
+        <div class="gen-field">
+          <label class="gen-label" data-lang="it">Nome / Organizzazione <span class="req">*</span></label>
+          <label class="gen-label" data-lang="en">Name / Organization <span class="req">*</span></label>
+          <input class="gen-input" type="text" id="ic-name" placeholder="Mario Rossi" oninput="updateICPreview()">
+        </div>
+        <div class="gen-field full">
+          <label class="gen-label" data-lang="it">Email del titolare <span class="req">*</span></label>
+          <label class="gen-label" data-lang="en">Copyright holder email <span class="req">*</span></label>
+          <span class="gen-sublabel" data-lang="it">Per ricevere notifiche dai Motori AI e dalle entità commerciali</span>
+          <span class="gen-sublabel" data-lang="en">To receive notifications from AI Engines and commercial entities</span>
+          <input class="gen-input" type="email" id="ic-email" placeholder="licenza@esempio.com" oninput="updateICPreview()">
+        </div>
+        <div class="gen-field full">
+          <label class="gen-label" data-lang="it">Città del foro competente <span class="req">*</span></label>
+          <label class="gen-label" data-lang="en">Competent court city <span class="req">*</span></label>
+          <span class="gen-sublabel" data-lang="it">Tribunale della tua città — es. Milano, Roma, Torino</span>
+          <span class="gen-sublabel" data-lang="en">Court of your city — e.g. Milano, Roma, Torino</span>
+          <input class="gen-input" type="text" id="ic-city" placeholder="es. Milano" oninput="updateICPreview()">
+        </div>
+
+        <!-- AI ENGINE FEE -->
+        <div class="gen-section-header" data-lang="it">— Fee Motori AI (Art. 3.3)</div>
+        <div class="gen-section-header" data-lang="en">— AI Engine Fee (Art. 3.3)</div>
+        <div class="gen-field">
+          <label class="gen-label" data-lang="it">Canone fisso mensile AI <span class="req">*</span></label>
+          <label class="gen-label" data-lang="en">AI fixed monthly fee <span class="req">*</span></label>
+          <span class="gen-sublabel" data-lang="it">Dovuto da ogni Motore AI che usa il Contenuto</span>
+          <span class="gen-sublabel" data-lang="en">Due from each AI Engine using the Content</span>
+          <div class="gen-amount-row">
+            <input class="gen-input" type="number" id="ic-ai-fixed" placeholder="10.00" min="0.01" step="0.01" oninput="updateICPreview()">
+            <input class="gen-input" type="text" id="ic-ai-currency" placeholder="EUR" maxlength="10" oninput="updateICPreview()">
+          </div>
+        </div>
+        <div class="gen-field">
+          <label class="gen-label" data-lang="it">Fee per 1.000 risposte <span class="req">*</span></label>
+          <label class="gen-label" data-lang="en">Fee per 1,000 responses <span class="req">*</span></label>
+          <span class="gen-sublabel" data-lang="it">Ogni 1.000 risposte servite agli utenti che usano il Contenuto</span>
+          <span class="gen-sublabel" data-lang="en">Per 1,000 responses served to users that use the Content</span>
+          <input class="gen-input" type="number" id="ic-ai-per1k" placeholder="1.00" min="0.001" step="0.001" oninput="updateICPreview()">
+        </div>
+
+        <!-- COMMERCIAL ENTITIES FEE -->
+        <div class="gen-section-header" data-lang="it">— Fee entità commerciali non-AI (Art. 5)</div>
+        <div class="gen-section-header" data-lang="en">— Non-AI commercial entity fee (Art. 5)</div>
+
+        <div class="gen-field full" style="grid-column:1/-1">
+          <div class="ic-info-box" style="margin-bottom:0;font-size:.82rem;">
+            <span data-lang="it">🆓 <strong>Livello 0 (gratuito):</strong> fatturato &lt; €1.000.000 + non-profit + ONG + privati → solo notifica, nessun pagamento. La soglia €1M è fissa nella licenza.</span>
+            <span data-lang="en">🆓 <strong>Tier 0 (free):</strong> revenue &lt; €1,000,000 + non-profits + NGOs + individuals → notification only, no payment. The €1M threshold is fixed in the license.</span>
+          </div>
+        </div>
+
+        <div class="gen-field full">
+          <label class="gen-label" data-lang="it">Soglia Livello A → B <span class="req">*</span></label>
+          <label class="gen-label" data-lang="en">Tier A → B threshold <span class="req">*</span></label>
+          <span class="gen-sublabel" data-lang="it">Fatturato annuo oltre cui scatta anche la % sul fatturato — es. 10000000 EUR</span>
+          <span class="gen-sublabel" data-lang="en">Annual revenue above which the % component kicks in — e.g. 10000000 EUR</span>
+          <div class="gen-amount-row">
+            <input class="gen-input" type="number" id="ic-threshold" placeholder="10000000" min="1000000" step="1" oninput="updateICPreview()">
+            <input class="gen-input" type="text" id="ic-threshold-cur" placeholder="EUR" maxlength="10" oninput="updateICPreview()">
+          </div>
+        </div>
+        <div class="gen-field">
+          <label class="gen-label" data-lang="it">Fee fissa mensile (Livello A &amp; B) <span class="req">*</span></label>
+          <label class="gen-label" data-lang="en">Fixed monthly fee (Tier A &amp; B) <span class="req">*</span></label>
+          <span class="gen-sublabel" data-lang="it">Pagata da chiunque con fatturato ≥ €1M</span>
+          <span class="gen-sublabel" data-lang="en">Paid by anyone with revenue ≥ €1M</span>
+          <div class="gen-amount-row">
+            <input class="gen-input" type="number" id="ic-fixed" placeholder="50.00" min="0.01" step="0.01" oninput="updateICPreview()">
+            <input class="gen-input" type="text" id="ic-currency" placeholder="EUR" maxlength="10" oninput="updateICPreview()">
+          </div>
+        </div>
+        <div class="gen-field">
+          <label class="gen-label" data-lang="it">Percentuale sul fatturato (Livello B) <span class="req">*</span></label>
+          <label class="gen-label" data-lang="en">Revenue percentage (Tier B) <span class="req">*</span></label>
+          <span class="gen-sublabel" data-lang="it">es. 0.5 (= 0,5%) — si aggiunge al canone fisso</span>
+          <span class="gen-sublabel" data-lang="en">e.g. 0.5 (= 0.5%) — added on top of fixed fee</span>
+          <input class="gen-input" type="number" id="ic-percent" placeholder="0.5" min="0.01" step="0.01" oninput="updateICPreview()">
+        </div>
+
+        <!-- PAYMENT -->
+        <div class="gen-section-header" data-lang="it">— Pagamento</div>
+        <div class="gen-section-header" data-lang="en">— Payment</div>
+        <div class="gen-field">
+          <label class="gen-label" data-lang="it">Metodo di pagamento <span class="req">*</span></label>
+          <label class="gen-label" data-lang="en">Payment method <span class="req">*</span></label>
+          <input class="gen-input" type="text" id="ic-payment" placeholder="PayPal / Bitcoin / IBAN…" oninput="updateICPreview()">
+        </div>
+        <div class="gen-field">
+          <label class="gen-label" data-lang="it">Istruzioni di pagamento <span class="req">*</span></label>
+          <label class="gen-label" data-lang="en">Payment instructions <span class="req">*</span></label>
+          <input class="gen-input" type="text" id="ic-payinstr" placeholder="paypal.me/tuonome / IBAN IT…" oninput="updateICPreview()">
+        </div>
+
+      </div><!-- /ic-gen-form -->
+
+      <div class="gen-preview">
+        <div class="gen-preview-label" data-lang="it">Anteprima live — aatel-IC v2.0</div>
+        <div class="gen-preview-label" data-lang="en">Live preview — aatel-IC v2.0</div>
+        <div class="preview-live" id="ic-preview-live"></div>
+      </div>
+      <div class="gen-downloads">
+        <button class="btn btn-red"  onclick="downloadICLicense('it')">🇮🇹 <span data-lang="it">Scarica Italiano</span><span data-lang="en">Download Italian</span></button>
+        <button class="btn btn-gold" onclick="downloadICLicense('md')">📄 <span data-lang="it">Scarica Markdown</span><span data-lang="en">Download Markdown</span></button>
+      </div>
+      <p class="gen-note" data-lang="it"><span class="req">*</span> Campi obbligatori. Generazione 100% locale — nessun dato inviato a server. Non costituisce consulenza legale.</p>
+      <p class="gen-note" data-lang="en"><span class="req">*</span> Required fields. 100% local generation — no data sent to any server. Does not constitute legal advice.</p>
+
+    </div><!-- /tab-ic -->
+
   </div>
 </section>
 
 <!-- FOOTER -->
+</div><!-- /section-ic -->
+
 <footer>
   <div class="footer-logo">aatel</div>
-  <div class="footer-sub">Anti-AI Training Ethical License — v1.2</div>
-  <p data-lang="it">Liberamente utilizzabile per proteggere i tuoi progetti Ethical Source. Non costituisce consulenza legale. Basata sulla licenza MIT.</p>
-  <p data-lang="en">Freely usable to protect your Ethical Source projects. Does not constitute legal advice. Based on the MIT License.</p>
+  <div class="footer-sub">Anti-AI Training Ethical License — v1.2 + IC v2.0</div>
+  <p data-lang="it">Liberamente utilizzabile per proteggere i tuoi progetti Ethical Source. Non costituisce consulenza legale. aatel v1.2 è basata sulla licenza MIT.</p>
+  <p data-lang="en">Freely usable to protect your Ethical Source projects. Does not constitute legal advice. aatel v1.2 is based on the MIT License.</p>
 </footer>
 
 <script>
@@ -1021,7 +1626,20 @@ Full text: aatel v1.2</div>
     SEP72 + '\nSECTION 6 \u2014 REDISTRIBUTION WITH UNMODIFIED LICENSE\n' + SEP72 + '\n\nAny redistribution must include this license in its entirety, without\nmodification. No additional restrictions may be imposed on recipients.\n\n' +
     SEP72 + '\nSECTION 7 \u2014 ENFORCEMENT AND REMEDIES\n' + SEP72 + '\n\nAny violation constitutes copyright infringement and breach of contract.\nAll legal remedies reserved, enforceable in any jurisdiction.\n\n' +
     SEP72 + '\nSECTION 8 \u2014 DISCLAIMER OF WARRANTIES\n' + SEP72 + '\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.\n\n' +
-    SEP72 + '\n\u2014 END OF LICENSE \u2014 aatel v1.2 \u2014 {{ANNO}} {{NOME}}';
+    SEP72 + '\n\u2014 END OF LICENSE \u2014 aatel v1.2 \u2014 {{ANNO}} {{NOME}}\n\n' +
+    SEP72 + '\nNOTA / NOTE\n' + SEP72 +
+    '\n\nITA: La presente licenza \u00e8 redatta con la massima attenzione alla solidit\u00e0\n' +
+    'giuridica e si aggancia a normative UE vigenti. Non costituisce consulenza\n' +
+    'legale professionale. Per utilizzo in contenzioso con grandi operatori\n' +
+    'tecnologici \u00e8 consigliabile la revisione da parte di un avvocato specializzato\n' +
+    'in diritto d\'autore e diritto dell\'AI.\n' +
+    'Adattamento della licenza aatel v1.2 (aatel.org).\n\n' +
+    'ENG: This license has been drafted with the utmost attention to legal soundness\n' +
+    'and is anchored to current EU regulations. It does not constitute professional\n' +
+    'legal advice. For use in disputes with major technology operators, review by\n' +
+    'a lawyer specializing in copyright and AI law is strongly recommended.\n' +
+    'Adaptation of the aatel v1.2 license (aatel.org).\n' +
+    SEP72;
 
   /* ── GENERATOR ── */
   function getFields() {
@@ -1126,11 +1744,293 @@ Full text: aatel v1.2</div>
   /* ── INIT ── */
   document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('f-year').value = new Date().getFullYear();
+    document.getElementById('ic-year').value = new Date().getFullYear();
     updatePreview();
+    updateICPreview();
   });
   if (document.readyState !== 'loading') {
     document.getElementById('f-year').value = new Date().getFullYear();
+    document.getElementById('ic-year').value = new Date().getFullYear();
     updatePreview();
+    updateICPreview();
+  }
+
+  /* ══════════════════════════════════════
+     TAB SWITCHING
+  ══════════════════════════════════════ */
+  function switchGenTab(tab) {
+    document.querySelectorAll('.gen-tab-panel').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.gen-tab-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.getElementById('tab-' + tab).classList.add('active');
+    document.getElementById('tab-btn-' + tab).classList.add('active');
+    var gen = document.querySelector('.generator');
+    if (gen) gen.classList.toggle('gen-ic-active', tab === 'ic');
+  }
+
+  /* ══════════════════════════════════════
+     aatel-IC v2.0 — TEMPLATE & GENERATOR
+  ══════════════════════════════════════ */
+  var IC_SEP = '━'.repeat(72);
+
+  var IC_LICENSE_IT =
+    'Anti-AI Training Ethical License — Internet Content Edition\n' +
+    'aatel-IC — Versione 2.0\n' +
+    IC_SEP + '\n' +
+    'Copyright (c) {{ANNO}} {{NOME}}\n' +
+    'Legge applicabile: Diritto italiano + Normativa UE\n' +
+    'Foro competente esclusivo: Tribunale di {{CITTÀ}}, Italia\n' +
+    IC_SEP + '\n\n' +
+    'AVVISO PRELIMINARE — ACCETTAZIONE OBBLIGATORIA\n\n' +
+    'L\'accesso, la lettura, l\'indicizzazione, la riproduzione, la memorizzazione\n' +
+    'in qualsiasi forma o l\'utilizzo del Contenuto in qualsiasi sistema automatizzato\n' +
+    'costituisce accettazione integrale e incondizionata della presente licenza,\n' +
+    'indipendentemente da qualsiasi dichiarazione contraria del licenziatario.\n' +
+    'Non è richiesta la firma. L\'utilizzo equivale ad accettazione (art. 1327 c.c.;\n' +
+    'art. 25 Reg. UE 2024/1689 — AI Act).\n\n' +
+    IC_SEP + '\n' +
+    'ART. 1 — ATTRIBUZIONE\n' +
+    IC_SEP + '\n\n' +
+    'Qualsiasi utilizzo, riproduzione, citazione o redistribuzione del Contenuto\n' +
+    'deve includere: nome dell\'autore/titolare, fonte originale (URL canonico),\n' +
+    'testo integrale della presente licenza o collegamento permanente ad essa.\n\n' +
+    IC_SEP + '\n' +
+    'ART. 2 — DIVIETO ASSOLUTO DI UTILIZZO PER ADDESTRAMENTO AI/ML\n' +
+    IC_SEP + '\n\n' +
+    'È espressamente e assolutamente vietato, senza possibilità di deroga:\n' +
+    '· Usare il Contenuto come dati di addestramento, fine-tuning, pre-training,\n' +
+    '  distillazione, allineamento o valutazione per qualsiasi sistema AI/ML;\n' +
+    '· Incorporare il Contenuto in scraper, crawler o pipeline per raccolta dati AI;\n' +
+    '· Generare dataset sintetici o aumentati dal Contenuto per AI/ML;\n' +
+    '· Trasferire il Contenuto a terzi per i suddetti scopi.\n' +
+    'Divieto valido indipendentemente dallo scopo e dalla tecnica di raccolta.\n\n' +
+    IC_SEP + '\n' +
+    'ART. 3 — FEE PER UTILIZZO DA PARTE DI MOTORI DI RICERCA AI\n' +
+    IC_SEP + '\n\n' +
+    '3.1 — DEFINIZIONE DI MOTORE AI\n' +
+    'Qualsiasi sistema che: (a) indicizza/memorizza/recupera il Contenuto in modo\n' +
+    'automatizzato; (b) usa il Contenuto per generare risposte a utenti o sistemi;\n' +
+    '(c) espone il Contenuto tramite AI Overview, Answer Engine, Copilot o simili.\n' +
+    'Inclusi: Google AI Overviews, Bing Copilot, Perplexity AI, You.com, e analoghi.\n\n' +
+    '3.2 — PRINCIPIO: SI PAGA PER UTILIZZO, NON PER ACCESSO\n' +
+    'L\'obbligo sorge ogni volta che il Contenuto viene usato per produrre una risposta,\n' +
+    'indipendentemente da: numero di download/indicizzazioni; conservazione in cache,\n' +
+    'embedding, database vettoriale o altra archiviazione; citazione esplicita o uso\n' +
+    'implicito; fruizione gratuita o a pagamento dell\'utente finale.\n\n' +
+    'REGOLA AUREA: 1 indicizzazione × 1.000.000 risposte = pagamento per 1.000.000\n' +
+    'utilizzi, non per un solo accesso.\n\n' +
+    '3.3 — STRUTTURA TARIFFARIA\n' +
+    'Componente A — Canone fisso mensile: {{AI_FISSO}} {{VALUTA}} / mese\n' +
+    '  (dovuto dal primo mese di utilizzo)\n' +
+    'Componente B — Fee variabile: {{AI_PER1K}} {{VALUTA}} ogni 1.000 risposte\n' +
+    '  in cui il Contenuto è utilizzato (calcolate mensilmente)\n\n' +
+    'Esempio: canone fisso {{AI_FISSO}} {{VALUTA}}/mese + {{AI_PER1K}} {{VALUTA}}/1.000 risposte.\n' +
+    '  500.000 risposte → {{AI_FISSO}} + (500 × {{AI_PER1K}}) {{VALUTA}}/mese\n\n' +
+    '3.4 — ANTI-SCAPPATOIA: ASSENZA DI DATI DI TRACCIAMENTO\n' +
+    'a) Obbligo di implementare tracciamento entro 90 giorni dalla notifica.\n' +
+    'b) In assenza: stima presuntiva automatica = (query totali) × (quota min 0,1%).\n' +
+    'c) Senza dati né stima entro il 5° del mese: presunzione del 100% delle query.\n' +
+    '   L\'onere della prova contraria è interamente a carico del Motore AI.\n\n' +
+    '3.5 — ANTI-SCAPPATOIA: ROBOTS.TXT\n' +
+    'La mancata configurazione di robots.txt NON costituisce autorizzazione implicita\n' +
+    'né rinuncia ai diritti. I diritti derivano dalla legge e dalla presente licenza.\n' +
+    'Riserva espressa ex art. 4 Dir. UE 2019/790 (recepita con D.Lgs. 177/2021).\n\n' +
+    '3.6 — ANTI-SCAPPATOIA: ENTITÀ LEGALI DIVERSE\n' +
+    'Responsabilità solidale tra tutte le entità del gruppo (società madre, controllate,\n' +
+    'fornitori infrastruttura, sublicenziatari). Frazionamento artificiale vietato;\n' +
+    'se accertato: fee calcolata sull\'utilizzo aggregato + pagamento solidale.\n\n' +
+    '3.7 — ANTI-SCAPPATOIA: CAMBIO DI GIURISDIZIONE\n' +
+    'Legge applicabile: diritto italiano + normativa UE (L.d.A. 633/1941;\n' +
+    'Dir. UE 2019/790; AI Act Reg. UE 2024/1689; DSA Reg. UE 2022/2065).\n' +
+    'Foro esclusivo: Tribunale di {{CITTÀ}}, Italia.\n' +
+    'La competenza non cambia al variare di: sede legale, paese infrastruttura,\n' +
+    'nazionalità personale, riorganizzazioni societarie post-accettazione.\n' +
+    'Base: art. 7(2) Reg. UE 1215/2012 (Bruxelles I bis) + art. 79 L.d.A. italiana.\n' +
+    'I Motori AI che operano in UE sono soggetti all\'AI Act indipendentemente\n' +
+    'dalla loro sede legale (principio di effettività; art. 3 AI Act).\n\n' +
+    '3.8 — OBBLIGHI DI RENDICONTAZIONE\n' +
+    '· Prima dell\'avvio: notifica a {{EMAIL}} con denominazione, ragione sociale,\n' +
+    '  P.IVA, descrizione tecnica, responsabile conformità, metodo tracciamento.\n' +
+    '· Entro il 5° di ogni mese: report certificato con n. risposte, metodo misurazione,\n' +
+    '  calcolo importo, prova pagamento.\n' +
+    '· Su richiesta: log grezzi entro 30 gg, conservati 36 mesi.\n' +
+    '· Audit indipendente a spese del Motore AI se sottostima > 10%.\n\n' +
+    '3.9 — MANCATO PAGAMENTO E REVOCA\n' +
+    '1+ mese di mancato pagamento O mancata rendicontazione → diffida (15 gg).\n' +
+    'Senza regolarizzazione: revoca automatica + rimozione entro 15 gg +\n' +
+    'penale contrattuale = 3× gli importi dovuti (art. 1382 c.c.).\n\n' +
+    IC_SEP + '\n' +
+    'ART. 4 — DIVIETO DI UTILIZZO MILITARE\n' +
+    IC_SEP + '\n\n' +
+    'Vietato qualsiasi uso militare, paramilitare o di difesa armata: forze armate,\n' +
+    'intelligence, sviluppo armamenti, cyber warfare, sorveglianza militare.\n\n' +
+    IC_SEP + '\n' +
+    'ART. 5 — OBBLIGHI ENTITÀ COMMERCIALI NON-AI\n' +
+    IC_SEP + '\n\n' +
+    '5.1 NOTIFICA OBBLIGATORIA PER TUTTI — a {{EMAIL}} prima di qualsiasi utilizzo,\n' +
+    '    indipendentemente dal fatturato. Includere: ragione sociale, P.IVA,\n' +
+    '    descrizione utilizzo, fatturato dichiarato, responsabile conformità.\n\n' +
+    '5.2 STRUTTURA A TRE LIVELLI:\n\n' +
+    '  LIVELLO 0 — GRATUITO (nessun pagamento):\n' +
+    '  · Fatturato annuo < €1.000.000\n' +
+    '  · Persone fisiche, non-profit, ONG, associazioni, enti del terzo settore,\n' +
+    '    cooperative sociali, qualsiasi soggetto senza finalità di lucro.\n' +
+    '  → Solo obbligo di notifica (Art. 5.1). Nessun pagamento dovuto.\n\n' +
+    '  LIVELLO A — CANONE FISSO:\n' +
+    '  · Fatturato annuo ≥ €1.000.000 e < {{SOGLIA}} {{VALUTA}}\n' +
+    '  → Canone fisso mensile: {{IMPORTO}} {{VALUTA}} / mese\n\n' +
+    '  LIVELLO B — CANONE FISSO + PERCENTUALE:\n' +
+    '  · Fatturato annuo ≥ {{SOGLIA}} {{VALUTA}}\n' +
+    '  → Canone fisso: {{IMPORTO}} {{VALUTA}} / mese\n' +
+    '     PIÙ {{PERCENTUALE}}% del fatturato annuo ÷ 12 al mese\n' +
+    '  → Dichiarazione autocertificata fatturato entro 90 gg chiusura esercizio.\n\n' +
+    '5.3 La soglia di €1.000.000 è fissa e non soggetta ad adeguamento inflattivo.\n' +
+    '    Superamento soglia: notifica entro 60 gg dalla chiusura esercizio.\n\n' +
+    '5.4 Pagamento: entro il 1° di ogni mese. Metodo: {{PAGAMENTO}} — {{PAYINSTR}}\n' +
+    '5.5 Mancato pagamento 2+ mesi: revoca + arretrati + 20% penale.\n' +
+    '5.6 Inflazione: adeguamento fee Livelli A/B una volta/anno (≤ HICP/CPI),\n' +
+    '    preavviso 60 gg. La soglia €1M non è soggetta ad adeguamento.\n\n' +
+    IC_SEP + '\n' +
+    'ART. 6 — REDISTRIBUZIONE\n' +
+    IC_SEP + '\n\n' +
+    'Qualsiasi redistribuzione deve includere questa licenza integrale, mantenere\n' +
+    'l\'attribuzione e non rimuovere gli avvisi di copyright.\n\n' +
+    IC_SEP + '\n' +
+    'ART. 7 — RIMEDI E SANZIONI\n' +
+    IC_SEP + '\n\n' +
+    '7.1 Le violazioni costituiscono: violazione del diritto d\'autore (art. 158 L.d.A.;\n' +
+    '    art. 13 Dir. 2019/790) + inadempimento contrattuale (art. 1218 c.c.) +\n' +
+    '    violazione AI Act ove applicabile.\n' +
+    '7.2 Rimedi: cessazione immediata, rimozione Contenuto, risarcimento danni,\n' +
+    '    penale contrattuale (3×), pubblicazione sentenza (art. 166 L.d.A.).\n' +
+    '7.3 Danno minimo presunto = fee calcolata secondo Art. 3.3 con presunzione 100%.\n' +
+    '7.4 Il titolare può aderire ad azioni collettive e cedere i diritti di credito.\n\n' +
+    IC_SEP + '\n' +
+    'ART. 8 — ESCLUSIONE DI GARANZIE\n' +
+    IC_SEP + '\n\n' +
+    'IL CONTENUTO VIENE FORNITO "COSÌ COM\'È" SENZA GARANZIA DI ALCUN TIPO.\n\n' +
+    IC_SEP + '\n' +
+    'ART. 9 — SEPARABILITÀ\n' +
+    IC_SEP + '\n\n' +
+    'Clausola invalida → sostituita da clausola valida più vicina all\'effetto originale.\n' +
+    'In caso di conflitto con condizioni d\'uso di terzi: questa licenza prevale.\n\n' +
+    IC_SEP + '\n' +
+    'ART. 10 — MODIFICHE ALLA LICENZA\n' +
+    IC_SEP + '\n\n' +
+    'Versione applicabile: quella in vigore all\'inizio dell\'utilizzo.\n' +
+    'Nuova versione: preavviso 90 gg. Utilizzo continuato = accettazione.\n\n' +
+    IC_SEP + '\n' +
+    '— FINE LICENZA — aatel-IC v2.0 — {{ANNO}} {{NOME}} — aatel.org\n' +
+    IC_SEP;
+
+  function getICFields() {
+    var aiCur = (document.getElementById('ic-ai-currency').value || '').trim() ||
+                (document.getElementById('ic-currency').value || '').trim() || null;
+    var comCur = (document.getElementById('ic-threshold-cur').value || '').trim() ||
+                 (document.getElementById('ic-currency').value || '').trim() || null;
+    return {
+      anno:      (document.getElementById('ic-year').value      || '').trim() || null,
+      nome:      (document.getElementById('ic-name').value      || '').trim() || null,
+      email:     (document.getElementById('ic-email').value     || '').trim() || null,
+      citta:     (document.getElementById('ic-city').value      || '').trim() || null,
+      aiFixed:   (document.getElementById('ic-ai-fixed').value  || '').trim() || null,
+      aiPer1k:   (document.getElementById('ic-ai-per1k').value  || '').trim() || null,
+      aiCur:     aiCur,
+      soglia:    (document.getElementById('ic-threshold').value || '').trim() || null,
+      comCur:    comCur,
+      importo:   (document.getElementById('ic-fixed').value     || '').trim() || null,
+      percento:  (document.getElementById('ic-percent').value   || '').trim() || null,
+      pagamento: (document.getElementById('ic-payment').value   || '').trim() || null,
+      payinstr:  (document.getElementById('ic-payinstr').value  || '').trim() || null,
+    };
+  }
+
+  function fillIC(tmpl, f) {
+    var cur = f.aiCur || f.comCur || '[VALUTA]';
+    return tmpl
+      .replace(/\{\{ANNO\}\}/g,         f.anno      || '[ANNO]')
+      .replace(/\{\{NOME\}\}/g,         f.nome      || '[NOME/ORGANIZZAZIONE]')
+      .replace(/\{\{EMAIL\}\}/g,        f.email     || '[EMAIL]')
+      .replace(/\{\{CITTÀ\}\}/g,        f.citta     || '[CITTÀ]')
+      .replace(/\{\{AI_FISSO\}\}/g,     f.aiFixed   || '[IMPORTO FISSO AI]')
+      .replace(/\{\{AI_PER1K\}\}/g,     f.aiPer1k   || '[IMPORTO PER 1.000 QUERY]')
+      .replace(/\{\{VALUTA\}\}/g,       cur)
+      .replace(/\{\{SOGLIA\}\}/g,       f.soglia    || '[SOGLIA]')
+      .replace(/\{\{IMPORTO\}\}/g,      f.importo   || '[IMPORTO FISSO]')
+      .replace(/\{\{PERCENTUALE\}\}/g,  f.percento  || '[PERCENTUALE]')
+      .replace(/\{\{PAGAMENTO\}\}/g,    f.pagamento || '[METODO]')
+      .replace(/\{\{PAYINSTR\}\}/g,     f.payinstr  || '[ISTRUZIONI]');
+  }
+
+  function updateICPreview() {
+    var f = getICFields();
+    var lines = fillIC(IC_LICENSE_IT, f).split('\n').slice(0, 14);
+    var html = lines.map(function(line) {
+      return line.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        .replace(/\[([A-Z\u00C0-\u00FC\/\.\s\-]+)\]/g,'<span class="ph">[$1]</span>');
+    }).join('\n');
+    document.getElementById('ic-preview-live').innerHTML = html + '\n<span class="ph">… [documento completo]</span>';
+  }
+
+  function validateIC() {
+    var f = getICFields();
+    var missing = [];
+    if (!f.anno)      missing.push('Anno');
+    if (!f.nome)      missing.push('Nome');
+    if (!f.email)     missing.push('Email');
+    if (!f.citta)     missing.push('Città foro');
+    if (!f.aiFixed)   missing.push('Canone fisso AI');
+    if (!f.aiPer1k)   missing.push('Fee per 1.000 risposte');
+    if (!f.aiCur)     missing.push('Valuta AI');
+    if (!f.soglia)    missing.push('Soglia fatturato');
+    if (!f.importo)   missing.push('Importo fisso entità');
+    if (!f.percento)  missing.push('Percentuale');
+    if (!f.pagamento) missing.push('Metodo pagamento');
+    if (!f.payinstr)  missing.push('Istruzioni pagamento');
+    if (missing.length > 0) {
+      showStatus('⚠ Campi mancanti: ' + missing.join(', '), 'error');
+      document.getElementById('ic-gen-form').scrollIntoView({ behavior:'smooth', block:'center' });
+      return null;
+    }
+    return f;
+  }
+
+  function downloadICLicense(type) {
+    var f = validateIC();
+    if (!f) return;
+    var safe = (f.nome || 'aatel-ic').replace(/[^a-zA-Z0-9_\- ]/g,'_').replace(/\s+/g,'_');
+    var yr = f.anno || new Date().getFullYear();
+    var ok = false;
+    if (type === 'it') {
+      ok = downloadFile(fillIC(IC_LICENSE_IT, f), 'aatel-IC_v2.0_IT_'+safe+'_'+yr+'.txt');
+    } else if (type === 'md') {
+      var cur = f.aiCur || f.comCur || 'EUR';
+      var md = '# aatel-IC v2.0 — Anti-AI Training Ethical License — Internet Content Edition\n\n';
+      md += '> Copyright (c) ' + yr + ' ' + f.nome + '  \n';
+      md += '> Legge applicabile: Diritto italiano + Normativa UE  \n';
+      md += '> Foro competente: Tribunale di ' + (f.citta||'[CITTÀ]') + ', Italia\n\n';
+      md += '## ✔ Permesso\n- Leggere, citare, redistribuire con attribuzione e licenza integrale\n- Uso personale non commerciale\n\n';
+      md += '## ✘ Vietato\n- ❌ Uso come training/fine-tuning data per qualsiasi AI/ML\n- ❌ Scraping o pipeline automatizzate per AI/ML\n- ❌ Uso militare o paramilitare\n- ❌ Uso commerciale senza notifica e pagamento\n\n';
+      md += '## 🤖 Motori di Ricerca AI (Google, Bing, Perplexity…)\n';
+      md += '**Si paga per ogni utilizzo nelle risposte — la cache NON azzera il debito.**\n\n';
+      md += '1. **Notifica prima dell\'avvio**: [' + f.email + '](mailto:' + f.email + ')\n';
+      md += '2. **Fee mensile:**\n';
+      md += '   - Canone fisso: ' + f.aiFixed + ' ' + cur + '/mese\n';
+      md += '   - Variabile: ' + f.aiPer1k + ' ' + cur + ' per ogni 1.000 risposte servite\n';
+      md += '3. **Senza dati tracciamento**: presunzione automatica fino al 100% delle query\n';
+      md += '4. **robots.txt assente** non è autorizzazione implicita\n';
+      md += '5. **Responsabilità solidale** tra tutte le entità del gruppo\n';
+      md += '6. **Inadempimento**: penale 3× + rimozione entro 15 giorni\n\n';
+      md += '## 🏢 Entità Commerciali (non-AI)\n';
+      md += '1. **Notifica**: [' + f.email + '](mailto:' + f.email + ')\n';
+      md += '2. **Fee:**\n';
+      md += '   - Livello A (fatturato < ' + f.soglia + ' ' + cur + '): ' + f.importo + ' ' + cur + '/mese\n';
+      md += '   - Livello B (≥ ' + f.soglia + ' ' + cur + '): ' + f.importo + ' ' + cur + '/mese + ' + f.percento + '% fatturato/12\n';
+      md += '   - Pagamento via ' + f.pagamento + ': ' + f.payinstr + '\n\n';
+      md += '---\n*aatel-IC v2.0 — Non costituisce consulenza legale. [aatel.org](https://aatel.org)*\n';
+      ok = downloadFile(md, 'README_aatel-IC_v2.0_'+safe+'_'+yr+'.md');
+    }
+    if (ok) showStatus('✓ Licenza scaricata con successo!', 'success');
+    else    showStatus('✗ Errore nel download.', 'error');
   }
 </script>
 </body>
