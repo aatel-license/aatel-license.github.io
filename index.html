@@ -1125,7 +1125,29 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
           <div class="consent-panel-title" data-lang="it">Scegli quali cookie accettare</div>
           <div class="consent-panel-title" data-lang="en">Choose which cookies to accept</div>
           <p class="consent-panel-text" data-lang="it">I cookie tecnici sono necessari al funzionamento del sito (tema, lingua). I cookie analitici ci aiutano a migliorare l'esperienza utente — non raccogliamo dati personali identificativi.</p>
+          <!-- ═══════════════════════════════════════════════════
+               DESCRIZIONE COOKIE NON TECNICI — IT
+               Incolla qui sotto la descrizione dettagliata
+               dei cookie analitici e di preferenza
+               ═══════════════════════════════════════════════════ -->
+          <p class="consent-panel-text" data-lang="it" id="cookie-detail-it">
+            Utilizziamo solo cookie tecnici di prima parte, necessari al funzionamento del sito. Nessun tracker, nessun cookie pubblicitario, nessuna trasmissione a server esterni.<br><br>
+            <strong style="color:var(--paper)">aatel-theme</strong> — Salva il tema grafico scelto. Durata: persistente (localStorage).<br>
+            <strong style="color:var(--paper)">aatel-consent</strong> — Registra le scelte sul consenso e l'accettazione della licenza aatel-IC v2.0. Durata: 365 giorni (localStorage).<br>
+            <strong style="color:var(--paper)">Lingua (sessione)</strong> — Mantiene la lingua selezionata (IT/EN). Durata: sessione corrente, solo in memoria.
+          </p>
           <p class="consent-panel-text" data-lang="en">Technical cookies are required for the site to work (theme, language). Analytics cookies help us improve the user experience — no personally identifiable data is collected.</p>
+          <!-- ═══════════════════════════════════════════════════
+               DESCRIZIONE COOKIE NON TECNICI — EN
+               Paste here the detailed description
+               of analytics and preference cookies
+               ═══════════════════════════════════════════════════ -->
+          <p class="consent-panel-text" data-lang="en" id="cookie-detail-en">
+            We use only first-party technical cookies, strictly required for the site to function. No trackers, no advertising cookies, no data transmitted to external servers.<br><br>
+            <strong style="color:var(--paper)">aatel-theme</strong> — Saves your selected visual theme. Duration: persistent (localStorage).<br>
+            <strong style="color:var(--paper)">aatel-consent</strong> — Stores consent choices and aatel-IC v2.0 license acceptance. Duration: 365 days (localStorage).<br>
+            <strong style="color:var(--paper)">Language (session)</strong> — Keeps selected language (IT/EN). Duration: current session, in-memory only.
+          </p>
 
           <div class="consent-toggles">
             <div class="consent-toggle-row">
@@ -1136,7 +1158,7 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
                 <span class="toggle-track"></span>
               </label>
             </div>
-            <!-- <div class="consent-toggle-row" hidden>
+            <div class="consent-toggle-row">
               <span class="consent-toggle-name" data-lang="it">Analitici — facoltativi</span>
               <span class="consent-toggle-name" data-lang="en">Analytics — optional</span>
               <label class="toggle-switch" aria-label="Cookie analitici">
@@ -1144,14 +1166,14 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
                 <span class="toggle-track"></span>
               </label>
             </div>
-            <div class="consent-toggle-row" hidden>
+            <div class="consent-toggle-row">
               <span class="consent-toggle-name" data-lang="it">Preferenze — facoltativi</span>
               <span class="consent-toggle-name" data-lang="en">Preferences — optional</span>
               <label class="toggle-switch" aria-label="Cookie preferenze">
                 <input type="checkbox" id="ck-prefs" checked>
                 <span class="toggle-track"></span>
               </label>
-            </div> -->
+            </div>
           </div>
         </div>
 
