@@ -486,6 +486,14 @@ footer { color:#555; padding:56px 40px; text-align:center; border-top:1px solid 
 .footer-logo { font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--paper); margin-bottom:6px; }
 .footer-sub { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:20px; }
 footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
+.footer-cookie-btn {
+  display:inline-flex; align-items:center; gap:7px; margin-top:24px;
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.15em;
+  text-transform:uppercase; color:#333; border:1px solid #1e1e1e;
+  background:transparent; padding:9px 18px; cursor:pointer;
+  transition:all .2s; touch-action:manipulation;
+}
+.footer-cookie-btn:hover { color:#777; border-color:#333; }
 
 /* ── REVEAL ── */
 .reveal { opacity:0; transform:translateY(20px); transition:opacity .6s ease,transform .6s ease; }
@@ -1260,7 +1268,7 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
            oppure HTML con <p>, <h3>, <strong>, ecc.
            (se usi HTML rimuovi white-space:pre-wrap da #license-text-content)
            ═══════════════════════════════════════════════════════ -->
-      <div id="license-text-content">
+      <div id="license-text-content" data-lang="it">
 [Anti-AI Training Ethical License — Internet Content Edition
 aatel-IC — Versione 2.0
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1448,6 +1456,169 @@ Nuova versione: preavviso 90 gg. Utilizzo continuato = accettazione.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 — FINE LICENZA — aatel-IC v2.0 — 2026 aatel.org — aatel.org
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━]
+      </div>
+      <div id="license-text-content" data-lang="en">
+        Anti-AI Training Ethical License — Internet Content Edition
+aatel-IC — Version 2.0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Copyright (c) 2026 aatel.org
+Governing law: Italian law + EU regulations
+Exclusive jurisdiction: Court of Milan, Italy
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PRELIMINARY NOTICE — MANDATORY ACCEPTANCE
+This is a translation; the Italian version shall prevail
+Accessing, reading, indexing, reproducing, storing in any form, or using the Content in any automated system constitutes full and unconditional acceptance of this license, regardless of any contrary statement by the licensee.
+No signature is required. Use is equivalent to acceptance (Art. 1327 Italian Civil Code; Art. 25 EU Reg. 2024/1689 — AI Act).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 1 — ATTRIBUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Any use, reproduction, citation, or redistribution of the Content must include: author/rights holder name, original source (canonical URL), full text of this license, or a permanent link to it.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 2 — ABSOLUTE PROHIBITION OF AI/ML TRAINING USE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+It is expressly and absolutely prohibited, without exception:
+· Using the Content for training, fine-tuning, pre-training, distillation, alignment, or evaluation of any AI/ML system;
+· Incorporating the Content into scrapers, crawlers, or pipelines for AI data collection;
+· Generating synthetic or augmented datasets from the Content for AI/ML;
+· Transferring the Content to third parties for the above purposes.
+
+The prohibition applies regardless of purpose or collection technique.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 3 — FEES FOR USE BY AI SEARCH ENGINES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3.1 — DEFINITION OF AI ENGINE
+Any system that:
+(a) indexes/stores/recalls the Content automatically;
+(b) uses the Content to generate responses to users or systems;
+(c) exposes the Content via AI Overview, Answer Engine, Copilot, or similar.
+
+Included: Google AI Overviews, Bing Copilot, Perplexity AI, You.com, and similar.
+
+3.2 — PRINCIPLE: PAY FOR USE, NOT ACCESS
+The obligation arises whenever the Content is used to produce a response, regardless of: number of downloads/indexings; storage in cache, embedding, vector database, or other storage; explicit citation or implicit use; free or paid end-user consumption.
+
+GOLDEN RULE: 1 indexing × 1,000,000 responses = payment for 1,000,000 uses, not for a single access.
+
+3.3 — FEE STRUCTURE
+Component A — Fixed monthly fee: €10/month
+(due from first month of use)
+Component B — Variable fee: €5 per 1,000 responses in which the Content is used (calculated monthly)
+
+Example: fixed fee €10/month + €5 per 1,000 responses.
+500,000 responses → 10 + (500 × 5) €/month
+
+3.4 — ANTI-LOOPHOLE: ABSENCE OF TRACKING DATA
+a) Obligation to implement tracking within 90 days of notice.
+b) If absent: automatic estimated calculation = (total queries) × (minimum quota 0.1%).
+c) Without data or estimate by the 5th of the month: presumption of 100% of queries.
+Burden of proof rests entirely with the AI Engine.
+
+3.5 — ANTI-LOOPHOLE: ROBOTS.TXT
+Failure to configure robots.txt does NOT constitute implicit authorization or waiver of rights. Rights derive from law and this license.
+Express reservation per Art. 4 EU Directive 2019/790 (implemented via Italian Legislative Decree 177/2021).
+
+3.6 — ANTI-LOOPHOLE: DIFFERENT LEGAL ENTITIES
+Joint liability among all group entities (parent company, subsidiaries, infrastructure providers, sublicensees). Artificial splitting prohibited; if detected: fee calculated on aggregated use + joint payment.
+
+3.7 — ANTI-LOOPHOLE: CHANGE OF JURISDICTION
+Applicable law: Italian law + EU regulations (Law No. 633/1941; EU Directive 2019/790; AI Act EU Reg. 2024/1689; DSA EU Reg. 2022/2065).
+Exclusive jurisdiction: Court of Milan, Italy.
+Competence does not change due to: legal seat, infrastructure country, personnel nationality, corporate reorganizations post-acceptance.
+Basis: Art. 7(2) EU Reg. 1215/2012 (Brussels I bis) + Art. 79 Italian Law 633/1941.
+AI Engines operating in the EU are subject to the AI Act regardless of their legal seat (principle of effectiveness; Art. 3 AI Act).
+
+3.8 — REPORTING OBLIGATIONS
+· Before launch: notify aatel.license@gmail.com
+ with name, company name, VAT, technical description, compliance officer, tracking method.
+· By the 5th of each month: certified report with number of responses, measurement method, fee calculation, proof of payment.
+· On request: raw logs within 30 days, kept 36 months.
+· Independent audit at AI Engine’s expense if underestimation > 10%.
+
+3.9 — NON-PAYMENT AND REVOCATION
+1+ month of non-payment OR failure to report → formal notice (15 days).
+Without regularization: automatic revocation + removal within 15 days + contractual penalty = 3× the amounts due (Art. 1382 Italian Civil Code).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 4 — PROHIBITION OF MILITARY USE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Any military, paramilitary, or armed defense use is prohibited: armed forces, intelligence, weapons development, cyber warfare, military surveillance.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 5 — OBLIGATIONS OF NON-AI COMMERCIAL ENTITIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5.1 MANDATORY NOTIFICATION FOR ALL — to aatel.license@gmail.com
+ before any use, regardless of turnover. Include: company name, VAT, usage description, declared turnover, compliance officer.
+
+5.2 THREE-TIER STRUCTURE:
+
+LEVEL 0 — FREE (no payment):
+· Annual turnover < €1,000,000
+· Individuals, non-profits, NGOs, associations, third-sector entities, social cooperatives, any non-profit entity.
+→ Only notification obligation (Art. 5.1). No payment due.
+
+LEVEL A — FIXED FEE:
+· Annual turnover ≥ €1,000,000 and < €1,000,000
+→ Fixed monthly fee: €10/month
+
+LEVEL B — FIXED FEE + PERCENTAGE:
+· Annual turnover ≥ €1,000,000
+→ Fixed fee: €10/month
+PLUS 0.5% of annual turnover ÷ 12 per month
+→ Self-certified turnover declaration within 90 days of fiscal year-end.
+
+5.3 The €1,000,000 threshold is fixed and not subject to inflation adjustment. Exceeding threshold: notify within 60 days of fiscal year-end.
+
+5.4 Payment: by the 1st of each month. Method: Bitcoin — bc1qd5ukz69vqv5zueraz4vv84qkqfdydwwnzmffm7
+5.5 Non-payment 2+ months: revocation + arrears + 20% penalty.
+5.6 Inflation: adjust Levels A/B fees once/year (≤ HICP/CPI), 60-day notice. The €1M threshold is not adjusted.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 6 — REDISTRIBUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Any redistribution must include this full license, retain attribution, and not remove copyright notices.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 7 — REMEDIES AND SANCTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+7.1 Violations constitute: copyright infringement (Art. 158 Italian Law 633/1941; Art. 13 Dir. 2019/790) + contractual breach (Art. 1218 Italian Civil Code) + AI Act violation where applicable.
+7.2 Remedies: immediate cessation, Content removal, damages, contractual penalty (3×), publication of judgment (Art. 166 Italian Law 633/1941).
+7.3 Presumed minimum damage = fee calculated per Art. 3.3 with 100% presumption.
+7.4 Rights holder may join class actions and assign credit rights.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 8 — DISCLAIMER OF WARRANTIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+THE CONTENT IS PROVIDED “AS IS” WITHOUT ANY WARRANTY.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 9 — SEVERABILITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Invalid clause → replaced by valid clause closest to original effect.
+In case of conflict with third-party terms of use: this license prevails.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 10 — LICENSE AMENDMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Applicable version: the one in effect at the start of use.
+New version: 90-day notice. Continued use = acceptance.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+— END OF LICENSE — aatel-IC v2.0 — 2026 aatel.org — aatel.org
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
       </div>
     </div>
 
@@ -2252,6 +2423,10 @@ Full text: aatel v1.2</div>
   <div class="footer-sub">Anti-AI Training Ethical License — v1.2 + IC v2.0</div>
   <p data-lang="it">Liberamente utilizzabile per proteggere i tuoi progetti Ethical Source. Non costituisce consulenza legale. aatel v1.2 è basata sulla licenza MIT.</p>
   <p data-lang="en">Freely usable to protect your Ethical Source projects. Does not constitute legal advice. aatel v1.2 is based on the MIT License.</p>
+  <button class="footer-cookie-btn" onclick="reopenConsent()">
+    🍪 <span data-lang="it">Gestisci cookie &amp; licenza</span>
+    <span data-lang="en">Manage cookies &amp; license</span>
+  </button>
 </footer>
 
 <script>
@@ -2889,12 +3064,13 @@ Full text: aatel v1.2</div>
     }
   });
 
+  function reopenConsent() {
+    document.getElementById('consent-accepted-bar').classList.add('hidden');
+    document.getElementById('consent-overlay').classList.remove('hidden');
+  }
+
   function dismissBar() {
     document.getElementById('consent-accepted-bar').classList.add('hidden');
-    /* re-open consent overlay for preference editing */
-    setTimeout(function() {
-      document.getElementById('consent-overlay').classList.remove('hidden');
-    }, 400);
   }
 
   /* On load: check if already consented */
