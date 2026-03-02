@@ -666,6 +666,373 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
   .lic-nav-btn { padding:10px 14px; font-size:9px; }
 }
 
+/* ══════════════════════════════════════════════════════════════
+   COOKIE & LICENSE BANNER
+   ══════════════════════════════════════════════════════════════ */
+
+/* Overlay backdrop */
+#consent-overlay {
+  position:fixed; inset:0; z-index:9000;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(6px) saturate(.7);
+  -webkit-backdrop-filter:blur(6px) saturate(.7);
+  display:flex; align-items:flex-end; justify-content:center;
+  padding:0 0 0 0;
+  transition:opacity .4s ease, visibility .4s ease;
+}
+#consent-overlay.hidden { opacity:0; visibility:hidden; pointer-events:none; }
+
+/* Main banner */
+#consent-banner {
+  width:100%; max-width:100%;
+  background:var(--dark);
+  border-top:1px solid #1e1e1e;
+  box-shadow:0 -32px 80px rgba(0,0,0,.6);
+  transform:translateY(0);
+  transition:transform .45s cubic-bezier(.22,1,.36,1);
+  position:relative;
+  overflow:hidden;
+}
+#consent-overlay.hidden #consent-banner {
+  transform:translateY(100%);
+}
+
+/* Decorative top line */
+#consent-banner::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,
+    var(--accent) 0%,
+    var(--accent) 50%,
+    var(--gold) 50%,
+    var(--gold) 100%
+  );
+}
+
+.consent-inner {
+  max-width:var(--max-content);
+  margin:0 auto;
+  padding:40px 40px 36px;
+}
+
+/* Header row */
+.consent-header {
+  display:flex; align-items:flex-start; gap:24px; margin-bottom:28px;
+}
+.consent-logo-area { flex-shrink:0; }
+.consent-wordmark {
+  font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:900;
+  color:var(--paper); letter-spacing:-.01em; line-height:1;
+}
+.consent-wordmark span { color:var(--accent); }
+.consent-tagline {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.22em;
+  text-transform:uppercase; color:#444; margin-top:5px;
+}
+
+.consent-intro { flex:1; min-width:0; }
+.consent-intro-title {
+  font-family:'Playfair Display',serif; font-size:clamp(1rem,2vw,1.25rem);
+  font-weight:700; color:var(--paper); margin-bottom:6px; line-height:1.3;
+}
+.consent-intro-text {
+  font-size:.85rem; line-height:1.75; color:#666;
+}
+.consent-intro-text a {
+  color:var(--accent); text-decoration:underline; text-underline-offset:3px;
+}
+
+/* Two panels */
+.consent-panels {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:1px; background:#111;
+  border:1px solid #111;
+  margin-bottom:28px;
+}
+.consent-panel {
+  background:var(--sb);
+  padding:22px 24px;
+  position:relative;
+}
+.consent-panel::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0; height:2px;
+}
+.consent-panel-cookie::before { background:var(--accent); }
+.consent-panel-ic::before     { background:var(--gold); }
+
+.consent-panel-head {
+  display:flex; align-items:center; gap:10px; margin-bottom:12px;
+}
+.consent-panel-icon { font-size:1.1rem; flex-shrink:0; }
+.consent-panel-label {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.2em;
+  text-transform:uppercase; flex:1;
+}
+.consent-panel-cookie .consent-panel-label { color:var(--accent); }
+.consent-panel-ic     .consent-panel-label { color:var(--gold); }
+
+.consent-panel-title {
+  font-family:'Playfair Display',serif; font-size:1rem; font-weight:700;
+  color:var(--paper); margin-bottom:8px;
+}
+.consent-panel-text {
+  font-size:.82rem; line-height:1.75; color:#666;
+}
+.consent-panel-text strong { color:#999; font-weight:500; }
+
+/* Toggles row inside cookie panel */
+.consent-toggles { margin-top:14px; display:flex; flex-direction:column; gap:9px; }
+.consent-toggle-row {
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.consent-toggle-name {
+  font-family:'DM Mono',monospace; font-size:9.5px; letter-spacing:.1em;
+  text-transform:uppercase; color:#777;
+}
+.consent-toggle-name.required { color:#444; }
+
+/* Toggle switch */
+.toggle-switch { position:relative; width:38px; height:20px; flex-shrink:0; }
+.toggle-switch input { opacity:0; width:0; height:0; position:absolute; }
+.toggle-track {
+  position:absolute; inset:0; border-radius:20px;
+  background:#1a1a1a; border:1px solid #2a2a2a;
+  cursor:pointer; transition:background .25s, border-color .25s;
+}
+.toggle-track::after {
+  content:''; position:absolute; top:3px; left:3px;
+  width:12px; height:12px; border-radius:50%;
+  background:#3a3a3a; transition:transform .25s, background .25s;
+}
+.toggle-switch input:checked ~ .toggle-track { background:var(--accent); border-color:var(--accent); }
+.toggle-switch input:checked ~ .toggle-track::after { transform:translateX(18px); background:#fff; }
+.toggle-switch input:disabled ~ .toggle-track { opacity:.4; cursor:not-allowed; }
+.toggle-switch input:disabled:checked ~ .toggle-track { opacity:.5; }
+
+/* IC agreement area */
+.consent-ic-agreement {
+  margin-top:14px;
+  padding:12px 14px;
+  background:rgba(184,149,42,.05);
+  border:1px solid rgba(184,149,42,.15);
+}
+.consent-checkbox-row {
+  display:flex; align-items:flex-start; gap:12px; cursor:pointer;
+}
+.consent-checkbox-custom {
+  width:18px; height:18px; border:1px solid #333; flex-shrink:0;
+  margin-top:1px; position:relative; transition:all .2s; cursor:pointer;
+  background:transparent;
+}
+.consent-checkbox-custom::after {
+  content:''; position:absolute; inset:0;
+  background:var(--gold);
+  clip-path:polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  opacity:0; transform:scale(.6); transition:all .2s;
+}
+.consent-checkbox-row.checked .consent-checkbox-custom {
+  border-color:var(--gold); background:rgba(184,149,42,.1);
+}
+.consent-checkbox-row.checked .consent-checkbox-custom::after {
+  opacity:1; transform:scale(1);
+}
+.consent-checkbox-label {
+  font-size:.8rem; line-height:1.7; color:#666;
+}
+.consent-checkbox-label a { color:var(--gold); text-decoration:underline; text-underline-offset:3px; }
+.consent-checkbox-label strong { color:#aaa; }
+
+/* Action row */
+.consent-actions {
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+}
+.consent-actions-left { flex:1; min-width:0; }
+.consent-actions-note {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.08em;
+  color:#333; line-height:1.7;
+}
+.consent-actions-right { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+.consent-btn {
+  font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.12em;
+  text-transform:uppercase; padding:13px 26px; border:none; cursor:pointer;
+  transition:all .22s; min-height:46px; white-space:nowrap; touch-action:manipulation;
+}
+.consent-btn-essential {
+  background:transparent; color:#555; border:1px solid #2a2a2a;
+}
+.consent-btn-essential:hover { border-color:#555; color:#888; }
+.consent-btn-all {
+  background:var(--accent); color:#fff;
+}
+.consent-btn-all:hover { filter:brightness(.85); }
+.consent-btn-confirm {
+  background:var(--gold); color:#111; font-weight:600;
+}
+.consent-btn-confirm:hover { filter:brightness(.9); }
+.consent-btn-confirm:disabled {
+  opacity:.35; cursor:not-allowed; filter:none;
+}
+
+/* IC required warning */
+.consent-ic-required {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.1em;
+  color:var(--deny); padding:6px 10px; background:rgba(139,0,0,.08);
+  border-left:2px solid var(--deny); margin-top:8px; display:none;
+}
+.consent-ic-required.show { display:block; }
+
+/* Accepted state — mini bar */
+#consent-accepted-bar {
+  position:fixed; bottom:0; left:0; right:0; z-index:8000;
+  background:var(--dark); border-top:1px solid #1a1a1a;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 24px; gap:16px;
+  transform:translateY(0);
+  transition:transform .35s ease;
+}
+#consent-accepted-bar.hidden { transform:translateY(100%); }
+.consent-bar-text {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.1em;
+  text-transform:uppercase; color:#333; display:flex; align-items:center; gap:10px;
+}
+.consent-bar-dot { width:6px; height:6px; border-radius:50%; background:var(--allow); flex-shrink:0; }
+.consent-bar-link {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.1em;
+  text-transform:uppercase; color:#444; cursor:pointer; border:none;
+  background:transparent; text-decoration:underline; text-underline-offset:3px;
+  transition:color .2s; padding:0;
+}
+.consent-bar-link:hover { color:#888; }
+
+/* Responsive */
+@media(max-width:860px) {
+  .consent-inner { padding:28px 24px 24px; }
+  .consent-panels { grid-template-columns:1fr; }
+  .consent-header { flex-direction:column; gap:16px; }
+  .consent-actions { flex-direction:column; align-items:stretch; }
+  .consent-actions-right { flex-direction:column; }
+  .consent-btn { width:100%; text-align:center; }
+}
+@media(max-width:600px) {
+  .consent-inner { padding:20px 16px 18px; }
+  .consent-wordmark { font-size:1.1rem; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   LICENSE MODAL (testo licenza incollato dall'utente)
+   ══════════════════════════════════════════════════════════════ */
+#license-modal-overlay {
+  position:fixed; inset:0; z-index:9500;
+  background:rgba(0,0,0,.85);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  display:flex; align-items:center; justify-content:center;
+  padding:24px;
+  opacity:0; visibility:hidden;
+  transition:opacity .3s ease, visibility .3s ease;
+}
+#license-modal-overlay.open { opacity:1; visibility:visible; }
+
+#license-modal {
+  background:var(--dark);
+  border:1px solid #222;
+  box-shadow:0 40px 120px rgba(0,0,0,.8);
+  width:100%; max-width:800px;
+  max-height:88vh;
+  display:flex; flex-direction:column;
+  transform:translateY(16px) scale(.98);
+  transition:transform .35s cubic-bezier(.22,1,.36,1);
+  position:relative;
+}
+#license-modal-overlay.open #license-modal {
+  transform:translateY(0) scale(1);
+}
+
+/* Gold top line */
+#license-modal::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0; height:2px;
+  background:var(--gold);
+}
+
+.lm-header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:24px 28px 20px;
+  border-bottom:1px solid #1a1a1a;
+  flex-shrink:0;
+}
+.lm-header-left { display:flex; flex-direction:column; gap:5px; }
+.lm-badge {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--gold);
+  display:inline-flex; align-items:center; gap:7px;
+}
+.lm-badge::before {
+  content:''; width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0;
+}
+.lm-title {
+  font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700;
+  color:var(--paper); line-height:1.2;
+}
+.lm-close {
+  width:36px; height:36px; border:1px solid #2a2a2a; background:transparent;
+  color:#555; font-size:1.1rem; cursor:pointer; display:flex;
+  align-items:center; justify-content:center;
+  transition:all .2s; flex-shrink:0;
+}
+.lm-close:hover { border-color:#555; color:var(--paper); }
+
+/* Scrollable body */
+.lm-body {
+  flex:1; overflow-y:auto; padding:32px 28px;
+  scrollbar-width:thin; scrollbar-color:#222 transparent;
+}
+.lm-body::-webkit-scrollbar { width:4px; }
+.lm-body::-webkit-scrollbar-track { background:transparent; }
+.lm-body::-webkit-scrollbar-thumb { background:#2a2a2a; border-radius:4px; }
+
+/* ── CONTENUTO LICENZA ── incolla qui il tuo testo */
+#license-text-content {
+  font-family:'DM Mono',monospace;
+  font-size:clamp(.72rem,1.1vw,.82rem);
+  line-height:1.9;
+  color:#777;
+  white-space:pre-wrap;
+  word-break:break-word;
+  /* Se vuoi usare HTML formattato invece di testo puro,
+     rimuovi white-space:pre-wrap e usa tag <p>, <h3>, ecc. */
+}
+
+/* Footer della modale */
+.lm-footer {
+  padding:18px 28px;
+  border-top:1px solid #1a1a1a;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  flex-shrink:0;
+  flex-wrap:wrap;
+}
+.lm-footer-note {
+  font-family:'DM Mono',monospace; font-size:9px; letter-spacing:.08em;
+  color:#333; line-height:1.7;
+}
+.lm-footer-btn {
+  font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.12em;
+  text-transform:uppercase; padding:11px 24px; border:none; cursor:pointer;
+  background:var(--gold); color:#111; font-weight:600;
+  transition:filter .2s; white-space:nowrap;
+}
+.lm-footer-btn:hover { filter:brightness(.9); }
+
+@media(max-width:600px) {
+  #license-modal-overlay { padding:0; align-items:flex-end; }
+  #license-modal { max-height:92vh; border-bottom:none; }
+  .lm-header { padding:18px 16px 14px; }
+  .lm-body { padding:20px 16px; }
+  .lm-footer { padding:14px 16px; flex-direction:column; align-items:stretch; }
+  .lm-footer-btn { text-align:center; }
+}
+
 /* ══════════════════
    RESPONSIVE
    ══════════════════ */
@@ -722,6 +1089,355 @@ footer p { font-size:.85rem; line-height:1.75; max-width:600px; margin:0 auto; }
 </style>
 </head>
 <body class="lang-it">
+
+<!-- ══════════════════════════════════════════════════════════════
+     COOKIE & LICENSE CONSENT BANNER
+     ══════════════════════════════════════════════════════════════ -->
+<div id="consent-overlay" role="dialog" aria-modal="true" aria-labelledby="consent-title">
+  <div id="consent-banner">
+    <div class="consent-inner">
+
+      <!-- Header -->
+      <div class="consent-header">
+        <div class="consent-logo-area">
+          <div class="consent-wordmark">a<span>a</span>tel</div>
+          <div class="consent-tagline" data-lang="it">Privacy &amp; Licenza</div>
+          <div class="consent-tagline" data-lang="en">Privacy &amp; License</div>
+        </div>
+        <div class="consent-intro">
+          <p class="consent-intro-title" id="consent-title" data-lang="it">Prima di continuare, due cose importanti</p>
+          <p class="consent-intro-title" id="consent-title" data-lang="en">Before continuing, two important things</p>
+          <p class="consent-intro-text" data-lang="it">Questo sito usa cookie tecnici essenziali per il funzionamento (tema, lingua) e cookie analitici facoltativi. I contenuti di questa pagina sono protetti dalla licenza <strong style="color:var(--gold)">aatel-IC v2.0</strong> — ne è vietato l'uso per addestrare modelli AI/ML senza compenso.</p>
+          <p class="consent-intro-text" data-lang="en">This site uses essential technical cookies (theme, language) and optional analytics cookies. The content of this page is protected by the <strong style="color:var(--gold)">aatel-IC v2.0</strong> license — use for AI/ML training without compensation is prohibited.</p>
+        </div>
+      </div>
+
+      <!-- Two panels -->
+      <div class="consent-panels">
+
+        <!-- Panel 1: Cookies -->
+        <div class="consent-panel consent-panel-cookie">
+          <div class="consent-panel-head">
+            <span class="consent-panel-icon">🍪</span>
+            <span class="consent-panel-label" data-lang="it">Gestione Cookie</span>
+            <span class="consent-panel-label" data-lang="en">Cookie Settings</span>
+          </div>
+          <div class="consent-panel-title" data-lang="it">Scegli quali cookie accettare</div>
+          <div class="consent-panel-title" data-lang="en">Choose which cookies to accept</div>
+          <p class="consent-panel-text" data-lang="it">I cookie tecnici sono necessari al funzionamento del sito (tema, lingua). I cookie analitici ci aiutano a migliorare l'esperienza utente — non raccogliamo dati personali identificativi.</p>
+          <p class="consent-panel-text" data-lang="en">Technical cookies are required for the site to work (theme, language). Analytics cookies help us improve the user experience — no personally identifiable data is collected.</p>
+
+          <div class="consent-toggles">
+            <div class="consent-toggle-row">
+              <span class="consent-toggle-name required" data-lang="it">Tecnici — obbligatori</span>
+              <span class="consent-toggle-name required" data-lang="en">Technical — required</span>
+              <label class="toggle-switch" aria-label="Cookie tecnici (obbligatori)">
+                <input type="checkbox" id="ck-essential" checked disabled>
+                <span class="toggle-track"></span>
+              </label>
+            </div>
+            <div class="consent-toggle-row">
+              <span class="consent-toggle-name" data-lang="it">Analitici — facoltativi</span>
+              <span class="consent-toggle-name" data-lang="en">Analytics — optional</span>
+              <label class="toggle-switch" aria-label="Cookie analitici">
+                <input type="checkbox" id="ck-analytics">
+                <span class="toggle-track"></span>
+              </label>
+            </div>
+            <div class="consent-toggle-row">
+              <span class="consent-toggle-name" data-lang="it">Preferenze — facoltativi</span>
+              <span class="consent-toggle-name" data-lang="en">Preferences — optional</span>
+              <label class="toggle-switch" aria-label="Cookie preferenze">
+                <input type="checkbox" id="ck-prefs" checked>
+                <span class="toggle-track"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: aatel-IC license -->
+        <div class="consent-panel consent-panel-ic">
+          <div class="consent-panel-head">
+            <span class="consent-panel-icon">⚖️</span>
+            <span class="consent-panel-label">aatel-IC v2.0</span>
+          </div>
+          <div class="consent-panel-title" data-lang="it">Accettazione licenza contenuti</div>
+          <div class="consent-panel-title" data-lang="en">Content license acceptance</div>
+          <p class="consent-panel-text" data-lang="it">I contenuti di questo sito (testi, licenze, documentazione) sono protetti dalla <strong>aatel-IC v2.0</strong>. L'accesso implica l'accettazione della licenza. Leggere, citare e condividere con attribuzione è <strong>sempre gratuito</strong>. Motori AI e entità commerciali soggette a fee devono notificare il titolare.</p>
+          <p class="consent-panel-text" data-lang="en">The content on this site (texts, licenses, documentation) is protected by <strong>aatel-IC v2.0</strong>. Access implies acceptance of the license. Reading, quoting and sharing with attribution is <strong>always free</strong>. AI Engines and commercial entities subject to fees must notify the holder.</p>
+
+          <div class="consent-ic-agreement">
+            <div class="consent-checkbox-row" id="ic-checkbox-row" onclick="toggleICConsent()" role="checkbox" aria-checked="false" tabindex="0">
+              <div class="consent-checkbox-custom" id="ic-checkbox-visual"></div>
+              <label class="consent-checkbox-label" for="ic-consent-input" data-lang="it">
+                Ho letto e accetto la licenza <strong>aatel-IC v2.0</strong>. Confermo che il mio utilizzo è conforme ai termini: non userò i contenuti per addestrare modelli AI/ML senza compenso, e notificherò il titolare se soggetto a fee. <a href="#" onclick="openLicenseModal(event)">Leggi il testo completo →</a>
+              </label>
+              <label class="consent-checkbox-label" for="ic-consent-input" data-lang="en">
+                I have read and accept the <strong>aatel-IC v2.0</strong> license. I confirm that my use is compliant: I will not use content to train AI/ML models without compensation, and will notify the holder if subject to fees. <a href="#" onclick="openLicenseModal(event)">Read full text →</a>
+              </label>
+              <input type="checkbox" id="ic-consent-input" style="display:none" onchange="syncICCheckbox()">
+            </div>
+          </div>
+          <div class="consent-ic-required" id="ic-required-msg" data-lang="it">⚠ Devi accettare la licenza aatel-IC per accedere al sito</div>
+          <div class="consent-ic-required" id="ic-required-msg-en" data-lang="en">⚠ You must accept the aatel-IC license to access the site</div>
+        </div>
+
+      </div><!-- /consent-panels -->
+
+      <!-- Actions -->
+      <div class="consent-actions">
+        <div class="consent-actions-left">
+          <p class="consent-actions-note" data-lang="it">La tua scelta viene salvata localmente. Puoi modificarla in qualsiasi momento nelle impostazioni. Non vendiamo dati a terzi. Generazione licenza 100% locale nel browser.</p>
+          <p class="consent-actions-note" data-lang="en">Your choice is saved locally. You can change it at any time in settings. We do not sell data to third parties. License generation is 100% local in your browser.</p>
+        </div>
+        <div class="consent-actions-right">
+          <button class="consent-btn consent-btn-essential" onclick="acceptEssential()" data-lang="it">Solo essenziali</button>
+          <button class="consent-btn consent-btn-essential" onclick="acceptEssential()" data-lang="en">Essential only</button>
+          <button class="consent-btn consent-btn-all" onclick="acceptAll()" data-lang="it">Accetta tutti i cookie</button>
+          <button class="consent-btn consent-btn-all" onclick="acceptAll()" data-lang="en">Accept all cookies</button>
+          <button class="consent-btn consent-btn-confirm" id="consent-confirm-btn" onclick="confirmConsent()" disabled data-lang="it">✓ Conferma &amp; accedi</button>
+          <button class="consent-btn consent-btn-confirm" id="consent-confirm-btn-en" onclick="confirmConsent()" disabled data-lang="en">✓ Confirm &amp; enter</button>
+        </div>
+      </div>
+
+    </div><!-- /consent-inner -->
+  </div><!-- /consent-banner -->
+</div><!-- /consent-overlay -->
+
+<!-- Mini accepted bar (shown after consent, dismissible) -->
+<div id="consent-accepted-bar" class="hidden" role="status">
+  <div class="consent-bar-text">
+    <span class="consent-bar-dot"></span>
+    <span data-lang="it">Cookie &amp; licenza aatel-IC v2.0 accettati</span>
+    <span data-lang="en">Cookies &amp; aatel-IC v2.0 license accepted</span>
+  </div>
+  <button class="consent-bar-link" onclick="dismissBar()" data-lang="it">Modifica preferenze</button>
+  <button class="consent-bar-link" onclick="dismissBar()" data-lang="en">Edit preferences</button>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     MODALE TESTO LICENZA aatel-IC v2.0
+     Incolla qui sotto il testo della tua licenza
+     ══════════════════════════════════════════════════════════════ -->
+<div id="license-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="lm-title-id">
+  <div id="license-modal">
+
+    <div class="lm-header">
+      <div class="lm-header-left">
+        <span class="lm-badge">aatel-IC v2.0</span>
+        <span class="lm-title" id="lm-title-id" data-lang="it">Testo integrale della licenza</span>
+        <span class="lm-title" id="lm-title-id" data-lang="en">Full license text</span>
+      </div>
+      <button class="lm-close" onclick="closeLicenseModal()" aria-label="Chiudi">✕</button>
+    </div>
+
+    <div class="lm-body">
+      <!-- ═══════════════════════════════════════════════════════
+           INCOLLA QUI IL TESTO DELLA TUA LICENZA
+           Puoi usare testo puro (verrà rispettata la formattazione)
+           oppure HTML con <p>, <h3>, <strong>, ecc.
+           (se usi HTML rimuovi white-space:pre-wrap da #license-text-content)
+           ═══════════════════════════════════════════════════════ -->
+      <div id="license-text-content">
+[Anti-AI Training Ethical License — Internet Content Edition
+aatel-IC — Versione 2.0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Copyright (c) 2026 aatel.org
+Legge applicabile: Diritto italiano + Normativa UE
+Foro competente esclusivo: Tribunale di Milano, Italia
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+AVVISO PRELIMINARE — ACCETTAZIONE OBBLIGATORIA
+
+L'accesso, la lettura, l'indicizzazione, la riproduzione, la memorizzazione
+in qualsiasi forma o l'utilizzo del Contenuto in qualsiasi sistema automatizzato
+costituisce accettazione integrale e incondizionata della presente licenza,
+indipendentemente da qualsiasi dichiarazione contraria del licenziatario.
+Non è richiesta la firma. L'utilizzo equivale ad accettazione (art. 1327 c.c.;
+art. 25 Reg. UE 2024/1689 — AI Act).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 1 — ATTRIBUZIONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Qualsiasi utilizzo, riproduzione, citazione o redistribuzione del Contenuto
+deve includere: nome dell'autore/titolare, fonte originale (URL canonico),
+testo integrale della presente licenza o collegamento permanente ad essa.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 2 — DIVIETO ASSOLUTO DI UTILIZZO PER ADDESTRAMENTO AI/ML
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+È espressamente e assolutamente vietato, senza possibilità di deroga:
+· Usare il Contenuto come dati di addestramento, fine-tuning, pre-training,
+  distillazione, allineamento o valutazione per qualsiasi sistema AI/ML;
+· Incorporare il Contenuto in scraper, crawler o pipeline per raccolta dati AI;
+· Generare dataset sintetici o aumentati dal Contenuto per AI/ML;
+· Trasferire il Contenuto a terzi per i suddetti scopi.
+Divieto valido indipendentemente dallo scopo e dalla tecnica di raccolta.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 3 — FEE PER UTILIZZO DA PARTE DI MOTORI DI RICERCA AI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3.1 — DEFINIZIONE DI MOTORE AI
+Qualsiasi sistema che: (a) indicizza/memorizza/recupera il Contenuto in modo
+automatizzato; (b) usa il Contenuto per generare risposte a utenti o sistemi;
+(c) espone il Contenuto tramite AI Overview, Answer Engine, Copilot o simili.
+Inclusi: Google AI Overviews, Bing Copilot, Perplexity AI, You.com, e analoghi.
+
+3.2 — PRINCIPIO: SI PAGA PER UTILIZZO, NON PER ACCESSO
+L'obbligo sorge ogni volta che il Contenuto viene usato per produrre una risposta,
+indipendentemente da: numero di download/indicizzazioni; conservazione in cache,
+embedding, database vettoriale o altra archiviazione; citazione esplicita o uso
+implicito; fruizione gratuita o a pagamento dell'utente finale.
+
+REGOLA AUREA: 1 indicizzazione × 1.000.000 risposte = pagamento per 1.000.000
+utilizzi, non per un solo accesso.
+
+3.3 — STRUTTURA TARIFFARIA
+Componente A — Canone fisso mensile: 10 € / mese
+  (dovuto dal primo mese di utilizzo)
+Componente B — Fee variabile: 5 € ogni 1.000 risposte
+  in cui il Contenuto è utilizzato (calcolate mensilmente)
+
+Esempio: canone fisso 10 €/mese + 5 €/1.000 risposte.
+  500.000 risposte → 10 + (500 × 5) €/mese
+
+3.4 — ANTI-SCAPPATOIA: ASSENZA DI DATI DI TRACCIAMENTO
+a) Obbligo di implementare tracciamento entro 90 giorni dalla notifica.
+b) In assenza: stima presuntiva automatica = (query totali) × (quota min 0,1%).
+c) Senza dati né stima entro il 5° del mese: presunzione del 100% delle query.
+   L'onere della prova contraria è interamente a carico del Motore AI.
+
+3.5 — ANTI-SCAPPATOIA: ROBOTS.TXT
+La mancata configurazione di robots.txt NON costituisce autorizzazione implicita
+né rinuncia ai diritti. I diritti derivano dalla legge e dalla presente licenza.
+Riserva espressa ex art. 4 Dir. UE 2019/790 (recepita con D.Lgs. 177/2021).
+
+3.6 — ANTI-SCAPPATOIA: ENTITÀ LEGALI DIVERSE
+Responsabilità solidale tra tutte le entità del gruppo (società madre, controllate,
+fornitori infrastruttura, sublicenziatari). Frazionamento artificiale vietato;
+se accertato: fee calcolata sull'utilizzo aggregato + pagamento solidale.
+
+3.7 — ANTI-SCAPPATOIA: CAMBIO DI GIURISDIZIONE
+Legge applicabile: diritto italiano + normativa UE (L.d.A. 633/1941;
+Dir. UE 2019/790; AI Act Reg. UE 2024/1689; DSA Reg. UE 2022/2065).
+Foro esclusivo: Tribunale di Milano, Italia.
+La competenza non cambia al variare di: sede legale, paese infrastruttura,
+nazionalità personale, riorganizzazioni societarie post-accettazione.
+Base: art. 7(2) Reg. UE 1215/2012 (Bruxelles I bis) + art. 79 L.d.A. italiana.
+I Motori AI che operano in UE sono soggetti all'AI Act indipendentemente
+dalla loro sede legale (principio di effettività; art. 3 AI Act).
+
+3.8 — OBBLIGHI DI RENDICONTAZIONE
+· Prima dell'avvio: notifica a aatel.license@gmail.com con denominazione, ragione sociale,
+  P.IVA, descrizione tecnica, responsabile conformità, metodo tracciamento.
+· Entro il 5° di ogni mese: report certificato con n. risposte, metodo misurazione,
+  calcolo importo, prova pagamento.
+· Su richiesta: log grezzi entro 30 gg, conservati 36 mesi.
+· Audit indipendente a spese del Motore AI se sottostima > 10%.
+
+3.9 — MANCATO PAGAMENTO E REVOCA
+1+ mese di mancato pagamento O mancata rendicontazione → diffida (15 gg).
+Senza regolarizzazione: revoca automatica + rimozione entro 15 gg +
+penale contrattuale = 3× gli importi dovuti (art. 1382 c.c.).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 4 — DIVIETO DI UTILIZZO MILITARE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Vietato qualsiasi uso militare, paramilitare o di difesa armata: forze armate,
+intelligence, sviluppo armamenti, cyber warfare, sorveglianza militare.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 5 — OBBLIGHI ENTITÀ COMMERCIALI NON-AI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5.1 NOTIFICA OBBLIGATORIA PER TUTTI — a aatel.license@gmail.com prima di qualsiasi utilizzo,
+    indipendentemente dal fatturato. Includere: ragione sociale, P.IVA,
+    descrizione utilizzo, fatturato dichiarato, responsabile conformità.
+
+5.2 STRUTTURA A TRE LIVELLI:
+
+  LIVELLO 0 — GRATUITO (nessun pagamento):
+  · Fatturato annuo < €1.000.000
+  · Persone fisiche, non-profit, ONG, associazioni, enti del terzo settore,
+    cooperative sociali, qualsiasi soggetto senza finalità di lucro.
+  → Solo obbligo di notifica (Art. 5.1). Nessun pagamento dovuto.
+
+  LIVELLO A — CANONE FISSO:
+  · Fatturato annuo ≥ €1.000.000 e < 1.000000 €
+  → Canone fisso mensile: 10 € / mese
+
+  LIVELLO B — CANONE FISSO + PERCENTUALE:
+  · Fatturato annuo ≥ 1.000000 €
+  → Canone fisso: 10 € / mese
+     PIÙ 0.5% del fatturato annuo ÷ 12 al mese
+  → Dichiarazione autocertificata fatturato entro 90 gg chiusura esercizio.
+
+5.3 La soglia di €1.000.000 è fissa e non soggetta ad adeguamento inflattivo.
+    Superamento soglia: notifica entro 60 gg dalla chiusura esercizio.
+
+5.4 Pagamento: entro il 1° di ogni mese. Metodo: Bitcoin — bc1qd5ukz69vqv5zueraz4vv84qkqfdydwwnzmffm7
+5.5 Mancato pagamento 2+ mesi: revoca + arretrati + 20% penale.
+5.6 Inflazione: adeguamento fee Livelli A/B una volta/anno (≤ HICP/CPI),
+    preavviso 60 gg. La soglia €1M non è soggetta ad adeguamento.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 6 — REDISTRIBUZIONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Qualsiasi redistribuzione deve includere questa licenza integrale, mantenere
+l'attribuzione e non rimuovere gli avvisi di copyright.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 7 — RIMEDI E SANZIONI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+7.1 Le violazioni costituiscono: violazione del diritto d'autore (art. 158 L.d.A.;
+    art. 13 Dir. 2019/790) + inadempimento contrattuale (art. 1218 c.c.) +
+    violazione AI Act ove applicabile.
+7.2 Rimedi: cessazione immediata, rimozione Contenuto, risarcimento danni,
+    penale contrattuale (3×), pubblicazione sentenza (art. 166 L.d.A.).
+7.3 Danno minimo presunto = fee calcolata secondo Art. 3.3 con presunzione 100%.
+7.4 Il titolare può aderire ad azioni collettive e cedere i diritti di credito.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 8 — ESCLUSIONE DI GARANZIE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+IL CONTENUTO VIENE FORNITO "COSÌ COM'È" SENZA GARANZIA DI ALCUN TIPO.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 9 — SEPARABILITÀ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Clausola invalida → sostituita da clausola valida più vicina all'effetto originale.
+In caso di conflitto con condizioni d'uso di terzi: questa licenza prevale.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 10 — MODIFICHE ALLA LICENZA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Versione applicabile: quella in vigore all'inizio dell'utilizzo.
+Nuova versione: preavviso 90 gg. Utilizzo continuato = accettazione.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+— FINE LICENZA — aatel-IC v2.0 — 2026 aatel.org — aatel.org
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━]
+      </div>
+    </div>
+
+    <div class="lm-footer">
+      <p class="lm-footer-note" data-lang="it">Scorrere fino in fondo prima di accettare. L'accettazione è vincolante.</p>
+      <p class="lm-footer-note" data-lang="en">Scroll to the bottom before accepting. Acceptance is binding.</p>
+      <button class="lm-footer-btn" onclick="closeLicenseModal()" data-lang="it">Ho letto — chiudi</button>
+      <button class="lm-footer-btn" onclick="closeLicenseModal()" data-lang="en">I've read — close</button>
+    </div>
+
+  </div>
+</div>
 
 <!-- LANG BAR -->
 <div class="lang-bar">
@@ -2032,6 +2748,150 @@ Full text: aatel v1.2</div>
     if (ok) showStatus('✓ Licenza scaricata con successo!', 'success');
     else    showStatus('✗ Errore nel download.', 'error');
   }
+
+  /* ══════════════════════════════════════════════════════════════
+     COOKIE & LICENSE CONSENT LOGIC
+     ══════════════════════════════════════════════════════════════ */
+
+  var icConsentAccepted = false;
+
+  /* Toggle IC license checkbox */
+  function toggleICConsent() {
+    icConsentAccepted = !icConsentAccepted;
+    var row = document.getElementById('ic-checkbox-row');
+    var inp = document.getElementById('ic-consent-input');
+    row.classList.toggle('checked', icConsentAccepted);
+    row.setAttribute('aria-checked', String(icConsentAccepted));
+    inp.checked = icConsentAccepted;
+    // enable/disable confirm buttons
+    document.querySelectorAll('.consent-btn-confirm').forEach(function(btn) {
+      btn.disabled = !icConsentAccepted;
+    });
+    // hide warning if now checked
+    if (icConsentAccepted) {
+      document.getElementById('ic-required-msg').classList.remove('show');
+      document.getElementById('ic-required-msg-en').classList.remove('show');
+    }
+  }
+
+  function syncICCheckbox() {
+    icConsentAccepted = document.getElementById('ic-consent-input').checked;
+    var row = document.getElementById('ic-checkbox-row');
+    row.classList.toggle('checked', icConsentAccepted);
+    row.setAttribute('aria-checked', String(icConsentAccepted));
+    document.querySelectorAll('.consent-btn-confirm').forEach(function(btn) {
+      btn.disabled = !icConsentAccepted;
+    });
+  }
+
+  /* Keyboard support for IC checkbox */
+  document.getElementById('ic-checkbox-row').addEventListener('keydown', function(e) {
+    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggleICConsent(); }
+  });
+
+  function saveConsent(analytics, prefs) {
+    try {
+      var data = {
+        ts: Date.now(),
+        essential: true,
+        analytics: analytics,
+        prefs: prefs,
+        icLicense: true,
+        icVersion: '2.0'
+      };
+      localStorage.setItem('aatel-consent', JSON.stringify(data));
+    } catch(e) {}
+  }
+
+  function hideOverlay() {
+    var overlay = document.getElementById('consent-overlay');
+    overlay.classList.add('hidden');
+    // show mini bar briefly
+    var bar = document.getElementById('consent-accepted-bar');
+    bar.classList.remove('hidden');
+    setTimeout(function() { bar.classList.add('hidden'); }, 5000);
+  }
+
+  function acceptEssential() {
+    if (!icConsentAccepted) {
+      document.getElementById('ic-required-msg').classList.add('show');
+      document.getElementById('ic-required-msg-en').classList.add('show');
+      document.getElementById('ic-checkbox-row').scrollIntoView({ behavior:'smooth', block:'center' });
+      return;
+    }
+    saveConsent(false, false);
+    hideOverlay();
+  }
+
+  function acceptAll() {
+    if (!icConsentAccepted) {
+      document.getElementById('ic-required-msg').classList.add('show');
+      document.getElementById('ic-required-msg-en').classList.add('show');
+      document.getElementById('ic-checkbox-row').scrollIntoView({ behavior:'smooth', block:'center' });
+      return;
+    }
+    // auto-check all toggles
+    document.getElementById('ck-analytics').checked = true;
+    document.getElementById('ck-prefs').checked = true;
+    saveConsent(true, true);
+    hideOverlay();
+  }
+
+  function confirmConsent() {
+    if (!icConsentAccepted) return;
+    var analytics = document.getElementById('ck-analytics').checked;
+    var prefs     = document.getElementById('ck-prefs').checked;
+    saveConsent(analytics, prefs);
+    hideOverlay();
+  }
+
+  function openLicenseModal(e) {
+    if (e) e.preventDefault();
+    document.getElementById('license-modal-overlay').classList.add('open');
+    document.getElementById('license-modal').querySelector('.lm-body').scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLicenseModal() {
+    document.getElementById('license-modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* Chiudi modale con Escape o click fuori */
+  document.getElementById('license-modal-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closeLicenseModal();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && document.getElementById('license-modal-overlay').classList.contains('open')) {
+      closeLicenseModal();
+    }
+  });
+
+  function dismissBar() {
+    document.getElementById('consent-accepted-bar').classList.add('hidden');
+    /* re-open consent overlay for preference editing */
+    setTimeout(function() {
+      document.getElementById('consent-overlay').classList.remove('hidden');
+    }, 400);
+  }
+
+  /* On load: check if already consented */
+  (function() {
+    try {
+      var saved = localStorage.getItem('aatel-consent');
+      if (saved) {
+        var data = JSON.parse(saved);
+        /* valid consent within 365 days */
+        if (data && data.icLicense && (Date.now() - data.ts) < 365 * 24 * 3600 * 1000) {
+          document.getElementById('consent-overlay').classList.add('hidden');
+          return;
+        }
+      }
+    } catch(e) {}
+    /* show banner */
+    document.getElementById('consent-overlay').classList.remove('hidden');
+  })();
+
 </script>
 </body>
 </html>
