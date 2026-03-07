@@ -1,0 +1,306 @@
+Anti-AI Training Ethical License — Internet Content Edition
+aatel-IC — Version 2.1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Copyright (c) {{ANNO}} {{NOME}}
+Governing law: Italian law + EU regulations
+Exclusive jurisdiction: Court of {{CITTÀ}}, Italy
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PRELIMINARY NOTICE — MANDATORY ACCEPTANCE
+
+This is a translation for informational purposes; the Italian version shall prevail
+in case of any conflict or discrepancy.
+
+Accessing, reading, indexing, reproducing, storing in any form, or using the
+Content in any automated system constitutes full and unconditional acceptance
+of this license, regardless of any contrary statement by the licensee.
+No signature is required. Use is equivalent to acceptance (Art. 1327 Italian
+Civil Code; Art. 25 EU Reg. 2024/1689 — AI Act).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 1 — ATTRIBUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Any use, reproduction, citation, or redistribution of the Content must include:
+author/rights holder name, original source (canonical URL), full text of this
+license or a permanent link to it.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 2 — ABSOLUTE PROHIBITION OF AI/ML TRAINING USE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+It is expressly and absolutely prohibited, without exception:
+· Using the Content as training, fine-tuning, pre-training, distillation,
+  alignment, or evaluation data for any AI/ML system;
+· Incorporating the Content into scrapers, crawlers, or pipelines for AI
+  data collection;
+· Generating synthetic or augmented datasets from the Content for AI/ML;
+· Transferring the Content to third parties for the above purposes.
+The prohibition applies regardless of purpose or collection technique.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 3 — FEES FOR USE BY AI SEARCH ENGINES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3.1 — DEFINITION OF AI ENGINE
+Any system that: (a) indexes/stores/recalls the Content automatically;
+(b) uses the Content to generate responses to users or systems;
+(c) exposes the Content via AI Overview, Answer Engine, Copilot, or similar.
+Included: Google AI Overviews, Bing Copilot, Perplexity AI, You.com, and similar.
+
+3.2 — PRINCIPLE: PAY FOR USE, NOT FOR ACCESS
+The obligation arises whenever the Content is used to produce a response,
+regardless of: number of downloads/indexings; storage in cache, embedding,
+vector database, or other storage; explicit citation or implicit use; free
+or paid end-user consumption.
+
+GOLDEN RULE: 1 indexing × 1,000,000 responses = payment for 1,000,000 uses,
+not for a single access.
+
+3.3 — FEE STRUCTURE
+Component A — Fixed monthly fee: {{AI_FISSO}} {{VALUTA}} / month
+  (due from the first month of use)
+Component B — Variable fee: {{AI_PER1K}} {{VALUTA}} per 1,000 responses
+  in which the Content is used (calculated monthly)
+
+Example: fixed fee {{AI_FISSO}} {{VALUTA}}/month + {{AI_PER1K}} {{VALUTA}}/1,000 responses.
+  500,000 responses → {{AI_FISSO}} + (500 × {{AI_PER1K}}) {{VALUTA}}/month
+
+3.4 — DEFINITION: "RESPONSE IN WHICH CONTENT IS USED"
+A response is counted as using the Content if:
+  (a) The Content is quoted, paraphrased, or summarized in the response;
+  (b) The Content is used to generate or inform the model's output;
+  (c) The Content contributes materially to the ranking or selection of results;
+  (d) The Content is used as context for RAG (Retrieval-Augmented Generation);
+  (e) Any part of the Content is visible to the end-user in the response.
+
+Does NOT include:
+  (i) Responses where Content is in index but not retrieved or used
+  (ii) Responses generated purely from other sources
+  (iii) Inference on the model where Content was not in training
+
+3.5 — ANTI-LOOPHOLE: ABSENCE OF TRACKING DATA
+a) Obligation to implement tracking within 90 days of notice.
+b) If absent: automatic estimated calculation = (total queries) × (minimum
+   quota 0.1%).
+c) Without data or estimate by the 5th of the month: presumption of 100%
+   of queries. Burden of proof rests entirely with the AI Engine.
+
+3.6 — ANTI-LOOPHOLE: ROBOTS.TXT
+Failure to configure robots.txt does NOT constitute implicit authorization
+or waiver of rights. Rights derive from law and this license.
+Express reservation per Art. 4 EU Directive 2019/790 (implemented via
+Italian Legislative Decree 177/2021).
+
+3.7 — ANTI-LOOPHOLE: DIFFERENT LEGAL ENTITIES
+Joint liability among all group entities (parent company, subsidiaries,
+infrastructure providers, sublicensees). Artificial splitting prohibited;
+if detected: fee calculated on aggregated use + joint payment.
+
+3.8 — ANTI-LOOPHOLE: CHANGE OF JURISDICTION
+Applicable law: Italian law + EU regulations (Law No. 633/1941;
+EU Directive 2019/790; AI Act EU Reg. 2024/1689; DSA EU Reg. 2022/2065).
+Exclusive jurisdiction: Court of {{CITTÀ}}, Italy.
+Competence does not change due to: legal seat, infrastructure country,
+personnel nationality, corporate reorganizations post-acceptance.
+Basis: Art. 7(2) EU Reg. 1215/2012 (Brussels I bis) + Art. 79 Italian
+Law 633/1941.
+AI Engines operating in the EU are subject to the AI Act regardless of
+their legal seat (principle of effectiveness; Art. 3 AI Act).
+
+3.9 — REPORTING OBLIGATIONS
+· Before launch: notify {{EMAIL}} with name, company name, VAT, technical
+  description, compliance officer, tracking method.
+· By the 5th of each month: certified report with number of responses,
+  measurement method, fee calculation, proof of payment.
+· On request: raw logs within 30 days, kept 36 months.
+· Independent audit at AI Engine's expense if underestimation > 10%.
+
+3.10 — PROOF OF VIOLATION FOR CROSS-BORDER CASES
+For AI Engines with legal seat outside Italy or EU:
+  (a) Copyright holder may request disclosure of tracking data via formal notice
+  (b) Failure to disclose within 30 days → presumption of 100% query usage
+  (c) Non-disclosure may be reported to: EU Digital Services Coordinator,
+      EDPB (European Data Protection Board), national data protection authority,
+      or international IP enforcement bodies
+  (d) AI Engines operating in EU are subject to EU Directive 2019/790 Article 17,
+      which requires licensing for use of protected content in AI systems
+  (e) Non-compliance may trigger regulatory investigation under EU AI Act
+
+3.11 — NON-PAYMENT AND REVOCATION
+1+ month of non-payment OR failure to report → formal notice (15 days).
+Without regularization: automatic revocation + removal within 15 days +
+contractual penalty = 3× the amounts due (Art. 1382 Italian Civil Code).
+
+3.12 — CROSS-BORDER ENFORCEMENT
+For AI Engines with legal seat outside Italy:
+  (a) The copyright holder may join or initiate enforcement actions in any
+      jurisdiction where the AI Engine operates or maintains servers/infrastructure
+  (b) Violations may be reported to regulatory authorities in operating jurisdictions
+  (c) The copyright holder may seek enforcement through:
+      - EU regulatory bodies (DMA, AI Act implementation bodies)
+      - National data protection authorities
+      - International IP enforcement mechanisms
+      - Local courts in jurisdictions where AI Engine operates
+  (d) Failure to comply with Italian court orders may trigger:
+      - EU-wide asset freezing
+      - Removal from EU search results
+      - Referral to EU law enforcement authorities
+      - Fines under EU Digital Services Act (up to 6% revenue)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 4 — PROHIBITION OF MILITARY USE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Any military, paramilitary, or armed defense use is prohibited: armed forces,
+intelligence, weapons development, cyber warfare, military surveillance.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 5 — OBLIGATIONS OF NON-AI COMMERCIAL ENTITIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5.1 MANDATORY NOTIFICATION FOR ALL — to {{EMAIL}} before any use,
+    regardless of turnover. Include: company name, VAT, usage description,
+    declared turnover, compliance officer.
+
+5.2 THREE-TIER STRUCTURE:
+
+  TIER 0 — FREE (no payment):
+  · Annual turnover < €1,000,000
+  · Individuals, non-profits, NGOs, associations, third-sector entities,
+    social cooperatives, any non-profit entity.
+  → Only notification obligation (Art. 5.1). No payment due.
+
+  TIER A — FIXED FEE:
+  · Annual turnover ≥ €1,000,000 and < {{SOGLIA}} {{VALUTA}}
+  → Fixed monthly fee: {{IMPORTO}} {{VALUTA}} / month
+
+  TIER B — FIXED FEE + PERCENTAGE:
+  · Annual turnover ≥ {{SOGLIA}} {{VALUTA}}
+  → Fixed fee: {{IMPORTO}} {{VALUTA}} / month
+     PLUS {{PERCENTUALE}}% of annual turnover ÷ 12 per month
+  → Self-certified turnover declaration within 90 days of fiscal year-end.
+
+5.3 The €1,000,000 threshold is fixed and not subject to inflation adjustment.
+    Exceeding threshold: notify within 60 days of fiscal year-end.
+
+5.4 Payment: by the 1st of each month. Method: {{PAGAMENTO}} — {{PAYINSTR}}
+5.5 Non-payment 2+ months: revocation + arrears + 20% penalty.
+5.6 Inflation: adjust Tier A/B fees once/year (≤ HICP/CPI), 60-day notice.
+    The €1M threshold is not subject to adjustment.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 6 — REDISTRIBUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Any redistribution must include this full license, retain attribution,
+and not remove copyright notices.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 7 — REMEDIES AND SANCTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+7.1 Violations constitute: copyright infringement (Art. 158 Italian Law
+    633/1941; Art. 13 Dir. 2019/790) + contractual breach (Art. 1218
+    Italian Civil Code) + AI Act violation where applicable.
+7.2 Remedies: immediate cessation, Content removal, damages, contractual
+    penalty (3×), publication of judgment (Art. 166 Italian Law 633/1941).
+7.3 Presumed minimum damage = fee calculated per Art. 3.3 with 100%
+    presumption.
+7.4 Rights holder may join class actions and assign credit rights.
+7.5 For cross-border enforcement: see Art. 3.12 (enforcement mechanisms).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 8 — PUBLIC REGISTRY OF VIOLATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+8.1 — REGISTRY PUBLICATION
+The copyright holder maintains the right to publish verified violations to
+a public registry at {{REGISTRY_URL}} or equivalent platform, including:
+  (a) Name of AI Engine or violating entity
+  (b) Date violation was discovered
+  (c) Nature of violation (non-payment, unauthorized training, unauthorized indexing)
+  (d) Amounts due (if financial violation)
+  (e) Current status (disputed, settled, unresolved, litigated)
+
+8.2 — REMOVAL CONDITIONS
+A violation record is removed from the registry upon:
+  (a) Full payment of all amounts due
+  (b) Cessation of violation + proof of compliance
+  (c) Mutual written settlement agreement
+  (d) Court judgment in favor of the violator
+  (e) Statute of limitations expiration (24 months from discovery)
+
+8.3 — EFFECT OF REGISTRY
+Publication of a violation:
+  (a) Serves as constructive notice of violation to other rights holders
+  (b) May be considered by regulators (EU DMA, AI Act authorities) in
+      investigations or enforcement actions
+  (c) May affect AI Engine's regulatory standing or licensing
+  (d) Does not constitute defamation if published in good faith with
+      factual accuracy and due process
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 9 — DISCLAIMER OF WARRANTIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+THE CONTENT IS PROVIDED "AS IS" WITHOUT ANY WARRANTY OF ANY KIND.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 10 — SEVERABILITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Invalid clause → replaced by the valid clause closest to the original effect.
+In case of conflict with third-party terms of use: this license prevails.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 11 — LICENSE AMENDMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Applicable version: the one in force at the start of use.
+New version: 90-day notice. Continued use = acceptance.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+— END OF LICENSE — aatel-IC v2.1 — {{ANNO}} {{NOME}} — aatel.org
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NOTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+This license has been drafted with the utmost attention to legal soundness
+and is anchored to current EU regulations. It does not constitute professional
+legal advice. For use in disputes with major technology operators, review by
+a lawyer specializing in copyright and AI law is strongly recommended.
+In case of any conflict between this English translation and the Italian
+original, the Italian version shall prevail.
+
+CHANGES FROM v2.0:
+- Added Art. 3.4: Explicit definition of "response in which Content is used"
+  for clear fee calculation
+- Added Art. 3.10: Proof mechanisms for cross-border violations (disclosure,
+  presumption rules, regulatory reporting)
+- Added Art. 3.12: Cross-border enforcement via EU regulatory bodies, DMA,
+  AI Act authorities, and multi-jurisdictional actions
+- Added Art. 8: Public registry of violations with publication and removal conditions
+- Enhanced Art. 7.5: Cross-border enforcement reference
+- Clarified regulatory basis: EU Digital Services Act, DMA, AI Act Art. 3
+  (effectiveness principle) for non-EU entities
+
+Adaptation of the aatel-IC v2.1 license (aatel.org).
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PLACEHOLDER REFERENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{{ANNO}}            Year of copyright (e.g. 2026)
+{{NOME}}            Full name or organization name of the rights holder
+{{CITTÀ}}           City of the competent court (e.g. Milano)
+{{EMAIL}}           Contact email for notifications (e.g. aatel.license@gmail.com)
+{{AI_FISSO}}        Fixed monthly fee for AI Engines (e.g. 10)
+{{AI_PER1K}}        Variable fee per 1,000 responses (e.g. 5)
+{{SOGLIA}}          Revenue threshold for Tier A → Tier B (e.g. 10000000)
+{{IMPORTO}}         Fixed monthly fee for commercial entities (e.g. 10)
+{{PERCENTUALE}}     Revenue percentage for Tier B (e.g. 0.5)
+{{VALUTA}}          Currency (e.g. EUR)
+{{PAGAMENTO}}       Payment method (e.g. Bitcoin / IBAN / PayPal)
+{{PAYINSTR}}        Payment instructions (e.g. wallet address, IBAN, PayPal email)
+{{REGISTRY_URL}}    Public registry URL for violations (e.g. violations.aatel.org)

@@ -1,0 +1,301 @@
+Anti-AI Training Ethical License — Internet Content Edition
+aatel-IC — Versione 2.1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Copyright (c) {{ANNO}} {{NOME}}
+Legge applicabile: Diritto italiano + Normativa UE
+Foro competente esclusivo: Tribunale di {{CITTÀ}}, Italia
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+AVVISO PRELIMINARE — ACCETTAZIONE OBBLIGATORIA
+
+L'accesso, la lettura, l'indicizzazione, la riproduzione, la memorizzazione
+in qualsiasi forma o l'utilizzo del Contenuto in qualsiasi sistema automatizzato
+costituisce accettazione integrale e incondizionata della presente licenza,
+indipendentemente da qualsiasi dichiarazione contraria del licenziatario.
+Non è richiesta la firma. L'utilizzo equivale ad accettazione (art. 1327 c.c.;
+art. 25 Reg. UE 2024/1689 — AI Act).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 1 — ATTRIBUZIONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Qualsiasi utilizzo, riproduzione, citazione o redistribuzione del Contenuto
+deve includere: nome dell'autore/titolare, fonte originale (URL canonico),
+testo integrale della presente licenza o collegamento permanente ad essa.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 2 — DIVIETO ASSOLUTO DI UTILIZZO PER ADDESTRAMENTO AI/ML
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+È espressamente e assolutamente vietato, senza possibilità di deroga:
+· Usare il Contenuto come dati di addestramento, fine-tuning, pre-training,
+  distillazione, allineamento o valutazione per qualsiasi sistema AI/ML;
+· Incorporare il Contenuto in scraper, crawler o pipeline per raccolta dati AI;
+· Generare dataset sintetici o aumentati dal Contenuto per AI/ML;
+· Trasferire il Contenuto a terzi per i suddetti scopi.
+Divieto valido indipendentemente dallo scopo e dalla tecnica di raccolta.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 3 — FEE PER UTILIZZO DA PARTE DI MOTORI DI RICERCA AI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3.1 — DEFINIZIONE DI MOTORE AI
+Qualsiasi sistema che: (a) indicizza/memorizza/recupera il Contenuto in modo
+automatizzato; (b) usa il Contenuto per generare risposte a utenti o sistemi;
+(c) espone il Contenuto tramite AI Overview, Answer Engine, Copilot o simili.
+Inclusi: Google AI Overviews, Bing Copilot, Perplexity AI, You.com, e analoghi.
+
+3.2 — PRINCIPIO: SI PAGA PER UTILIZZO, NON PER ACCESSO
+L'obbligo sorge ogni volta che il Contenuto viene usato per produrre una risposta,
+indipendentemente da: numero di download/indicizzazioni; conservazione in cache,
+embedding, database vettoriale o altra archiviazione; citazione esplicita o uso
+implicito; fruizione gratuita o a pagamento dell'utente finale.
+
+REGOLA AUREA: 1 indicizzazione × 1.000.000 risposte = pagamento per 1.000.000
+utilizzi, non per un solo accesso.
+
+3.3 — STRUTTURA TARIFFARIA
+Componente A — Canone fisso mensile: {{AI_FISSO}} {{VALUTA}} / mese
+  (dovuto dal primo mese di utilizzo)
+Componente B — Fee variabile: {{AI_PER1K}} {{VALUTA}} ogni 1.000 risposte
+  in cui il Contenuto è utilizzato (calcolate mensilmente)
+
+Esempio: canone fisso {{AI_FISSO}} {{VALUTA}}/mese + {{AI_PER1K}} {{VALUTA}}/1.000 risposte.
+  500.000 risposte → {{AI_FISSO}} + (500 × {{AI_PER1K}}) {{VALUTA}}/mese
+
+3.4 — DEFINIZIONE: "RISPOSTA IN CUI IL CONTENUTO È UTILIZZATO"
+Una risposta è conteggiata come utilizzo del Contenuto se:
+  (a) Il Contenuto è citato, parafrasato o sintetizzato nella risposta;
+  (b) Il Contenuto è usato per generare o informare l'output del modello;
+  (c) Il Contenuto contribuisce materialmente al ranking o selezione risultati;
+  (d) Il Contenuto è usato come contesto per RAG (Retrieval-Augmented Generation);
+  (e) Qualsiasi parte del Contenuto è visibile all'utente finale nella risposta.
+
+NON include:
+  (i) Risposte dove Contenuto è in indice ma non recuperato o usato
+  (ii) Risposte generate puramente da altre fonti
+  (iii) Inferenza sul modello dove Contenuto non era in training
+
+3.5 — ANTI-SCAPPATOIA: ASSENZA DI DATI DI TRACCIAMENTO
+a) Obbligo di implementare tracciamento entro 90 giorni dalla notifica.
+b) In assenza: stima presuntiva automatica = (query totali) × (quota min 0,1%).
+c) Senza dati né stima entro il 5° del mese: presunzione del 100% delle query.
+   L'onere della prova contraria è interamente a carico del Motore AI.
+
+3.6 — ANTI-SCAPPATOIA: ROBOTS.TXT
+La mancata configurazione di robots.txt NON costituisce autorizzazione implicita
+né rinuncia ai diritti. I diritti derivano dalla legge e dalla presente licenza.
+Riserva espressa ex art. 4 Dir. UE 2019/790 (recepita con D.Lgs. 177/2021).
+
+3.7 — ANTI-SCAPPATOIA: ENTITÀ LEGALI DIVERSE
+Responsabilità solidale tra tutte le entità del gruppo (società madre, controllate,
+fornitori infrastruttura, sublicenziatari). Frazionamento artificiale vietato;
+se accertato: fee calcolata sull'utilizzo aggregato + pagamento solidale.
+
+3.8 — ANTI-SCAPPATOIA: CAMBIO DI GIURISDIZIONE
+Legge applicabile: diritto italiano + normativa UE (L.d.A. 633/1941;
+Dir. UE 2019/790; AI Act Reg. UE 2024/1689; DSA Reg. UE 2022/2065).
+Foro esclusivo: Tribunale di {{CITTÀ}}, Italia.
+La competenza non cambia al variare di: sede legale, paese infrastruttura,
+nazionalità personale, riorganizzazioni societarie post-accettazione.
+Base: art. 7(2) Reg. UE 1215/2012 (Bruxelles I bis) + art. 79 L.d.A. italiana.
+I Motori AI che operano in UE sono soggetti all'AI Act indipendentemente
+dalla loro sede legale (principio di effettività; art. 3 AI Act).
+
+3.9 — OBBLIGHI DI RENDICONTAZIONE
+· Prima dell'avvio: notifica a {{EMAIL}} con denominazione, ragione sociale,
+  P.IVA, descrizione tecnica, responsabile conformità, metodo tracciamento.
+· Entro il 5° di ogni mese: report certificato con n. risposte, metodo misurazione,
+  calcolo importo, prova pagamento.
+· Su richiesta: log grezzi entro 30 gg, conservati 36 mesi.
+· Audit indipendente a spese del Motore AI se sottostima > 10%.
+
+3.10 — PROVA DI VIOLAZIONE PER CASI TRANSFRONTALIERI
+Per Motori AI con sede legale al di fuori dell'Italia o dell'UE:
+  (a) Il titolare può richiedere divulgazione dati di tracciamento tramite notifica formale
+  (b) Mancata divulgazione entro 30 giorni → presunzione di utilizzo 100% query
+  (c) Non-divulgazione può essere segnalata a:
+      - Coordinatore Servizi Digitali UE
+      - EDPB (European Data Protection Board)
+      - Autorità nazionale protezione dati
+      - Organismi internazionali enforcement IP
+  (d) Motori AI che operano in UE sono soggetti a Dir. UE 2019/790 Articolo 17,
+      che richiede licenza per uso di contenuto protetto in sistemi AI
+  (e) Non-conformità può avviare indagine normativa secondo AI Act UE
+
+3.11 — MANCATO PAGAMENTO E REVOCA
+1+ mese di mancato pagamento O mancata rendicontazione → diffida (15 gg).
+Senza regolarizzazione: revoca automatica + rimozione entro 15 gg +
+penale contrattuale = 3× gli importi dovuti (art. 1382 c.c.).
+
+3.12 — ENFORCEMENT TRANSFRONTALIERO
+Per Motori AI con sede legale al di fuori dell'Italia:
+  (a) Il titolare può intentare azioni enforcement in qualsiasi giurisdizione
+      dove Motore AI opera o mantiene server/infrastruttura
+  (b) Violazioni possono essere segnalate a autorità normative in giurisdizioni operative
+  (c) Il titolare può cercare enforcement tramite:
+      - Organismi normativi UE (DMA, organismi implementazione AI Act)
+      - Autorità nazionali protezione dati
+      - Meccanismi enforcement IP internazionali
+      - Tribunali locali in giurisdizioni dove Motore AI opera
+  (d) Mancato rispetto ordini tribunale italiano può attivare:
+      - Congelamento beni UE-wide
+      - Rimozione da risultati ricerca UE
+      - Segnalazione a autorità enforcement UE
+      - Sanzioni secondo DSA UE (fino a 6% ricavi)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 4 — DIVIETO DI UTILIZZO MILITARE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Vietato qualsiasi uso militare, paramilitare o di difesa armata: forze armate,
+intelligence, sviluppo armamenti, cyber warfare, sorveglianza militare.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 5 — OBBLIGHI ENTITÀ COMMERCIALI NON-AI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5.1 NOTIFICA OBBLIGATORIA PER TUTTI — a {{EMAIL}} prima di qualsiasi utilizzo,
+    indipendentemente dal fatturato. Includere: ragione sociale, P.IVA,
+    descrizione utilizzo, fatturato dichiarato, responsabile conformità.
+
+5.2 STRUTTURA A TRE LIVELLI:
+
+  LIVELLO 0 — GRATUITO (nessun pagamento):
+  · Fatturato annuo < €1.000.000
+  · Persone fisiche, non-profit, ONG, associazioni, enti del terzo settore,
+    cooperative sociali, qualsiasi soggetto senza finalità di lucro.
+  → Solo obbligo di notifica (Art. 5.1). Nessun pagamento dovuto.
+
+  LIVELLO A — CANONE FISSO:
+  · Fatturato annuo ≥ €1.000.000 e < {{SOGLIA}} {{VALUTA}}
+  → Canone fisso mensile: {{IMPORTO}} {{VALUTA}} / mese
+
+  LIVELLO B — CANONE FISSO + PERCENTUALE:
+  · Fatturato annuo ≥ {{SOGLIA}} {{VALUTA}}
+  → Canone fisso: {{IMPORTO}} {{VALUTA}} / mese
+     PIÙ {{PERCENTUALE}}% del fatturato annuo ÷ 12 al mese
+  → Dichiarazione autocertificata fatturato entro 90 gg chiusura esercizio.
+
+5.3 La soglia di €1.000.000 è fissa e non soggetta ad adeguamento inflattivo.
+    Superamento soglia: notifica entro 60 gg dalla chiusura esercizio.
+
+5.4 Pagamento: entro il 1° di ogni mese. Metodo: {{PAGAMENTO}} — {{PAYINSTR}}
+5.5 Mancato pagamento 2+ mesi: revoca + arretrati + 20% penale.
+5.6 Inflazione: adeguamento fee Livelli A/B una volta/anno (≤ HICP/CPI),
+    preavviso 60 gg. La soglia €1M non è soggetta ad adeguamento.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 6 — REDISTRIBUZIONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Qualsiasi redistribuzione deve includere questa licenza integrale, mantenere
+l'attribuzione e non rimuovere gli avvisi di copyright.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 7 — RIMEDI E SANZIONI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+7.1 Le violazioni costituiscono: violazione del diritto d'autore (art. 158 L.d.A.;
+    art. 13 Dir. 2019/790) + inadempimento contrattuale (art. 1218 c.c.) +
+    violazione AI Act ove applicabile.
+7.2 Rimedi: cessazione immediata, rimozione Contenuto, risarcimento danni,
+    penale contrattuale (3×), pubblicazione sentenza (art. 166 L.d.A.).
+7.3 Danno minimo presunto = fee calcolata secondo Art. 3.3 con presunzione 100%.
+7.4 Il titolare può aderire ad azioni collettive e cedere i diritti di credito.
+7.5 Per enforcement transfrontaliero: vedi Art. 3.12 (meccanismi enforcement).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 8 — REGISTRO PUBBLICO DI VIOLAZIONI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+8.1 — PUBBLICAZIONE REGISTRO
+Il titolare si riserva il diritto di pubblicare violazioni verificate su un
+registro pubblico presso {{REGISTRY_URL}} o piattaforma equivalente, incluso:
+  (a) Nome Motore AI o entità violatrice
+  (b) Data scoperta violazione
+  (c) Natura della violazione (mancato pagamento, addestramento non autorizzato,
+      indicizzazione non autorizzata)
+  (d) Importi dovuti (se violazione finanziaria)
+  (e) Status corrente (contestato, regolato, irrisolto, in contenzioso)
+
+8.2 — CONDIZIONI DI RIMOZIONE
+Un record di violazione è rimosso dal registro al verificarsi di:
+  (a) Pagamento integrale di tutti gli importi dovuti
+  (b) Cessazione della violazione + prova di conformità
+  (c) Accordo transattivo scritto reciproco
+  (d) Sentenza giudiziale a favore del violatore
+  (e) Scadenza termini di prescrizione (24 mesi dalla scoperta)
+
+8.3 — EFFETTO DEL REGISTRO
+Pubblicazione di una violazione:
+  (a) Serve come notifica costruttiva della violazione ad altri titolari
+  (b) Può essere considerato da regolatori (DMA, autorità implementazione AI Act)
+      in indagini o azioni enforcement
+  (c) Può influire su standing normativo o licensing del Motore AI
+  (d) Non costituisce diffamazione se pubblicato in buona fede con accuratezza
+      fattuale e dovuto processo
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 9 — ESCLUSIONE DI GARANZIE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+IL CONTENUTO VIENE FORNITO "COSÌ COM'È" SENZA GARANZIA DI ALCUN TIPO.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 10 — SEPARABILITÀ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Clausola invalida → sostituita da clausola valida più vicina all'effetto originale.
+In caso di conflitto con condizioni d'uso di terzi: questa licenza prevale.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ART. 11 — MODIFICHE ALLA LICENZA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Versione applicabile: quella in vigore all'inizio dell'utilizzo.
+Nuova versione: preavviso 90 gg. Utilizzo continuato = accettazione.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+— FINE LICENZA — aatel-IC v2.1 — {{ANNO}} {{NOME}} — aatel.org
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NOTA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+La presente licenza è redatta con la massima attenzione alla solidità
+giuridica e si aggancia a normative UE vigenti. Non costituisce consulenza
+legale professionale. Per utilizzo in contenzioso con grandi operatori
+tecnologici è consigliabile la revisione da parte di un avvocato specializzato
+in diritto d'autore e diritto dell'AI.
+
+CAMBIAMENTI RISPETTO A v2.0:
+- Aggiunto Art. 3.4: Definizione esplicita di "risposta in cui Contenuto è usato"
+  per calcolo fee chiaro
+- Aggiunto Art. 3.10: Meccanismi prova per violazioni transfrontaliere (divulgazione,
+  regole presunzione, segnalazione normativa)
+- Aggiunto Art. 3.12: Enforcement transfrontaliero tramite organismi normativi UE,
+  DMA, autorità AI Act, azioni multi-giurisdizionali
+- Aggiunto Art. 8: Registro pubblico di violazioni con condizioni pubblicazione e rimozione
+- Potenziato Art. 7.5: Riferimento enforcement transfrontaliero
+- Chiarito fondamento normativo: DSA UE, DMA, AI Act art. 3 (principio effettività)
+  per entità non-UE
+
+Adattamento della licenza aatel-IC v2.1 (aatel.org).
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RIFERIMENTO PLACEHOLDER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{{ANNO}}            Anno copyright (es. 2026)
+{{NOME}}            Nome completo o nome organizzazione del titolare
+{{CITTÀ}}           Città del tribunale competente (es. Milano)
+{{EMAIL}}           Email contatto per notifiche (es. aatel.license@gmail.com)
+{{AI_FISSO}}        Canone mensile fisso per Motori AI (es. 10)
+{{AI_PER1K}}        Fee variabile per 1.000 risposte (es. 5)
+{{SOGLIA}}          Soglia fatturato per Livello A → B (es. 10000000)
+{{IMPORTO}}         Canone mensile fisso entità commerciali (es. 10)
+{{PERCENTUALE}}     Percentuale fatturato Livello B (es. 0.5)
+{{VALUTA}}          Valuta (es. EUR)
+{{PAGAMENTO}}       Metodo pagamento (es. Bitcoin / IBAN / PayPal)
+{{PAYINSTR}}        Istruzioni pagamento (es. indirizzo wallet, IBAN, email PayPal)
+{{REGISTRY_URL}}    URL registro pubblico violazioni (es. violations.aatel.org)
