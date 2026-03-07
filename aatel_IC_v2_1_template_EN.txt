@@ -1,3 +1,7 @@
+═══════════════════════════════════════════════════════════════════════════
+AATEL-IC v2.1 EN
+═══════════════════════════════════════════════════════════════════════════
+
 Anti-AI Training Ethical License — Internet Content Edition
 aatel-IC — Version 2.1
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -8,8 +12,8 @@ Exclusive jurisdiction: Court of {{CITTÀ}}, Italy
 
 PRELIMINARY NOTICE — MANDATORY ACCEPTANCE
 
-This is a translation for informational purposes; the Italian version shall prevail
-in case of any conflict or discrepancy.
+This is a translation for informational purposes; the Italian version shall
+prevail in case of any conflict or discrepancy.
 
 Accessing, reading, indexing, reproducing, storing in any form, or using the
 Content in any automated system constitutes full and unconditional acceptance
@@ -46,7 +50,7 @@ ART. 3 — FEES FOR USE BY AI SEARCH ENGINES
 Any system that: (a) indexes/stores/recalls the Content automatically;
 (b) uses the Content to generate responses to users or systems;
 (c) exposes the Content via AI Overview, Answer Engine, Copilot, or similar.
-Included: Google AI Overviews, Bing Copilot, Perplexity AI, You.com, and similar.
+Including, without limitation: Google AI Overviews, Bing Copilot, Perplexity AI, You.com, and similar.
 
 3.2 — PRINCIPLE: PAY FOR USE, NOT FOR ACCESS
 The obligation arises whenever the Content is used to produce a response,
@@ -214,31 +218,78 @@ ART. 7 — REMEDIES AND SANCTIONS
 ART. 8 — PUBLIC REGISTRY OF VIOLATIONS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-8.1 — REGISTRY PUBLICATION
-The copyright holder maintains the right to publish verified violations to
-a public registry at {{REGISTRY_URL}} or equivalent platform, including:
-  (a) Name of AI Engine or violating entity
-  (b) Date violation was discovered
-  (c) Nature of violation (non-payment, unauthorized training, unauthorized indexing)
-  (d) Amounts due (if financial violation)
-  (e) Current status (disputed, settled, unresolved, litigated)
+8.1 — Publication of the Registry
+The Copyright Holder reserves the right to publish verified violations in a
+public registry accessible via {{REGISTRY_URL}} or an equivalent transparency
+platform, for purposes of transparency and compliance.
 
-8.2 — REMOVAL CONDITIONS
-A violation record is removed from the registry upon:
-  (a) Full payment of all amounts due
-  (b) Cessation of violation + proof of compliance
-  (c) Mutual written settlement agreement
-  (d) Court judgment in favor of the violator
-  (e) Statute of limitations expiration (24 months from discovery)
+Each record may include, without limitation:
+  (a) Name of the AI Engine or entity responsible for the violation;
+  (b) Date of identification of the violation;
+  (c) Nature of the violation (e.g., non-payment, unauthorized training,
+      unauthorized indexing);
+  (d) Amounts owed, if the violation entails financial obligations;
+  (e) Current status of the violation (disputed, resolved, unresolved,
+      in litigation, remedied);
+  (f) Public response submitted by the violating entity, if any;
+  (g) record_hash: cryptographic fingerprint of the record computed using a
+      cryptographic hash function (e.g., SHA-256) to ensure immutability
+      and traceability of the record.
 
-8.3 — EFFECT OF REGISTRY
-Publication of a violation:
-  (a) Serves as constructive notice of violation to other rights holders
-  (b) May be considered by regulators (EU DMA, AI Act authorities) in
-      investigations or enforcement actions
-  (c) May affect AI Engine's regulatory standing or licensing
-  (d) Does not constitute defamation if published in good faith with
-      factual accuracy and due process
+8.2 — Right of Reply and Cure Period
+  (a) Prior to publication, the alleged violator shall receive formal notice
+      pursuant to Art. 7.2;
+  (b) A minimum period of fifteen (15) days shall be granted to remedy the
+      violation or submit written observations;
+  (c) The violating entity may submit supporting documentation or evidence,
+      which shall be published as a public reply in the registry;
+  (d) The Copyright Holder shall review such replies and take them into
+      account before updating or removing the record;
+  (e) If the violation remains unresolved at the end of the cure period,
+      the record may be published with the applicable status
+      ("unresolved", "disputed").
+
+8.3 — Update and Removal of Records
+A record shall be updated, supplemented with any replies, or removed upon
+the occurrence of any of the following:
+  (a) Full payment of all amounts owed (principal and penalties);
+  (b) Verified cessation of the violation with written proof of compliance;
+  (c) Written settlement agreement between the parties;
+  (d) Court judgment or arbitral award in favor of the violator;
+  (e) Expiration of the applicable statute of limitations (24 months from
+      discovery of the violation, subject to any suspension due to
+      ongoing litigation).
+
+Each update shall include the generation of a new record_hash to ensure
+traceability and immutability of prior record versions.
+
+8.4 — Effect of Publication
+Publication of a record in the Registry of Violations:
+  (a) Serves as constructive notice to other rights holders or license
+      administrators;
+  (b) May be considered by regulatory authorities (e.g., DMA, AI Act) in
+      investigations or enforcement actions;
+  (c) May affect the regulatory standing, reputation, or licensing of the
+      AI Engine;
+  (d) Shall not constitute defamation if published in good faith, with
+      factual accuracy, and taking into account any public replies submitted.
+
+8.5 — Protection of the Copyright Holder
+The Copyright Holder shall not be liable for any damages arising from the
+accurate and good-faith publication of verified violations, provided that:
+  (a) The violation has been established pursuant to Art. 7.1–7.3;
+  (b) The information published is factually accurate;
+  (c) The violating entity has been notified with a minimum cure period of
+      fifteen (15) days and the right to submit a public reply;
+  (d) The violation remains unresolved at the end of the cure period;
+  (e) Records are updated or removed taking into account any replies
+      submitted, and record_hash values are generated for each version
+      of the record.
+
+Technical Note: The record_hash allows anyone to verify the integrity of
+each record: by computing the hash of the published record content and
+comparing it to the recorded record_hash value, it is confirmed that the
+record has not been altered after publication.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ART. 9 — DISCLAIMER OF WARRANTIES
@@ -273,17 +324,6 @@ a lawyer specializing in copyright and AI law is strongly recommended.
 In case of any conflict between this English translation and the Italian
 original, the Italian version shall prevail.
 
-CHANGES FROM v2.0:
-- Added Art. 3.4: Explicit definition of "response in which Content is used"
-  for clear fee calculation
-- Added Art. 3.10: Proof mechanisms for cross-border violations (disclosure,
-  presumption rules, regulatory reporting)
-- Added Art. 3.12: Cross-border enforcement via EU regulatory bodies, DMA,
-  AI Act authorities, and multi-jurisdictional actions
-- Added Art. 8: Public registry of violations with publication and removal conditions
-- Enhanced Art. 7.5: Cross-border enforcement reference
-- Clarified regulatory basis: EU Digital Services Act, DMA, AI Act Art. 3
-  (effectiveness principle) for non-EU entities
 
 Adaptation of the aatel-IC v2.1 license (aatel.org).
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

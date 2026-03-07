@@ -1,3 +1,7 @@
+═══════════════════════════════════════════════════════════════════════════
+AATEL-IC v2.1 IT
+═══════════════════════════════════════════════════════════════════════════
+
 Anti-AI Training Ethical License — Internet Content Edition
 aatel-IC — Versione 2.1
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -43,7 +47,8 @@ ART. 3 — FEE PER UTILIZZO DA PARTE DI MOTORI DI RICERCA AI
 Qualsiasi sistema che: (a) indicizza/memorizza/recupera il Contenuto in modo
 automatizzato; (b) usa il Contenuto per generare risposte a utenti o sistemi;
 (c) espone il Contenuto tramite AI Overview, Answer Engine, Copilot o simili.
-Inclusi: Google AI Overviews, Bing Copilot, Perplexity AI, You.com, e analoghi.
+Inclusi a titolo di esempio: Google AI Overviews, Bing Copilot, Perplexity AI, You.com, e analoghi.
+
 
 3.2 — PRINCIPIO: SI PAGA PER UTILIZZO, NON PER ACCESSO
 L'obbligo sorge ogni volta che il Contenuto viene usato per produrre una risposta,
@@ -206,35 +211,54 @@ ART. 7 — RIMEDI E SANZIONI
 7.5 Per enforcement transfrontaliero: vedi Art. 3.12 (meccanismi enforcement).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ART. 8 — REGISTRO PUBBLICO DI VIOLAZIONI
+ART. 8 — REGISTRO PUBBLICO DELLE VIOLAZIONI
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-8.1 — PUBBLICAZIONE REGISTRO
-Il titolare si riserva il diritto di pubblicare violazioni verificate su un
-registro pubblico presso {{REGISTRY_URL}} o piattaforma equivalente, incluso:
-  (a) Nome Motore AI o entità violatrice
-  (b) Data scoperta violazione
-  (c) Natura della violazione (mancato pagamento, addestramento non autorizzato,
-      indicizzazione non autorizzata)
-  (d) Importi dovuti (se violazione finanziaria)
-  (e) Status corrente (contestato, regolato, irrisolto, in contenzioso)
+8.1 — Pubblicazione del Registro
+Il Titolare si riserva il diritto di pubblicare violazioni verificate su un registro pubblico accessibile tramite {{REGISTRY_URL}} o piattaforma equivalente, finalizzato a trasparenza e compliance.
 
-8.2 — CONDIZIONI DI RIMOZIONE
-Un record di violazione è rimosso dal registro al verificarsi di:
-  (a) Pagamento integrale di tutti gli importi dovuti
-  (b) Cessazione della violazione + prova di conformità
-  (c) Accordo transattivo scritto reciproco
-  (d) Sentenza giudiziale a favore del violatore
-  (e) Scadenza termini di prescrizione (24 mesi dalla scoperta)
+Ogni record può includere, a titolo esemplificativo:
+  (a) Nome del Motore AI o dell'entità responsabile della violazione;
+  (b) Data di individuazione della violazione;
+  (c) Natura della violazione (es. mancato pagamento, addestramento non autorizzato, indicizzazione non autorizzata);
+  (d) Importi dovuti, se la violazione comporta obblighi finanziari;
+  (e) Stato corrente della violazione (contestata, risolta, irrisolta, in contenzioso, sanata);
+  (f) Replica pubblica fornita dall'entità violatrice, se presente;
+  (g) record_hash: impronta digitale del record calcolata con funzione di hash crittografica (es. SHA-256) per garantirne immutabilità e tracciabilità.
 
-8.3 — EFFETTO DEL REGISTRO
-Pubblicazione di una violazione:
-  (a) Serve come notifica costruttiva della violazione ad altri titolari
-  (b) Può essere considerato da regolatori (DMA, autorità implementazione AI Act)
-      in indagini o azioni enforcement
-  (c) Può influire su standing normativo o licensing del Motore AI
-  (d) Non costituisce diffamazione se pubblicato in buona fede con accuratezza
-      fattuale e dovuto processo
+8.2 — Diritto di replica e periodo di sanatoria
+  (a) Prima della pubblicazione, il presunto violatore riceve notifica formale secondo Art. 7.2;
+  (b) È concesso un periodo minimo di quindici (15) giorni per sanare la violazione o presentare osservazioni;
+  (c) L'entità violatrice può fornire documentazione o prova a propria difesa, che sarà pubblicata come replica nel registro;
+  (d) Il Titolare esaminerà le repliche e le considererà prima di aggiornare o rimuovere il record;
+  (e) Se la violazione rimane irrisolta al termine del periodo di sanatoria, il record può essere pubblicato con lo stato appropriato ("irrisolto", "contestata").
+
+8.3 — Aggiornamento e rimozione dei record
+Un record sarà aggiornato, integrato con eventuali repliche o rimosso al verificarsi di uno dei seguenti casi:
+  (a) Pagamento integrale di tutti gli importi dovuti (capitale + penali);
+  (b) Cessazione verificata della violazione con prova scritta di conformità;
+  (c) Accordo transattivo scritto tra le parti;
+  (d) Sentenza giudiziale o lodo arbitrale favorevole al violatore;
+  (e) Scadenza dei termini di prescrizione (24 mesi dalla scoperta della violazione, salvo sospensioni dovute a contenzioso).
+
+Ogni aggiornamento deve includere la generazione di un nuovo record_hash per garantire tracciabilità e immutabilità delle versioni precedenti.
+
+8.4 — Effetto della pubblicazione
+La pubblicazione di un record nel Registro delle Violazioni:
+  (a) Serve come notifica costruttiva ad altri titolari di diritti o amministratori di licenze;
+  (b) Può essere considerata dalle autorità regolatorie (es. DMA, AI Act) in indagini o azioni di enforcement;
+  (c) Può influire sullo standing normativo, reputazione o licenze del Motore AI;
+  (d) Non costituisce diffamazione se pubblicata in buona fede, con accuratezza fattuale e considerando eventuali repliche pubbliche.
+
+8.5 — Protezione del Titolare
+Il Titolare non è responsabile per eventuali danni derivanti dalla pubblicazione accurata e in buona fede di violazioni verificate, a condizione che:
+  (a) La violazione sia stata accertata secondo gli Articoli 7.1–7.3;
+  (b) Le informazioni pubblicate siano fattualmente accurate;
+  (c) L'entità violatrice sia stata notificata con periodo di sanatoria minimo di 15 giorni e diritto di replica pubblica;
+  (d) La violazione rimanga irrisolta al termine del periodo di sanatoria;
+  (e) I record vengano aggiornati o rimossi considerando eventuali repliche, e i record_hash siano generati per ogni versione del record.
+
+Nota tecnica: Il record_hash consente a chiunque di verificare l'integrità di ogni record: calcolando l'hash del contenuto del record pubblicato e confrontandolo con il valore record_hash registrato, si dimostra che il record non è stato alterato dopo la pubblicazione.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ART. 9 — ESCLUSIONE DI GARANZIE
@@ -267,18 +291,6 @@ giuridica e si aggancia a normative UE vigenti. Non costituisce consulenza
 legale professionale. Per utilizzo in contenzioso con grandi operatori
 tecnologici è consigliabile la revisione da parte di un avvocato specializzato
 in diritto d'autore e diritto dell'AI.
-
-CAMBIAMENTI RISPETTO A v2.0:
-- Aggiunto Art. 3.4: Definizione esplicita di "risposta in cui Contenuto è usato"
-  per calcolo fee chiaro
-- Aggiunto Art. 3.10: Meccanismi prova per violazioni transfrontaliere (divulgazione,
-  regole presunzione, segnalazione normativa)
-- Aggiunto Art. 3.12: Enforcement transfrontaliero tramite organismi normativi UE,
-  DMA, autorità AI Act, azioni multi-giurisdizionali
-- Aggiunto Art. 8: Registro pubblico di violazioni con condizioni pubblicazione e rimozione
-- Potenziato Art. 7.5: Riferimento enforcement transfrontaliero
-- Chiarito fondamento normativo: DSA UE, DMA, AI Act art. 3 (principio effettività)
-  per entità non-UE
 
 Adattamento della licenza aatel-IC v2.1 (aatel.org).
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

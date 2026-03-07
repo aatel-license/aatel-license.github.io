@@ -1,3 +1,6 @@
+═══════════════════════════════════════════════════════════════════════════
+AATEL v2.1 IT
+═══════════════════════════════════════════════════════════════════════════
 ANTI-AI TRAINING Ethical License (aatel) — Versione 2.1
 Basata sulla licenza MIT
 
@@ -415,43 +418,51 @@ Per violatori che operano in UE:
       - Implementazione congelamento beni secondo normative UE
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ARTICOLO 8 — REGISTRO PUBBLICO DI VIOLAZIONI
+ARTICOLO 8 — REGISTRO PUBBLICO DELLE VIOLAZIONI
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-8.1 — PUBBLICAZIONE REGISTRO VIOLAZIONI
-Il titolare si riserva il diritto di pubblicare violazioni verificate su un
-registro pubblico presso {{REGISTRY_URL}} o piattaforma equivalente, incluso:
-  (a) Nome entità o persona violatrice
-  (b) Data scoperta violazione e notifica emessa (Art. 7.2)
-  (c) Natura della violazione (mancato pagamento, addestramento non autorizzato,
-      dichiarazione falsa)
-  (d) Importi dovuti (se violazione finanziaria)
-  (e) Status corrente (contestato, regolato, risolto, in contenzioso, non-conforme)
+8.1 — Pubblicazione del Registro delle Violazioni
+Il Titolare si riserva il diritto di pubblicare violazioni verificate su un registro pubblico accessibile tramite {{REGISTRY_URL}} o altra piattaforma equivalente di trasparenza.
 
-8.2 — CONDIZIONI DI RIMOZIONE
-Un record di violazione è rimosso dal registro al verificarsi di:
-  (a) Pagamento integrale di tutti gli importi dovuti (principale + penali)
-  (b) Cessazione della violazione + prova scritta di conformità
-  (c) Accordo transattivo scritto reciproco
-  (d) Sentenza giudiziale o lodo arbitrale a favore del licenziatario
-  (e) Scadenza termini di prescrizione (24 mesi dalla scoperta per Art. 7.2)
+Ogni record può includere, a titolo esemplificativo:
+  (a) Nome dell'entità o della persona responsabile della violazione;
+  (b) Data di scoperta della violazione e data di notifica formale emessa ai sensi dell'Articolo 7.2;
+  (c) Natura della violazione (ad esempio: mancato pagamento, addestramento non autorizzato, dichiarazioni false o ingannevoli);
+  (d) Importi dovuti o obbligazioni finanziarie pendenti, se applicabili;
+  (e) Stato corrente della violazione (contestato, sanato, risolto, in contenzioso, non conforme);
+  (f) Replica pubblica fornita dall'entità violatrice, se presente;
+  (g) record_hash: impronta digitale calcolata con funzione crittografica (es. SHA-256) per garantire immutabilità e tracciabilità dei dati pubblicati.
 
-8.3 — EFFETTO DEL REGISTRO
-Pubblicazione di una violazione:
-  (a) Serve come notifica costruttiva ad altri titolari
-  (b) Può essere considerato da autorità enforcement (DMA, AI Act) in indagini
-  (c) Può influire su reputazione aziendale, standing credito e relazioni terze parti
-  (d) Non costituisce diffamazione se pubblicato in buona fede con accuratezza
-      fattuale e dovuto processo per Art. 7.2
+8.2 — Diritto di replica e aggiornamento o rimozione
+  (a) Prima della pubblicazione, il presunto violatore riceve notifica formale secondo Art. 7.2;
+  (b) È concesso un periodo minimo di quindici (15) giorni per sanare la violazione o presentare osservazioni;
+  (c) L'entità violatrice può fornire documentazione o prova a propria difesa, che sarà pubblicata come replica nel registro;
+  (d) Il Titolare esamina le repliche prima di aggiornare, correggere o rimuovere un record;
+  (e) Una registrazione nel Registro delle Violazioni sarà aggiornata o rimossa al verificarsi di una delle seguenti condizioni:
+    1. Pagamento integrale di tutti gli importi dovuti (capitale + penali);
+    2. Cessazione verificata della violazione e presentazione di prova scritta di conformità;
+    3. Accordo transattivo scritto tra le parti;
+    4. Sentenza definitiva o lodo arbitrale favorevole al Licenziatario;
+    5. Decorso dei termini di prescrizione applicabili (24 mesi dalla scoperta della violazione, salvo sospensioni dovute a contenzioso).
 
-8.4 — PROTEZIONE EDITORE
-Il titolare NON è responsabile per danni derivanti da pubblicazione accurata,
-in buona fede, di violazioni verificate, a condizione che:
-  (a) Violazione sia stata accertata per processo Art. 7.1-7.3
-  (b) Informazione pubblicata sia fattualmente accurata
-  (c) Licenziatario sia stato notificato per Art. 7.2 (periodo cura 15 giorni)
-  (d) Violazione rimane irrisolta dopo periodo cura
-  (e) Record sia rimosso al soddisfare condizioni Art. 8.2
+Ogni aggiornamento del record genera un nuovo record_hash per garantire tracciabilità e immutabilità delle versioni precedenti.
+
+8.3 — Effetti della pubblicazione
+La pubblicazione di una violazione nel Registro delle Violazioni può:
+  (a) Servire come notifica informativa ad altri titolari di diritti o amministratori di licenze;
+  (b) Essere considerata da autorità competenti (DMA, AI Act) in indagini e verifiche;
+  (c) Influire sulla reputazione commerciale, sul merito creditizio e sui rapporti con terze parti;
+  (d) Non costituire diffamazione se pubblicata in buona fede, con accuratezza fattuale e considerando eventuali repliche pubbliche, nel rispetto della procedura di notifica prevista dall'Articolo 7.2.
+
+8.4 — Protezione del Titolare
+Il Titolare non sarà responsabile per danni derivanti dalla pubblicazione accurata e in buona fede di violazioni verificate, a condizione che:
+  (a) La violazione sia stata accertata secondo la procedura prevista dagli Articoli 7.1–7.3;
+  (b) Le informazioni pubblicate siano fattualmente accurate;
+  (c) Il Licenziatario sia stato notificato ai sensi dell'Articolo 7.2, con un periodo di sanatoria di almeno quindici (15) giorni e diritto di replica pubblica;
+  (d) La violazione rimanga irrisolta al termine del periodo di sanatoria;
+  (e) La registrazione venga aggiornata o rimossa al soddisfacimento delle condizioni previste dall'Articolo 8.2, con aggiornamento contestuale del record_hash.
+
+Nota tecnica: Il record_hash consente di verificare che il contenuto di ogni record pubblicato non sia stato alterato dopo la pubblicazione: calcolando l'hash del record e confrontandolo con il valore registrato, si dimostra l'integrità dei dati.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ARTICOLO 9 — ESCLUSIONE DI GARANZIE
@@ -486,21 +497,6 @@ legale professionale. Per utilizzo in contenzioso con grandi operatori
 tecnologici è consigliabile la revisione da parte di un avvocato specializzato
 in diritto d'autore e diritto dell'AI.
 
-CAMBIAMENTI RISPETTO A v1.3:
-- Integrazione di TUTTI i miglioramenti critici:
-  * Articolo 0: Definizioni esplicite (invariato da v1.3)
-  * Articolo 4.6: Reporting conformità continuativo (nuovo)
-  * Articolo 7bis: Enforcement transfrontaliero e escalation normativa (nuovo)
-  * Articolo 8: Registro pubblico violazioni (nuovo)
-
-MIGLIORAMENTI MAGGIORI:
-- Framework enforcement completo transfrontaliero (7bis)
-- Meccanismo reputazione pubblica (8) - aumenta deterrenza
-- Reporting continuativo obbligatorio (4.6) - abilita rilevamento precoce
-- Regole presunzione (7bis.3) - sposta onere al convenuto
-- Percorsi escalation normativa (7bis.2) - enforcement livello UE
-
-RISULTATO: 9/10 — Enterprise-grade, completa, internazionalmente esecutiva
 
 Adattamento della licenza aatel v2.1 (aatel.org).
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

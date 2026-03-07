@@ -1,3 +1,7 @@
+══════════════════════════════════════════════════════════════════════════
+AATEL v2.1 — EN
+══════════════════════════════════════════════════════════════════════════
+
 ANTI-AI TRAINING Ethical License (aatel) — Version 2.1
 Based on the MIT License
 
@@ -60,7 +64,7 @@ Any legally registered entity that:
 
 0.5 — "VIOLATION"
 Use of the Software in violation of Section 2, 3, or 4 of this license without
-proper notification and payment as required by Section 4 and 5.
+proper notification and payment as required by Sections 4 and 5.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 SECTION 1 — ATTRIBUTION
@@ -415,39 +419,75 @@ For violators operating in EU:
 SECTION 8 — PUBLIC REGISTRY OF VIOLATIONS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-8.1 — VIOLATION REGISTRY PUBLICATION
-The copyright holder maintains the right to publish verified violations to
-a public registry at {{REGISTRY_URL}} (or equivalent platform), including:
-  (a) Name of violating entity or individual
-  (b) Date violation was discovered and notice issued (Art. 7.2)
-  (c) Nature of violation (non-payment, unauthorized training, false declaration)
-  (d) Amounts due (if financial violation)
-  (e) Current status (disputed, settled, resolved, litigated, non-compliant)
+8.1 — Publication of the Registry
+The Copyright Holder reserves the right to publish verified violations in a
+public registry accessible via {{REGISTRY_URL}} or an equivalent transparency
+platform.
 
-8.2 — REMOVAL CONDITIONS
-A violation record is removed from the registry upon:
-  (a) Full payment of all amounts due (principal + penalties)
-  (b) Cessation of violation + written proof of compliance
-  (c) Mutual written settlement agreement
-  (d) Court judgment or arbitral award in favor of the violator
-  (e) 24-month statute of limitations expiration from discovery (Art. 7.2)
+Each record may include, without limitation:
+  (a) Name of the entity or individual responsible for the violation;
+  (b) Date of discovery of the violation and date of formal notice issued
+      pursuant to Section 7.2;
+  (c) Nature of the violation (e.g., non-payment, unauthorized training,
+      false or misleading declarations);
+  (d) Amounts owed or pending financial obligations, if applicable;
+  (e) Current status of the violation (disputed, remedied, resolved,
+      in litigation, non-compliant);
+  (f) Public response submitted by the violating entity, if any;
+  (g) record_hash: cryptographic fingerprint of the record computed using a
+      cryptographic hash function (e.g., SHA-256) to ensure immutability
+      and traceability of the published data.
 
-8.3 — EFFECT OF REGISTRY
-Publication of a violation:
-  (a) Serves as constructive notice to other copyright holders
-  (b) May be considered by enforcement authorities (DMA, AI Act) in investigations
-  (c) May affect violator's business reputation, credit standing, and third-party relationships
-  (d) Does not constitute defamation if published in good faith with
-      factual accuracy and due process per Art. 7.2
+8.2 — Right of Reply and Update or Removal
+  (a) Prior to publication, the alleged violator shall receive formal notice
+      pursuant to Section 7.2;
+  (b) A minimum period of fifteen (15) days shall be granted to remedy the
+      violation or submit written observations;
+  (c) The violating entity may submit supporting documentation or evidence,
+      which shall be published as a public reply in the registry;
+  (d) The Copyright Holder shall review such replies before updating,
+      correcting, or removing a record;
+  (e) A record in the Registry of Violations shall be updated or removed
+      upon the occurrence of any of the following:
+        1. Full payment of all amounts owed (principal and penalties);
+        2. Verified cessation of the violation with written proof of compliance;
+        3. Written settlement agreement between the parties;
+        4. Final court judgment or arbitral award in favor of the licensee;
+        5. Expiration of applicable limitation periods (24 months from
+           discovery of the violation, subject to any suspension due to
+           ongoing litigation).
 
-8.4 — PUBLISHER PROTECTION
-The copyright holder is NOT liable for damages arising from accurate,
-good-faith publication of verified violations, provided:
-  (a) Violation was discovered per Art. 7.1-7.3 process
-  (b) Information published is factually accurate
-  (c) Violator was notified per Art. 7.2 (15-day cure period)
-  (d) Violation remains unresolved after cure period
-  (e) Record is removed upon satisfaction of Art. 8.2 conditions
+Each update shall include the generation of a new record_hash to ensure
+traceability and immutability of prior record versions.
+
+8.3 — Effects of Publication
+Publication of a record in the Registry of Violations may:
+  (a) Serve as informative notice to other rights holders or license
+      administrators;
+  (b) Be considered by competent authorities (e.g., DMA, AI Act) in
+      investigations and audits;
+  (c) Affect commercial reputation, creditworthiness, and third-party
+      relationships;
+  (d) Not constitute defamation if published in good faith, with factual
+      accuracy, and taking into account any public replies, in compliance
+      with the notification procedure set forth in Section 7.2.
+
+8.4 — Protection of the Copyright Holder
+The Copyright Holder shall not be liable for any damages arising from the
+accurate and good-faith publication of verified violations, provided that:
+  (a) The violation has been established in accordance with the procedure
+      set forth in Sections 7.1–7.3;
+  (b) The information published is factually accurate;
+  (c) The licensee has been notified pursuant to Section 7.2, with a minimum
+      cure period of fifteen (15) days and the right to submit a public reply;
+  (d) The violation remains unresolved at the end of the cure period;
+  (e) Records are updated or removed upon fulfilment of the conditions set
+      forth in Section 8.2, with concurrent generation of a new record_hash.
+
+Technical Note: The record_hash enables verification that the content of each
+published record has not been altered after publication: by recomputing the
+hash of the record content and comparing it to the recorded record_hash value,
+the integrity of the data is confirmed.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 SECTION 9 — DISCLAIMER OF WARRANTIES
@@ -481,21 +521,6 @@ and is anchored to current EU regulations. It does not constitute professional
 legal advice. For use in disputes with major technology operators, review by
 a lawyer specializing in copyright and AI law is strongly recommended.
 
-CHANGES FROM v1.3:
-- Integrated ALL critical enhancements:
-  * Section 0: Explicit definitions (unchanged from v1.3)
-  * Section 4.6: Ongoing compliance reporting (new)
-  * Section 7bis: Cross-border enforcement & regulatory escalation (new)
-  * Section 8: Public violation registry (new)
-
-MAJOR IMPROVEMENTS:
-- Complete enforcement framework across borders (7bis)
-- Public reputation mechanism (8) - increases deterrence
-- Mandatory ongoing reporting (4.6) - enables early detection
-- Presumption rules (7bis.3) - shifts burden to defendant
-- Regulatory escalation paths (7bis.2) - EU-level enforcement
-
-RESULT: 9/10 — Enterprise-grade, comprehensive, internationally enforceable
 
 Adaptation of the aatel v2.1 license (aatel.org).
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -514,3 +539,6 @@ PLACEHOLDER REFERENCE
 {{PAGAMENTO}}    Payment method (e.g. Bitcoin / IBAN / PayPal)
 {{PAYINSTR}}     Payment instructions (e.g. wallet address, IBAN, PayPal email)
 {{REGISTRY_URL}} Public registry URL for violations (e.g. violations.aatel.org)
+
+
+═══════════════════════════════════════════════════════════════════════════
