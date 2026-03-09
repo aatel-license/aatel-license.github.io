@@ -46,8 +46,8 @@ ART. 3 — FEE PER UTILIZZO DA PARTE DI MOTORI DI RICERCA AI
 3.1 — DEFINIZIONE DI MOTORE AI
 Qualsiasi sistema che: (a) indicizza/memorizza/recupera il Contenuto in modo
 automatizzato; (b) usa il Contenuto per generare risposte a utenti o sistemi;
-(c) espone il Contenuto tramite AI Overview, Answer Engine, Copilot o simili.
-Inclusi a titolo di esempio: Google AI Overviews, Bing Copilot, Perplexity AI, You.com, e analoghi.
+(c) espone il Contenuto tramite AI Overview, Answer Engine o simili.
+
 
 
 3.2 — PRINCIPIO: SI PAGA PER UTILIZZO, NON PER ACCESSO
