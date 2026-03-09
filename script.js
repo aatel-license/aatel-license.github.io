@@ -1194,8 +1194,7 @@ ART. 3 — FEE PER UTILIZZO DA PARTE DI MOTORI DI RICERCA AI
 3.1 — DEFINIZIONE DI MOTORE AI
 Qualsiasi sistema che: (a) indicizza/memorizza/recupera il Contenuto in modo
 automatizzato; (b) usa il Contenuto per generare risposte a utenti o sistemi;
-(c) espone il Contenuto tramite AI Overview, Answer Engine, Copilot o simili.
-Inclusi: Google AI Overviews, Bing Copilot, Perplexity AI, You.com, e analoghi.
+(c) espone il Contenuto tramite AI Overview, Answer Engine o simili.
 
 3.2 — PRINCIPIO: SI PAGA PER UTILIZZO, NON PER ACCESSO
 L'obbligo sorge ogni volta che il Contenuto viene usato per produrre una risposta,
@@ -1500,8 +1499,8 @@ ART. 3 — FEES FOR USE BY AI SEARCH ENGINES
 3.1 — DEFINITION OF AI ENGINE
 Any system that: (a) indexes/stores/recalls the Content automatically;
 (b) uses the Content to generate responses to users or systems;
-(c) exposes the Content via AI Overview, Answer Engine, Copilot, or similar.
-Included: Google AI Overviews, Bing Copilot, Perplexity AI, You.com, and similar.
+(c) exposes the Content via AI Overview, Answer Engine, or similar.
+
 
 3.2 — PRINCIPLE: PAY FOR USE, NOT FOR ACCESS
 The obligation arises whenever the Content is used to produce a response,
@@ -1984,7 +1983,7 @@ PLACEHOLDER REFERENCE
       md += '> Jurisdiction: Court of ' + (f.citta||'[CITTÀ]') + ', Italy\n\n';
       md += '## ✔ Permitted\n- Reading, quoting, sharing with attribution\n- Personal non-commercial use\n- Non-profits, NGOs, companies under €1M: free (notification only)\n\n';
       md += '## ✘ Prohibited\n- ❌ AI/ML training, fine-tuning, evaluation data use\n- ❌ AI scraping or automated collection pipelines\n- ❌ Military or paramilitary use\n- ❌ Commercial use without notification and payment\n\n';
-      md += '## 🤖 AI Engines (Google, Bing, Perplexity…)\n';
+      md += '## 🤖 AI Engines (E.g. Google, Bing, Perplexity… and/or similar)\n';
       md += '**Fee per use — cache does NOT reset the obligation.**\n\n';
       md += '1. **Notify before launch**: [' + f.email + '](mailto:' + f.email + ')\n';
       md += '2. **Monthly fee:**\n';
