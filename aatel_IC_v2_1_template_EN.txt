@@ -49,8 +49,8 @@ ART. 3 — FEES FOR USE BY AI SEARCH ENGINES
 3.1 — DEFINITION OF AI ENGINE
 Any system that: (a) indexes/stores/recalls the Content automatically;
 (b) uses the Content to generate responses to users or systems;
-(c) exposes the Content via AI Overview, Answer Engine, Copilot, or similar.
-Including, without limitation: Google AI Overviews, Bing Copilot, Perplexity AI, You.com, and similar.
+(c) exposes the Content via AI Overview, Answer Engine or similar.
+
 
 3.2 — PRINCIPLE: PAY FOR USE, NOT FOR ACCESS
 The obligation arises whenever the Content is used to produce a response,
