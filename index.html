@@ -112,10 +112,10 @@
             <div class="consent-checkbox-row" id="ic-checkbox-row" onclick="toggleICConsent()" role="checkbox" aria-checked="false" tabindex="0">
               <div class="consent-checkbox-custom" id="ic-checkbox-visual"></div>
               <label class="consent-checkbox-label" for="ic-consent-input" data-lang="it">
-                Ho letto e accetto la licenza <strong>aatel-IC v2.1</strong>. Confermo che il mio utilizzo è conforme ai termini: non userò i contenuti per addestrare modelli AI/ML senza compenso, e notificherò il titolare se soggetto a fee. <a href="#" onclick="openLicenseModal(event)">Leggi il testo completo →</a>
+                Ho letto e accetto la licenza <strong>aatel-IC v2.1</strong>. Confermo che il mio utilizzo è conforme ai termini: non userò i contenuti per addestrare modelli AI/ML senza compenso, e notificherò il titolare se soggetto a fee. <a href="#" onclick="LicenseModal(event)">Leggi il testo completo →</a>
               </label>
               <label class="consent-checkbox-label" for="ic-consent-input" data-lang="en">
-                I have read and accept the <strong>aatel-IC v2.1</strong> license. I confirm that my use is compliant: I will not use content to train AI/ML models without compensation, and will notify the holder if subject to fees. <a href="#" onclick="openLicenseModal(event)">Read full text →</a>
+                I have read and accept the <strong>aatel-IC v2.1</strong> license. I confirm that my use is compliant: I will not use content to train AI/ML models without compensation, and will notify the holder if subject to fees. <a href="#" onclick="LicenseModal(event)">Read full text →</a>
               </label>
               <input type="checkbox" id="ic-consent-input" style="display:none" onchange="syncICCheckbox()">
             </div>
@@ -426,8 +426,8 @@ Not professional legal advice. aatel.org
         <span class="hero-tag hero-tag-v12">🏢 Fee a livelli</span>
         <span class="hero-tag hero-tag-v12">📊 Anti-inflazione</span>
       </div>
-      <p class="hero-half-desc" data-lang="it">Licenza open-source ispirata alla MIT per <strong style="color:var(--paper)">software</strong>. Vieta addestramento AI/ML, usi militari, e include tariffe a due livelli con salvaguardia inflazione.</p>
-      <p class="hero-half-desc" data-lang="en">MIT-inspired open-source license for <strong style="color:var(--paper)">software</strong>. Bans AI/ML training, military use, and includes tiered revenue fees with annual inflation protection.</p>
+      <p class="hero-half-desc" data-lang="it">Licenza ethical-source ispirata alla MIT per <strong style="color:var(--paper)">software</strong>. Vieta addestramento AI/ML, usi militari, e include tariffe a due livelli con salvaguardia inflazione.</p>
+      <p class="hero-half-desc" data-lang="en">MIT-inspired ethical-source license for <strong style="color:var(--paper)">software</strong>. Bans AI/ML training, military use, and includes tiered revenue fees with annual inflation protection.</p>
       <div class="hero-half-ctas">
         <a href="#generator" class="btn btn-red" onclick="switchGenTab('aatel')" data-lang="it">🔧 Genera v2.1</a>
         <a href="#generator" class="btn btn-red" onclick="switchGenTab('aatel')" data-lang="en">🔧 Generate v2.1</a>
