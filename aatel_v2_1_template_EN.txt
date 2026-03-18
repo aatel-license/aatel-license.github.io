@@ -3,7 +3,6 @@ AATEL v2.1 — EN
 ══════════════════════════════════════════════════════════════════════════
 
 ANTI-AI TRAINING Ethical License (aatel) — Version 2.1
-Based on the MIT License
 
 Copyright (c) {{ANNO}} {{NOME}}
 
