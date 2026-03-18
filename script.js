@@ -106,7 +106,6 @@
      ══════════════════════════════════════════════════════════════ */
 
   var LICENSE_IT = `ANTI-AI TRAINING Ethical License (aatel) — Versione 2.1
-Basata sulla licenza MIT
 
 Copyright (c) {{ANNO}} {{NOME}}
 
@@ -635,7 +634,6 @@ RIFERIMENTO PLACEHOLDER
 `;
 
   var LICENSE_EN = `ANTI-AI TRAINING Ethical License (aatel) — Version 2.1
-Based on the MIT License
 
 Copyright (c) {{ANNO}} {{NOME}}
 
@@ -1885,7 +1883,6 @@ PLACEHOLDER REFERENCE
       var cur = f.valuta || 'EUR';
       var md = '# ANTI-AI TRAINING Ethical License (aatel) v2.1\n\n';
       md += '> Copyright (c) ' + yr + ' ' + f.nome + '  \n';
-      md += '> Based on the MIT License\n\n';
       md += '## ✔ Permitted\n- Use, copy, modify, distribute, sublicense, sell the Software\n- Commercial use (with notification + fee)\n- Personal and non-profit use (free)\n\n';
       md += '## ✘ Prohibited\n- ❌ AI/ML training data use (any purpose)\n- ❌ Military or defense use\n- ❌ Commercial use without notification and fee\n\n';
       md += '## 💰 Fee Structure\n';
@@ -1893,6 +1890,14 @@ PLACEHOLDER REFERENCE
       md += '- **Tier A** (revenue < ' + f.soglia + ' ' + cur + '): ' + f.importo + ' ' + cur + '/month\n';
       md += '- **Tier B** (revenue ≥ ' + f.soglia + ' ' + cur + '): ' + f.importo + ' ' + cur + '/month + ' + f.percento + '% revenue/12\n';
       md += '- **Payment**: ' + f.pagamento + ' — ' + f.payinstr + '\n\n';
+      md += '---\n**DISCLAIMER OF WARRANTIES**' + '\n' 
+         'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  +'*\n'+
+'IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, +'*\n'+
+'FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL +'*\n'+
+'THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR +'*\n'+
+'OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, +'*\n'+
+'ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR +'*\n'+
+'OTHER DEALINGS IN THE SOFTWARE.'+'*\n';
       md += '---\n*aatel v2.1 — Not legal advice. [aatel.org](https://aatel.org)*\n';
       ok = downloadFile(md, 'README_aatel_v2.1_'+safe+'_'+yr+'.md');
     }
