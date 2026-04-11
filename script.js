@@ -4,108 +4,153 @@
    Generazione licenze 100% locale nel browser
    ══════════════════════════════════════════════════════════════ */
 
-  /* ── LANG ── */
-  function setLang(lang) {
-    document.body.className = 'lang-' + lang;
-    document.getElementById('btn-it').className = 'lang-btn' + (lang==='it' ? ' active' : '');
-    document.getElementById('btn-en').className = 'lang-btn' + (lang==='en' ? ' active' : '');
-    document.documentElement.lang = lang;
-  }
+/* ── LANG ── */
+function setLang(lang) {
+  document.body.className = "lang-" + lang;
+  document.getElementById("btn-it").className =
+    "lang-btn" + (lang === "it" ? " active" : "");
+  document.getElementById("btn-en").className =
+    "lang-btn" + (lang === "en" ? " active" : "");
+  document.documentElement.lang = lang;
+}
 
-  /* ── THEME DROPDOWN ── */
-  var THEME_SWATCHES = {
-    pelle:'#c8391a', ghiaccio:'#1565c0', bosco:'#2e7d32', viola:'#7b1fa2', alba:'#d4680a',
-    carta:'#c0392b', cielo:'#0077cc', menta:'#00897b', cipria:'#c2185b', limone:'#9e9000',
-    carbone:'#ff6b35', rosso:'#d32f2f', oceano:'#00bcd4', tabacco:'#d4a054', notte:'#5c8aff'
-  };
-  function toggleThemePicker(e) {
-    e.stopPropagation();
-    var picker = document.getElementById('theme-picker');
-    var isOpen = picker.classList.contains('open');
-    picker.classList.toggle('open', !isOpen);
-    document.getElementById('theme-trigger').setAttribute('aria-expanded', String(!isOpen));
-  }
-  function setTheme(theme) {
-    document.body.setAttribute('data-theme', theme);
-    var dot = document.querySelector('.theme-trigger .t-dot');
-    if (dot && THEME_SWATCHES[theme]) dot.style.background = THEME_SWATCHES[theme];
-    document.querySelectorAll('.theme-option').forEach(function(btn) {
-      btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
-    });
-    var picker = document.getElementById('theme-picker');
-    picker.classList.remove('open');
-    document.getElementById('theme-trigger').setAttribute('aria-expanded', 'false');
-    try { localStorage.setItem('aatel-theme', theme); } catch(e) {}
-  }
-  document.addEventListener('click', function(e) {
-    var picker = document.getElementById('theme-picker');
-    if (picker && !picker.contains(e.target)) {
-      picker.classList.remove('open');
-      document.getElementById('theme-trigger').setAttribute('aria-expanded', 'false');
-    }
+/* ── THEME DROPDOWN ── */
+var THEME_SWATCHES = {
+  pelle: "#c8391a",
+  ghiaccio: "#1565c0",
+  bosco: "#2e7d32",
+  viola: "#7b1fa2",
+  alba: "#d4680a",
+  carta: "#c0392b",
+  cielo: "#0077cc",
+  menta: "#00897b",
+  cipria: "#c2185b",
+  limone: "#9e9000",
+  carbone: "#ff6b35",
+  rosso: "#d32f2f",
+  oceano: "#00bcd4",
+  tabacco: "#d4a054",
+  notte: "#5c8aff",
+};
+function toggleThemePicker(e) {
+  e.stopPropagation();
+  var picker = document.getElementById("theme-picker");
+  var isOpen = picker.classList.contains("open");
+  picker.classList.toggle("open", !isOpen);
+  document
+    .getElementById("theme-trigger")
+    .setAttribute("aria-expanded", String(!isOpen));
+}
+function setTheme(theme) {
+  document.body.setAttribute("data-theme", theme);
+  var dot = document.querySelector(".theme-trigger .t-dot");
+  if (dot && THEME_SWATCHES[theme])
+    dot.style.background = THEME_SWATCHES[theme];
+  document.querySelectorAll(".theme-option").forEach(function (btn) {
+    btn.classList.toggle("active", btn.getAttribute("data-theme") === theme);
   });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') { var picker = document.getElementById('theme-picker'); if (picker) picker.classList.remove('open'); }
+  var picker = document.getElementById("theme-picker");
+  picker.classList.remove("open");
+  document
+    .getElementById("theme-trigger")
+    .setAttribute("aria-expanded", "false");
+  try {
+    localStorage.setItem("aatel-theme", theme);
+  } catch (e) {}
+}
+document.addEventListener("click", function (e) {
+  var picker = document.getElementById("theme-picker");
+  if (picker && !picker.contains(e.target)) {
+    picker.classList.remove("open");
+    document
+      .getElementById("theme-trigger")
+      .setAttribute("aria-expanded", "false");
+  }
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    var picker = document.getElementById("theme-picker");
+    if (picker) picker.classList.remove("open");
+  }
+});
+(function () {
+  try {
+    var saved = localStorage.getItem("aatel-theme");
+    if (saved && THEME_SWATCHES[saved]) setTheme(saved);
+  } catch (e) {}
+})();
+
+/* ── ACCORDION ── */
+function toggleAcc(header) {
+  var item = header.parentElement;
+  var body = item.querySelector(".acc-body");
+  var isOpen = item.classList.contains("open");
+  var acc = item.closest(".accordion");
+  acc.querySelectorAll(".acc-item.open").forEach(function (el) {
+    el.classList.remove("open");
+    el.querySelector(".acc-body").style.maxHeight = "0";
   });
-  (function() {
-    try { var saved = localStorage.getItem('aatel-theme'); if (saved && THEME_SWATCHES[saved]) setTheme(saved); } catch(e) {}
-  })();
-
-  /* ── ACCORDION ── */
-  function toggleAcc(header) {
-    var item = header.parentElement;
-    var body = item.querySelector('.acc-body');
-    var isOpen = item.classList.contains('open');
-    var acc = item.closest('.accordion');
-    acc.querySelectorAll('.acc-item.open').forEach(function(el) {
-      el.classList.remove('open');
-      el.querySelector('.acc-body').style.maxHeight = '0';
-    });
-    if (!isOpen) {
-      item.classList.add('open');
-      body.style.maxHeight = body.scrollHeight + 'px';
-    }
+  if (!isOpen) {
+    item.classList.add("open");
+    body.style.maxHeight = body.scrollHeight + "px";
   }
+}
 
-  /* ── COPY ── */
-  function copyLicense() {
-    var text = document.getElementById('copy-block').textContent;
-    navigator.clipboard.writeText(text).then(function() {
-      document.querySelectorAll('.copy-btn').forEach(function(btn) {
-        var orig = btn.textContent;
-        btn.textContent = btn.getAttribute('data-lang') === 'it' ? '✓ Copiato!' : '✓ Copied!';
-        btn.classList.add('copied');
-        setTimeout(function() { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
-      });
+/* ── COPY ── */
+function copyLicense() {
+  var text = document.getElementById("copy-block").textContent;
+  navigator.clipboard.writeText(text).then(function () {
+    document.querySelectorAll(".copy-btn").forEach(function (btn) {
+      var orig = btn.textContent;
+      btn.textContent =
+        btn.getAttribute("data-lang") === "it" ? "✓ Copiato!" : "✓ Copied!";
+      btn.classList.add("copied");
+      setTimeout(function () {
+        btn.textContent = orig;
+        btn.classList.remove("copied");
+      }, 2000);
     });
-  }
+  });
+}
 
-  function copyICLicense() {
-    var text = document.getElementById('ic-copy-block').textContent;
-    navigator.clipboard.writeText(text).then(function() {
-      var btns = document.querySelectorAll('#testo-ic .copy-btn');
-      btns.forEach(function(btn) {
-        var orig = btn.textContent;
-        btn.textContent = btn.getAttribute('data-lang') === 'it' ? '✓ Copiato!' : '✓ Copied!';
-        btn.classList.add('copied');
-        setTimeout(function() { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
-      });
+function copyICLicense() {
+  var text = document.getElementById("ic-copy-block").textContent;
+  navigator.clipboard.writeText(text).then(function () {
+    var btns = document.querySelectorAll("#testo-ic .copy-btn");
+    btns.forEach(function (btn) {
+      var orig = btn.textContent;
+      btn.textContent =
+        btn.getAttribute("data-lang") === "it" ? "✓ Copiato!" : "✓ Copied!";
+      btn.classList.add("copied");
+      setTimeout(function () {
+        btn.textContent = orig;
+        btn.classList.remove("copied");
+      }, 2000);
     });
-  }
+  });
+}
 
-  /* ── REVEAL ── */
-  var ro = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }
+/* ── REVEAL ── */
+var ro = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add("visible");
+        ro.unobserve(e.target);
+      }
     });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(function(el) { ro.observe(el); });
+  },
+  { threshold: 0.08 },
+);
+document.querySelectorAll(".reveal").forEach(function (el) {
+  ro.observe(el);
+});
 
-  /* ══════════════════════════════════════════════════════════════
+/* ══════════════════════════════════════════════════════════════
      LICENSE TEMPLATES — aatel v2.1
      ══════════════════════════════════════════════════════════════ */
 
-  var LICENSE_IT = `ANTI-AI TRAINING Ethical License (aatel) — Versione 2.1
+var LICENSE_IT = `ANTI-AI TRAINING Ethical License (aatel) — Versione 2.1
 
 Copyright (c) {{ANNO}} {{NOME}}
 
@@ -633,7 +678,7 @@ RIFERIMENTO PLACEHOLDER
 {{REGISTRY_URL}} URL registro pubblico violazioni (es. violations.aatel.org)
 `;
 
-  var LICENSE_EN = `ANTI-AI TRAINING Ethical License (aatel) — Version 2.1
+var LICENSE_EN = `ANTI-AI TRAINING Ethical License (aatel) — Version 2.1
 
 Copyright (c) {{ANNO}} {{NOME}}
 
@@ -1156,11 +1201,11 @@ PLACEHOLDER REFERENCE
 {{REGISTRY_URL}} Public registry URL for violations (e.g. violations.aatel.org)
 `;
 
-  /* ══════════════════════════════════════════════════════════════
+/* ══════════════════════════════════════════════════════════════
      LICENSE TEMPLATES — aatel-IC v2.1
      ══════════════════════════════════════════════════════════════ */
 
-  var IC_LICENSE_IT = `Anti-AI Training Ethical License — Internet Content Edition
+var IC_LICENSE_IT = `Anti-AI Training Ethical License — Internet Content Edition
 aatel-IC — Versione 2.1
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Copyright (c) {{ANNO}} {{NOME}}
@@ -1468,7 +1513,7 @@ RIFERIMENTO PLACEHOLDER
 {{REGISTRY_URL}}    URL registro pubblico violazioni (es. violations.aatel.org)
 `;
 
-  var IC_LICENSE_EN = `Anti-AI Training Ethical License — Internet Content Edition
+var IC_LICENSE_EN = `Anti-AI Training Ethical License — Internet Content Edition
 aatel-IC — Version 2.1
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Copyright (c) {{ANNO}} {{NOME}}
@@ -1782,392 +1827,573 @@ PLACEHOLDER REFERENCE
 {{REGISTRY_URL}}    Public registry URL for violations (e.g. violations.aatel.org)
 `;
 
-  /* ── aatel v2.1 GENERATOR ── */
+/* ── aatel v2.1 GENERATOR ── */
 
-  function getFields() {
-    var cur = (document.getElementById('f-threshold-cur').value || '').trim() || null;
-    return {
-      anno:        (document.getElementById('f-year').value         || '').trim() || null,
-      nome:        (document.getElementById('f-name').value         || '').trim() || null,
-      email:       (document.getElementById('f-email').value        || '').trim() || null,
-      citta:       (document.getElementById('f-city') ? (document.getElementById('f-city').value || '').trim() : null) || null,
-      soglia:      (document.getElementById('f-threshold').value    || '').trim() || null,
-      valuta:      cur,
-      importo:     (document.getElementById('f-fixed').value        || '').trim() || null,
-      percento:    (document.getElementById('f-percent').value      || '').trim() || null,
-      pagamento:   (document.getElementById('f-payment').value      || '').trim() || null,
-      payinstr:    (document.getElementById('f-payinstr').value     || '').trim() || null,
-      registryUrl: (document.getElementById('f-registry') ? (document.getElementById('f-registry').value || '').trim() : null) || null,
-    };
+function getFields() {
+  var cur =
+    (document.getElementById("f-threshold-cur").value || "").trim() || null;
+  return {
+    anno: (document.getElementById("f-year").value || "").trim() || null,
+    nome: (document.getElementById("f-name").value || "").trim() || null,
+    email: (document.getElementById("f-email").value || "").trim() || null,
+    citta:
+      (document.getElementById("f-city")
+        ? (document.getElementById("f-city").value || "").trim()
+        : null) || null,
+    soglia: (document.getElementById("f-threshold").value || "").trim() || null,
+    valuta: cur,
+    importo: (document.getElementById("f-fixed").value || "").trim() || null,
+    percento: (document.getElementById("f-percent").value || "").trim() || null,
+    pagamento:
+      (document.getElementById("f-payment").value || "").trim() || null,
+    payinstr:
+      (document.getElementById("f-payinstr").value || "").trim() || null,
+    registryUrl:
+      (document.getElementById("f-registry")
+        ? (document.getElementById("f-registry").value || "").trim()
+        : null) || null,
+  };
+}
+
+function fill(tmpl, f) {
+  var cur = f.valuta || "[VALUTA]";
+  return tmpl
+    .replace(/\{\{ANNO\}\}/g, f.anno || "[ANNO]")
+    .replace(/\{\{NOME\}\}/g, f.nome || "[NOME/ORGANIZZAZIONE]")
+    .replace(/\{\{EMAIL\}\}/g, f.email || "[EMAIL]")
+    .replace(/\{\{CITTÀ\}\}/g, f.citta || "[CITTÀ]")
+    .replace(/\{\{SOGLIA\}\}/g, f.soglia || "[SOGLIA]")
+    .replace(/\{\{VALUTA\}\}/g, cur)
+    .replace(/\{\{IMPORTO\}\}/g, f.importo || "[IMPORTO]")
+    .replace(/\{\{PERCENTUALE\}\}/g, f.percento || "[PERCENTUALE]")
+    .replace(/\{\{PAGAMENTO\}\}/g, f.pagamento || "[METODO]")
+    .replace(/\{\{PAYINSTR\}\}/g, f.payinstr || "[ISTRUZIONI]")
+    .replace(/\{\{REGISTRY_URL\}\}/g, f.registryUrl || "[REGISTRY_URL]");
+}
+
+function updatePreview() {
+  var f = getFields();
+  var lines = fill(LICENSE_IT, f).split("\n").slice(0, 12);
+  var html = lines
+    .map(function (line) {
+      return line
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(
+          /\[([A-Z\/\s\u00C0-\u00FC\.\-]+)\]/g,
+          '<span class="ph">[$1]</span>',
+        );
+    })
+    .join("\n");
+  document.getElementById("preview-live").innerHTML =
+    html + '\n<span class="ph">… [documento completo]</span>';
+}
+
+function showStatus(msg, type) {
+  var el = document.getElementById("gen-status");
+  el.textContent = msg;
+  el.className = "gen-status show " + type;
+  setTimeout(function () {
+    el.className = "gen-status";
+  }, 4000);
+}
+
+function downloadFile(content, filename) {
+  try {
+    var blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+    return true;
+  } catch (e) {
+    return false;
   }
+}
 
-  function fill(tmpl, f) {
-    var cur = f.valuta || '[VALUTA]';
-    return tmpl
-      .replace(/\{\{ANNO\}\}/g,        f.anno      || '[ANNO]')
-      .replace(/\{\{NOME\}\}/g,        f.nome      || '[NOME/ORGANIZZAZIONE]')
-      .replace(/\{\{EMAIL\}\}/g,       f.email     || '[EMAIL]')
-      .replace(/\{\{CITTÀ\}\}/g,       f.citta     || '[CITTÀ]')
-      .replace(/\{\{SOGLIA\}\}/g,      f.soglia    || '[SOGLIA]')
-      .replace(/\{\{VALUTA\}\}/g,      cur)
-      .replace(/\{\{IMPORTO\}\}/g,     f.importo   || '[IMPORTO]')
-      .replace(/\{\{PERCENTUALE\}\}/g, f.percento  || '[PERCENTUALE]')
-      .replace(/\{\{PAGAMENTO\}\}/g,   f.pagamento || '[METODO]')
-      .replace(/\{\{PAYINSTR\}\}/g,    f.payinstr  || '[ISTRUZIONI]')
-      .replace(/\{\{REGISTRY_URL\}\}/g, f.registryUrl || '[REGISTRY_URL]');
+function validate() {
+  var f = getFields();
+  var missing = [];
+  if (!f.anno) missing.push("Anno");
+  if (!f.nome) missing.push("Nome");
+  if (!f.email) missing.push("Email");
+  if (!f.citta) missing.push("Città foro");
+  if (!f.soglia) missing.push("Soglia fatturato");
+  if (!f.valuta) missing.push("Valuta");
+  if (!f.importo) missing.push("Importo fisso");
+  if (!f.percento) missing.push("Percentuale");
+  if (!f.pagamento) missing.push("Metodo pagamento");
+  if (!f.payinstr) missing.push("Istruzioni pagamento");
+  if (missing.length > 0) {
+    showStatus("⚠ Campi mancanti: " + missing.join(", "), "error");
+    document
+      .getElementById("gen-form")
+      .scrollIntoView({ behavior: "smooth", block: "center" });
+    return null;
   }
+  return f;
+}
 
-  function updatePreview() {
-    var f = getFields();
-    var lines = fill(LICENSE_IT, f).split('\n').slice(0, 12);
-    var html = lines.map(function(line) {
-      return line.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-        .replace(/\[([A-Z\/\s\u00C0-\u00FC\.\-]+)\]/g,'<span class="ph">[$1]</span>');
-    }).join('\n');
-    document.getElementById('preview-live').innerHTML = html + '\n<span class="ph">… [documento completo]</span>';
+function downloadLicense(type) {
+  var f = validate();
+  if (!f) return;
+  var safe = (f.nome || "aatel")
+    .replace(/[^a-zA-Z0-9_\- ]/g, "_")
+    .replace(/\s+/g, "_");
+  var yr = f.anno || new Date().getFullYear();
+  var ok = false;
+  if (type === "it") {
+    ok = downloadFile(
+      fill(LICENSE_IT, f),
+      "aatel_v2.1_IT_" + safe + "_" + yr + ".txt",
+    );
+  } else if (type === "en") {
+    ok = downloadFile(
+      fill(LICENSE_EN, f),
+      "aatel_v2.1_EN_" + safe + "_" + yr + ".txt",
+    );
+  } else if (type === "both") {
+    ok = downloadFile(
+      fill(LICENSE_IT, f),
+      "aatel_v2.1_IT_" + safe + "_" + yr + ".txt",
+    );
+    setTimeout(function () {
+      downloadFile(
+        fill(LICENSE_EN, f),
+        "aatel_v2.1_EN_" + safe + "_" + yr + ".txt",
+      );
+    }, 400);
+  } else if (type === "md") {
+    var cur = f.valuta || "EUR";
+    var md = "# ANTI-AI TRAINING Ethical License (aatel) v2.1\n\n";
+
+    md += "> Copyright (c) " + yr + " " + f.nome + "  \n";
+
+    md +=
+      "## ✔ Permitted\n" +
+      "- Use, copy, modify, distribute, sublicense, sell the Software\n" +
+      "- Commercial use (with notification + fee)\n" +
+      "- Personal and non-profit use (free)\n\n";
+
+    md +=
+      "## ✘ Prohibited\n" +
+      "- ❌ AI/ML training data use (any purpose)\n" +
+      "- ❌ Military or defense use\n" +
+      "- ❌ Commercial use without notification and fee\n\n";
+
+    md += "## 💰 Fee Structure\n";
+    md +=
+      "- **Notify before use**: [" + f.email + "](mailto:" + f.email + ")\n";
+    md +=
+      "- **Tier A** (revenue < " +
+      f.soglia +
+      " " +
+      cur +
+      "): " +
+      f.importo +
+      " " +
+      cur +
+      "/month\n";
+    md +=
+      "- **Tier B** (revenue ≥ " +
+      f.soglia +
+      " " +
+      cur +
+      "): " +
+      f.importo +
+      " " +
+      cur +
+      "/month + " +
+      f.percento +
+      "% revenue/12\n";
+    md += "- **Payment**: " + f.pagamento + " — " + f.payinstr + "\n\n";
+
+    md += "---\n";
+    md += "**DISCLAIMER OF WARRANTIES**\n";
+    md +=
+      'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, ';
+    md +=
+      "INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. ";
+    md +=
+      "IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, ";
+    md +=
+      "WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE ";
+    md += "OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n";
+
+    md += "---\n";
+    md += "*aatel v2.1 — Not legal advice. [aatel.org](https://aatel.org)*\n";
+
+    ok = downloadFile(md, "README_aatel_v2.1_" + safe + "_" + yr + ".md");
   }
+  if (ok) showStatus("✓ Licenza scaricata con successo!", "success");
+  else showStatus("✗ Errore nel download.", "error");
+}
 
-  function showStatus(msg, type) {
-    var el = document.getElementById('gen-status');
-    el.textContent = msg;
-    el.className = 'gen-status show ' + type;
-    setTimeout(function() { el.className = 'gen-status'; }, 4000);
+/* ── GEN TABS ── */
+function switchGenTab(tab) {
+  document.querySelectorAll(".gen-tab-panel").forEach(function (p) {
+    p.classList.remove("active");
+  });
+  document.querySelectorAll(".gen-tab-btn").forEach(function (b) {
+    b.classList.remove("active");
+  });
+  document.getElementById("tab-" + tab).classList.add("active");
+  document.getElementById("tab-btn-" + tab).classList.add("active");
+  var gen = document.querySelector(".generator");
+  if (gen) gen.classList.toggle("gen-ic-active", tab === "ic");
+}
+
+/* ── aatel-IC v2.1 GENERATOR ── */
+
+function getICFields() {
+  var aiCur =
+    (document.getElementById("ic-ai-currency").value || "").trim() ||
+    (document.getElementById("ic-currency").value || "").trim() ||
+    null;
+  var comCur =
+    (document.getElementById("ic-threshold-cur").value || "").trim() ||
+    (document.getElementById("ic-currency").value || "").trim() ||
+    null;
+  return {
+    anno: (document.getElementById("ic-year").value || "").trim() || null,
+    nome: (document.getElementById("ic-name").value || "").trim() || null,
+    email: (document.getElementById("ic-email").value || "").trim() || null,
+    citta: (document.getElementById("ic-city").value || "").trim() || null,
+    aiFixed:
+      (document.getElementById("ic-ai-fixed").value || "").trim() || null,
+    aiPer1k:
+      (document.getElementById("ic-ai-per1k").value || "").trim() || null,
+    aiCur: aiCur,
+    soglia:
+      (document.getElementById("ic-threshold").value || "").trim() || null,
+    comCur: comCur,
+    importo: (document.getElementById("ic-fixed").value || "").trim() || null,
+    percento:
+      (document.getElementById("ic-percent").value || "").trim() || null,
+    pagamento:
+      (document.getElementById("ic-payment").value || "").trim() || null,
+    payinstr:
+      (document.getElementById("ic-payinstr").value || "").trim() || null,
+    registryUrl:
+      (document.getElementById("ic-registry")
+        ? (document.getElementById("ic-registry").value || "").trim()
+        : null) || null,
+  };
+}
+
+function fillIC(tmpl, f) {
+  var cur = f.aiCur || f.comCur || "[VALUTA]";
+  return tmpl
+    .replace(/\{\{ANNO\}\}/g, f.anno || "[ANNO]")
+    .replace(/\{\{NOME\}\}/g, f.nome || "[NOME/ORGANIZZAZIONE]")
+    .replace(/\{\{EMAIL\}\}/g, f.email || "[EMAIL]")
+    .replace(/\{\{CITTÀ\}\}/g, f.citta || "[CITTÀ]")
+    .replace(/\{\{AI_FISSO\}\}/g, f.aiFixed || "[IMPORTO FISSO AI]")
+    .replace(/\{\{AI_PER1K\}\}/g, f.aiPer1k || "[IMPORTO PER 1.000 QUERY]")
+    .replace(/\{\{VALUTA\}\}/g, cur)
+    .replace(/\{\{SOGLIA\}\}/g, f.soglia || "[SOGLIA]")
+    .replace(/\{\{IMPORTO\}\}/g, f.importo || "[IMPORTO FISSO]")
+    .replace(/\{\{PERCENTUALE\}\}/g, f.percento || "[PERCENTUALE]")
+    .replace(/\{\{PAGAMENTO\}\}/g, f.pagamento || "[METODO]")
+    .replace(/\{\{PAYINSTR\}\}/g, f.payinstr || "[ISTRUZIONI]")
+    .replace(/\{\{REGISTRY_URL\}\}/g, f.registryUrl || "[REGISTRY_URL]");
+}
+
+function updateICPreview() {
+  var f = getICFields();
+  var lines = fillIC(IC_LICENSE_IT, f).split("\n").slice(0, 14);
+  var html = lines
+    .map(function (line) {
+      return line
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(
+          /\[([A-Z\/\s\u00C0-\u00FC\.\-]+)\]/g,
+          '<span class="ph">[$1]</span>',
+        );
+    })
+    .join("\n");
+  document.getElementById("ic-preview-live").innerHTML =
+    html + '\n<span class="ph">… [documento completo]</span>';
+}
+
+function validateIC() {
+  var f = getICFields();
+  var missing = [];
+  if (!f.anno) missing.push("Anno");
+  if (!f.nome) missing.push("Nome");
+  if (!f.email) missing.push("Email");
+  if (!f.citta) missing.push("Città foro");
+  if (!f.aiFixed) missing.push("Canone fisso AI");
+  if (!f.aiPer1k) missing.push("Fee per 1.000 risposte");
+  if (!f.aiCur) missing.push("Valuta AI");
+  if (!f.soglia) missing.push("Soglia fatturato");
+  if (!f.importo) missing.push("Importo fisso entità");
+  if (!f.percento) missing.push("Percentuale");
+  if (!f.pagamento) missing.push("Metodo pagamento");
+  if (!f.payinstr) missing.push("Istruzioni pagamento");
+  if (missing.length > 0) {
+    showStatus("⚠ Campi mancanti: " + missing.join(", "), "error");
+    document
+      .getElementById("ic-gen-form")
+      .scrollIntoView({ behavior: "smooth", block: "center" });
+    return null;
   }
+  return f;
+}
 
-  function downloadFile(content, filename) {
-    try {
-      var blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-      var url = URL.createObjectURL(blob);
-      var a = document.createElement('a');
-      a.href = url; a.download = filename; a.click();
-      URL.revokeObjectURL(url);
-      return true;
-    } catch(e) { return false; }
+function downloadICLicense(type) {
+  var f = validateIC();
+  if (!f) return;
+  var safe = (f.nome || "aatel-ic")
+    .replace(/[^a-zA-Z0-9_\- ]/g, "_")
+    .replace(/\s+/g, "_");
+  var yr = f.anno || new Date().getFullYear();
+  var ok = false;
+  if (type === "it") {
+    ok = downloadFile(
+      fillIC(IC_LICENSE_IT, f),
+      "aatel-IC_v2.1_IT_" + safe + "_" + yr + ".txt",
+    );
+  } else if (type === "en") {
+    ok = downloadFile(
+      fillIC(IC_LICENSE_EN, f),
+      "aatel-IC_v2.1_EN_" + safe + "_" + yr + ".txt",
+    );
+  } else if (type === "both") {
+    ok = downloadFile(
+      fillIC(IC_LICENSE_IT, f),
+      "aatel-IC_v2.1_IT_" + safe + "_" + yr + ".txt",
+    );
+    setTimeout(function () {
+      downloadFile(
+        fillIC(IC_LICENSE_EN, f),
+        "aatel-IC_v2.1_EN_" + safe + "_" + yr + ".txt",
+      );
+    }, 400);
+  } else if (type === "md") {
+    var cur = f.aiCur || f.comCur || "EUR";
+    var md =
+      "# aatel-IC v2.1 — Anti-AI Training Ethical License — Internet Content Edition\n\n";
+    md += "> Copyright (c) " + yr + " " + f.nome + "  \n";
+    md += "> Governing law: Italian law + EU regulations  \n";
+    md += "> Jurisdiction: Court of " + (f.citta || "[CITTÀ]") + ", Italy\n\n";
+    md +=
+      "## ✔ Permitted\n- Reading, quoting, sharing with attribution\n- Personal non-commercial use\n- Non-profits, NGOs, companies under €1M: free (notification only)\n\n";
+    md +=
+      "## ✘ Prohibited\n- ❌ AI/ML training, fine-tuning, evaluation data use\n- ❌ AI scraping or automated collection pipelines\n- ❌ Military or paramilitary use\n- ❌ Commercial use without notification and payment\n\n";
+    md += "## 🤖 AI Engines (E.g. Google, Bing, Perplexity… and/or similar)\n";
+    md += "**Fee per use — cache does NOT reset the obligation.**\n\n";
+    md +=
+      "1. **Notify before launch**: [" +
+      f.email +
+      "](mailto:" +
+      f.email +
+      ")\n";
+    md += "2. **Monthly fee:**\n";
+    md += "   - Fixed: " + f.aiFixed + " " + cur + "/month\n";
+    md +=
+      "   - Variable: " +
+      f.aiPer1k +
+      " " +
+      cur +
+      " per 1,000 responses served\n";
+    md += "3. **No tracking data**: automatic 100% presumption\n";
+    md += "4. **Missing robots.txt** ≠ implicit permission\n";
+    md += "5. **Joint liability** across all group entities\n";
+    md += "6. **Non-compliance**: 3× penalty + removal within 15 days\n\n";
+    md += "## 🏢 Commercial Entities (non-AI)\n";
+    md += "1. **Notify**: [" + f.email + "](mailto:" + f.email + ")\n";
+    md += "2. **Fee:**\n";
+    md += "   - Tier 0 (revenue < €1M): free, notification only\n";
+    md +=
+      "   - Tier A (€1M ≤ revenue < " +
+      f.soglia +
+      " " +
+      cur +
+      "): " +
+      f.importo +
+      " " +
+      cur +
+      "/month\n";
+    md +=
+      "   - Tier B (≥ " +
+      f.soglia +
+      " " +
+      cur +
+      "): " +
+      f.importo +
+      " " +
+      cur +
+      "/month + " +
+      f.percento +
+      "% revenue/12\n";
+    md += "   - Payment via " + f.pagamento + ": " + f.payinstr + "\n\n";
+    md +=
+      "---\n*aatel-IC v2.1 — Not legal advice. [aatel.org](https://aatel.org)*\n";
+    ok = downloadFile(md, "README_aatel-IC_v2.1_" + safe + "_" + yr + ".md");
   }
+  if (ok) showStatus("✓ Licenza scaricata con successo!", "success");
+  else showStatus("✗ Errore nel download.", "error");
+}
 
-  function validate() {
-    var f = getFields();
-    var missing = [];
-    if (!f.anno)     missing.push('Anno');
-    if (!f.nome)     missing.push('Nome');
-    if (!f.email)    missing.push('Email');
-    if (!f.citta)    missing.push('Città foro');
-    if (!f.soglia)   missing.push('Soglia fatturato');
-    if (!f.valuta)   missing.push('Valuta');
-    if (!f.importo)  missing.push('Importo fisso');
-    if (!f.percento) missing.push('Percentuale');
-    if (!f.pagamento)missing.push('Metodo pagamento');
-    if (!f.payinstr) missing.push('Istruzioni pagamento');
-    if (missing.length > 0) {
-      showStatus('⚠ Campi mancanti: ' + missing.join(', '), 'error');
-      document.getElementById('gen-form').scrollIntoView({ behavior:'smooth', block:'center' });
-      return null;
-    }
-    return f;
-  }
-
-  function downloadLicense(type) {
-    var f = validate();
-    if (!f) return;
-    var safe = (f.nome || 'aatel').replace(/[^a-zA-Z0-9_\- ]/g,'_').replace(/\s+/g,'_');
-    var yr = f.anno || new Date().getFullYear();
-    var ok = false;
-    if (type === 'it') {
-      ok = downloadFile(fill(LICENSE_IT, f), 'aatel_v2.1_IT_'+safe+'_'+yr+'.txt');
-    } else if (type === 'en') {
-      ok = downloadFile(fill(LICENSE_EN, f), 'aatel_v2.1_EN_'+safe+'_'+yr+'.txt');
-    } else if (type === 'both') {
-      ok = downloadFile(fill(LICENSE_IT, f), 'aatel_v2.1_IT_'+safe+'_'+yr+'.txt');
-      setTimeout(function() { downloadFile(fill(LICENSE_EN, f), 'aatel_v2.1_EN_'+safe+'_'+yr+'.txt'); }, 400);
-    } else if (type === 'md') {
-      var cur = f.valuta || 'EUR';
-      var md = '# ANTI-AI TRAINING Ethical License (aatel) v2.1\n\n';
-      md += '> Copyright (c) ' + yr + ' ' + f.nome + '  \n';
-      md += '## ✔ Permitted\n- Use, copy, modify, distribute, sublicense, sell the Software\n- Commercial use (with notification + fee)\n- Personal and non-profit use (free)\n\n';
-      md += '## ✘ Prohibited\n- ❌ AI/ML training data use (any purpose)\n- ❌ Military or defense use\n- ❌ Commercial use without notification and fee\n\n';
-      md += '## 💰 Fee Structure\n';
-      md += '- **Notify before use**: [' + f.email + '](mailto:' + f.email + ')\n';
-      md += '- **Tier A** (revenue < ' + f.soglia + ' ' + cur + '): ' + f.importo + ' ' + cur + '/month\n';
-      md += '- **Tier B** (revenue ≥ ' + f.soglia + ' ' + cur + '): ' + f.importo + ' ' + cur + '/month + ' + f.percento + '% revenue/12\n';
-      md += '- **Payment**: ' + f.pagamento + ' — ' + f.payinstr + '\n\n';
-      md += '---\n**DISCLAIMER OF WARRANTIES**' + '\n' 
-         'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  +'*\n'+
-'IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, +'*\n'+
-'FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL +'*\n'+
-'THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR +'*\n'+
-'OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, +'*\n'+
-'ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR +'*\n'+
-'OTHER DEALINGS IN THE SOFTWARE.'+'*\n';
-      md += '---\n*aatel v2.1 — Not legal advice. [aatel.org](https://aatel.org)*\n';
-      ok = downloadFile(md, 'README_aatel_v2.1_'+safe+'_'+yr+'.md');
-    }
-    if (ok) showStatus('✓ Licenza scaricata con successo!', 'success');
-    else    showStatus('✗ Errore nel download.', 'error');
-  }
-
-  /* ── GEN TABS ── */
-  function switchGenTab(tab) {
-    document.querySelectorAll('.gen-tab-panel').forEach(function(p) { p.classList.remove('active'); });
-    document.querySelectorAll('.gen-tab-btn').forEach(function(b) { b.classList.remove('active'); });
-    document.getElementById('tab-' + tab).classList.add('active');
-    document.getElementById('tab-btn-' + tab).classList.add('active');
-    var gen = document.querySelector('.generator');
-    if (gen) gen.classList.toggle('gen-ic-active', tab === 'ic');
-  }
-
-  /* ── aatel-IC v2.1 GENERATOR ── */
-
-  function getICFields() {
-    var aiCur = (document.getElementById('ic-ai-currency').value || '').trim() ||
-                (document.getElementById('ic-currency').value || '').trim() || null;
-    var comCur = (document.getElementById('ic-threshold-cur').value || '').trim() ||
-                 (document.getElementById('ic-currency').value || '').trim() || null;
-    return {
-      anno:      (document.getElementById('ic-year').value      || '').trim() || null,
-      nome:      (document.getElementById('ic-name').value      || '').trim() || null,
-      email:     (document.getElementById('ic-email').value     || '').trim() || null,
-      citta:     (document.getElementById('ic-city').value      || '').trim() || null,
-      aiFixed:   (document.getElementById('ic-ai-fixed').value  || '').trim() || null,
-      aiPer1k:   (document.getElementById('ic-ai-per1k').value  || '').trim() || null,
-      aiCur:     aiCur,
-      soglia:    (document.getElementById('ic-threshold').value || '').trim() || null,
-      comCur:    comCur,
-      importo:   (document.getElementById('ic-fixed').value     || '').trim() || null,
-      percento:  (document.getElementById('ic-percent').value   || '').trim() || null,
-      pagamento: (document.getElementById('ic-payment').value   || '').trim() || null,
-      payinstr:  (document.getElementById('ic-payinstr').value  || '').trim() || null,
-      registryUrl: (document.getElementById('ic-registry') ? (document.getElementById('ic-registry').value || '').trim() : null) || null,
-    };
-  }
-
-  function fillIC(tmpl, f) {
-    var cur = f.aiCur || f.comCur || '[VALUTA]';
-    return tmpl
-      .replace(/\{\{ANNO\}\}/g,         f.anno      || '[ANNO]')
-      .replace(/\{\{NOME\}\}/g,         f.nome      || '[NOME/ORGANIZZAZIONE]')
-      .replace(/\{\{EMAIL\}\}/g,        f.email     || '[EMAIL]')
-      .replace(/\{\{CITTÀ\}\}/g,        f.citta     || '[CITTÀ]')
-      .replace(/\{\{AI_FISSO\}\}/g,     f.aiFixed   || '[IMPORTO FISSO AI]')
-      .replace(/\{\{AI_PER1K\}\}/g,     f.aiPer1k   || '[IMPORTO PER 1.000 QUERY]')
-      .replace(/\{\{VALUTA\}\}/g,       cur)
-      .replace(/\{\{SOGLIA\}\}/g,       f.soglia    || '[SOGLIA]')
-      .replace(/\{\{IMPORTO\}\}/g,      f.importo   || '[IMPORTO FISSO]')
-      .replace(/\{\{PERCENTUALE\}\}/g,  f.percento  || '[PERCENTUALE]')
-      .replace(/\{\{PAGAMENTO\}\}/g,    f.pagamento || '[METODO]')
-      .replace(/\{\{PAYINSTR\}\}/g,     f.payinstr  || '[ISTRUZIONI]')
-      .replace(/\{\{REGISTRY_URL\}\}/g, f.registryUrl || '[REGISTRY_URL]');
-  }
-
-  function updateICPreview() {
-    var f = getICFields();
-    var lines = fillIC(IC_LICENSE_IT, f).split('\n').slice(0, 14);
-    var html = lines.map(function(line) {
-      return line.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-        .replace(/\[([A-Z\/\s\u00C0-\u00FC\.\-]+)\]/g,'<span class="ph">[$1]</span>');
-    }).join('\n');
-    document.getElementById('ic-preview-live').innerHTML = html + '\n<span class="ph">… [documento completo]</span>';
-  }
-
-  function validateIC() {
-    var f = getICFields();
-    var missing = [];
-    if (!f.anno)      missing.push('Anno');
-    if (!f.nome)      missing.push('Nome');
-    if (!f.email)     missing.push('Email');
-    if (!f.citta)     missing.push('Città foro');
-    if (!f.aiFixed)   missing.push('Canone fisso AI');
-    if (!f.aiPer1k)   missing.push('Fee per 1.000 risposte');
-    if (!f.aiCur)     missing.push('Valuta AI');
-    if (!f.soglia)    missing.push('Soglia fatturato');
-    if (!f.importo)   missing.push('Importo fisso entità');
-    if (!f.percento)  missing.push('Percentuale');
-    if (!f.pagamento) missing.push('Metodo pagamento');
-    if (!f.payinstr)  missing.push('Istruzioni pagamento');
-    if (missing.length > 0) {
-      showStatus('⚠ Campi mancanti: ' + missing.join(', '), 'error');
-      document.getElementById('ic-gen-form').scrollIntoView({ behavior:'smooth', block:'center' });
-      return null;
-    }
-    return f;
-  }
-
-  function downloadICLicense(type) {
-    var f = validateIC();
-    if (!f) return;
-    var safe = (f.nome || 'aatel-ic').replace(/[^a-zA-Z0-9_\- ]/g,'_').replace(/\s+/g,'_');
-    var yr = f.anno || new Date().getFullYear();
-    var ok = false;
-    if (type === 'it') {
-      ok = downloadFile(fillIC(IC_LICENSE_IT, f), 'aatel-IC_v2.1_IT_'+safe+'_'+yr+'.txt');
-    } else if (type === 'en') {
-      ok = downloadFile(fillIC(IC_LICENSE_EN, f), 'aatel-IC_v2.1_EN_'+safe+'_'+yr+'.txt');
-    } else if (type === 'both') {
-      ok = downloadFile(fillIC(IC_LICENSE_IT, f), 'aatel-IC_v2.1_IT_'+safe+'_'+yr+'.txt');
-      setTimeout(function() { downloadFile(fillIC(IC_LICENSE_EN, f), 'aatel-IC_v2.1_EN_'+safe+'_'+yr+'.txt'); }, 400);
-    } else if (type === 'md') {
-      var cur = f.aiCur || f.comCur || 'EUR';
-      var md = '# aatel-IC v2.1 — Anti-AI Training Ethical License — Internet Content Edition\n\n';
-      md += '> Copyright (c) ' + yr + ' ' + f.nome + '  \n';
-      md += '> Governing law: Italian law + EU regulations  \n';
-      md += '> Jurisdiction: Court of ' + (f.citta||'[CITTÀ]') + ', Italy\n\n';
-      md += '## ✔ Permitted\n- Reading, quoting, sharing with attribution\n- Personal non-commercial use\n- Non-profits, NGOs, companies under €1M: free (notification only)\n\n';
-      md += '## ✘ Prohibited\n- ❌ AI/ML training, fine-tuning, evaluation data use\n- ❌ AI scraping or automated collection pipelines\n- ❌ Military or paramilitary use\n- ❌ Commercial use without notification and payment\n\n';
-      md += '## 🤖 AI Engines (E.g. Google, Bing, Perplexity… and/or similar)\n';
-      md += '**Fee per use — cache does NOT reset the obligation.**\n\n';
-      md += '1. **Notify before launch**: [' + f.email + '](mailto:' + f.email + ')\n';
-      md += '2. **Monthly fee:**\n';
-      md += '   - Fixed: ' + f.aiFixed + ' ' + cur + '/month\n';
-      md += '   - Variable: ' + f.aiPer1k + ' ' + cur + ' per 1,000 responses served\n';
-      md += '3. **No tracking data**: automatic 100% presumption\n';
-      md += '4. **Missing robots.txt** ≠ implicit permission\n';
-      md += '5. **Joint liability** across all group entities\n';
-      md += '6. **Non-compliance**: 3× penalty + removal within 15 days\n\n';
-      md += '## 🏢 Commercial Entities (non-AI)\n';
-      md += '1. **Notify**: [' + f.email + '](mailto:' + f.email + ')\n';
-      md += '2. **Fee:**\n';
-      md += '   - Tier 0 (revenue < €1M): free, notification only\n';
-      md += '   - Tier A (€1M ≤ revenue < ' + f.soglia + ' ' + cur + '): ' + f.importo + ' ' + cur + '/month\n';
-      md += '   - Tier B (≥ ' + f.soglia + ' ' + cur + '): ' + f.importo + ' ' + cur + '/month + ' + f.percento + '% revenue/12\n';
-      md += '   - Payment via ' + f.pagamento + ': ' + f.payinstr + '\n\n';
-      md += '---\n*aatel-IC v2.1 — Not legal advice. [aatel.org](https://aatel.org)*\n';
-      ok = downloadFile(md, 'README_aatel-IC_v2.1_'+safe+'_'+yr+'.md');
-    }
-    if (ok) showStatus('✓ Licenza scaricata con successo!', 'success');
-    else    showStatus('✗ Errore nel download.', 'error');
-  }
-
-  /* ══════════════════════════════════════════════════════════════
+/* ══════════════════════════════════════════════════════════════
      COOKIE & LICENSE CONSENT LOGIC
      ══════════════════════════════════════════════════════════════ */
 
-  var icConsentAccepted = false;
+var icConsentAccepted = false;
 
-  function toggleICConsent() {
-    icConsentAccepted = !icConsentAccepted;
-    var row = document.getElementById('ic-checkbox-row');
-    var inp = document.getElementById('ic-consent-input');
-    row.classList.toggle('checked', icConsentAccepted);
-    row.setAttribute('aria-checked', String(icConsentAccepted));
-    inp.checked = icConsentAccepted;
-    document.querySelectorAll('.consent-btn-confirm').forEach(function(btn) {
-      btn.disabled = !icConsentAccepted;
-    });
-    if (icConsentAccepted) {
-      document.getElementById('ic-required-msg').classList.remove('show');
-      document.getElementById('ic-required-msg-en').classList.remove('show');
+function toggleICConsent() {
+  icConsentAccepted = !icConsentAccepted;
+  var row = document.getElementById("ic-checkbox-row");
+  var inp = document.getElementById("ic-consent-input");
+  row.classList.toggle("checked", icConsentAccepted);
+  row.setAttribute("aria-checked", String(icConsentAccepted));
+  inp.checked = icConsentAccepted;
+  document.querySelectorAll(".consent-btn-confirm").forEach(function (btn) {
+    btn.disabled = !icConsentAccepted;
+  });
+  if (icConsentAccepted) {
+    document.getElementById("ic-required-msg").classList.remove("show");
+    document.getElementById("ic-required-msg-en").classList.remove("show");
+  }
+}
+
+function syncICCheckbox() {
+  icConsentAccepted = document.getElementById("ic-consent-input").checked;
+  var row = document.getElementById("ic-checkbox-row");
+  row.classList.toggle("checked", icConsentAccepted);
+  row.setAttribute("aria-checked", String(icConsentAccepted));
+  document.querySelectorAll(".consent-btn-confirm").forEach(function (btn) {
+    btn.disabled = !icConsentAccepted;
+  });
+}
+
+document
+  .getElementById("ic-checkbox-row")
+  .addEventListener("keydown", function (e) {
+    if (e.key === " " || e.key === "Enter") {
+      e.preventDefault();
+      toggleICConsent();
     }
-  }
-
-  function syncICCheckbox() {
-    icConsentAccepted = document.getElementById('ic-consent-input').checked;
-    var row = document.getElementById('ic-checkbox-row');
-    row.classList.toggle('checked', icConsentAccepted);
-    row.setAttribute('aria-checked', String(icConsentAccepted));
-    document.querySelectorAll('.consent-btn-confirm').forEach(function(btn) {
-      btn.disabled = !icConsentAccepted;
-    });
-  }
-
-  document.getElementById('ic-checkbox-row').addEventListener('keydown', function(e) {
-    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggleICConsent(); }
   });
 
-  function saveConsent(analytics, prefs) {
-    try {
-      var data = {
-        ts: Date.now(),
-        essential: true,
-        analytics: analytics,
-        prefs: prefs,
-        icLicense: true,
-        icVersion: '2.0'
-      };
-      localStorage.setItem('aatel-consent', JSON.stringify(data));
-    } catch(e) {}
-  }
+function saveConsent(analytics, prefs) {
+  try {
+    var data = {
+      ts: Date.now(),
+      essential: true,
+      analytics: analytics,
+      prefs: prefs,
+      icLicense: true,
+      icVersion: "2.0",
+    };
+    localStorage.setItem("aatel-consent", JSON.stringify(data));
+  } catch (e) {}
+}
 
-  function hideOverlay() {
-    var overlay = document.getElementById('consent-overlay');
-    overlay.classList.add('hidden');
-    var bar = document.getElementById('consent-accepted-bar');
-    bar.classList.remove('hidden');
-    setTimeout(function() { bar.classList.add('hidden'); }, 5000);
-  }
+function hideOverlay() {
+  var overlay = document.getElementById("consent-overlay");
+  overlay.classList.add("hidden");
+  var bar = document.getElementById("consent-accepted-bar");
+  bar.classList.remove("hidden");
+  setTimeout(function () {
+    bar.classList.add("hidden");
+  }, 5000);
+}
 
-  function acceptEssential() {
-    if (!icConsentAccepted) {
-      document.getElementById('ic-required-msg').classList.add('show');
-      document.getElementById('ic-required-msg-en').classList.add('show');
-      document.getElementById('ic-checkbox-row').scrollIntoView({ behavior:'smooth', block:'center' });
-      return;
-    }
-    saveConsent(false, false);
-    hideOverlay();
+function acceptEssential() {
+  if (!icConsentAccepted) {
+    document.getElementById("ic-required-msg").classList.add("show");
+    document.getElementById("ic-required-msg-en").classList.add("show");
+    document
+      .getElementById("ic-checkbox-row")
+      .scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
   }
+  saveConsent(false, false);
+  hideOverlay();
+}
 
-  function acceptAll() {
-    if (!icConsentAccepted) {
-      document.getElementById('ic-required-msg').classList.add('show');
-      document.getElementById('ic-required-msg-en').classList.add('show');
-      document.getElementById('ic-checkbox-row').scrollIntoView({ behavior:'smooth', block:'center' });
-      return;
-    }
-    document.getElementById('ck-analytics').checked = true;
-    document.getElementById('ck-prefs').checked = true;
-    saveConsent(true, true);
-    hideOverlay();
+function acceptAll() {
+  if (!icConsentAccepted) {
+    document.getElementById("ic-required-msg").classList.add("show");
+    document.getElementById("ic-required-msg-en").classList.add("show");
+    document
+      .getElementById("ic-checkbox-row")
+      .scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
   }
+  document.getElementById("ck-analytics").checked = true;
+  document.getElementById("ck-prefs").checked = true;
+  saveConsent(true, true);
+  hideOverlay();
+}
 
-  function confirmConsent() {
-    if (!icConsentAccepted) return;
-    var analytics = document.getElementById('ck-analytics').checked;
-    var prefs     = document.getElementById('ck-prefs').checked;
-    saveConsent(analytics, prefs);
-    hideOverlay();
-  }
+function confirmConsent() {
+  if (!icConsentAccepted) return;
+  var analytics = document.getElementById("ck-analytics").checked;
+  var prefs = document.getElementById("ck-prefs").checked;
+  saveConsent(analytics, prefs);
+  hideOverlay();
+}
 
-  function reopenConsent() {
-    document.getElementById('consent-accepted-bar').classList.add('hidden');
-    document.getElementById('consent-overlay').classList.remove('hidden');
-  }
+function reopenConsent() {
+  document.getElementById("consent-accepted-bar").classList.add("hidden");
+  document.getElementById("consent-overlay").classList.remove("hidden");
+}
 
-  function dismissBar() {
-    document.getElementById('consent-accepted-bar').classList.add('hidden');
-  }
+function dismissBar() {
+  document.getElementById("consent-accepted-bar").classList.add("hidden");
+}
 
-  /* ── MODALE LICENZA ── */
-  function openLicenseModal(e) {
-    if (e) e.preventDefault();
-    document.getElementById('license-modal-overlay').classList.add('open');
-    document.getElementById('license-modal').querySelector('.lm-body').scrollTop = 0;
-    document.body.style.overflow = 'hidden';
-  }
+/* ── MODALE LICENZA ── */
+function openLicenseModal(e) {
+  if (e) e.preventDefault();
+  document.getElementById("license-modal-overlay").classList.add("open");
+  document.getElementById("license-modal").querySelector(".lm-body").scrollTop =
+    0;
+  document.body.style.overflow = "hidden";
+}
 
-  function closeLicenseModal() {
-    document.getElementById('license-modal-overlay').classList.remove('open');
-    document.body.style.overflow = '';
-  }
+function closeLicenseModal() {
+  document.getElementById("license-modal-overlay").classList.remove("open");
+  document.body.style.overflow = "";
+}
 
-  document.getElementById('license-modal-overlay').addEventListener('click', function(e) {
+document
+  .getElementById("license-modal-overlay")
+  .addEventListener("click", function (e) {
     if (e.target === this) closeLicenseModal();
   });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && document.getElementById('license-modal-overlay').classList.contains('open')) {
-      closeLicenseModal();
-    }
-  });
+document.addEventListener("keydown", function (e) {
+  if (
+    e.key === "Escape" &&
+    document.getElementById("license-modal-overlay").classList.contains("open")
+  ) {
+    closeLicenseModal();
+  }
+});
 
-  /* On load: check if already consented */
-  (function() {
-    try {
-      var saved = localStorage.getItem('aatel-consent');
-      if (saved) {
-        var data = JSON.parse(saved);
-        if (data && data.icLicense && (Date.now() - data.ts) < 365 * 24 * 3600 * 1000) {
-          document.getElementById('consent-overlay').classList.add('hidden');
-          return;
-        }
+/* On load: check if already consented */
+(function () {
+  try {
+    var saved = localStorage.getItem("aatel-consent");
+    if (saved) {
+      var data = JSON.parse(saved);
+      if (
+        data &&
+        data.icLicense &&
+        Date.now() - data.ts < 365 * 24 * 3600 * 1000
+      ) {
+        document.getElementById("consent-overlay").classList.add("hidden");
+        return;
       }
-    } catch(e) {}
-    document.getElementById('consent-overlay').classList.remove('hidden');
-  })();
+    }
+  } catch (e) {}
+  document.getElementById("consent-overlay").classList.remove("hidden");
+})();
