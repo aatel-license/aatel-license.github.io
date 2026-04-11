@@ -1,144 +1,554 @@
 # aatel-license.github.io
 # ANTI-AI TRAINING ETHICAL LICENSE
 *IMPORTANT DISCLAIMER*: This license (AATEL - Anti-AI Training Ethical License) is an independent software ethical license and is not in any way affiliated, associated, authorized, or endorsed by the UK Civil Aviation Authority (CAA) or the Air Travel Organisers' Licensing (ATOL) scheme. The name "AATEL" is an acronym referring to software data protection and has no connection to travel protection services or civil aviation regulations.
-## AATEL — Version 1.0
+══════════════════════════════════════════════════════════════════════════
+AATEL v2.1 — EN
+══════════════════════════════════════════════════════════════════════════
 
-*Based on the MIT License*
+ANTI-AI TRAINING Ethical License (aatel) — Version 2.1
 
-**Copyright (c) [YEAR] [NAME/ORGANIZATION]**
+Copyright (c) {{ANNO}} {{NOME}}
 
-Permission is hereby granted, free of charge, to any person or entity obtaining a copy of this software and associated documentation files (the **"Software"**), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, **subject to the following conditions:**
+Permission is hereby granted, free of charge, to any person or entity obtaining
+a copy of this software and associated documentation files (the "Software"), to
+deal in the Software without restriction, subject to the following conditions:
 
-> ⚠ **READ CAREFULLY** — Failure to comply with any condition of this License constitutes a material breach and results in automatic, immediate termination of all rights granted herein.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 0 — DEFINITIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
----
+0.1 — "AI TRAINING"
+Includes, but is not limited to:
+  (a) Supervised learning, unsupervised learning, reinforcement learning
+  (b) Fine-tuning, domain adaptation, transfer learning
+  (c) Distillation, quantization, pruning (model compression)
+  (d) Synthetic or augmented data generation derived from the Software
+  (e) Alignment training (RLHF, DPO, preference optimization, similars)
+  (f) Evaluation or benchmarking of AI/ML models using the Software
+  (g) Feature extraction or embedding generation for ML pipelines
 
-## Section 1 — Attribution
+Does NOT include:
+  (i) Inference (running a trained model to generate output)
+  (ii) Caching or temporary storage for end-user queries
+  (iii) Citation or reference to the Software in documentation
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software, in any form or medium, whether printed, digital, or otherwise. The attribution must be clearly visible and unaltered.
+0.2 — "MILITARY USE"
+Includes:
+  (a) Direct use by armed forces, national guards, militias, or active reserves
+  (b) Use by intelligence or security agencies (NSA, MI6, DGSE, similars)
+  (c) Contractor (primary or subcontractor) providing services to any entity in (a)-(b)
+  (d) Weapons development, targeting systems, cyber warfare platforms
+  (e) Military surveillance, reconnaissance, battle management systems
+  (f) Dual-use: systems that can be modified or adapted for military purposes
+  (g) Indirect use: transferring the Software to third parties for military use
 
----
+Does NOT include:
+  (i) Civilian law enforcement (police, border patrol)
+  (ii) Defensive cybersecurity (protecting non-military systems)
+  (iii) Academic research on military technology (with publication intent)
 
-## Section 2 — Prohibition on Use for AI/ML Model Training
+0.3 — "COMMERCIAL ENTITY"
+Any individual, organization, or legal person that:
+  - Generates revenue from goods, services, or intellectual property
+  - Has annual gross revenue ≥ {{SOGLIA}} {{VALUTA}}
+  - Operates for profit or commercial purpose
+  - Is NOT classified as non-profit under Section 5.6
 
-Notwithstanding any other provision of this License, it is **expressly and absolutely prohibited**, for any natural person, legal entity, corporation, government body, non-profit organization, academic institution, or any other entity, acting directly or indirectly, to:
+0.4 — "NON-PROFIT ORGANIZATION"
+Any legally registered entity that:
+  - Has transparent funding mechanisms (public disclosure of donors/budget)
+  - Prohibits distribution of profits or surplus to members
+  - Has no commercial revenue from core activities
+  - Is registered as charitable, NGO, association, or cooperative (non-profit model)
+  - Includes: NGOs, charities, academic institutions, public research bodies,
+    third-sector organizations, social cooperatives
+  - EXCLUDES: VC-funded startups, tech companies, government contractors
 
-- Use the Software, in whole or in part, as training data, fine-tuning data, pre-training data, or evaluation data for any artificial intelligence, machine learning, deep learning, large language model, or any other statistical model or automated system of any kind;
-- Use the output, structure, logic, architecture, or any component derived from the Software to train, fine-tune, pre-train, distill, align, benchmark, or evaluate any AI or ML model of any kind;
-- Incorporate the Software into any automated pipeline, data collection system, web scraper, or data aggregation process whose primary or secondary purpose is the collection of data for AI/ML training purposes;
-- Use the Software to generate synthetic datasets, augmented datasets, or any form of derivative data intended for use in AI/ML model training;
-- License, sublicense, or otherwise transfer the Software to any third party for any of the purposes described above.
+0.5 — "VIOLATION"
+Use of the Software in violation of Section 2, 3, or 4 of this license without
+proper notification and payment as required by Sections 4 and 5.
 
-This prohibition applies **regardless of purpose** — including commercial, academic, governmental, research, non-profit, or personal use — and regardless of the form in which the Software is accessed, processed, or reproduced.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 1 — ATTRIBUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
----
+The copyright notice and this permission notice shall be included in all copies
+or substantial portions of the Software.
 
-## Section 3 — Prohibition on Military Use
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 2 — PROHIBITION ON AI/ML MODEL TRAINING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-The Software may **not** be used, in whole or in part, directly or indirectly, for any military, paramilitary, or armed defense purpose. This prohibition includes, without limitation:
+It is EXPRESSLY AND ABSOLUTELY PROHIBITED, directly or indirectly, to:
 
-- Use by or on behalf of any armed forces, military branch, national guard, militia, paramilitary group, or any intelligence agency of any nation or supranational organization;
-- Use by any company, contractor, subcontractor, or consultant operating under a military, defense, or intelligence contract, where such use relates to that contract;
-- Use for the development, production, testing, simulation, guidance, targeting, or operational support of weapons systems, autonomous weapons, combat drones, military surveillance systems, or any technology designed for armed conflict;
-- Use for cyber warfare, electronic warfare, signals intelligence, mass surveillance for military or intelligence purposes, or any offensive or defensive military cyber operation;
-- Indirect use through third parties acting on behalf of any military or intelligence organization.
+  (a) Use the Software as training, fine-tuning, pre-training, or evaluation data
+      for any AI, ML, deep learning, LLM, or statistical model of any kind
+      (as defined in Section 0.1);
 
-This prohibition applies to **all entities**, regardless of nationality, legal status, or the purportedly defensive or humanitarian nature of the use.
+  (b) Use the output, structure, or any derived component to train, fine-tune,
+      distill, align, benchmark, or evaluate any AI or ML model;
 
----
+  (c) Incorporate the Software into automated pipelines for AI/ML data collection;
 
-## Section 4 — Mandatory Notification for Commercial Entities
+  (d) Generate synthetic or augmented datasets for AI/ML model training;
 
-### 4.1 — Obligation to Notify
+  (e) Transfer the Software to third parties for any of the above purposes.
 
-Any **company, corporation, commercial entity, or for-profit organization** that intends to use, modify, and/or redistribute the Software — in any form, even partial — is **legally obligated** to notify the copyright holder **before** commencing such use, by sending a formal notification email to the address specified in Section 4.4.
+This prohibition applies REGARDLESS OF PURPOSE — commercial, academic,
+governmental, research, non-profit, or personal.
 
-### 4.2 — Content of the Notification Email
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 3 — PROHIBITION ON MILITARY USE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-The notification email must contain all of the following:
+The Software may NOT be used for any military, paramilitary, or armed defense
+purpose, as defined in Section 0.2. This includes:
 
-- Full legal name and registered address of the company;
-- Tax identification number, VAT number, or equivalent national business identifier;
-- Description of the intended use of the Software (internal use, commercial product, redistribution, SaaS integration, etc.);
-- Intended start date of use;
-- Name, role, and email address of the individual within the organization responsible for compliance with this License.
+  (a) Armed forces, national guards, militias, intelligence agencies;
 
-### 4.3 — Notification of Changes and Termination
+  (b) Primary contractors and subcontractors providing services to (a);
 
-In the event of any material change in the use of the Software (change of product, new distribution channel, transfer to a third party, merger, acquisition, etc.), the entity must send an **updated notification email** within **30 calendar days** of such change occurring.
+  (c) Development of weapons, military drones, targeting, or surveillance systems;
 
-Upon **cessation of use** of the Software, the entity must send a **termination notification email** within **30 calendar days**, specifying the effective date of cessation, after which the monthly donation obligation under Section 5 shall cease.
+  (d) Cyber warfare, electronic warfare, or offensive military operations;
 
-### 4.4 — Notification Contact
+  (e) Dual-use systems that can be adapted for military use;
 
-All notifications required under this Section must be sent by email to: **[COPYRIGHT HOLDER EMAIL ADDRESS]**
+  (f) Indirect use through third parties acting on behalf of military organizations.
 
-Use of the Software without completing the notification procedure constitutes a **material violation of this License** and results in the automatic termination of all rights granted herein.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 4 — MANDATORY NOTIFICATION FOR COMMERCIAL ENTITIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
----
+4.1 — OBLIGATION TO NOTIFY
+Notify by email BEFORE commencing use: {{EMAIL}}
 
-## Section 5 — Monthly Donation Obligation for Commercial Entities
+4.2 — Notification must include:
+  (a) Full legal name and business registration number
+  (b) Tax ID / VAT number (if applicable)
+  (c) Business address and jurisdiction
+  (d) Description of intended use
+  (e) Expected start date
+  (f) Declared annual gross revenue (to determine fee tier per Section 5)
+  (g) Name, title, and contact of designated compliance officer
+  (h) Declaration: "I certify that this Software will NOT be used for AI training
+      or military purposes as defined in Sections 2 and 3."
 
-### 5.1 — Obligation and Minimum Monthly Amount
+4.3 — Material changes must trigger updated notification within 30 days:
+  (a) Change of legal status or ownership
+  (b) Tier crossing (revenue above/below threshold)
+  (c) Change in use description or scope
+  (d) Change of compliance officer
 
-Any **company, corporation, commercial entity, or for-profit organization** that uses, modifies, and/or redistributes the Software — in any form, even partial — is required to make a **recurring monthly donation of at least the Minimum Monthly Amount**, in the currency designated by the copyright holder, to the original copyright holder, beginning in the first calendar month of use, modification, or redistribution.
+4.4 — Tier Crossing
+  If annual revenue crosses the {{SOGLIA}} {{VALUTA}} threshold:
+  - Notify within 60 days of fiscal year-end when crossing occurred
+  - Adjust payments from the 1st day of next fiscal year
+  - Failure to notify = retroactive penalty (see Section 7.3)
 
-The **Minimum Monthly Amount** shall be no less than **[AMOUNT] [CURRENCY]** (e.g. €1.00, $2.00, £1.50, or any other amount and currency as set by the copyright holder). The copyright holder reserves the right to set a higher amount at their sole discretion and in any currency of their choosing. Any change to the Minimum Monthly Amount or accepted currency must be published by the copyright holder at least **30 calendar days** before taking effect, at the contact address specified in Section 5.3. In the absence of a contrary indication, the amount and currency published by the copyright holder at the time the entity begins using the Software shall remain in effect until further notice.
+4.5 — Cessation
+  If use is terminated, send cessation email within 30 days to {{EMAIL}}
 
-### 5.2 — Payment Terms
+4.6 — ONGOING COMPLIANCE REPORTING
 
-- Payment must be made on or before the first (1st) calendar day of each month, for that month;
-- The entity must retain documentary proof of each monthly payment (receipt, transaction screenshot, bank statement, or equivalent) for a minimum period of 24 months and make such records available upon written request by the copyright holder;
-- The obligation to pay ceases upon receipt by the copyright holder of a valid termination notification as described in Section 4.3.
+4.6.1 MONTHLY REPORTING REQUIREMENT
+Tier A and B commercial entities must submit:
+  (a) By the 5th calendar day of each month:
+      - Certified statement of compliance
+      - Any material changes to use or business
+      - Certification of payment made
+  (b) Failure to report = presumption of material change requiring reclassification
+  (c) Format: Email to {{EMAIL}} with subject "[YEAR] MONTHLY COMPLIANCE REPORT"
 
-### 5.3 — Payment Method and Instructions
+4.6.2 ANNUAL AUDIT CERTIFICATION (TIER B ONLY)
+Tier B entities must provide annually (within 90 days of fiscal year-end):
+  (a) Self-certified revenue declaration (signed by authorized officer)
+  (b) Copy of relevant tax filing or certified accountant letter
+  (c) Declaration of no material business structure changes
+  (d) Confirmation of use continuation/cessation
 
-The copyright holder has **sole and absolute discretion** over the choice of payment method. Any legally recognized method is permitted, including but not limited to: bank transfer, credit card, PayPal, cryptocurrency (Bitcoin, Ethereum, etc.), Stripe, Revolut, cheque, or any other method chosen by the copyright holder.
+4.6.3 RECORD RETENTION
+All commercial entities must retain:
+  (a) Payment records: 24 months
+  (b) Usage records (if applicable): 24 months
+  (c) Compliance certifications: 24 months
+  (d) Available for copyright holder upon request within 15 days
 
-**Accepted payment method:** [PAYMENT METHOD]
+4.6.4 AUDIT RIGHTS
+Copyright holder may audit:
+  (a) Upon reasonable suspicion of non-compliance
+  (b) No more than once per calendar year per entity
+  (c) Via remote document review or on-site inspection
+  (d) All costs borne by copyright holder UNLESS non-compliance > 10%
+  (e) If non-compliance found: audit costs are additional penalty
 
-**Full payment instructions:** [PAYMENT INSTRUCTIONS — e.g. wallet address, IBAN, PayPal email, payment URL, etc.]
+WARNING: Use without notification = MATERIAL VIOLATION resulting in automatic
+termination of all rights and triggering penalty provisions (Section 7).
 
-The copyright holder must publish the payment method and full instructions at least **30 calendar days** before any change takes effect. In the absence of notice, the method and instructions in force at the start of the entity's use of the Software shall remain applicable.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 5 — FEE STRUCTURE AND PAYMENT OBLIGATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-### 5.4 — Default and Remedies
+5.1 — TIER A (Annual revenue < {{SOGLIA}} {{VALUTA}})
+Fixed monthly fee: {{IMPORTO}} {{VALUTA}} / month
+No additional revenue-based component.
+Due from the 1st of each month, starting the month notification is received.
 
-Failure to make the required payment for **two (2) or more consecutive months** constitutes a material breach of this License and results in the **automatic and immediate revocation** of all rights to use, modify, and redistribute the Software. Such rights shall not be reinstated until all outstanding payments have been settled in full.
+5.2 — TIER B (Annual revenue ≥ {{SOGLIA}} {{VALUTA}})
+Fixed monthly fee: {{IMPORTO}} {{VALUTA}} / month, PLUS
+Revenue percentage: {{PERCENTUALE}}% of annual gross revenue ÷ 12 per month.
 
-### 5.5 — Exemptions
+Tier B entities must provide a self-certified annual revenue declaration
+within 90 days of each fiscal year-end. The copyright holder may request
+supporting documentation (tax filings, financial statements) to verify
+declarations.
 
-**Private individuals and non-profit organizations** are exempt from the donation obligation under this Section, provided they comply with all other conditions of this License.
+Example calculation:
+  Threshold: {{SOGLIA}} {{VALUTA}}
+  Fixed fee: {{IMPORTO}} {{VALUTA}}/month
+  Percentage: {{PERCENTUALE}}%
+  Annual revenue: {{SOGLIA}} × 2 {{VALUTA}}
+  Monthly payment: {{IMPORTO}} + (({{SOGLIA}} × 2 × {{PERCENTUALE}}) ÷ 12) {{VALUTA}}
 
----
+5.3 — FREELANCERS AND SOLE TRADERS
+Treated as Tier A if annual net income < {{SOGLIA}} {{VALUTA}},
+as Tier B if annual net income ≥ {{SOGLIA}} {{VALUTA}}.
+Submit tax return or certified accountant letter as proof.
 
-## Section 6 — Redistribution with Unmodified License
+5.4 — PAYMENT TERMS AND METHOD
+Due on or before the 1st calendar day of each month.
+Accepted payment method: {{PAGAMENTO}}
+Full payment instructions: {{PAYINSTR}}
+Retain documentary proof of all payments for a minimum of 24 months.
+Payment records must be provided on request (within 15 days).
 
-Any redistribution of the Software, whether modified or unmodified, must include this License in its entirety, without modification of any clause. No additional restrictions may be imposed on recipients beyond those already set forth herein. Any redistribution that omits, modifies, or supersedes this License is null and void and constitutes a material breach.
+5.5 — DEFAULT AND REMEDIES
+Failure to pay for 2+ consecutive months = AUTOMATIC AND IMMEDIATE REVOCATION
+of all rights. Reinstated only upon:
+  (a) Full settlement of all arrears
+  (b) Late payment penalty = 20% of unpaid amounts
+  (c) Written confirmation of cure
 
----
+5.6 — EXEMPTIONS
+Private individuals (personal non-commercial use) and non-profit organizations
+(as defined in Section 0.4) are exempt from payment obligations.
+Exemption verification: non-profits must still provide notification (Section 4.1)
+with proof of non-profit status (registration certificate).
 
-## Section 7 — Enforcement and Remedies
+5.7 — SAFEGUARD CLAUSE — ANNUAL INFLATION ADJUSTMENT
+The copyright holder reserves the right, at their sole discretion, to adjust
+once per calendar year: the fixed fee, the revenue threshold, and/or the
+revenue percentage.
 
-Any violation of the conditions set forth in this License shall constitute both **copyright infringement** under applicable law and a **breach of contract**. The copyright holder reserves the right to pursue all available legal remedies, including but not limited to injunctive relief, monetary damages, recovery of legal fees, and termination of all granted rights. The copyright holder may enforce this License in any jurisdiction where the Software is used.
+Mechanism: any upward adjustment may not exceed the annual HICP rate published
+by Eurostat (EU), or the equivalent national CPI of the country where the
+copyright holder is domiciled, for the most recently published 12-month
+reference period. Downward adjustments are always permitted.
 
-Termination of rights under this License does not affect any legal proceedings that may arise from prior violations.
+Notification: at least 60 calendar days before the adjusted amounts take
+effect, with indication of previous parameters, new parameters, the inflation
+index used, the calculation, and the effective date.
 
----
+Effect of silence: no written objection within 30 days of receiving the
+notification = deemed acceptance. If objecting, the entity must cease use
+and submit a termination notice within the same 30-day period.
 
-## Section 8 — Disclaimer of Warranties
+First-year protection: no adjustment may be applied within the first 12
+months from the date on which a given entity begins using the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 6 — REDISTRIBUTION WITH UNMODIFIED LICENSE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
----
+Any redistribution must include this license in its entirety, without
+modification. No additional restrictions may be imposed on recipients.
 
-## QUICK REFERENCE SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 7 — MONITORING, ENFORCEMENT AND REMEDIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**✔ Allowed:** Use, copy, modify, merge, publish, distribute, sublicense, sell — for any non-military, non-AI-training purpose, subject to attribution and (for commercial entities) notification and monthly donation.
+7.1 — VIOLATION TRIGGERS
+A violation occurs upon:
+  (a) Use of the Software for AI training (Section 2) without prior written consent
+  (b) Use of the Software for military purposes (Section 3) without prior consent
+  (c) Use by commercial entity without notification and payment (Sections 4-5)
+  (d) Failure to pay for 1+ month (after notice)
+  (e) False declaration of non-profit status or revenue tier
+  (f) Transfer to third parties in violation of Section 2(e)
 
-**✘ Prohibited:** AI/ML training of any kind. Any military or defense use. Redistribution without this License. Commercial use without notification and donation.
+7.2 — DISPUTE NOTIFICATION & CURE PERIOD
+Upon discovery of violation, copyright holder sends formal notice to licensee
+with 15-day cure period. Notice must specify:
+  (a) Description of alleged violation
+  (b) Relevant section(s) of license
+  (c) Required corrective action
+  (d) Deadline for cure (15 calendar days)
 
-**⚡ Commercial entities must:** (1) notify the copyright holder by email before use; (2) pay at least the Minimum Monthly Amount in the copyright holder's chosen currency via the payment method designated by the copyright holder; (3) notify upon change or cessation of use.
+7.3 — VIOLATION SANCTIONS & REMEDIES
+If violation is not cured within 15 days, the following apply:
 
----
+AUTOMATIC REMEDIES:
+  (a) Immediate termination of all rights under this license
+  (b) Cessation order: cease use within 15 days
+  (c) Deletion of all copies: delete/destroy Software within 30 days
+  (d) Mandatory audit: provide copies of any backups, derivatives, or uses
+
+FINANCIAL PENALTIES:
+  (a) Non-payment cases: penalty = 3× unpaid amounts (minimum {{IMPORTO}} {{VALUTA}})
+  (b) AI training violations: penalty = 3× annual fee for that entity
+      (or estimated annual fee if entity size cannot be determined)
+  (c) Military use violations: penalty = 5× estimated annual usage fee
+  (d) False declaration: penalty = 2× the amounts that should have been paid
+
+PUBLICATION REMEDY:
+  (a) Copyright holder may publish the name, date, and nature of violation
+      on a public registry or website, for 12 months, unless dispute is resolved.
+
+RIGHTS ASSIGNMENT:
+  (a) Licensee may not dispute or object to publication.
+  (b) Copyright holder may assign penalty recovery rights to legal counsel or
+      third-party collection agency.
+
+7.4 — ENFORCEMENT JURISDICTION
+Applicable law: Italian law + EU regulations
+  - Italian Copyright Law (Law No. 633/1941)
+  - EU Directive 2019/790 (Digital Single Market)
+  - EU Regulation 2024/1689 (AI Act)
+  - General Italian Civil Code provisions (Art. 1218 breach, Art. 1382 damages)
+
+Exclusive jurisdiction: Court of {{CITTÀ}}, Italy (civile / tribunale)
+  - All disputes, claims, and enforcement actions shall be brought exclusively
+    before the civil court (tribunale) of {{CITTÀ}}, Italy.
+  - Both parties submit to personal jurisdiction in {{CITTÀ}}, Italy.
+  - Any proceedings in another jurisdiction shall be considered void.
+
+Competence does NOT change due to:
+  (a) Licensee's legal seat or incorporation in another country
+  (b) Infrastructure location or cloud hosting jurisdiction
+  (c) Personnel nationality or residence
+  (d) Corporate reorganizations, mergers, or acquisitions post-acceptance
+  (e) Any claim that accepting this license violates local law
+
+WAIVER OF IMMUNITY:
+  Any entity using the Software implicitly waives claims of sovereign immunity,
+  diplomatic immunity, or jurisdictional challenge in the Court of {{CITTÀ}}, Italy.
+
+7.5 — RIGHT TO LITIGATION AND CLASS ACTION
+The copyright holder may:
+  (a) Sue directly in the Court of {{CITTÀ}}, Italy
+  (b) Join or initiate class action suits against multiple violators
+  (c) Assign rights to legal counsel or collection agencies
+  (d) Report violations to competent authorities
+
+Licensee waives right to:
+  (a) Forum shopping or challenging jurisdiction
+  (b) Requesting arbitration instead of court proceedings
+  (c) Demanding jury trial
+
+7.6 — PRESUMPTION OF DAMAGES
+If violation is proven, minimum damages are presumed as:
+  (a) Non-payment: 3× unpaid amounts + costs
+  (b) Unauthorized AI training: 3× estimated annual usage fee + 1-year access ban
+  (c) Military use: 5× estimated annual usage fee + permanent access ban
+  (d) False declaration: 2× misclassified fees + reputational damages
+
+Licensee bears burden of proof to reduce damages below presumed amounts.
+
+7.7 — RIGHT OF INSPECTION & AUDIT
+Copyright holder or designated auditor may:
+  (a) Request access to Software usage logs (if available)
+  (b) Request proof of cessation or deletion
+  (c) Conduct remote or on-site audit of compliance
+  (d) Require sworn declaration of non-use
+  (e) Engage independent third-party auditor (at licensee's expense, if
+      non-compliance confirmed)
+
+Licensee must respond within 30 days or forfeit right to dispute damages.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 7bis — CROSS-BORDER ENFORCEMENT & REGULATORY ESCALATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+7bis.1 — ENFORCEMENT FOR ENTITIES OUTSIDE ITALY
+
+For licensees with legal seat outside Italy or EU:
+  (a) Copyright holder may initiate enforcement in any jurisdiction where
+      the licensee operates, maintains infrastructure, or has revenue
+  (b) Copyright holder may report violations to:
+      - Competent national courts in operating jurisdictions
+      - National data protection authorities
+      - International IP enforcement organizations
+      - EU enforcement bodies (if operating in EU)
+
+7bis.2 — REGULATORY ESCALATION (EU ENTITIES)
+
+For entities operating in the EU:
+  (a) Violations may be reported to:
+      - National data protection authority (where headquartered)
+      - EU Digital Services Coordinator (for platform violations)
+      - EDPB (European Data Protection Board) if data processing involved
+      - Industry regulator (if applicable)
+  (b) Violations may trigger investigation under:
+      - Digital Markets Act (if entity is gatekeeper)
+      - AI Act (if commercial AI training)
+      - Digital Services Act (if platform violation)
+
+7bis.3 — PRESUMPTION OF LIABILITY (NON-DISCLOSURE)
+
+If licensee fails to disclose tracking/usage data upon formal request:
+  (a) Burden of proof shifts entirely to licensee
+  (b) Copyright holder may presume:
+      - 100% of relevant commercial activity involves Software
+      - Violator intentionally concealed usage
+      - Statutory damages are appropriate
+  (c) Failure to respond within 30 days = automatic presumption
+
+7bis.4 — ASSET ENFORCEMENT
+
+For violators operating in EU:
+  (a) Copyright holder may seek from Italian court:
+      - EU-wide asset freezing orders
+      - Compliance orders enforceable across EU (Brussels I bis)
+      - Injunctions for service suspension
+      - Removal orders from EU marketplaces
+  (b) Non-compliance with Italian court orders may trigger:
+      - Referral to EU law enforcement
+      - Reporting to competent authorities
+      - Public notice of non-compliance
+      - Implementation of asset freezes per EU regulations
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 8 — PUBLIC REGISTRY OF VIOLATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+8.1 — Publication of the Registry
+The Copyright Holder reserves the right to publish verified violations in a
+public registry accessible via {{REGISTRY_URL}} or an equivalent transparency
+platform.
+
+Each record may include, without limitation:
+  (a) Name of the entity or individual responsible for the violation;
+  (b) Date of discovery of the violation and date of formal notice issued
+      pursuant to Section 7.2;
+  (c) Nature of the violation (e.g., non-payment, unauthorized training,
+      false or misleading declarations);
+  (d) Amounts owed or pending financial obligations, if applicable;
+  (e) Current status of the violation (disputed, remedied, resolved,
+      in litigation, non-compliant);
+  (f) Public response submitted by the violating entity, if any;
+  (g) record_hash: cryptographic fingerprint of the record computed using a
+      cryptographic hash function (e.g., SHA-256) to ensure immutability
+      and traceability of the published data.
+
+8.2 — Right of Reply and Update or Removal
+  (a) Prior to publication, the alleged violator shall receive formal notice
+      pursuant to Section 7.2;
+  (b) A minimum period of fifteen (15) days shall be granted to remedy the
+      violation or submit written observations;
+  (c) The violating entity may submit supporting documentation or evidence,
+      which shall be published as a public reply in the registry;
+  (d) The Copyright Holder shall review such replies before updating,
+      correcting, or removing a record;
+  (e) A record in the Registry of Violations shall be updated or removed
+      upon the occurrence of any of the following:
+        1. Full payment of all amounts owed (principal and penalties);
+        2. Verified cessation of the violation with written proof of compliance;
+        3. Written settlement agreement between the parties;
+        4. Final court judgment or arbitral award in favor of the licensee;
+        5. Expiration of applicable limitation periods (24 months from
+           discovery of the violation, subject to any suspension due to
+           ongoing litigation).
+
+Each update shall include the generation of a new record_hash to ensure
+traceability and immutability of prior record versions.
+
+8.3 — Effects of Publication
+Publication of a record in the Registry of Violations may:
+  (a) Serve as informative notice to other rights holders or license
+      administrators;
+  (b) Be considered by competent authorities (e.g., DMA, AI Act) in
+      investigations and audits;
+  (c) Affect commercial reputation, creditworthiness, and third-party
+      relationships;
+  (d) Not constitute defamation if published in good faith, with factual
+      accuracy, and taking into account any public replies, in compliance
+      with the notification procedure set forth in Section 7.2.
+
+8.4 — Protection of the Copyright Holder
+The Copyright Holder shall not be liable for any damages arising from the
+accurate and good-faith publication of verified violations, provided that:
+  (a) The violation has been established in accordance with the procedure
+      set forth in Sections 7.1–7.3;
+  (b) The information published is factually accurate;
+  (c) The licensee has been notified pursuant to Section 7.2, with a minimum
+      cure period of fifteen (15) days and the right to submit a public reply;
+  (d) The violation remains unresolved at the end of the cure period;
+  (e) Records are updated or removed upon fulfilment of the conditions set
+      forth in Section 8.2, with concurrent generation of a new record_hash.
+
+Technical Note: The record_hash enables verification that the content of each
+published record has not been altered after publication: by recomputing the
+hash of the record content and comparing it to the recorded record_hash value,
+the integrity of the data is confirmed.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 9 — DISCLAIMER OF WARRANTIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR 
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR 
+OTHER DEALINGS IN THE SOFTWARE.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 10 — SEVERABILITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+If any provision of this license is held invalid or unenforceable, it shall
+be replaced by the valid provision that most closely approximates the original
+effect. In case of conflict with third-party terms of use: this license prevails.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 11 — LICENSE AMENDMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Applicable version: the one in force at the start of use.
+New version: 90-day notice. Continued use = acceptance.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+— END OF LICENSE — aatel v2.1 — {{ANNO}} {{NOME}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NOTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+This license has been drafted with the utmost attention to legal soundness
+and is anchored to current EU regulations. It does not constitute professional
+legal advice. For use in disputes with major technology operators, review by
+a lawyer specializing in copyright and AI law is strongly recommended.
+
+
+Adaptation of the aatel v2.1 license (aatel.org).
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PLACEHOLDER REFERENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{{ANNO}}         Year of copyright (e.g. 2026)
+{{NOME}}         Full name or organization name of the rights holder
+{{CITTÀ}}        City of the competent court (e.g. Milano)
+{{EMAIL}}        Contact email for notifications (e.g. aatel.license@gmail.com)
+{{SOGLIA}}       Revenue threshold for Tier A → Tier B (e.g. 1000000)
+{{IMPORTO}}      Fixed monthly fee for commercial entities (e.g. 10)
+{{PERCENTUALE}}  Revenue percentage for Tier B (e.g. 0.5)
+{{VALUTA}}       Currency (e.g. EUR)
+{{PAGAMENTO}}    Payment method (e.g. Bitcoin / IBAN / PayPal)
+{{PAYINSTR}}     Payment instructions (e.g. wallet address, IBAN, PayPal email)
+{{REGISTRY_URL}} Public registry URL for violations (e.g. violations.aatel.org)
+
+
+═══════════════════════════════════════════════════════════════════════════
 
 *— END OF LICENSE —*
